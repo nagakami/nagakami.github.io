@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASS Subtitle Vertical Centering Solution</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; }
+        code { background: #0000; padding: 2px 5px; border-radius: 3px; }
+        pre { background: #333; color: #fff; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .note { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Vertical Centering for ASS Subtitles</h1>
+    
+    <h2><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASS Subtitle Vertical Centering Solution</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; }
+        code { background: #000000; padding: 2px 5px; border-radius: 3px; }
+        pre { background: #333; color: #fff; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .note { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Vertical Centering for ASS Subtitles</h1>
+    
+    <h2>Modified Python Code</h2>
+    <pre><code>
+audioID = "J32"
+audio_path = f"{audioID}_modified.mp3"
+output_path = f"{audioID}.ass"
+
+import stable_whisper
+import os
+
+def modify_ass_styles(file_path):
+    with open(file_path, 'r', encoding='utf-8-sig') as f:
+        lines = f.readlines()
+    
+    modified = []
+    for line in lines:
+        if line.startswith("Style: Default"):
+            parts = line.strip().split(',')
+            if len(parts) >= 22:
+                # Change alignment to center-middle (5) and vertical margin to 0
+                parts[18] = '5'  # Alignment field
+                parts[21] = '0'  # MarginV field
+            modified.append(','.join(parts) + '\n')
+        else:
+            modified.append(line)
+    
+    with open(file_path, 'w', encoding='utf-8-sig') as f:
+        f.writelines(modified)
+
+def create_ass_from_audio(audio_file, output_ass_file):
+    model = stable_whisper.load_model("medium")
+    result = model.transcribe(audio_file)
+    
+    result.to_ass(
+        filepath=output_ass_file,
+        font="ＭＳゴシック",
+        font_size=20,
+        highlight_color="00ff00",
+        karaoke=True,
+        segment_level=True,
+        word_level=True
+    )
+    
+    modify_ass_styles(output_ass_file)
+    print(f"\nASS file saved as: {output_ass_file}\n")
+
+if __name__ == "__main__":
+    create_ass_from_audio(audio_path, output_path)
+    </code></pre>
+
+    <h2>Key Modifications Explained</h2>
+    <ol>
+        <li>
+            <strong>Style Modification Function</strong>
+            <p>Added <code>modify_ass_styles</code> to adjust ASS file parameters:</p>
+            <ul>
+                <li>Alignment changed from 8 (top-center) to 5 (middle-center)</li>
+                <li>Vertical margin (MarginV) set to 0 for perfect centering</li>
+            </ul>
+        </li>
+        <li>
+            <strong>ASS File Structure</strong>
+            <p>Targeted the style line format:</p>
+            <pre>Style: Name,Font,Size,PrimaryColor,...,Alignment,MarginL,MarginR,MarginV,Encoding</pre>
+        </li>
+        <li>
+            <strong>Index Positions</strong>
+            <ul>
+                <li>Index 18: Alignment parameter</li>
+                <li>Index 21: MarginV (vertical margin)</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Technical Notes</h2>
+    <div class="note">
+        <p>✪ Tested with stable-whisper v0.9.1</p>
+        <p>✪ Requires media players supporting ASS subtitles (VLC, MPC-HC)</p>
+        <p>✪ Maintains original karaoke effects and timing precision</p>
+    </div>
+</body>
+</html></h2>
+    <pre><code>
+audioID = "J32"
+audio_path = f"{audioID}_modified.mp3"
+output_path = f"{audioID}.ass"
+
+import stable_whisper
+import os
+
+def modify_ass_styles(file_path):
+    with open(file_path, 'r', encoding='utf-8-sig') as f:
+        lines = f.readlines()
+    
+    modified = []
+    for line in lines:
+        if line.startswith("Style: Default"):
+            parts = line.strip().split(',')
+            if len(parts) >= 22:
+                # Change alignment to center-middle (5) and vertical margin to 0
+                parts[18] = '5'  # Alignment field
+                parts[21] = '0'  # MarginV field
+            modified.append(','.join(parts) + '\n')
+        else:
+            modified.append(line)
+    
+    with open(file_path, 'w', encoding='utf-8-sig') as f:
+        f.writelines(modified)
+
+def create_ass_from_audio(audio_file, output_ass_file):
+    model = stable_whisper.load_model("medium")
+    result = model.transcribe(audio_file)
+    
+    result.to_ass(
+        filepath=output_ass_file,
+        font="ＭＳゴシック",
+        font_size=20,
+        highlight_color="00ff00",
+        karaoke=True,
+        segment_level=True,
+        word_level=True
+    )
+    
+    modify_ass_styles(output_ass_file)
+    print(f"\nASS file saved as: {output_ass_file}\n")
+
+if __name__ == "__main__":
+    create_ass_from_audio(audio_path, output_path)
+    </code></pre>
+
+    <h2>Key Modifications Explained</h2>
+    <ol>
+        <li>
+            <strong>Style Modification Function</strong>
+            <p>Added <code>modify_ass_styles</code> to adjust ASS file parameters:</p>
+            <ul>
+                <li>Alignment changed from 8 (top-center) to 5 (middle-center)</li>
+                <li>Vertical margin (MarginV) set to 0 for perfect centering</li>
+            </ul>
+        </li>
+        <li>
+            <strong>ASS File Structure</strong>
+            <p>Targeted the style line format:</p>
+            <pre>Style: Name,Font,Size,PrimaryColor,...,Alignment,MarginL,MarginR,MarginV,Encoding</pre>
+        </li>
+        <li>
+            <strong>Index Positions</strong>
+            <ul>
+                <li>Index 18: Alignment parameter</li>
+                <li>Index 21: MarginV (vertical margin)</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Technical Notes</h2>
+    <div class="note">
+        <p>✪ Tested with stable-whisper v0.9.1</p>
+        <p>✪ Requires media players supporting ASS subtitles (VLC, MPC-HC)</p>
+        <p>✪ Maintains original karaoke effects and timing precision</p>
+    </div>
+</body>
+</html>

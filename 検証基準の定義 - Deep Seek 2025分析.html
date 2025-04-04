@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>検証基準の定義 - 技術レポートガイドライン</title>
+    <style>
+        body {
+            font-family: "Meiryo", sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #1a5276;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .verification-criteria {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2e86c1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #eaf2f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .verified {
+            color: #28b463;
+            font-weight: bold;
+        }
+        .unverified {
+            color: #c0392b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>技術情報検証基準（2023年）</h1>
+
+    <div class="verification-criteria">
+        <h2>検証済み情報の定義</h2>
+        <p>以下の<strong>全て</strong>を満たす場合に「検証済み」と認定：</p>
+        <ol>
+            <li><strong>公的記録の存在</strong>：企業IR・特許庁公示・学術論文など一次情報源</li>
+            <li><strong>再現可能性</strong>：第三者機関による追試結果または検証可能な実験データ</li>
+            <li><strong>時効性</strong>：情報公開から3年以内（2020年以降）のもの</li>
+            <li><strong>矛盾の不存在</strong>：反証データが公表されていない</li>
+        </ol>
+    </div>
+
+    <table>
+        <tr>
+            <th>検証対象</th>
+            <th>要求される証拠レベル</th>
+            <th>許容される情報源</th>
+        </tr>
+        <tr>
+            <td>技術仕様</td>
+            <td>
+                <ul>
+                    <li>ベンチマークテスト結果</li>
+                    <li>規格認証書（ISO/IECなど）</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>製造元公式サイト</li>
+                    <li>TÜV Rheinland等検査機関</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>市場データ</td>
+            <td>公的統計との整合性</td>
+            <td>
+                <ul>
+                    <li>財務省貿易統計</li>
+                    <li>Gartner/IDC調査</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="example">
+        <h3>検証済み事例：NVIDIA H100 GPU</h3>
+        <p><span class="verified">検証日：2023年3月21日</span></p>
+        <ul>
+            <li><strong>NVIDIA公式スペックシート</strong>（2022年9月公開）</li>
+            <li><strong>MLPerf v2.1テスト結果</strong>（2023年2月）</li>
+            <li><strong>Tom's Hardwareによる性能検証</strong>（2023年1月）</li>
+        </ul>
+    </div>
+
+    <div class="example">
+        <h3>未検証事例：次世代量子チップ</h3>
+        <p><span class="unverified">※研究段階のため検証不能</span></p>
+        <ul>
+            <li>企業プレスリリースのみ（2023年4月）</li>
+            <li>査読済み論文未発表</li>
+            <li>独立機関による評価不存在</li>
+        </ul>
+    </div>
+
+    <h2>情報鮮度管理</h2>
+    <p>全てのデータに以下のメタデータを付与：</p>
+    <ul>
+        <li><strong>初出日</strong>：情報が最初に公開された日付</li>
+        <li><strong>最終検証日</strong>：当方が確認した最新日付</li>
+        <li><strong>情報源タイプ</strong>：政府 / 企業 / 第三者機関</li>
+    </ul>
+</body>
+</html>
