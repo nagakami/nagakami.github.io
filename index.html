@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Files Index</title>
+    <title>HTML Files Index with Read Counter</title>
     <style>
         body {
             background-color: black;
@@ -39,56 +39,97 @@
             font-size: 0.8em;
             margin-left: 10px;
         }
+        .read-counter {
+            color: #ffa500;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
     </style>
+    <script>
+        // Load read counts from localStorage
+        function loadReadCounts() {
+            const readCounts = JSON.parse(localStorage.getItem('readCounts')) || {};
+            return readCounts;
+        }
+
+        // Increment read count for a file
+        function incrementCounter(fileName) {
+            const readCounts = loadReadCounts();
+            readCounts[fileName] = (readCounts[fileName] || 0) + 1;
+            localStorage.setItem('readCounts', JSON.stringify(readCounts));
+            const counterElement = document.getElementById("counter-" + fileName);
+            if (counterElement) {
+                counterElement.textContent = "[Read " + readCounts[fileName] + " time(s)]";
+            }
+        }
+
+        // Attach click event listeners to all links
+        function attachClickHandlers() {
+            const links = document.querySelectorAll("a.track-click");
+            links.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    const fileName = event.target.getAttribute("data-filename");
+                    if (fileName) {
+                        incrementCounter(fileName);
+                    }
+                });
+            });
+        }
+
+        // Initialize counters and attach handlers
+        document.addEventListener("DOMContentLoaded", () => {
+            attachClickHandlers();
+        });
+    </script>
 </head>
 <body>
-    <h1>HTML Files Index</h1>
+    <h1>HTML Files Index with Read Counter</h1>
     <ul id="fileList">
-        <li><a href="ICEと自由についての会話 - Max Blumenthal.html" target="_blank" rel="noopener noreferrer">ICEと自由についての会話 - Max Blumenthal.html</a><span class="file-info">(last modified: Fri Apr 18 14:08:18 2025)</span></li>
-<li><a href="[ダグ・マクレガー大佐] ロシアはイランへの攻撃を黙って見過ごすことはない.html" target="_blank" rel="noopener noreferrer">[ダグ・マクレガー大佐] ロシアはイランへの攻撃を黙って見過ごすことはない.html</a><span class="file-info">(last modified: Wed Apr 16 11:50:33 2025)</span></li>
-<li><a href="「トランプの対イラン戦争計画は核兵器へ」.html" target="_blank" rel="noopener noreferrer">「トランプの対イラン戦争計画は核兵器へ」.html</a><span class="file-info">(last modified: Mon Apr 14 13:22:54 2025)</span></li>
-<li><a href="日本と外国（1）「日本だけ貧乏根性なし」.html" target="_blank" rel="noopener noreferrer">日本と外国（1）「日本だけ貧乏根性なし」.html</a><span class="file-info">(last modified: Sun Apr 13 11:13:49 2025)</span></li>
-<li><a href="ジョン・ミアシャイマー教授 - トランプ、ネタニヤフ、そしてイラン.html" target="_blank" rel="noopener noreferrer">ジョン・ミアシャイマー教授 - トランプ、ネタニヤフ、そしてイラン.html</a><span class="file-info">(last modified: Fri Apr 11 19:15:27 2025)</span></li>
-<li><a href="Strategic Analysis Trump-Netanyahu Meeting & Gaza Crisis.html" target="_blank" rel="noopener noreferrer">Strategic Analysis Trump-Netanyahu Meeting & Gaza Crisis.html</a><span class="file-info">(last modified: Fri Apr 11 16:34:51 2025)</span></li>
-<li><a href="マリとアルジェリアの緊張 - ドローン撃墜事件から広がる対立の深層.html" target="_blank" rel="noopener noreferrer">マリとアルジェリアの緊張 - ドローン撃墜事件から広がる対立の深層.html</a><span class="file-info">(last modified: Thu Apr 10 19:54:06 2025)</span></li>
-<li><a href="サヘル危機 ー 撃墜されたドローンが地域対立の引き金に.html" target="_blank" rel="noopener noreferrer">サヘル危機 ー 撃墜されたドローンが地域対立の引き金に.html</a><span class="file-info">(last modified: Thu Apr 10 17:52:26 2025)</span></li>
-<li><a href="トランプ政権第2期政策の地政学的・経済的影響, 04,10, 2025.html" target="_blank" rel="noopener noreferrer">トランプ政権第2期政策の地政学的・経済的影響, 04,10, 2025.html</a><span class="file-info">(last modified: Thu Apr 10 15:18:48 2025)</span></li>
-<li><a href="貧乏根性 「イギリスの貧乏根性」.html" target="_blank" rel="noopener noreferrer">貧乏根性 「イギリスの貧乏根性」.html</a><span class="file-info">(last modified: Wed Apr  9 12:31:42 2025)</span></li>
-<li><a href="サックス教授, 関税 - 経済的影響と地政学的影響.html" target="_blank" rel="noopener noreferrer">サックス教授, 関税 - 経済的影響と地政学的影響.html</a><span class="file-info">(last modified: Wed Apr  9 10:30:44 2025)</span></li>
-<li><a href="ジェフリー・サックス教授 - 戦争と関税.html" target="_blank" rel="noopener noreferrer">ジェフリー・サックス教授 - 戦争と関税.html</a><span class="file-info">(last modified: Wed Apr  9 09:35:49 2025)</span></li>
-<li><a href="AES連盟とサヘル地域の新たな地政学.html" target="_blank" rel="noopener noreferrer">AES連盟とサヘル地域の新たな地政学.html</a><span class="file-info">(last modified: Tue Apr  8 14:18:49 2025)</span></li>
-<li><a href="トランプ政権のイラン政策分析.html" target="_blank" rel="noopener noreferrer">トランプ政権のイラン政策分析.html</a><span class="file-info">(last modified: Tue Apr  8 09:27:13 2025)</span></li>
-<li><a href="U.S. and Houthi Military Timeline - March-April Events.html" target="_blank" rel="noopener noreferrer">U.S. and Houthi Military Timeline - March-April Events.html</a><span class="file-info">(last modified: Mon Apr  7 10:11:32 2025)</span></li>
-<li><a href="米国とイランの緊張関係分析.html" target="_blank" rel="noopener noreferrer">米国とイランの緊張関係分析.html</a><span class="file-info">(last modified: Mon Apr  7 09:26:45 2025)</span></li>
-<li><a href="Germany's New China Strategy.html" target="_blank" rel="noopener noreferrer">Germany's New China Strategy.html</a><span class="file-info">(last modified: Sun Apr  6 14:40:27 2025)</span></li>
-<li><a href="テヘランから モハマド・モランディ教授インタビュー.html" target="_blank" rel="noopener noreferrer">テヘランから モハマド・モランディ教授インタビュー.html</a><span class="file-info">(last modified: Fri Apr  4 22:27:15 2025)</span></li>
-<li><a href="Professor Muhammad Morandi from Tehran, Iran.html" target="_blank" rel="noopener noreferrer">Professor Muhammad Morandi from Tehran, Iran.html</a><span class="file-info">(last modified: Fri Apr  4 21:29:23 2025)</span></li>
-<li><a href="最新戦略報告 2025年4月2日.html" target="_blank" rel="noopener noreferrer">最新戦略報告 2025年4月2日.html</a><span class="file-info">(last modified: Fri Apr  4 12:59:06 2025)</span></li>
-<li><a href="満足主義と技術の進歩.html" target="_blank" rel="noopener noreferrer">満足主義と技術の進歩.html</a><span class="file-info">(last modified: Fri Apr  4 11:35:21 2025)</span></li>
-<li><a href="Deep Seek 2025 世界の技術パワーシフト.html" target="_blank" rel="noopener noreferrer">Deep Seek 2025 世界の技術パワーシフト.html</a><span class="file-info">(last modified: Thu Apr  3 13:24:44 2025)</span></li>
-<li><a href="農林中金の赤字問題.html" target="_blank" rel="noopener noreferrer">農林中金の赤字問題.html</a><span class="file-info">(last modified: Tue Apr  1 12:53:45 2025)</span></li>
-<li><a href="高騰し続ける米についての情報.html" target="_blank" rel="noopener noreferrer">高騰し続ける米についての情報.html</a><span class="file-info">(last modified: Tue Apr  1 12:32:45 2025)</span></li>
-<li><a href="Unpreventable Collapse.html" target="_blank" rel="noopener noreferrer">Unpreventable Collapse.html</a><span class="file-info">(last modified: Mon Mar 31 10:11:05 2025)</span></li>
-<li><a href="Iran-US-Israel Relations  Complete 2025 Analysis.html" target="_blank" rel="noopener noreferrer">Iran-US-Israel Relations  Complete 2025 Analysis.html</a><span class="file-info">(last modified: Sun Mar 30 13:44:38 2025)</span></li>
-<li><a href="India's Agricultural Miracle and Economic Strategies.html" target="_blank" rel="noopener noreferrer">India's Agricultural Miracle and Economic Strategies.html</a><span class="file-info">(last modified: Sat Mar 29 12:25:53 2025)</span></li>
-<li><a href="Japan's Treasury Sell-Off  Western & Non-Western Perspectives.html" target="_blank" rel="noopener noreferrer">Japan's Treasury Sell-Off  Western & Non-Western Perspectives.html</a><span class="file-info">(last modified: Sat Mar 29 11:50:42 2025)</span></li>
-<li><a href="中国のイエメンへの軍事支援疑惑.html" target="_blank" rel="noopener noreferrer">中国のイエメンへの軍事支援疑惑.html</a><span class="file-info">(last modified: Fri Mar 28 19:49:32 2025)</span></li>
-<li><a href="China's Alleged Military Aid to Yemen.html" target="_blank" rel="noopener noreferrer">China's Alleged Military Aid to Yemen.html</a><span class="file-info">(last modified: Thu Mar 27 19:58:22 2025)</span></li>
-<li><a href="日本の金融シフト.html" target="_blank" rel="noopener noreferrer">日本の金融シフト.html</a><span class="file-info">(last modified: Thu Mar 27 15:31:24 2025)</span></li>
-<li><a href="Japan's Financial Shift.html" target="_blank" rel="noopener noreferrer">Japan's Financial Shift.html</a><span class="file-info">(last modified: Thu Mar 27 14:33:44 2025)</span></li>
-<li><a href="Global Media Analysis： Japan's Treasury Sell-Off.html" target="_blank" rel="noopener noreferrer">Global Media Analysis： Japan's Treasury Sell-Off.html</a><span class="file-info">(last modified: Thu Mar 27 14:10:27 2025)</span></li>
-<li><a href="Yemen Conflict Media Analysis2.html" target="_blank" rel="noopener noreferrer">Yemen Conflict Media Analysis2.html</a><span class="file-info">(last modified: Thu Mar 27 13:07:07 2025)</span></li>
-<li><a href="Yemen Conflict Media Analysis.html" target="_blank" rel="noopener noreferrer">Yemen Conflict Media Analysis.html</a><span class="file-info">(last modified: Thu Mar 27 12:44:45 2025)</span></li>
-<li><a href="Ben Norton - トランプの戦争は失敗.html" target="_blank" rel="noopener noreferrer">Ben Norton - トランプの戦争は失敗.html</a><span class="file-info">(last modified: Tue Mar 25 13:55:43 2025)</span></li>
-<li><a href="政治分析 - 中東情勢.html" target="_blank" rel="noopener noreferrer">政治分析 - 中東情勢.html</a><span class="file-info">(last modified: Tue Mar 25 10:18:29 2025)</span></li>
-<li><a href="スコット・リッター氏インタビュー.html" target="_blank" rel="noopener noreferrer">スコット・リッター氏インタビュー.html</a><span class="file-info">(last modified: Tue Mar 25 08:50:10 2025)</span></li>
-<li><a href="Disappointment with Trump’s Actions.html" target="_blank" rel="noopener noreferrer">Disappointment with Trump’s Actions.html</a><span class="file-info">(last modified: Sat Mar 22 12:42:07 2025)</span></li>
-<li><a href="スコット・リッター  イランの秘密兵器と米国のイエメン戦略.html" target="_blank" rel="noopener noreferrer">スコット・リッター  イランの秘密兵器と米国のイエメン戦略.html</a><span class="file-info">(last modified: Sat Mar 22 12:26:45 2025)</span></li>
-<li><a href="Scott Ritter  Iran’s Secret Weapon and U.S. Strategy in Yemen.html" target="_blank" rel="noopener noreferrer">Scott Ritter  Iran’s Secret Weapon and U.S. Strategy in Yemen.html</a><span class="file-info">(last modified: Sat Mar 22 12:12:18 2025)</span></li>
-<li><a href="Analysis of Russia-Ukraine Conflict.html" target="_blank" rel="noopener noreferrer">Analysis of Russia-Ukraine Conflict.html</a><span class="file-info">(last modified: Sat Mar 22 10:49:01 2025)</span></li>
-<li><a href="John Mearsheimer ROARS  Russia - Ukraine War Will Never Stop.html" target="_blank" rel="noopener noreferrer">John Mearsheimer ROARS  Russia - Ukraine War Will Never Stop.html</a><span class="file-info">(last modified: Sat Mar 22 10:20:42 2025)</span></li>
-<li><a href="The term 'Goyim in the Talmud.html" target="_blank" rel="noopener noreferrer">The term 'Goyim in the Talmud.html</a><span class="file-info">(last modified: Thu Mar 20 11:25:10 2025)</span></li>
-<li><a href="タルムードにおける「ゴイム」.html" target="_blank" rel="noopener noreferrer">タルムードにおける「ゴイム」.html</a><span class="file-info">(last modified: Thu Mar 20 11:24:06 2025)</span></li>
+        <li><a href="ICEと自由についての会話 - Max Blumenthal.html" target="_blank" class="track-click" data-filename="ICEと自由についての会話 - Max Blumenthal.html">ICEと自由についての会話 - Max Blumenthal.html</a><span class="file-info">(last modified: Fri Apr 18 14:08:18 2025)</span><span id="counter-ICEと自由についての会話 - Max Blumenthal.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="[ダグ・マクレガー大佐] ロシアはイランへの攻撃を黙って見過ごすことはない.html" target="_blank" class="track-click" data-filename="[ダグ・マクレガー大佐] ロシアはイランへの攻撃を黙って見過ごすことはない.html">[ダグ・マクレガー大佐] ロシアはイランへの攻撃を黙って見過ごすことはない.html</a><span class="file-info">(last modified: Wed Apr 16 11:50:33 2025)</span><span id="counter-[ダグ・マクレガー大佐] ロシアはイランへの攻撃を黙って見過ごすことはない.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="「トランプの対イラン戦争計画は核兵器へ」.html" target="_blank" class="track-click" data-filename="「トランプの対イラン戦争計画は核兵器へ」.html">「トランプの対イラン戦争計画は核兵器へ」.html</a><span class="file-info">(last modified: Mon Apr 14 13:22:54 2025)</span><span id="counter-「トランプの対イラン戦争計画は核兵器へ」.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="日本と外国（1）「日本だけ貧乏根性なし」.html" target="_blank" class="track-click" data-filename="日本と外国（1）「日本だけ貧乏根性なし」.html">日本と外国（1）「日本だけ貧乏根性なし」.html</a><span class="file-info">(last modified: Sun Apr 13 11:13:49 2025)</span><span id="counter-日本と外国（1）「日本だけ貧乏根性なし」.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="ジョン・ミアシャイマー教授 - トランプ、ネタニヤフ、そしてイラン.html" target="_blank" class="track-click" data-filename="ジョン・ミアシャイマー教授 - トランプ、ネタニヤフ、そしてイラン.html">ジョン・ミアシャイマー教授 - トランプ、ネタニヤフ、そしてイラン.html</a><span class="file-info">(last modified: Fri Apr 11 19:15:27 2025)</span><span id="counter-ジョン・ミアシャイマー教授 - トランプ、ネタニヤフ、そしてイラン.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Strategic Analysis Trump-Netanyahu Meeting & Gaza Crisis.html" target="_blank" class="track-click" data-filename="Strategic Analysis Trump-Netanyahu Meeting & Gaza Crisis.html">Strategic Analysis Trump-Netanyahu Meeting & Gaza Crisis.html</a><span class="file-info">(last modified: Fri Apr 11 16:34:51 2025)</span><span id="counter-Strategic Analysis Trump-Netanyahu Meeting & Gaza Crisis.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="マリとアルジェリアの緊張 - ドローン撃墜事件から広がる対立の深層.html" target="_blank" class="track-click" data-filename="マリとアルジェリアの緊張 - ドローン撃墜事件から広がる対立の深層.html">マリとアルジェリアの緊張 - ドローン撃墜事件から広がる対立の深層.html</a><span class="file-info">(last modified: Thu Apr 10 19:54:06 2025)</span><span id="counter-マリとアルジェリアの緊張 - ドローン撃墜事件から広がる対立の深層.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="サヘル危機 ー 撃墜されたドローンが地域対立の引き金に.html" target="_blank" class="track-click" data-filename="サヘル危機 ー 撃墜されたドローンが地域対立の引き金に.html">サヘル危機 ー 撃墜されたドローンが地域対立の引き金に.html</a><span class="file-info">(last modified: Thu Apr 10 17:52:26 2025)</span><span id="counter-サヘル危機 ー 撃墜されたドローンが地域対立の引き金に.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="トランプ政権第2期政策の地政学的・経済的影響, 04,10, 2025.html" target="_blank" class="track-click" data-filename="トランプ政権第2期政策の地政学的・経済的影響, 04,10, 2025.html">トランプ政権第2期政策の地政学的・経済的影響, 04,10, 2025.html</a><span class="file-info">(last modified: Thu Apr 10 15:18:48 2025)</span><span id="counter-トランプ政権第2期政策の地政学的・経済的影響, 04,10, 2025.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="貧乏根性 「イギリスの貧乏根性」.html" target="_blank" class="track-click" data-filename="貧乏根性 「イギリスの貧乏根性」.html">貧乏根性 「イギリスの貧乏根性」.html</a><span class="file-info">(last modified: Wed Apr  9 12:31:42 2025)</span><span id="counter-貧乏根性 「イギリスの貧乏根性」.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="サックス教授, 関税 - 経済的影響と地政学的影響.html" target="_blank" class="track-click" data-filename="サックス教授, 関税 - 経済的影響と地政学的影響.html">サックス教授, 関税 - 経済的影響と地政学的影響.html</a><span class="file-info">(last modified: Wed Apr  9 10:30:44 2025)</span><span id="counter-サックス教授, 関税 - 経済的影響と地政学的影響.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="ジェフリー・サックス教授 - 戦争と関税.html" target="_blank" class="track-click" data-filename="ジェフリー・サックス教授 - 戦争と関税.html">ジェフリー・サックス教授 - 戦争と関税.html</a><span class="file-info">(last modified: Wed Apr  9 09:35:49 2025)</span><span id="counter-ジェフリー・サックス教授 - 戦争と関税.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="AES連盟とサヘル地域の新たな地政学.html" target="_blank" class="track-click" data-filename="AES連盟とサヘル地域の新たな地政学.html">AES連盟とサヘル地域の新たな地政学.html</a><span class="file-info">(last modified: Tue Apr  8 14:18:49 2025)</span><span id="counter-AES連盟とサヘル地域の新たな地政学.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="トランプ政権のイラン政策分析.html" target="_blank" class="track-click" data-filename="トランプ政権のイラン政策分析.html">トランプ政権のイラン政策分析.html</a><span class="file-info">(last modified: Tue Apr  8 09:27:13 2025)</span><span id="counter-トランプ政権のイラン政策分析.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="U.S. and Houthi Military Timeline - March-April Events.html" target="_blank" class="track-click" data-filename="U.S. and Houthi Military Timeline - March-April Events.html">U.S. and Houthi Military Timeline - March-April Events.html</a><span class="file-info">(last modified: Mon Apr  7 10:11:32 2025)</span><span id="counter-U.S. and Houthi Military Timeline - March-April Events.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="米国とイランの緊張関係分析.html" target="_blank" class="track-click" data-filename="米国とイランの緊張関係分析.html">米国とイランの緊張関係分析.html</a><span class="file-info">(last modified: Mon Apr  7 09:26:45 2025)</span><span id="counter-米国とイランの緊張関係分析.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Germany's New China Strategy.html" target="_blank" class="track-click" data-filename="Germany's New China Strategy.html">Germany's New China Strategy.html</a><span class="file-info">(last modified: Sun Apr  6 14:40:27 2025)</span><span id="counter-Germany's New China Strategy.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="テヘランから モハマド・モランディ教授インタビュー.html" target="_blank" class="track-click" data-filename="テヘランから モハマド・モランディ教授インタビュー.html">テヘランから モハマド・モランディ教授インタビュー.html</a><span class="file-info">(last modified: Fri Apr  4 22:27:15 2025)</span><span id="counter-テヘランから モハマド・モランディ教授インタビュー.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Professor Muhammad Morandi from Tehran, Iran.html" target="_blank" class="track-click" data-filename="Professor Muhammad Morandi from Tehran, Iran.html">Professor Muhammad Morandi from Tehran, Iran.html</a><span class="file-info">(last modified: Fri Apr  4 21:29:23 2025)</span><span id="counter-Professor Muhammad Morandi from Tehran, Iran.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="最新戦略報告 2025年4月2日.html" target="_blank" class="track-click" data-filename="最新戦略報告 2025年4月2日.html">最新戦略報告 2025年4月2日.html</a><span class="file-info">(last modified: Fri Apr  4 12:59:06 2025)</span><span id="counter-最新戦略報告 2025年4月2日.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="満足主義と技術の進歩.html" target="_blank" class="track-click" data-filename="満足主義と技術の進歩.html">満足主義と技術の進歩.html</a><span class="file-info">(last modified: Fri Apr  4 11:35:21 2025)</span><span id="counter-満足主義と技術の進歩.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Deep Seek 2025 世界の技術パワーシフト.html" target="_blank" class="track-click" data-filename="Deep Seek 2025 世界の技術パワーシフト.html">Deep Seek 2025 世界の技術パワーシフト.html</a><span class="file-info">(last modified: Thu Apr  3 13:24:44 2025)</span><span id="counter-Deep Seek 2025 世界の技術パワーシフト.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="農林中金の赤字問題.html" target="_blank" class="track-click" data-filename="農林中金の赤字問題.html">農林中金の赤字問題.html</a><span class="file-info">(last modified: Tue Apr  1 12:53:45 2025)</span><span id="counter-農林中金の赤字問題.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="高騰し続ける米についての情報.html" target="_blank" class="track-click" data-filename="高騰し続ける米についての情報.html">高騰し続ける米についての情報.html</a><span class="file-info">(last modified: Tue Apr  1 12:32:45 2025)</span><span id="counter-高騰し続ける米についての情報.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Unpreventable Collapse.html" target="_blank" class="track-click" data-filename="Unpreventable Collapse.html">Unpreventable Collapse.html</a><span class="file-info">(last modified: Mon Mar 31 10:11:05 2025)</span><span id="counter-Unpreventable Collapse.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Iran-US-Israel Relations  Complete 2025 Analysis.html" target="_blank" class="track-click" data-filename="Iran-US-Israel Relations  Complete 2025 Analysis.html">Iran-US-Israel Relations  Complete 2025 Analysis.html</a><span class="file-info">(last modified: Sun Mar 30 13:44:38 2025)</span><span id="counter-Iran-US-Israel Relations  Complete 2025 Analysis.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="India's Agricultural Miracle and Economic Strategies.html" target="_blank" class="track-click" data-filename="India's Agricultural Miracle and Economic Strategies.html">India's Agricultural Miracle and Economic Strategies.html</a><span class="file-info">(last modified: Sat Mar 29 12:25:53 2025)</span><span id="counter-India's Agricultural Miracle and Economic Strategies.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Japan's Treasury Sell-Off  Western & Non-Western Perspectives.html" target="_blank" class="track-click" data-filename="Japan's Treasury Sell-Off  Western & Non-Western Perspectives.html">Japan's Treasury Sell-Off  Western & Non-Western Perspectives.html</a><span class="file-info">(last modified: Sat Mar 29 11:50:42 2025)</span><span id="counter-Japan's Treasury Sell-Off  Western & Non-Western Perspectives.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="中国のイエメンへの軍事支援疑惑.html" target="_blank" class="track-click" data-filename="中国のイエメンへの軍事支援疑惑.html">中国のイエメンへの軍事支援疑惑.html</a><span class="file-info">(last modified: Fri Mar 28 19:49:32 2025)</span><span id="counter-中国のイエメンへの軍事支援疑惑.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="China's Alleged Military Aid to Yemen.html" target="_blank" class="track-click" data-filename="China's Alleged Military Aid to Yemen.html">China's Alleged Military Aid to Yemen.html</a><span class="file-info">(last modified: Thu Mar 27 19:58:22 2025)</span><span id="counter-China's Alleged Military Aid to Yemen.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="日本の金融シフト.html" target="_blank" class="track-click" data-filename="日本の金融シフト.html">日本の金融シフト.html</a><span class="file-info">(last modified: Thu Mar 27 15:31:24 2025)</span><span id="counter-日本の金融シフト.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Japan's Financial Shift.html" target="_blank" class="track-click" data-filename="Japan's Financial Shift.html">Japan's Financial Shift.html</a><span class="file-info">(last modified: Thu Mar 27 14:33:44 2025)</span><span id="counter-Japan's Financial Shift.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Global Media Analysis： Japan's Treasury Sell-Off.html" target="_blank" class="track-click" data-filename="Global Media Analysis： Japan's Treasury Sell-Off.html">Global Media Analysis： Japan's Treasury Sell-Off.html</a><span class="file-info">(last modified: Thu Mar 27 14:10:27 2025)</span><span id="counter-Global Media Analysis： Japan's Treasury Sell-Off.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Yemen Conflict Media Analysis2.html" target="_blank" class="track-click" data-filename="Yemen Conflict Media Analysis2.html">Yemen Conflict Media Analysis2.html</a><span class="file-info">(last modified: Thu Mar 27 13:07:07 2025)</span><span id="counter-Yemen Conflict Media Analysis2.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Yemen Conflict Media Analysis.html" target="_blank" class="track-click" data-filename="Yemen Conflict Media Analysis.html">Yemen Conflict Media Analysis.html</a><span class="file-info">(last modified: Thu Mar 27 12:44:45 2025)</span><span id="counter-Yemen Conflict Media Analysis.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Ben Norton - トランプの戦争は失敗.html" target="_blank" class="track-click" data-filename="Ben Norton - トランプの戦争は失敗.html">Ben Norton - トランプの戦争は失敗.html</a><span class="file-info">(last modified: Tue Mar 25 13:55:43 2025)</span><span id="counter-Ben Norton - トランプの戦争は失敗.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="政治分析 - 中東情勢.html" target="_blank" class="track-click" data-filename="政治分析 - 中東情勢.html">政治分析 - 中東情勢.html</a><span class="file-info">(last modified: Tue Mar 25 10:18:29 2025)</span><span id="counter-政治分析 - 中東情勢.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="スコット・リッター氏インタビュー.html" target="_blank" class="track-click" data-filename="スコット・リッター氏インタビュー.html">スコット・リッター氏インタビュー.html</a><span class="file-info">(last modified: Tue Mar 25 08:50:10 2025)</span><span id="counter-スコット・リッター氏インタビュー.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Disappointment with Trump’s Actions.html" target="_blank" class="track-click" data-filename="Disappointment with Trump’s Actions.html">Disappointment with Trump’s Actions.html</a><span class="file-info">(last modified: Sat Mar 22 12:42:07 2025)</span><span id="counter-Disappointment with Trump’s Actions.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="スコット・リッター  イランの秘密兵器と米国のイエメン戦略.html" target="_blank" class="track-click" data-filename="スコット・リッター  イランの秘密兵器と米国のイエメン戦略.html">スコット・リッター  イランの秘密兵器と米国のイエメン戦略.html</a><span class="file-info">(last modified: Sat Mar 22 12:26:45 2025)</span><span id="counter-スコット・リッター  イランの秘密兵器と米国のイエメン戦略.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Scott Ritter  Iran’s Secret Weapon and U.S. Strategy in Yemen.html" target="_blank" class="track-click" data-filename="Scott Ritter  Iran’s Secret Weapon and U.S. Strategy in Yemen.html">Scott Ritter  Iran’s Secret Weapon and U.S. Strategy in Yemen.html</a><span class="file-info">(last modified: Sat Mar 22 12:12:18 2025)</span><span id="counter-Scott Ritter  Iran’s Secret Weapon and U.S. Strategy in Yemen.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="Analysis of Russia-Ukraine Conflict.html" target="_blank" class="track-click" data-filename="Analysis of Russia-Ukraine Conflict.html">Analysis of Russia-Ukraine Conflict.html</a><span class="file-info">(last modified: Sat Mar 22 10:49:01 2025)</span><span id="counter-Analysis of Russia-Ukraine Conflict.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="John Mearsheimer ROARS  Russia - Ukraine War Will Never Stop.html" target="_blank" class="track-click" data-filename="John Mearsheimer ROARS  Russia - Ukraine War Will Never Stop.html">John Mearsheimer ROARS  Russia - Ukraine War Will Never Stop.html</a><span class="file-info">(last modified: Sat Mar 22 10:20:42 2025)</span><span id="counter-John Mearsheimer ROARS  Russia - Ukraine War Will Never Stop.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="The term 'Goyim in the Talmud.html" target="_blank" class="track-click" data-filename="The term 'Goyim in the Talmud.html">The term 'Goyim in the Talmud.html</a><span class="file-info">(last modified: Thu Mar 20 11:25:10 2025)</span><span id="counter-The term 'Goyim in the Talmud.html" class="read-counter">[Read 0 time(s)]</span></li>
+<li><a href="タルムードにおける「ゴイム」.html" target="_blank" class="track-click" data-filename="タルムードにおける「ゴイム」.html">タルムードにおける「ゴイム」.html</a><span class="file-info">(last modified: Thu Mar 20 11:24:06 2025)</span><span id="counter-タルムードにおける「ゴイム」.html" class="read-counter">[Read 0 time(s)]</span></li>
     </ul>
 </body>
 </html>
