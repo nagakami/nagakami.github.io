@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>戦略核弾頭ミサイルと戦術核弾頭ミサイルの徹底分析（Part 1）</title>
+  <style>
+    body { background: #191c24; color: #eaeaea; font-family: "Segoe UI", "Noto Sans JP", sans-serif; max-width: 980px; margin: auto; padding: 2em; line-height: 1.85; font-size: 1.13em;}
+    h1, h2, h3 { color: #7dc1ff; }
+    h4 { color: #ffd166; }
+    a { color: #91c8f6; }
+    ul, ol { margin-bottom: 1.7em; }
+    table { background: #23272e; border-collapse: collapse; width: 100%; margin-bottom: 2em; }
+    th, td { border: 1px solid #2e3440; padding: 0.7em; }
+    th { background: #20242a; }
+    .toc { background: #22262e; padding: 1.2em; margin: 1.5em 0 2em 0; border-radius: 8px; }
+    .toc h2 { color: #fff; font-size: 1.13em; margin-bottom: 0.6em; }
+    .toc ul { margin: 0; padding-left: 1.2em; }
+    .toc ul li { margin-bottom: 0.2em; }
+    .highlight { color: #ffd166; background: #23272e; border-left: 7px solid #ffb300; padding: 1.1em; margin: 2em 0; font-size: 1.18em;}
+    .qbox { background: #23272e; border-left: 6px solid #fd6e6e; margin: 2em 0; padding: 1em 1.5em; }
+    .recbox { background: #20242a; border-left: 6px solid #7dc1ff; margin: 2em 0; padding: 1em 1.5em; }
+    .source-summary { background: #20242a; padding: 0.5em 1em; margin-bottom: 1.1em; border-left: 4px solid #6ec6ff; font-size: 0.98em; }
+    .databox { background: #243040; color: #fff; border-left: 6px solid #6ec6ff; padding: 1em; margin: 1.5em 0; }
+  </style>
+</head>
+<body>
+  <h1>戦略核弾頭ミサイルと戦術核弾頭ミサイルの徹底分析レポート（Part 1）</h1>
+  <div class="toc">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#summary">エグゼクティブ・サマリー</a></li>
+      <li><a href="#background">背景と歴史的文脈</a></li>
+      <li><a href="#method">調査方法</a></li>
+      <li><a href="#definitions">用語定義・基本的な違い</a></li>
+      <li><a href="#data">データと現状</a></li>
+      <li><a href="#case">ケーススタディ（小話含む）</a></li>
+      <li><a href="#continue">→ 次回予告（Part2）</a></li>
+    </ul>
+  </div>
+
+  <h2 id="summary">エグゼクティブ・サマリー</h2>
+  <div class="highlight">
+    「戦略核弾頭ミサイル」と「戦術核弾頭ミサイル」は目的・威力・運用思想が大きく異なる。戦略核は「抑止」のための大量破壊兵器、戦術核は「実戦使用」も想定される小型核兵器である。<br>
+    もし中国が「戦術核弾頭ミサイル」を多数配備し、実際に使える態勢をとれば、米国の「核の傘」は抑止力として大きく弱体化する可能性がある。特に日本の安全保障に深刻な影響が予想される。
+  </div>
+
+  <h2 id="background">背景と歴史的文脈</h2>
+  <ul>
+    <li>冷戦期、米ソは「核抑止」＝戦略核ミサイルを大量配備し、全面核戦争を相互に防止。</li>
+    <li>一方、ヨーロッパ戦線などでは「戦術核」（小型・短射程）が実戦投入も想定された。</li>
+    <li>冷戦後、戦術核の配備は減少したが、ロシア・中国は近年、再び戦術核の重要性を強調。</li>
+    <li>日本は米国の「核の傘」に依存し、独自核戦力は持たない。</li>
+  </ul>
+
+  <h2 id="method">調査方法</h2>
+  <ul>
+    <li>学術論文・政府白書・国際機関報告・日米中ロの公開資料、新旧の報道（西側・非西側含む）を幅広く調査。</li>
+    <li>主要な分析・統計はArms Control Association, SIPRI, 国防省, 中国国防白書等を参照。</li>
+    <li>2025年6月時点で公開されているニュース・分析も反映。</li>
+    <li>信頼性の高い代替リンクやアーカイブも提示。</li>
+  </ul>
+
+  <h2 id="definitions">用語定義・基本的な違い</h2>
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>戦略核弾頭ミサイル</th>
+      <th>戦術核弾頭ミサイル</th>
+    </tr>
+    <tr>
+      <td>主な目的</td>
+      <td>敵国全土・大都市・軍事基幹施設への壊滅的打撃による「抑止」</td>
+      <td>戦場・局地的な軍事目標への攻撃、戦局転換、限定的抑止</td>
+    </tr>
+    <tr>
+      <td>威力（目安）</td>
+      <td>100kt～1Mt超（TNT換算）</td>
+      <td>数kt～50kt程度</td>
+    </tr>
+    <tr>
+      <td>射程</td>
+      <td>数千～1万km超（ICBM/SLBM等）</td>
+      <td>数十～数百km（短・中距離弾道/巡航ミサイル等）</td>
+    </tr>
+    <tr>
+      <td>配備例</td>
+      <td>米LGM-30ミニットマン、露RS-24ヤルス、中国DF-41等</td>
+      <td>露イスカンデルM、米B61戦術核、（将来的に中国のDF-17搭載型等）</td>
+    </tr>
+    <tr>
+      <td>国際的法的位置づけ</td>
+      <td>NPT体制下での核抑止戦略の主軸</td>
+      <td>戦略・戦術の区別は曖昧。制限条約や透明性は乏しい</td>
+    </tr>
+  </table>
+
+  <h2 id="data">最新データと現状（2025年6月時点）</h2>
+  <div class="databox">
+    <ul>
+      <li><b>中国の核弾頭保有数：</b> 推定500～600（SIPRI, 2024/2025）※戦術核は明言されずも開発加速</li>
+      <li><b>ロシアの戦術核配備：</b> 約1900発（Arms Control Assoc.）</li>
+      <li><b>米国の戦術核：</b> 約100発（主に欧州配備B61）</li>
+      <li><b>中国は2020年代後半から極超音速滑空ミサイル（DF-17等）や短・中距離弾道ミサイルへの小型核搭載を準備中</b></li>
+    </ul>
+  </div>
+  <table>
+    <tr>
+      <th>国</th><th>全核弾頭数</th><th>推定戦術核</th><th>主な配備/開発状況</th>
+    </tr>
+    <tr>
+      <td>中国</td>
+      <td>500～600</td>
+      <td>公式非公開</td>
+      <td>戦術核開発強化中、DF-17量産中</td>
+    </tr>
+    <tr>
+      <td>ロシア</td>
+      <td>約4300（配備済）</td>
+      <td>1900</td>
+      <td>戦術核は欧州・極東に多数配備</td>
+    </tr>
+    <tr>
+      <td>米国</td>
+      <td>約3700</td>
+      <td>100</td>
+      <td>B61戦術核を欧州・NATO同盟国へ</td>
+    </tr>
+  </table>
+
+  <h2 id="case">ケーススタディ・小話</h2>
+  <ul>
+    <li>
+      <b>冷戦期のNATOとワルシャワ条約機構：</b>
+      西ドイツ戦線において「戦術核」の大量投入計画が存在。戦略核と異なり、現場指揮官レベルでの迅速投入が想定された（出典: NATO archives, SIPRI）。
+    </li>
+    <li>
+      <b>近年の中国：</b>
+      米国防総省やSIPRIは「中国が2020年代半ば以降、短・中距離ミサイルへの小型核搭載を本格化させる」と指摘。中国国防白書でも「核の多様化・柔軟化」を強調。
+    </li>
+  </ul>
+
+  <h2 id="continue">→ 次回予告（Part2）</h2>
+  <ul>
+    <li>「中国が戦術核弾頭ミサイルを量産・実戦態勢化した場合、なぜ米国の『日本への核の傘』が無意味化するのか？」を因果分析</li>
+    <li>国際情勢・専門家意見・メディア（西側・非西側）論調・シナリオ分析</li>
+    <li>実証データ・図表・多角的視点を交えて徹底検証</li>
+  </ul>
+ <p>
+    <b>次へ：</b> <a href="核弾頭ミサイル徹底分析レポート_Part2.html">パート2</a>
+  </p></body>
+</html>
