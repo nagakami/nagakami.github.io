@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ロシアタンカー拿捕への報復（仮想）シナリオ</title>
+<style>
+  :root {
+    --bg-primary: #05060a;
+    --bg-secondary: #0d1117;
+    --bg-card: #102027;
+    --text-primary: #e0e3ea;
+    --text-secondary: #9fa8b5;
+    --text-accent: #f5f7ff;
+    --border-primary: #202635;
+    --border-accent: #263238;
+    --accent-blue: #4fc3f7;
+    --accent-blue-light: #64b5f6;
+    --accent-green: #4db6ac;
+    --accent-orange: #ffb74d;
+    --accent-red: #ff8a80;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+    overflow-x: auto;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, #1a1f2e 100%);
+    border-bottom: 1px solid var(--border-primary);
+    padding: 20px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ast-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .ast-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ast-tagline {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    font-size: 0.75rem;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 32px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    color: var(--text-accent);
+    margin-bottom: 16px;
+    border-left: 5px solid var(--accent-blue);
+    padding-left: 20px;
+    font-weight: 600;
+  }
+
+  h1 .scenario-tag {
+    display: inline-block;
+    background: rgba(78, 52, 46, 0.8);
+    color: #ffccbc;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    margin-left: 12px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: var(--text-accent);
+    margin: 2.5em 0 1em 0;
+    border-left: 4px solid var(--accent-blue-light);
+    padding-left: 16px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    color: #e3f2fd;
+    margin: 2em 0 0.8em 0;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 1em;
+    text-align: justify;
+  }
+
+  .info-box {
+    border-left: 4px solid var(--accent-green);
+    background: var(--bg-card);
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .warning-box {
+    border-left: 4px solid var(--accent-orange);
+    background: rgba(43, 27, 15, 0.8);
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .critical {
+    color: var(--accent-red);
+  }
+
+  .section-divider {
+    border-top: 1px dashed var(--border-accent);
+    margin: 40px 0 24px 0;
+  }
+
+  ul {
+    margin: 1em 0 1.5em 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+
+  li:before {
+    content: "▸";
+    color: var(--accent-blue-light);
+    font-weight: bold;
+    position: absolute;
+    left: -1.5em;
+  }
+
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+  }
+
+  .scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-accent);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+  }
+
+  .scenario-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .probability-high { border-left: 5px solid var(--accent-green); }
+  .probability-medium { border-left: 5px solid var(--accent-orange); }
+  .probability-low { border-left: 5px solid var(--accent-red); }
+
+  .probability-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .prob-high { background: rgba(77, 182, 172, 0.2); color: var(--accent-green); }
+  .prob-medium { background: rgba(255, 183, 77, 0.2); color: var(--accent-orange); }
+  .prob-low { background: rgba(255, 138, 128, 0.2); color: var(--accent-red); }
+
+  footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
+    padding: 32px;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .disclaimer {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    main { padding: 20px 16px; }
+    header { padding: 16px 20px; }
+    h1 { font-size: 1.5rem; padding-left: 16px; }
+    .scenario-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="ast-brand">
+        <div class="ast-logo">AST</div>
+        <div class="ast-tagline">Strategic Analysis & Scenario Planning</div>
+      </div>
+      <div class="meta">
+        <span class="meta-tag">作成日: 2026-01-09</span>
+        <span class="meta-tag">分類: 海洋安全保障・制裁対抗・グレーゾーン戦</span>
+        <span class="meta-tag">対象: ロシアタンカー拿捕事案</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>ロシアタンカー拿捕への報復<span class="scenario-tag">仮想シナリオ</span></h1>
+<!-- **タイトル：** 「米国タンカー拿捕」米露海洋対立の新局面：日本シーレーンへの制裁波及リスク
+ **導入部（68文字）：** 
+ 米露タンカー拿捕対立が公海で激化。ロシアのグレーゾーン報復は黒海・北極航路圧力強化へ。日本は中東依存度80%のLNG輸入に即時警戒を。
+ -->
+    <div class="info-box">
+      <strong>要旨：</strong><br>
+      米国によるロシア船籍タンカー公海拿捕に対し、ロシアは軍事的な直接対決を避け、外交・法執行・海洋上のグレーゾーン圧力を組み合わせた段階的エスカレーションを選択する蓋然性が高い。この多層的アプローチは、国内世論の面子維持、友好国へのシグナル発信、米国へのコスト増大を同時に達成する最適解となる。
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>1. 事案背景とロシアの戦略的認識</h2>
+
+    <h3>1-1. トリガー事象の構造</h3>
+    <p>
+      米国沿岸警備隊がベネズエラ産原油制裁執行のため、北大西洋・カリブ海域でロシア船籍タンカー2隻を公海上で拿捕。この事案は単なる個別船舶押収を超え、「航行の自由vs制裁執行」の原則対立を象徴化する。ロシアにとって、これは制裁回避ルートの機能不全化と、グローバルな海洋法執行体制への挑戦状でもある。
+    </p>
+
+    <h3>1-2. ロシアのコアインセンティブ</h3>
+    <ul>
+      <li>国内向け：強硬姿勢による政権支持率維持</li>
+      <li>友好国向け：反制裁連帯のシグナル発信</li>
+      <li>米国向け：海洋上でのコスト増大を通じた抑止力回復</li>
+      <li>市場向け：エネルギー貿易継続能力の証明</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <h2>2. 報復シナリオ階層（確率順）</h2>
+
+    <div class="scenario-grid">
+      <div class="scenario-card probability-high">
+        <div class="scenario-header">
+          <span class="probability-badge prob-high">確率：高 (80-90%)</span>
+          <strong>外交・世論戦の全方位展開</strong>
+        </div>
+        <ul>
+          <li>国連安保理・総会での「米海賊行為」決議案提出</li>
+          <li>グローバルサウス諸国への共同声明呼びかけ</li>
+          <li>RT・Sputnikを通じた24時間サイクル報道</li>
+          <li>「航行の自由はロシアの権利」ナラティブ確立</li>
+        </ul>
+      </div>
+
+      <div class="scenario-card probability-high">
+        <div class="scenario-header">
+          <span class="probability-badge prob-high">確率：高 (70-85%)</span>
+          <strong>海洋グレーゾーン圧力強化</strong>
+        </div>
+        <ul>
+          <li>黒海・バルト海・北極圏での検査頻度3倍化</li>
+          <li>「安全保障上の理由」による72時間ルール導入</li>
+          <li>西側海運企業への選択的遅延措置</li>
+          <li>ケルチ海峡型事案の日常化</li>
+        </ul>
+      </div>
+
+      <div class="scenario-card probability-medium">
+        <div class="scenario-header">
+          <span class="probability-badge prob-medium">確率：中 (40-60%)</span>
+          <strong>シャドーフリート軍事エスコート</strong>
+        </div>
+        <ul>
+          <li>特定タンカーへの護衛艦・潜水艦常時同行</li>
+          <li>北大西洋航路でのロシア海軍プレゼンス拡大</li>
+          <li>危険接近・レーダーロックを通じたハラスメント</li>
+          <li>拿捕試行時の即時介入体制構築</li>
+        </ul>
+      </div>
+
+      <div class="scenario-card probability-medium">
+        <div class="scenario-header">
+          <span class="probability-badge prob-medium">確率：中 (30-50%)</span>
+          <strong>エネルギー市場カウンター</strong>
+        </div>
+        <ul>
+          <li>欧州向け天然ガス微減配分（-5～10%）</li>
+          <li>インド・中国向け原油ディスカウント拡大</li>
+          <li>中東経由迂回ルートの本格運用開始</li>
+          <li>第三国フラッグシフト加速化</li>
+        </ul>
+      </div>
+
+      <div class="scenario-card probability-low">
+        <div class="scenario-header">
+          <span class="probability-badge prob-low">確率：低 (5-15%)</span>
+          <strong>対称的公海拿捕（レッドライン）</strong>
+        </div>
+        <ul>
+          <li>米国籍タンカー公海上での強制検査・拿捕</li>
+          <li>米軍補給船への接近・妨害行為</li>
+          <li>完全な米ロ海洋権限対立構図化</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong class="critical">エスカレーション制御ライン：</strong><br>
+      公海上での米国籍船舶に対する武力行使は、ロシアにとっても制御不能な軍事衝突リスクを伴うため、実行確率は極めて低い。ただし、国内向けの強硬レトリックとして「対称報復権利」の主張は継続する。
+    </div>
+
+    <div class="section-divider"></div>
+
+    <h2>3. 時間軸別展開予測</h2>
+
+    <h3>3-1. 第1週 (即時対応：1-7日)</h3>
+    <ul>
+      <li>外務省・国防省統一非難声明発表</li>
+      <li>国連安保理緊急会合要求</li>
+      <li>乗組員人道待遇要求（世論形成）</li>
+      <li>主要友好国への支持要請開始</li>
+    </ul>
+
+    <h3>3-2. 第2-4週 (実務的圧力：8-28日)</h3>
+    <ul>
+      <li>黒海・バルト海検査体制3倍化完了</li>
+      <li>第1陣エスコート任務開始（テストケース）</li>
+      <li>欧州向けガス微調整実施</li>
+      <li>訴訟戦開始（各国裁判所・仲裁）</li>
+    </ul>
+
+    <h3>3-3. 第2ヶ月以降 (新常態化：29日～)</h3>
+    <ul>
+      <li>グレーゾーン圧力の日常化</li>
+      <li>シャドーフリート完全軍事化</li>
+      <li>海洋法解釈対立の国際司法化</li>
+      <li>次回拿捕事案への即応態勢確立</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <h2>4. AST戦略評価と投資含意</h2>
+
+    <h3>4-1. 海運・保険市場への波及</h3>
+    <ul>
+      <li>黒海・バルト海航路の戦争リスク保険料30-50%上昇</li>
+      <li>ロシア近接ルートのコンテナ船離脱加速</li>
+      <li>北極航路の戦略的重要性急上昇</li>
+    </ul>
+
+    <h3>4-2. エネルギー価格への影響</h3>
+    <ul>
+      <li>欧州TTF先物3-5%プレミアム化</li>
+      <li>Uralsブレンド割引幅一時的縮小</li>
+      <li>ベネズエラ原油流出ルート完全遮断</li>
+    </ul>
+
+    <h3>4-3. AST推奨監視指標</h3>
+    <ul>
+      <li>ロシア近海検査件数週次推移（閾値：前週比+50%）</li>
+      <li>黒海フリート出港頻度・目的地変化</li>
+      <li>欧州天然ガス在庫回転率悪化度</li>
+      <li>国連安保理でのロシア支持国数変動</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="disclaimer">
+      ※本報告書はASTのオープンソース分析・仮想シナリオ評価であり、いかなる政府・組織・機関の公式見解を代表するものではありません。<br>
+      投資助言や法務判断の根拠としての使用は適切ではありません。
+    </div>
+  </footer>
+</body>
+</html>
