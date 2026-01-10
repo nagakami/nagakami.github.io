@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【軍事・地政学分析】デンマークの「致命的警告」が露わにするNATO同盟の亀裂とトランプ孤立主義の危険性</title>
+    <style>
+        :root {
+            --primary-bg: #0a0e17;
+            --secondary-bg: #161b26;
+            --tertiary-bg: #1f283d;
+            --primary-text: #e2e8f0;
+            --secondary-text: #94a3b8;
+            --accent-1: #3b82f6;
+            --accent-2: #ef4444;
+            --accent-3: #f59e0b;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --primary-bg: #f0f4f8;
+            --secondary-bg: #ffffff;
+            --tertiary-bg: #e2e8f0;
+            --primary-text: #1e293b;
+            --secondary-text: #475569;
+            --accent-1: #2563eb;
+            --accent-2: #dc2626;
+            --accent-3: #d97706;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.7;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            transition: var(--transition);
+            letter-spacing: 0.01em;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            background: var(--secondary-bg);
+            border: 2px solid var(--accent-2);
+            color: var(--primary-text);
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--accent-2);
+            transform: rotate(30deg);
+        }
+
+        .header-container {
+            text-align: center;
+            padding: 40px 20px 30px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--accent-2);
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, transparent 100%);
+            border-radius: var(--border-radius);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-container::before {
+            content: "緊急分析";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--accent-2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin: 20px 0 15px;
+            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .intro-summary {
+            font-size: 1.15rem;
+            color: var(--secondary-text);
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: rgba(22, 27, 38, 0.8);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-2);
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+            line-height: 1.8;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+            color: var(--secondary-text);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-2), #f97316);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-left: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+            color: white;
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 30px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .video-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+        }
+
+        /* セクション共通 */
+        .section-title {
+            color: var(--accent-1);
+            margin: 60px 0 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--tertiary-bg);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .section-title i {
+            font-size: 2rem;
+        }
+
+        /* 意図分析カード */
+        .intent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .intent-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .intent-card {
+            background-color: var(--secondary-bg);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            border-top: 6px solid var(--accent-1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intent-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-1), transparent);
+        }
+
+        .intent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .intent-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .intent-card h3 {
+            margin-bottom: 20px;
+            color: var(--primary-text);
+            padding-right: 60px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* トピックカード */
+        .topic-card {
+            background-color: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--tertiary-bg);
+            transition: var(--transition);
+        }
+
+        .topic-card:hover {
+            border-color: var(--accent-2);
+        }
+
+        .topic-header {
+            background: linear-gradient(90deg, var(--tertiary-bg), var(--secondary-bg));
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .topic-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-2), transparent);
+        }
+
+        .topic-icon {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+            color: white;
+            min-width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .topic-content {
+            padding: 35px;
+        }
+
+        .topic-content h4 {
+            color: var(--accent-1);
+            margin: 30px 0 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .topic-content h4 i {
+            font-size: 1.3rem;
+        }
+
+        blockquote {
+            border-left: 5px solid var(--accent-2);
+            padding: 25px 30px;
+            margin: 30px 0;
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.05), transparent);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-style: italic;
+            color: var(--secondary-text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: "“";
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--accent-2);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .implication-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(239, 68, 68, 0.05));
+            border-left: 6px solid var(--accent-3);
+            padding: 30px;
+            margin-top: 35px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .implication-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--accent-3);
+        }
+
+        .implication-box h5 {
+            color: var(--accent-3);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* タグ */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: var(--tertiary-bg);
+            color: var(--secondary-text);
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-weight: 500;
+        }
+
+        .tag:hover {
+            background-color: var(--accent-2);
+            color: white;
+            cursor: pointer;
+            transform: translateY(-3px);
+            border-color: var(--accent-2);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        /* フッター */
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--tertiary-bg);
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+            border-radius: 3px;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .topic-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .theme-toggle {
+                top: 15px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .header-container::before {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+            
+            .intro-summary {
+                padding: 20px;
+                font-size: 1.05rem;
+            }
+        }
+
+        /* 強調テキスト */
+        .highlight {
+            background: linear-gradient(120deg, rgba(59, 130, 246, 0.2) 0%, transparent 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--accent-1);
+        }
+
+        .warning-text {
+            color: var(--accent-2);
+            font-weight: 700;
+            border-bottom: 2px dotted var(--accent-2);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- テーマ切り替えボタン -->
+    <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ヘッダー -->
+    <header class="header-container">
+        <!-- ファイルタイトル＋65文字前後の日本語紹介文 -->
+        <h1>【極秘分析】デンマーク発「致命的警告」の衝撃：トランプ孤立主義が引き起こすNATO崩壊と新冷戦の序章<span class="urgency-badge">同盟危機</span></h1>
+        
+        <div class="intro-summary">
+            トランプ政権によるNATO脅迫を受け、デンマーク首相が「断固たる対応」を警告。一中小国の声明が、米国保護主義の限界と欧州の自立化、さらにはロシア・中国による同盟分断工作の成功を白日に晒した。
+        </div>
+        
+        <div class="video-meta">
+            <div class="meta-item">
+                <i class="fas fa-video"></i>
+                <span>分析対象: 🚨Denmark Delivers FATAL WARNING to TRUMP after THREATS</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>分析日: 2026年1月10日</span>
+            </div>
+        </div>
+        
+        <a href="https://youtu.be/5tZZnmt9kmA" class="video-link" target="_blank">
+            <i class="fab fa-youtube"></i> オリジナル動画を緊急視聴
+        </a>
+    </header>
+
+    <!-- スクリプト意図分析セクション -->
+    <section>
+        <h2 class="section-title"><i class="fas fa-brain"></i> スクリプト全体の意図分析</h2>
+        <p style="margin-bottom: 35px; color: var(--secondary-text); font-size: 1.1rem;">
+            本動画が伝えるデンマークの警告には、<span class="highlight">「トランプ外交」の核心的危険性と、国際秩序の静かなる大変動</span>を指摘する7つの戦略的意図が込められている。
+        </p>
+        
+        <div class="intent-grid">
+            <div class="intent-card">
+                <div class="intent-number">1</div>
+                <h3>「同盟軽視」が招く「戦略的孤独」の可視化</h3>
+                <p>「取引的な同盟観」が<span class="highlight">米国の長期的な信用と影響力そのものを毀損</span>し、結果的に「<span class="warning-text">安価な安全保障」を求めて最も高価な代償（孤立）を払う</span>という逆説を暴露する意図。</p>
+            </div>
+            
+            <div class="intent-card">
+                <div class="intent-number">2</div>
+                <h3>欧州の「米国依存脱却」と戦略的自立への覚醒</h3>
+                <p>デンマークという<span class="highlight">従来は親米的・穏健な国でさえ米国の保護を疑問視</span>し始めた事実を提示。これが欧州全体の<span class="warning-text">「自立化の転換点」</span>となる可能性を暗示する意図。</p>
+            </div>
+            
+            <div class="intent-card">
+                <div class="intent-number">3</div>
+                <h3>「力による平和」論の現実的限界の実証</h3>
+                <p>軍事力による威嚇だけでは<span class="highlight">同盟の結束も地域の安定も維持できない</span>現実を、NATO内部の亀裂を通じて示す。権力政治の<span class="warning-text">「非合理性」と「不安定性」</span>を浮き彫りにする意図。</p>
+            </div>
+            
+            <div class="intent-card">
+                <div class="intent-number">4</div>
+                <h3>ロシア・中国の「同盟分断工作」成功の警告</h3>
+                <p>トランプの言動が<span class="highlight">意図せずして敵対国の戦略的目標（西側同盟の弱体化）を手助けしている</span>構造を指摘。これは<span class="warning-text">「戦略的自己損傷」</span>の典型例であると警告する意図。</p>
+            </div>
+            
+            <div class="intent-card">
+                <div class="intent-number">5</div>
+                <h3>国際規範と「約束の遵守」の地政学的価値の再確認</h3>
+                <p>短期利益のために<span class="highlight">長年の同盟の原則（集団防衛）を軽視することが、国家ブランドと信頼性に与える壊滅的ダメージ</span>を具体的な外交事例で示す意図。</p>
+            </div>
+            
+            <div class="intent-card">
+                <div class="intent-number">6</div>
+                <h3>中小国の「地政学的発言力」の可能性を示唆</h3>
+                <p>デンマークのように軍事・経済規模は小さくとも、<span class="highlight">道義的立場と一貫した原則に基づく発言が、超大国の行動を牽制しうる</span>という国際政治の新たな力学を提示する意図。</p>
+            </div>
+            
+            <div class="intent-card">
+                <div class="intent-number">7</div>
+                <h3>「米国大統領」への事前牽制と行動制約の形成</h3>
+                <p>政権発足前から<span class="highlight">国際社会からの明確な「レッドライン」と反発のコストを示す</span>ことで、実際の政策決定に<span class="warning-text">ブレーキをかける国際世論の枠組み</span>を作り出そうとする意図。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要トピック詳細解説 -->
+    <section>
+        <h2 class="section-title"><i class="fas fa-layer-group"></i> 主要トピックの詳細解説</h2>
+        <p style="margin-bottom: 35px; color: var(--secondary-text); font-size: 1.1rem;">
+            一つの外交警告が象徴する、<span class="highlight">「同盟の終わり」と「新たな力の秩序」誕生</span>の兆候を、3つの核心的トピックから深層分析する。
+        </p>
+        
+        <!-- トピック1 -->
+        <article class="topic-card">
+            <div class="topic-header">
+                <div class="topic-icon"><i class="fas fa-handshake-slash"></i></div>
+                <div>
+                    <h3>トピック1: 「取引的同盟論」の破綻とNATOのアイデンティティ危機</h3>
+                    <div class="tags">
+                        <span class="tag">NATO</span>
+                        <span class="tag">集団防衛</span>
+                        <span class="tag">同盟の信頼</span>
+                        <span class="tag">米国政治</span>
+                        <span class="tag">第5条</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-content">
+                <h4><i class="fas fa-history"></i> 背景と文脈</h4>
+                <p>北大西洋条約機構（NATO）は、<span class="highlight">「集団防衛」（第5条）という鉄壁の相互防衛約束</span>を中核として、冷戦期から欧州の平和と安定を支えてきた。これは単なる軍事同盟ではなく、<span class="warning-text">「共通の価値（民主主義、自由、法の支配）を守る共同体」</span>という政治的アイデンティティを持っていた。しかし、2010年代以降、米国では特に共和党右派から、<span class="highlight">「米国が欧州防衛の費用を不当に負担している」</span>という「同盟費用論」が台頭。トランプ大統領はこの論調を先鋭化させ、<span class="warning-text">NATOを「サービスの対価を支払っていない国」との「取引」</span>とみなす発言を繰り返してきた。</p>
+                
+                <h4><i class="fas fa-quote-right"></i> 動画の核心的論点</h4>
+                <p>動画は、トランプ陣営が次期政権に向けて<span class="highlight">「NATO加盟国が国防費GDP比2%目標を満たさない場合、米国は集団防衛義務を履行しない」</span>と公然と脅迫したことを受けて、デンマーク首相が「そのような条件付き支援は受け入れられない」と警告した経緯を分析する。ここでの核心は、<span class="warning-text">「取引的発想」が同盟の「本質」を蝕んでいる点にある</span>。動画では、<span class="highlight">第5条の発動は「会計報告書」ではなく「共通の価値への攻撃」がきっかけであるべき</span>というNATOの根本原則が脅かされていると指摘。デンマークの反応は、<span class="highlight">「同盟は金で買えるサービスではない」</span>という欧州側の根本的な怒りと失望の表れであり、これは単なる外交摩擦ではなく、<span class="warning-text">「同盟の魂」をめぐる存立危機</span>であると論じる。</p>
+                
+                <blockquote>
+                    「NATOが単なる防衛サービスの請負業者になってしまえば、それはもはや同盟ではなくなる。我々が共有するのは領土だけではない。自由と民主主義という未来への約束だ。それを金銭的な取引に貶めることは、我々が守るべきものそのものを否定することだ。」
+                </blockquote>
+                
+                <div class="implication-box">
+                    <h5><i class="fas fa-lightbulb"></i> 日本への戦略的示唆</h5>
+                    <p><span class="warning-text">日本の安全保障の根幹を揺るがす「日米同盟の条件付き化」の悪夢が現実味を帯びてきた。</span>日本はNATO加盟国ではないが、日米安保条約は同様の「集団的自衛権」と相互防衛の精神に基づく。</p>
+                    <p>1. <span class="highlight">「価値観同盟」としての日米関係の再構築と積極的アピールが急務。</span>日本の役割を「ホストネーション支援」や「思いやり予算」といった経費分担の枠組みを超えて、<span class="warning-text">「インド太平洋の自由と開放された秩序」という共通の戦略的利益の守護者</span>として再定義する必要がある。</p>
+                    <p>2. 米国の内政変化に左右されない<span class="highlight">「同盟の冗長性」と「多角的安保ネットワーク」の構築を加速。</span>日豪、日韓（困難だが）、日EU、日英など、米国を唯一の軸としない補完的な安全保障対話と協力を強化すべきである。</p>
+                    <p>3. 日本の防衛力強化と国防費増額を、<span class="highlight">「米国への支払い」ではなく「自国および地域の安定への不可欠な投資」</span>として明確に位置づけ、国内外に対して戦略的メッセージを発信し続ける。</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- トピック2 -->
+        <article class="topic-card">
+            <div class="topic-header">
+                <div class="topic-icon"><i class="fas fa-flag-europe"></i></div>
+                <div>
+                    <h3>トピック2: 欧州の戦略的自立（戦略的自治）と「ポスト米国」時代の序章</h3>
+                    <div class="tags">
+                        <span class="tag">欧州連合(EU)</span>
+                        <span class="tag">戦略的自立</span>
+                        <span class="tag">欧州軍</span>
+                        <span class="tag">フランス・ドイツ</span>
+                        <span class="tag">露中対応</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-content">
+                <h4><i class="fas fa-history"></i> 背景と文脈</h4>
+                <p>欧州は長年、<span class="highlight">米国の「核の傘」と在欧米軍に安全保障の大半を依存</span>してきた。冷戦終結後もこの構図は続いたが、<span class="warning-text">2014年のクリミア併合、そして2022年のウクライナ侵攻</span>は欧州の安全保障環境を一変させた。欧州連合（EU）は「戦略的自律（Strategic Autonomy）」の概念を打ち出し、<span class="highlight">独自の防衛能力構築と危機対応メカニズムの強化</span>を模索し始めた。しかし、現実には政策調整の難しさや予算制約から進展は限定的で、<span class="warning-text">米国への依存は依然として圧倒的</span>であった。</p>
+                
+                <h4><i class="fas fa-quote-right"></i> 動画の核心的論点</h4>
+                <p>動画は、デンマークの警告を<span class="highlight">「欧州の覚醒を告げる象徴的事件」</span>と位置付ける。従来、<span class="highlight">「親米的」かつ「NATO重視」の姿勢で知られるデンマークでさえ、米国の保護を当然視しなくなった</span>ことは、欧州全体の心理的転換点を示すと分析。動画はさらに、<span class="warning-text">フランスとドイツが主導する「欧州防衛イニシアチブ」</span>が、これまで以上に現実味と緊急性を帯びてきたと指摘。これは単なる軍隊統合ではなく、<span class="highlight">独自の情報収集衛星網、兵站システム、迅速展開部隊など、米国抜きで行動できる「完全な防衛エコシステム」</span>の構築を意味する。動画は、トランプの脅迫が<span class="warning-text">「欧州の自立化」に最後の一押しをした可能性</span>があり、長期的には米国の欧州における影響力衰退につながりかねないと警告する。</p>
+                
+                <blockquote>
+                    「我々は決して米国に背を向けているわけではない。しかし、自らの命運を完全に他国の大統領の言動に委ねておくほどナイーブではない。ウクライナで学んだのは、最後に自分自身を守れるのは自分自身だけだ、ということだ。」
+                </blockquote>
+                
+                <div class="implication-box">
+                    <h5><i class="fas fa-lightbulb"></i> 日本への戦略的示唆</h5>
+                    <p><span class="warning-text">「欧州の自立」は、日本にとって「新たな戦略的パートナーの誕生」であると同時に、「米国一極依存リスク」を映し出す鏡でもある。</span></p>
+                    <p>1. <span class="highlight">「日EU安全保障・防衛協力」を戦略的優先事項に格上げすべき。</span>情報共有、海洋安全保障、サイバー防衛、防衛装備・技術協力など、<span class="warning-text">NATOや米国を経由しない直接的な協力の枠組み</span>を強化する。欧州が自立に向かう今こそ、パートナーシップを深化させる絶好の機会である。</p>
+                    <p>2. 欧州の「戦略的自立」プロセスを<span class="highlight">「日米同盟の補完」として積極的に位置づけ、米国を説得する外交努力が必要。</span>欧州が自らの足で立つことは、米国にとっての負担軽減となり、ひいては日米同盟の資源をインド太平洋に集中させることにもつながるという建設的論理を展開すべきである。</p>
+                    <p>3. 日本自身の「<span class="highlight">戦略的自立性」の涵養について、欧州の動きから学び、国内で真剣な議論を開始する時期に来ている。</span>自衛隊の持続的戦力投射能力、弾薬・重要物資の国内生産基盤、代替サプライチェーンの確保など、「<span class="warning-text">もしもの時」の基盤整備</span>を急がなければならない。</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- トピック3 -->
+        <article class="topic-card">
+            <div class="topic-header">
+                <div class="topic-icon"><i class="fas fa-chess-board"></i></div>
+                <div>
+                    <h3>トピック3: 敵対勢力の「同盟分断工作」の成功と新冷戦構造の深化</h3>
+                    <div class="tags">
+                        <span class="tag">ロシア</span>
+                        <span class="tag">中国</span>
+                        <span class="tag">分断工作</span>
+                        <span class="tag">ハイブリッド戦争</span>
+                        <span class="tag">情報操作</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-content">
+                <h4><i class="fas fa-history"></i> 背景と文脈</h4>
+                <p>ロシアと中国は、西側の結束、特に<span class="highlight">米国を中心とした同盟ネットワークを自らの戦略的目標達成における最大の障害</span>と見なしてきた。両国は、<span class="warning-text">情報操作、影響力工作、経済的誘引・圧力など多様な「ハイブリッド」手段</span>を用いて、欧米諸国間および各国国内の分断を促進する戦略を長年追求してきた。ロシアのウクライナ侵攻は、<span class="highlight">逆説的にNATO結束を一時的に強めた</span>が、それは「外部からの脅威」が明確であったためである。敵対勢力にとってより好都合なのは、<span class="warning-text">「内部からの崩壊」</span>である。</p>
+                
+                <h4><i class="fas fa-quote-right"></i> 動画の核心的論点</h4>
+                <p>動画が最も強く警告するのは、<span class="highlight">「トランプの言動が、ロシア・中国の長年の工作目標を『無料で』実現させている」</span>という危険性である。具体的には、NATOへの懐疑と条件付き支援の脅しが、<span class="warning-text">同盟の信頼を内部から破壊し、加盟国間に猜疑心を生み出す</span>効果は、まさにモスクワや北京が望んでいたものだと指摘。動画は、<span class="highlight">「米国の大統領が最も効果的な『ロシアの工作員』になりうる」</span>という逆説的なシナリオを示唆する。この分裂が深化すれば、<span class="warning-text">欧州はロシアに対する抑止力を、アジアは中国に対する抑止力をそれぞれ弱体化させ</span>、両地域で勢力拡大を試みる敵対勢力に大胆に行動する隙を与えることになる。</p>
+                
+                <blockquote>
+                    「クレムリンの戦略家たちは、何十年もかけてNATOを弱体化させようと巨額の資金と人的資源を費やしてきた。今、彼らはワシントンで最も権力のある人物が、彼らの代わりにその仕事をしてくれるのを、驚きとともに眺めているに違いない。」
+                </blockquote>
+                
+                <div class="implication-box">
+                    <h5><i class="fas fa-lightbulb"></i> 日本への戦略的示唆</h5>
+                    <p><span class="warning-text">日本は、米国発の「同盟分断」リスクと、それを虎視眈々と狙う中国の二重の脅威に直面している。</span></p>
+                    <p>1. <span class="highlight">米国の政治的内紛が同盟の信頼性を損なわないよう、予防的な「同盟強化外交」を展開する。</span>超党派の議員団との交流を強化し、<span class="warning-text">「日米同盟は党派を超えた国家的資産である」</span>との認識を米国側に働きかける必要がある。同時に、中国による「日米分断工作」への警戒を常に怠らず、共同での対抗策を模索する。</p>
+                    <p>2. <span class="highlight">地域の同盟・友好国ネットワーク（日米豪印、日米韓、ASEAN諸国など）の結束を「内発的価値」に基づいて強化。</span>これらを単なる「対中包囲網」としてではなく、<span class="warning-text">法の支配、航行の自由、経済的繁栄など、域内全ての国々に利益をもたらす積極的アジェンダを共有するプラットフォーム</span>として昇華させる。</p>
+                    <p>3. <span class="highlight">国内における「対米依存」と「自立」の議論を、感情的・政治的なものから、冷静な戦略的リスク管理の観点に引き戻す。</span>あらゆる国際環境の変化に耐えうる、<span class="warning-text">「強靭で多様な安全保障ポスト」</span>の構築が日本の国益であるという国民的コンセンサスを形成していく。</p>
+                </div>
+            </div>
+        </article>
+    </section>
+    
+    <!-- フッター -->
+    <footer class="footer">
+        <p>本レポートは公開情報に基づく戦略的分析であり、特定の政治家・政党・国家を支持または非難するものではありません。</p>
+        <p>| 出典: Denmark Delivers FATAL WARNING to TRUMP after THREATS (2026年1月9日公開)</p>
+        <p style="margin-top: 25px; font-size: 0.9rem; opacity: 0.8; font-style: italic;">
+            <i class="fas fa-exclamation-triangle"></i> 注意: 同盟関係の変化は国際秩序の根本を揺るがします。確固たる原則と柔軟な戦略的思考の両立が、複雑化する世界を生き抜くカギとなります。
+        </p>
+    </footer>
+
+    <script>
+        // ダーク/ライトモード切り替え
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+        
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-moon';
+                themeToggle.setAttribute('aria-label', 'ライトモードに切り替え');
+            } else {
+                themeIcon.className = 'fas fa-sun';
+                themeToggle.setAttribute('aria-label', 'ダークモードに切り替え');
+            }
+        }
+        
+        // タグのインタラクション
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const tagText = this.textContent;
+                const allCards = document.querySelectorAll('.topic-card');
+                let matchingCards = 0;
+                
+                allCards.forEach(card => {
+                    const cardTags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent);
+                    if (cardTags.includes(tagText)) {
+                        card.style.boxShadow = '0 0 0 3px var(--accent-2)';
+                        matchingCards++;
+                    } else {
+                        card.style.boxShadow = '';
+                    }
+                });
+                
+                setTimeout(() => {
+                    allCards.forEach(card => {
+                        card.style.boxShadow = '';
+                    });
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
