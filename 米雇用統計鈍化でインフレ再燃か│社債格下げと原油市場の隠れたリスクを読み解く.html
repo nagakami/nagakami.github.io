@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>米雇用統計鈍化でインフレ再燃か│社債格下げと原油市場の隠れたリスクを読み解く【2025年1月朝刊】</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="アメリカの雇用が弱まり、物価が再び上がりそうだと心配されています。同時に、企業の借金の格下げリスクと原油価格の動きが注目されています。この動画は、最新の経済状況をわかりやすく説明し、日本への影響も考えます。">
+<style>
+:root {
+  color-scheme: dark;
+  --bg-main: #05060a;
+  --bg-card: #0d1018;
+  --bg-card-soft: #111623;
+  --bg-accent: #131b2e;
+  --text-main: #f5f7ff;
+  --text-soft: #c3c7e0;
+  --text-muted: #9ba0c2;
+  --accent: #5aa9ff;
+  --accent-soft: rgba(90,169,255,0.16);
+  --accent-strong: #ffb347;
+  --border-subtle: #23273a;
+  --danger: #ff5c7a;
+  --ok: #3dd68c;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 24px 80px rgba(0,0,0,0.65);
+  --shadow-card: 0 18px 50px rgba(3,7,18,0.75);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #151b30 0%, #05060a 52%, #020308 100%);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.page {
+  width: 100%;
+  max-width: 1120px;
+  padding: 20px clamp(16px, 4vw, 28px) 56px;
+}
+header {
+  margin-bottom: 26px;
+}
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.badge {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  padding: 5px 11px;
+  border: 1px solid rgba(144,178,255,0.4);
+  background: radial-gradient(circle at top left, rgba(90,169,255,0.18), rgba(9,12,20,0.95));
+  color: var(--text-soft);
+}
+.badge-strong {
+  border-color: rgba(255,179,71,0.65);
+  background: radial-gradient(circle at top left, rgba(255,179,71,0.22), rgba(9,12,20,0.96));
+  color: var(--accent-strong);
+}
+.title-block {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.6fr);
+  gap: 18px;
+  align-items: flex-start;
+}
+@media (max-width: 880px) {
+  .title-block {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 3vw, 27px);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+h1 span.accent {
+  color: var(--accent-strong);
+}
+.lead {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.lead strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 9px;
+  margin-top: 4px;
+}
+.meta-item {
+  background: linear-gradient(135deg, rgba(19,27,46,0.9), rgba(7,9,18,0.98));
+  border-radius: 13px;
+  padding: 10px 12px;
+  border: 1px solid rgba(71,84,138,0.7);
+}
+.meta-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.meta-value {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+.meta-value strong {
+  color: var(--accent);
+}
+.hero-note {
+  background: radial-gradient(circle at top, rgba(90,169,255,0.18), rgba(10,14,26,0.98));
+  border-radius: var(--radius-lg);
+  padding: 13px 14px;
+  border: 1px solid rgba(102,126,234,0.7);
+  box-shadow: var(--shadow-soft);
+}
+.hero-note-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.hero-note-main {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.hero-note-main em {
+  color: var(--accent-strong);
+  font-style: normal;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.section {
+  background: radial-gradient(circle at top left, rgba(19,27,46,0.9), rgba(5,6,12,0.98));
+  border-radius: var(--radius-lg);
+  padding: 18px 18px 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+}
+.section-tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(144,178,255,0.45);
+  color: var(--text-muted);
+}
+.section-body p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-soft);
+}
+.section-body p strong {
+  color: var(--accent);
+}
+.intent-list {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+.intent-list li {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.intent-list li strong {
+  color: var(--accent-strong);
+}
+.quote-box {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(90deg, rgba(90,169,255,0.14), rgba(10,12,24,0.95));
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.subheading {
+  margin: 16px 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.topic-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+}
+@media (max-width: 900px) {
+  .topic-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.topic-card {
+  background: radial-gradient(circle at top, rgba(12,18,36,0.96), rgba(5,6,12,0.98));
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(60,72,122,0.9);
+  padding: 18px 18px 16px;
+  box-shadow: var(--shadow-card);
+}
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.topic-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+.topic-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(90,169,255,0.6);
+  color: var(--text-muted);
+}
+.topic-body p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-soft);
+}
+.topic-body p strong {
+  color: var(--accent);
+}
+.topic-footer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(84,95,135,0.8);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+.topic-footer strong {
+  color: var(--accent-strong);
+}
+.tagline {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(19,27,46,0.96);
+  border: 1px solid rgba(148,163,246,0.7);
+  font-size: 12px;
+  color: var(--text-soft);
+}
+.highlight-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--danger);
+  box-shadow: 0 0 8px rgba(255,92,122,0.65);
+}
+.table-wrapper {
+  margin-top: 12px;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 540px;
+}
+th, td {
+  border: 1px solid rgba(53,65,112,0.9);
+  padding: 10px 12px;
+  text-align: left;
+}
+th {
+  background: rgba(15,23,42,0.98);
+  color: var(--text-soft);
+  font-weight: 600;
+}
+tr:nth-child(even) td {
+  background: rgba(10,15,30,0.9);
+}
+tr:nth-child(odd) td {
+  background: rgba(6,10,22,0.95);
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- 米雇用統計鈍化でインフレ再燃か│社債格下げと原油市場の隠れたリスクを読み解く【2025年1月朝刊】 アメリカの雇用が弱まり、物価が再び上がりそうだと心配される中、企業の借金の格下げリスクと原油価格の動きが市場に影を落としている。この動画は、2025年1月の最新経済指標を平易に解説し、日本への影響も静かに示唆する。 (68文字) -->
+
+<header>
+  <div class="badge-row">
+    <div class="badge-strong">雇用が弱まり物価が再び上がりそう</div>
+    <div class="badge">社債リスクと原油市場の動き</div>
+  </div>
+
+  <div class="title-block">
+    <div>
+      <h1><span class="accent">米雇用統計鈍化</span>でインフレ再燃の懸念が高まる</h1>
+      <p class="lead">この動画は、2025年1月のアメリカ経済の最新状況を説明します。雇用が弱くなったこと、物価がまた上がりそうだと心配されていること、企業の借金の評価が下がるリスク、原油価格のこれからについて、わかりやすくお伝えします。日本への影響も一緒に考えます。</p>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">動画タイトル</div>
+          <div class="meta-value">【朝刊】米雇用統計鈍化とインフレ再燃懸念│社債格下げリスクと原油市場の行方【2025年1月】</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">動画のURL</div>
+          <div class="meta-value"><a href="https://youtu.be/nJN8Z2h_aQo" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">https://youtu.be/nJN8Z2h_aQo</a></div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">主なテーマ</div>
+          <div class="meta-value">アメリカ経済の最新指標と市場への影響</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-note">
+      <div class="hero-note-title">一番大切なポイント</div>
+      <div class="hero-note-main">アメリカの雇用が弱くなると、金利を下げる動きが出やすくなります。でも、物価が再び上がりそうだと心配されています。企業の借金や原油価格にも影響が出そうです。日本のお金や株にも、静かに波が来るかもしれません。</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 動画全体の意図分析 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">動画全体のねらい</div>
+      <div class="section-tag">6つの主なポイント</div>
+    </div>
+    <div class="section-body">
+      <p>この動画は、2025年1月のアメリカ経済の重要なニュースをまとめています。雇用や物価、企業の借金、原油の状況を説明し、市場がどう動くかを考えるきっかけにしたいと思っています。事実をそのままお伝えし、みんなが経済の動きを理解しやすくしています。</p>
+      <ol class="intent-list">
+        <li><strong>雇用統計の結果を説明する</strong>：アメリカの雇用の増え方が弱くなったことを、数字を使ってわかりやすく伝えます。</li>
+        <li><strong>インフレが再び起きる心配を指摘する</strong>：物価がまた上がりそうだと、なぜそう思うかを説明します。</li>
+        <li><strong>企業の借金の評価が下がるリスクを伝える</strong>：社債（企業の借金）の評価が下がる可能性と、その影響を整理します。</li>
+        <li><strong>原油市場のこれからを考える</strong>：原油価格がどうなるか、理由とともに示します。</li>
+        <li><strong>全体の市場見通しをまとめる</strong>：これらのことが株や金利にどう影響するかを考えます。</li>
+        <li><strong>日本への影響を示唆する</strong>：アメリカの動きが日本の経済やお金にどうかかわるかを、静かに伝えます。</li>
+      </ol>
+      <p>日本にとっては、アメリカ経済の変化が自分たちの生活や投資にどうつながるかを考えるヒントになります。</p>
+    </div>
+  </section>
+
+  <!-- 主要トピック -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">主な内容を一つずつ説明します</div>
+      <div class="section-tag">背景→ポイント→日本への意味</div>
+    </div>
+
+    <div class="section-body">
+
+      <div class="topic-grid">
+        <article class="topic-card">
+          <div class="topic-header">
+            <div class="topic-title">① アメリカの雇用統計が弱くなった</div>
+            <div class="topic-pill">雇用の増え方が鈍化</div>
+          </div>
+          <div class="topic-body">
+            <p>アメリカでは毎月、雇用の状況を調べた数字が出ます。2025年1月は、雇用の増え方が予想より弱くなりました。新しい仕事があまり増えていないのです。</p>
+            <p>雇用が弱くなると、経済全体がゆっくりになるサインです。中央銀行（アメリカのお金を管理するところ）は、金利を下げることを考えやすくなります。</p>
+            <p>でも、雇用が弱いのに物価が上がる心配もあるので、簡単には金利を下げられないかもしれません。</p>
+          </div>
+          <div class="topic-footer">
+            <strong>日本への意味：</strong>アメリカの雇用が弱くなると、ドルが弱くなり円が強くなることがあります。日本のお金（円）の価値が変わり、輸出する会社に影響が出ます。日本の中央銀行の決めごとも、注意してみる必要があります。
+          </div>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-header">
+            <div class="topic-title">② 物価が再び上がりそうだと心配される</div>
+            <div class="topic-pill">インフレ再燃の懸念</div>
+          </div>
+          <div class="topic-body">
+            <p>最近、アメリカでは物価が落ち着いてきました。でも、雇用が弱いのに一部の物価が上がる兆候があります。再び物価が上がり続ける心配が出てきました。</p>
+            <p>物価が上がると、お金の価値が下がります。中央銀行は金利を上げて物価を抑えようとしますが、雇用が弱いとそれも難しいです。</p>
+            <p>このバランスが崩れると、市場が大きく動くことがあります。みんなが心配して、株が下がったりします。</p>
+          </div>
+          <div class="topic-footer">
+            <strong>日本への意味：</strong>アメリカで物価が上がると、日本にも物価が上がる波が来ることがあります。輸入するものが高くなり、日本の生活費にも影響します。日本銀行の金利の決めごとも、変わる可能性があります。
+          </div>
+        </article>
+      </div>
+
+      <div class="topic-grid">
+        <article class="topic-card">
+          <div class="topic-header">
+            <div class="topic-title">③ 企業の借金の評価が下がるリスク</div>
+            <div class="topic-pill">社債格下げの可能性</div>
+          </div>
+          <div class="topic-body">
+            <p>企業は社債（借金の紙）を出してお金を集めます。その評価が、信頼できる会社かどうかを示します。最近、経済が弱くなると評価が下がる会社が増える心配があります。</p>
+            <p>評価が下がると、企業は高い金利でしかお金を借りられなくなります。返せなくなる会社が出てくるかもしれません。</p>
+            <p>これが広がると、銀行や投資する人たちに影響が出て、市場全体が不安定になります。</p>
+          </div>
+          <div class="topic-footer">
+            <strong>日本への意味：</strong>日本の企業や銀行もアメリカの社債を持っています。評価が下がると、日本の金融にも影響が出ます。日本の企業の借金状況も、注意してみる必要があります。
+          </div>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-header">
+            <div class="topic-title">④ 原油市場のこれから</div>
+            <div class="topic-pill">原油価格の行方</div>
+          </div>
+          <div class="topic-body">
+            <p>原油はガソリンやプラスチックの元になります。価格は世界の経済や戦争で変わります。最近、雇用が弱いと需要が減るので価格が下がる心配があります。</p>
+            <p>でも、中東の状況や供給の変化で、逆に上がる可能性もあります。価格が大きく動くと、物価全体に影響します。</p>
+            <p>投資する人たちは、原油の動きをとても気にしています。価格が安定しないと、株やお金の価値も揺れます。</p>
+          </div>
+          <div class="topic-footer">
+            <strong>日本への意味：</strong>日本は原油をほとんど輸入しています。価格が上がると、ガソリンや電気代が高くなります。日本の物価や生活に直接影響するので、原油のニュースをチェックしておくと良いです。
+          </div>
+        </article>
+      </div>
+
+      <h3 class="subheading">日本へのまとめ</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>内容</th>
+              <th>アメリカの場合</th>
+              <th>日本が考えるべきこと</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>雇用統計</td>
+              <td>雇用の増え方が弱くなる</td>
+              <td>円の価値が変わり、輸出企業に影響</td>
+            </tr>
+            <tr>
+              <td>インフレ懸念</td>
+              <td>物価が再び上がりそう</td>
+              <td>輸入物価が上がり、日本の生活費に影響</td>
+            </tr>
+            <tr>
+              <td>社債リスク</td>
+              <td>企業の借金の評価が下がるかも</td>
+              <td>日本の銀行や投資に波及する可能性</td>
+            </tr>
+            <tr>
+              <td>原油市場</td>
+              <td>価格が不安定になる</td>
+              <td>エネルギー価格が上がり、物価に影響</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="tagline"><span class="highlight-pill"><span class="highlight-dot"></span><span>この説明は、アメリカの最新経済ニュースを日本のこれからに活かすために作りました。</span></span></p>
+
+    </div>
+  </section>
+
+</main>
+<footer style="margin-top: 40px; padding: 20px; border-top: 1px solid rgba(84,95,135,0.6); text-align: center; font-size: 12px; color: var(--text-muted);">
+  <p><strong>免責事項</strong></p>
+  <p>本レポートは、公開されている動画の内容を参考に、一般的な情報提供を目的として作成したものです。<br>
+  投資勧誘や個別の投資アドバイスを意図するものではなく、経済情勢や市場動向の将来を保証するものでもありません。<br>
+  記載された内容は作成時点の情報に基づくものであり、実際の状況は変動します。<br>
+  投資や経済に関する判断は、必ずご自身で情報収集を行い、自己責任でお願いいたします。</p>
+</footer>
+</div>
+</body>
+</html>
