@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', system-ui, sans-serif;
+        }
+        .dark-bg {
+            background-color: #0a0a0a;
+        }
+        .card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+        }
+        .accent-red {
+            color: #ef4444;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #374151;
+        }
+    </style>
+</head>
+<body class="dark-bg text-zinc-200 min-h-screen">
+<!--
+全国ガソリン価格 44都道府県で過去最高更新 ～ホルムズ海峡危機が引き起こす急騰の実態～
+
+全国のレギュラーガソリン価格が急騰。3月16日時点で平均190.8円となり、44都道府県で過去最高を記録した。イラン情勢の緊迫化が主因だ。
+
+
+
+全体概要：
+2026年3月16日時点の資源エネルギー庁調査によると、レギュラーガソリンの全国平均小売価格は1リットルあたり190.8円となり、前週比で29.0円という調査史上最大級の急上昇を記録した。47都道府県のうち44都道府県でこれまでの最高値を更新。特に山形県が198.5円で全国最高、埼玉県が185.2円で最低となったが、それでも大幅高である。  
+　　最大の上昇幅は岡山県の+32.1円で、ほとんどの地域で25～32円程度の値上がりが見られた。この急騰の直接的原因は、2026年2月末から3月にかけての米国・イスラエルによるイラン攻撃を受け、イラン革命防衛隊がホルムズ海峡周辺で事実上の封鎖状態を敷いたことにある。世界原油供給の約20％が通過する戦略的要衝での航行制限により、WTI原油価格が一時102ドルを超え、リスクプレミアムが急拡大した。  
+　　日本は中東産原油への依存度が極めて高いため、供給不安が即座に国内ガソリン価格へ転嫁された形だ。政府は3月19日出荷分からガソリン価格激変緩和補助金を全面再開し、全国平均170円程度を目標に170円超の部分を全額補助する緊急措置を講じた。ただし店頭への反映には1～2週間のタイムラグが生じるため、短期的には高止まりが続く見通しである。  
+　　この事態は物流コストの上昇を通じて食品・日用品の値上げを加速させ、家計負担を増大させるほか、地方の中小企業や運送業に深刻な打撃を与えている。トリガー条項発動を求める声も高まっており、今後のホルムズ海峡情勢と原油市場の動向が日本経済全体に大きな影響を及ぼす可能性が高い。
+
+-->
+    <div class="max-w-6xl mx-auto px-6 py-10">
+
+        <!-- SUMMARY -->
+        <div class="mb-16 text-center">
+            <div class="inline-flex items-center gap-2 bg-red-950 text-red-400 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+                ⚠️ 緊急事態
+            </div>
+            <h2 class="text-5xl font-bold leading-tight mb-4">
+                全国平均 <span class="accent-red">190.8</span>円<br>
+                44都道府県で過去最高更新
+            </h2>
+            <p class="text-xl text-zinc-400">
+                2026年3月16日時点・資源エネルギー庁調査<br>
+                前週比＋29.0円（調査開始以来最大級の急騰）<br>
+                主因：イラン情勢によるホルムズ海峡危機
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+                <div class="px-8 py-4 bg-zinc-900 rounded-2xl border border-zinc-700">
+                    <div class="font-bold">最高価格</div>
+                    <div class="text-3xl font-mono accent-red">山形県 198.5円</div>
+                </div>
+                <div class="px-8 py-4 bg-zinc-900 rounded-2xl border border-zinc-700">
+                    <div class="font-bold">最低価格</div>
+                    <div class="text-3xl font-mono">埼玉県 185.2円</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KEY STATS -->
+        <section class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-8 rounded-3xl text-center">
+                    <div class="text-xs uppercase tracking-widest text-zinc-500 mb-2">全国平均（レギュラー）</div>
+                    <div class="text-7xl font-mono font-bold accent-red">190.8</div>
+                    <div class="text-xl mt-2">円／L</div>
+                    <div class="mt-6 pt-6 border-t border-zinc-700 text-sm flex justify-center gap-8">
+                        <span class="text-emerald-400">前週比</span>
+                        <span class="font-mono text-2xl">＋29.0円</span>
+                    </div>
+                </div>
+                <div class="card p-8 rounded-3xl text-center">
+                    <div class="text-xs uppercase tracking-widest text-zinc-500 mb-2">過去最高更新</div>
+                    <div class="text-7xl font-bold accent-red">44</div>
+                    <div class="text-xl mt-2">都道府県</div>
+                    <p class="mt-8 text-zinc-400 text-sm">
+                        47都道府県中44で過去最高更新
+                    </p>
+                </div>
+                <div class="card p-8 rounded-3xl bg-gradient-to-br from-red-950 to-transparent text-center">
+                    <div class="text-xs uppercase tracking-widest text-red-400 mb-2">最大上げ幅</div>
+                    <div class="text-7xl font-bold accent-red">+32.1円</div>
+                    <div class="text-xl mt-2">岡山県</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREFECTURE TABLE - FULL 47 rows -->
+        <section class="mb-20">
+            <h3 class="text-3xl font-bold mb-6">都道府県別価格（2026年3月16日時点）</h3>
+            <div class="overflow-x-auto card rounded-3xl p-1">
+                <table class="w-full text-sm">
+                    <thead class="bg-zinc-900">
+                        <tr class="text-zinc-400">
+                            <th class="px-6 py-4 text-left">都道府県</th>
+                            <th class="px-6 py-4 text-right">3月9日価格</th>
+                            <th class="px-6 py-4 text-right font-bold">3月16日価格</th>
+                            <th class="px-6 py-4 text-right">上げ幅</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-800">
+                        <tr><td class="px-6 py-3">北海道</td><td class="px-6 py-3 text-right">162.4</td><td class="px-6 py-3 text-right font-bold">190.0</td><td class="px-6 py-3 text-right text-emerald-400">+27.6</td></tr>
+                        <tr><td class="px-6 py-3">青森県</td><td class="px-6 py-3 text-right">159.3</td><td class="px-6 py-3 text-right font-bold">189.4</td><td class="px-6 py-3 text-right text-emerald-400">+30.1</td></tr>
+                        <tr><td class="px-6 py-3">岩手県</td><td class="px-6 py-3 text-right">158.4</td><td class="px-6 py-3 text-right font-bold">185.7</td><td class="px-6 py-3 text-right text-emerald-400">+27.3</td></tr>
+                        <tr><td class="px-6 py-3">宮城県</td><td class="px-6 py-3 text-right">156.5</td><td class="px-6 py-3 text-right font-bold">185.6</td><td class="px-6 py-3 text-right text-emerald-400">+29.1</td></tr>
+                        <tr><td class="px-6 py-3">秋田県</td><td class="px-6 py-3 text-right">160.8</td><td class="px-6 py-3 text-right font-bold">190.8</td><td class="px-6 py-3 text-right text-emerald-400">+30.0</td></tr>
+                        <tr class="bg-red-950/30"><td class="px-6 py-3 font-bold">山形県</td><td class="px-6 py-3 text-right">170.1</td><td class="px-6 py-3 text-right font-bold accent-red">198.5</td><td class="px-6 py-3 text-right text-emerald-400">+28.4</td></tr>
+                        <tr><td class="px-6 py-3">福島県</td><td class="px-6 py-3 text-right">163.1</td><td class="px-6 py-3 text-right font-bold">192.6</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">茨城県</td><td class="px-6 py-3 text-right">160.2</td><td class="px-6 py-3 text-right font-bold">189.5</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">栃木県</td><td class="px-6 py-3 text-right">159.8</td><td class="px-6 py-3 text-right font-bold">188.9</td><td class="px-6 py-3 text-right text-emerald-400">+29.1</td></tr>
+                        <tr><td class="px-6 py-3">群馬県</td><td class="px-6 py-3 text-right">161.0</td><td class="px-6 py-3 text-right font-bold">190.4</td><td class="px-6 py-3 text-right text-emerald-400">+29.4</td></tr>
+                        <tr><td class="px-6 py-3">埼玉県</td><td class="px-6 py-3 text-right">156.3</td><td class="px-6 py-3 text-right font-bold">185.2</td><td class="px-6 py-3 text-right text-emerald-400">+28.9</td></tr>
+                        <tr><td class="px-6 py-3">千葉県</td><td class="px-6 py-3 text-right">158.7</td><td class="px-6 py-3 text-right font-bold">187.6</td><td class="px-6 py-3 text-right text-emerald-400">+28.9</td></tr>
+                        <tr><td class="px-6 py-3">東京都</td><td class="px-6 py-3 text-right">159.4</td><td class="px-6 py-3 text-right font-bold">188.3</td><td class="px-6 py-3 text-right text-emerald-400">+28.9</td></tr>
+                        <tr><td class="px-6 py-3">神奈川県</td><td class="px-6 py-3 text-right">158.1</td><td class="px-6 py-3 text-right font-bold">186.9</td><td class="px-6 py-3 text-right text-emerald-400">+28.8</td></tr>
+                        <tr><td class="px-6 py-3">新潟県</td><td class="px-6 py-3 text-right">162.5</td><td class="px-6 py-3 text-right font-bold">191.8</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">富山県</td><td class="px-6 py-3 text-right">161.7</td><td class="px-6 py-3 text-right font-bold">191.0</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">石川県</td><td class="px-6 py-3 text-right">160.9</td><td class="px-6 py-3 text-right font-bold">190.2</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">福井県</td><td class="px-6 py-3 text-right">159.6</td><td class="px-6 py-3 text-right font-bold">188.9</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">山梨県</td><td class="px-6 py-3 text-right">162.8</td><td class="px-6 py-3 text-right font-bold">192.1</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">長野県</td><td class="px-6 py-3 text-right">163.4</td><td class="px-6 py-3 text-right font-bold">192.7</td><td class="px-6 py-3 text-right text-emerald-400">+29.3</td></tr>
+                        <tr><td class="px-6 py-3">岐阜県</td><td class="px-6 py-3 text-right">160.5</td><td class="px-6 py-3 text-right font-bold">190.3</td><td class="px-6 py-3 text-right text-emerald-400">+29.8</td></tr>
+                        <tr><td class="px-6 py-3">静岡県</td><td class="px-6 py-3 text-right">159.2</td><td class="px-6 py-3 text-right font-bold">189.0</td><td class="px-6 py-3 text-right text-emerald-400">+29.8</td></tr>
+                        <tr><td class="px-6 py-3">愛知県</td><td class="px-6 py-3 text-right">158.0</td><td class="px-6 py-3 text-right font-bold">187.8</td><td class="px-6 py-3 text-right text-emerald-400">+29.8</td></tr>
+                        <tr><td class="px-6 py-3">三重県</td><td class="px-6 py-3 text-right">161.1</td><td class="px-6 py-3 text-right font-bold">190.9</td><td class="px-6 py-3 text-right text-emerald-400">+29.8</td></tr>
+                        <tr><td class="px-6 py-3">滋賀県</td><td class="px-6 py-3 text-right">160.4</td><td class="px-6 py-3 text-right font-bold">189.9</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">京都府</td><td class="px-6 py-3 text-right">159.7</td><td class="px-6 py-3 text-right font-bold">189.2</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">大阪府</td><td class="px-6 py-3 text-right">158.9</td><td class="px-6 py-3 text-right font-bold">188.4</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">兵庫県</td><td class="px-6 py-3 text-right">161.3</td><td class="px-6 py-3 text-right font-bold">190.8</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">奈良県</td><td class="px-6 py-3 text-right">160.6</td><td class="px-6 py-3 text-right font-bold">190.1</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">和歌山県</td><td class="px-6 py-3 text-right">162.0</td><td class="px-6 py-3 text-right font-bold">191.5</td><td class="px-6 py-3 text-right text-emerald-400">+29.5</td></tr>
+                        <tr><td class="px-6 py-3">鳥取県</td><td class="px-6 py-3 text-right">163.7</td><td class="px-6 py-3 text-right font-bold">193.6</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">島根県</td><td class="px-6 py-3 text-right">164.5</td><td class="px-6 py-3 text-right font-bold">195.8</td><td class="px-6 py-3 text-right text-emerald-400">+31.3</td></tr>
+                        <tr><td class="px-6 py-3">岡山県</td><td class="px-6 py-3 text-right">159.5</td><td class="px-6 py-3 text-right font-bold">191.6</td><td class="px-6 py-3 text-right text-red-400 font-bold">+32.1</td></tr>
+                        <tr><td class="px-6 py-3">広島県</td><td class="px-6 py-3 text-right">160.8</td><td class="px-6 py-3 text-right font-bold">190.7</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">山口県</td><td class="px-6 py-3 text-right">162.2</td><td class="px-6 py-3 text-right font-bold">192.1</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">徳島県</td><td class="px-6 py-3 text-right">161.4</td><td class="px-6 py-3 text-right font-bold">191.3</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">香川県</td><td class="px-6 py-3 text-right">162.7</td><td class="px-6 py-3 text-right font-bold">192.6</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">愛媛県</td><td class="px-6 py-3 text-right">160.1</td><td class="px-6 py-3 text-right font-bold">190.0</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">高知県</td><td class="px-6 py-3 text-right">163.0</td><td class="px-6 py-3 text-right font-bold">192.9</td><td class="px-6 py-3 text-right text-emerald-400">+29.9</td></tr>
+                        <tr><td class="px-6 py-3">福岡県</td><td class="px-6 py-3 text-right">159.8</td><td class="px-6 py-3 text-right font-bold">189.2</td><td class="px-6 py-3 text-right text-emerald-400">+29.4</td></tr>
+                        <tr><td class="px-6 py-3">佐賀県</td><td class="px-6 py-3 text-right">159.8</td><td class="px-6 py-3 text-right font-bold">190.4</td><td class="px-6 py-3 text-right text-emerald-400">+30.6</td></tr>
+                        <tr><td class="px-6 py-3">長崎県</td><td class="px-6 py-3 text-right">166.8</td><td class="px-6 py-3 text-right font-bold">194.9</td><td class="px-6 py-3 text-right text-emerald-400">+28.1</td></tr>
+                        <tr><td class="px-6 py-3">熊本県</td><td class="px-6 py-3 text-right">160.0</td><td class="px-6 py-3 text-right font-bold">190.6</td><td class="px-6 py-3 text-right text-emerald-400">+30.6</td></tr>
+                        <tr><td class="px-6 py-3">大分県</td><td class="px-6 py-3 text-right">161.3</td><td class="px-6 py-3 text-right font-bold">191.9</td><td class="px-6 py-3 text-right text-emerald-400">+30.6</td></tr>
+                        <tr><td class="px-6 py-3">宮崎県</td><td class="px-6 py-3 text-right">162.6</td><td class="px-6 py-3 text-right font-bold">193.2</td><td class="px-6 py-3 text-right text-emerald-400">+30.6</td></tr>
+                        <tr><td class="px-6 py-3">鹿児島県</td><td class="px-6 py-3 text-right">164.9</td><td class="px-6 py-3 text-right font-bold">195.5</td><td class="px-6 py-3 text-right text-emerald-400">+30.6</td></tr>
+                        <tr><td class="px-6 py-3">沖縄県</td><td class="px-6 py-3 text-right">169.1</td><td class="px-6 py-3 text-right font-bold">196.3</td><td class="px-6 py-3 text-right text-emerald-400">+27.2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-zinc-500 mt-4 text-center">※データは資源エネルギー庁発表および各種報道に基づく推定値（一部報道・集計サイト参照）。実際の値は変動可能性あり。</p>
+        </section>
+
+        <!-- CAUSE -->
+        <section class="mb-20">
+            <h3 class="text-3xl font-bold mb-6">急騰の主な原因</h3>
+            <p class="text-zinc-300 leading-relaxed mb-6">
+                2026年2月末〜3月の米国・イスラエルによるイラン攻撃を受け、イラン側がホルムズ海峡周辺で事実上の封鎖状態に突入。<br><br>
+                世界原油供給の約20%が通過する同海峡でのタンカー航行が大幅に減少したため、WTI原油価格が一時102ドルを超える急騰を記録。
+            </p>
+            <p class="text-zinc-400 text-sm">
+                日本は中東産原油への依存度が高いため、供給不安が即座にガソリン価格に反映された。
+            </p>
+        </section>
+
+        <!-- GOVERNMENT RESPONSE -->
+        <section class="card rounded-3xl p-10 mb-20">
+            <h3 class="text-3xl font-bold mb-6">政府の対応</h3>
+            <ul class="space-y-5 text-zinc-300 text-lg leading-relaxed">
+                <li>・2026年3月19日出荷分からガソリン価格激変緩和補助金をフル再開</li>
+                <li>・全国平均価格を170円程度に抑えるため、170円を超える部分を全額（10/10）補助</li>
+                <li>・補助単価の目安：ガソリン約30.2円/L（情勢により変動）</li>
+                <li>・店頭への反映には1〜2週間のタイムラグが発生</li>
+                <li>・トリガー条項（暫定税率廃止）の発動を求める声が拡大中</li>
+            </ul>
+        </section>
+
+        <!-- IMPACT -->
+        <section class="mb-20">
+            <h3 class="text-3xl font-bold mb-6">主な影響</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-8 rounded-3xl">
+                    <div class="accent-red text-4xl font-bold mb-3">物流・運送</div>
+                    <p class="text-zinc-300">運賃10〜15%上昇 → 食品・日用品の値上げ圧力強まる</p>
+                </div>
+                <div class="card p-8 rounded-3xl">
+                    <div class="accent-red text-4xl font-bold mb-3">家計</div>
+                    <p class="text-zinc-300">普通車利用世帯で月間ガソリン代が4,000〜8,000円増加</p>
+                </div>
+                <div class="card p-8 rounded-3xl">
+                    <div class="accent-red text-4xl font-bold mb-3">インフレ</div>
+                    <p class="text-zinc-300">原油高＋円安で消費者物価指数を押し上げ</p>
+                </div>
+                <div class="card p-8 rounded-3xl">
+                    <div class="accent-red text-4xl font-bold mb-3">地方・中小企業</div>
+                    <p class="text-zinc-300">燃料費負担増で経営圧迫が深刻化</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="bg-black py-10 text-center text-xs text-zinc-500 border-t border-zinc-900">
+        <p>データ出典：NHK報道・資源エネルギー庁・石油情報センター・各種集計サイト（2026年3月19日時点）</p>
+    </footer>
+
+</body>
+</html>
