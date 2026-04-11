@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>緊急報告書｜日本関連タンカー群 イラン方面（ホルムズ海峡）移動の全容</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --text: #e0e0e0;
+            --accent: #00b0ff;
+            --danger: #ff3b5c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+            border-bottom: 4px solid var(--accent);
+            padding: 2rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 176, 255, 0.2);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+        }
+        
+        .report-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--accent);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        p, li {
+            font-size: 1.1rem;
+            margin-bottom: 1.1rem;
+        }
+        
+        ul, ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .highlight {
+            background: rgba(0, 176, 255, 0.15);
+            padding: 1.2rem;
+            border-left: 5px solid var(--accent);
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: #111;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        th {
+            background: #222;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        tr:hover {
+            background: rgba(0, 176, 255, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 8px;
+            width: 28px;
+            height: 28px;
+            background: var(--surface);
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .date {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        
+        footer {
+            background: #111;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #333;
+            font-size: 0.95rem;
+            color: #888;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--danger);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            main { padding: 0 1rem; margin: 2rem auto; }
+            section { padding: 1.8rem; }
+        }
+        body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 32px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+       a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+       p { margin-bottom: 1em; }
+
+    </style>
+</head>
+<body>
+        <div class="header-content">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 1rem;">
+                <span style="font-size: 2.8rem;">🇯🇵</span>
+                <span style="font-size: 2.8rem;">🇮🇷</span>
+            </div>
+            <h1>日本関連タンカー群：イラン方面（ホルムズ海峡）移動に関する緊急報告書</h1>
+            <p class="subtitle">2026年4月11日時点　最新動向　─ 米イラン停戦下での商業船舶大移動 ─</p>
+            
+            <div class="report-meta">
+                <div class="meta-item">
+                    <span>🕒 更新日時：</span>
+                    <strong>2026年4月11日 05:23 UTC</strong>
+                </div>
+                <div class="meta-item">
+                    <span>🔴 状況：</span>
+                    <strong>進行中</strong>
+                    <span class="badge">停戦下・監視継続</span>
+                </div>
+                <div class="meta-item">
+                    <span>📡 情報源：</span>
+                    <strong>Bloomberg / 日経 / TBS / MarineTraffic</strong>
+                </div>
+            </div>
+        </div>
+
+    <main>
+        <!-- 概要 -->
+        <section id="summary">
+            <h2>1. 執行概要</h2>
+            <p>2026年4月9日以降、日本企業（主に商船三井など）が保有・運航する超大型原油タンカー（VLCC）2隻を含む「タンカー群」が、ペルシャ湾内から東進し、<strong>イラン・オマーン国境のホルムズ海峡方面へ向かっている</strong>ことが確認されました。</p>
+            
+            <div class="highlight">
+                <strong>重要ポイント：</strong><br>
+                ・日本政府が「軍事的にタンカー群を送った」わけではなく、<strong>民間商業船舶</strong>の自主的な移動です。<br>
+                ・米イラン停戦合意（直近2週間）を受けて、封鎖状態にあったホルムズ海峡の再開を試みる動きのひとつ。<br>
+                ・これにより日本関係船舶約43〜45隻がペルシャ湾内に足止めされていた状況に変化の兆しが見えています。
+            </div>
+            
+            <p>日本は原油輸入の約9割を中東に依存しており、ホルムズ海峡は「日本のエネルギー生命線」。今回の移動は、日本経済にとって極めて重要なシグナルです。</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>移動開始日</td>
+                        <td>2026年4月9日夜（現地時間）</td>
+                    </tr>
+                    <tr>
+                        <td>主な対象船</td>
+                        <td>Mayasan（マヤサン）、Yakumosan（ヤクモサン）ほかVLCC複数</td>
+                    </tr>
+                    <tr>
+                        <td>積載量</td>
+                        <td>各約200万バレル（日本消費量の約2日分/隻）</td>
+                    </tr>
+                    <tr>
+                        <td>出発地</td>
+                        <td>サウジアラビア・ラスタヌラ沖</td>
+                    </tr>
+                    <tr>
+                        <td>目的地方向</td>
+                        <td>ホルムズ海峡 → 日本方面（原油輸送）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 背景 -->
+        <section id="background">
+            <h2>2. 事態の背景</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2026年2月28日</div>
+                    <p>米イスラエル連合がイランに対して大規模軍事攻撃を実施。イラン革命防衛隊が報復としてホルムズ海峡の事実上封鎖を宣言。</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2026年3月上旬</div>
+                    <p>日本関係船舶44〜45隻がペルシャ湾内に足止め（うち約3分の2が原油・LNG・化学タンカー）。日本消費量10日分相当の原油が湾内に滞留。</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2026年3月〜4月上旬</div>
+                    <p>商船三井など日本企業がイランと外交調整。イラン側は「日本船籍・日本関係船舶の通過を認める用意あり」と表明。</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2026年4月9日〜10日</div>
+                    <p><strong>停戦合意後初の本格移動</strong>　Mayasan号・Yakumosan号がホルムズ海峡方面へ東進開始。</p>
+                </div>
+            </div>
+            
+            <p>これまで日本政府は自衛隊派遣を憲法上慎重に扱い、外交交渉を中心に事態に対処してきました。トランプ米大統領は日本・韓国・ドイツに対し「ホルムズ海峡警護のための艦船派遣」を事実上要請していましたが、日本はこれを拒否し、民間船舶の安全確保に注力しています。</p>
+        </section>
+
+        <!-- 詳細 -->
+        <section id="details">
+            <h2>3. 最新動向と対象タンカー群</h2>
+            <p>MarineTrafficなどの船舶追跡データによると、以下の日本関連タンカーがホルムズ海峡手前で集結・移動中です：</p>
+            
+            <ul>
+                <li><strong>Mayasan（マヤサン）</strong> ─ 商船三井系VLCC、約200万バレル積載</li>
+                <li><strong>Yakumosan（ヤクモサン）</strong> ─ 同上、約200万バレル積載</li>
+                <li><strong>Daisen（ダイセン）、Azumasan（アズマサン）</strong> など日本行きVLCC複数</li>
+                <li>その他：Miracle Hope号など日本企業関連船</li>
+            </ul>
+            
+            <p class="highlight">
+                これらのタンカー群は、3月中旬からサウジアラビア・ラスタヌラ沖で停泊していましたが、米イラン停戦発表を受けて一斉に東進を開始。ホルムズ海峡入口付近に船舶が集中しています。
+            </p>
+            
+            <p>すでに成功事例として：</p>
+            <ul>
+                <li>商船三井保有LNGタンカー「SOHAR（ソハール）」 ─ 停戦後初の日本関係船舶通過</li>
+                <li>インド船籍LPGタンカー「Green Asha」「Green Sanvi」 ─ 商船三井子会社保有、日本関係第2・3号</li>
+            </ul>
+            
+            <p>イラン側は日本船舶に対して「通過許可」を個別に調整しているとみられ、他国船舶より優先的に扱われている可能性があります。</p>
+        </section>
+
+        <!-- 影響 -->
+        <section id="impact">
+            <h2>4. 日本経済・エネルギーへの影響</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>影響項目</th>
+                        <th>現状</th>
+                        <th>予想される影響</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>原油供給</td>
+                        <td>湾内滞留分：日本消費10日分相当</td>
+                        <td>通過成功で即時供給再開。失敗時はガソリン・物価高騰</td>
+                    </tr>
+                    <tr>
+                        <td>原油価格</td>
+                        <td>WTI 80ドル超（一時81ドル台）</td>
+                        <td>通過成功で下落圧力。失敗で100ドル超も</td>
+                    </tr>
+                    <tr>
+                        <td>海上保険料</td>
+                        <td>急騰中</td>
+                        <td>日本企業負担増 → 最終的に消費者価格へ転嫁</td>
+                    </tr>
+                    <tr>
+                        <td>自衛隊派遣</td>
+                        <td>現時点なし</td>
+                        <td>政府は「集団的自衛権」行使の可能性を排除せず、監視継続</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>日本政府・経済産業省は「代替ルート確保」と「戦略石油備蓄（250日分以上）」を活用し、国民生活への影響を最小限に抑える方針です。</p>
+        </section>
+
+        <!-- 展望 -->
+        <section id="outlook">
+            <h2>5. 今後の展望とリスク</h2>
+            <p>停戦は「2週間限定」とされており、いつ再び緊張が高まるかわかりません。主要リスクは以下の通りです：</p>
+            <ol>
+                <li>イラン革命防衛隊による突然の攻撃再開</li>
+                <li>トランプ大統領の追加圧力（日本への艦船派遣要求）</li>
+                <li>船舶保険料の高騰と船会社の運航判断</li>
+                <li>中国・ロシアなどの第三国介入</li>
+            </ol>
+            
+            <div class="highlight">
+                日本はこれまで「平和外交」と「民間主導」のバランスで対応してきましたが、今回のタンカー群移動は「エネルギー安全保障の正念場」となっています。政府は今後もイランとの直接協議を継続し、国民生活を守るための最善策を講じる必要があります。
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>本報告書は公開情報（Bloomberg、Yahoo!ニュース、日経新聞、TBS、MarineTraffic等）に基づく分析です。状況は刻一刻と変化するため、最新情報は各報道機関でご確認ください。</p>
+
+    </footer>
+</body>
+</html>
