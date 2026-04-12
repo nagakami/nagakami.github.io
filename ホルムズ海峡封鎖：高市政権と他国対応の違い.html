@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホルムズ海峡封鎖・イラン情勢 統合詳細報告書</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #0f172a;
+            --card: #1e2937;
+            --text: #e2e8f0;
+            --accent: #3b82f6;
+            --border: #334155;
+            --highlight: #60a5fa;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans JP', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        
+        header {
+            background: linear-gradient(90deg, #1e2937, #0f172a);
+            padding: 50px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .date {
+            font-size: 1.05rem;
+            background: rgba(59, 130, 246, 0.25);
+            color: #60a5fa;
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 24px;
+            border-radius: 9999px;
+            margin-top: 20px;
+            gap: 8px;
+        }
+        
+        main { padding: 60px; }
+        
+        section { margin-bottom: 70px; }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 4px solid var(--accent);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: var(--highlight);
+            position: relative;
+        }
+        
+        h3::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        ul, ol {
+            margin-left: 28px;
+            margin-bottom: 28px;
+        }
+        
+        li {
+            margin-bottom: 16px;
+            position: relative;
+        }
+        
+        .highlight {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: #93c5fd;
+            font-weight: 500;
+        }
+        
+        .card {
+            background: #334155;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+            border-left: 6px solid var(--accent);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+        }
+        
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            background: #1e2937;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .timeline-date {
+            min-width: 110px;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            background: #1e2937;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 20px 24px;
+            text-align: left;
+            border-bottom: 1px solid #475569;
+        }
+        
+        th {
+            background: #1e40af;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .quote {
+            font-style: italic;
+            border-left: 5px solid #64748b;
+            padding-left: 20px;
+            margin: 24px 0;
+            color: #cbd5e1;
+        }
+        
+        .footer {
+            background: #0f172a;
+            padding: 40px 60px;
+            text-align: center;
+            font-size: 1rem;
+            color: #64748b;
+            border-top: 1px solid var(--border);
+        }
+        
+        .note {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-top: 40px;
+            padding: 20px;
+            background: #1e2937;
+            border-radius: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            body { padding: 20px 10px; }
+            main { padding: 30px 20px; }
+            h1 { font-size: 2.2rem; }
+        }
+        body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 32px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+       a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+       p { margin-bottom: 1em; }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ホルムズ海峡封鎖・イラン情勢<br>高市政権および国際対応 </h1>
+            <p class="subtitle">第2次高市内閣（自民・維新連立政権）の外交・エネルギー対策を中心に、他国動向、国内影響、SNS反応、米イラン協議の最新状況までを広く深く整理・分析</p>
+            <div class="date">2026年4月12日時点　公式発表・報道・AISデータ・SNS傾向に基づく</div>
+        </header>
+        
+        <main>
+            <!-- 概要 -->
+            <section>
+                <h2>1. 執行概要</h2>
+                <p>米・イスラエルによるイラン攻撃（2月28日開始）後、イランはホルムズ海峡を事実上封鎖。停戦合意（2週間）後も完全開放に至らず、イランは「友好国」選別・通航料（原油1バレル約1ドル、人民元/暗号資産）で船舶通過を管理中。日本関係船舶は約42〜45隻がペルシャ湾内に足止めされ、直近1週間（4月4〜10日）の日本到着タンカーは0隻（通常週平均7隻）。原油輸入の8割超が中東依存の日本は、第2の石油ショックに直面。</p>
+                <div class="card">
+                    <strong>高市政権の基本方針：</strong> 武力（自衛隊派遣）は憲法上慎重。電話外交・備蓄放出（第2弾：国家備蓄約20日分、5月上旬）・代替調達（米国・中央アジア等）を軸に「航行安全確保と事態沈静化」を優先。野党・メディアからは「米国追従・独自外交不足」との批判が強い。
+                </div>
+                <p class="note">状況は極めて流動的。米イラン直接協議（4月11日〜パキスタン・イスラマバード）が進行中。トランプ大統領は「ホルムズ一掃作業開始」「イラン海空軍壊滅」と強気。</p>
+            </section>
+            
+            <!-- 高市政権の対応全体 -->
+            <section>
+                <h2>2. 高市政権の総合対応（公式事実・詳細）</h2>
+                <h3>2-1. 外交努力（イランとの直接交渉）</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">4月8日</div>
+                        <div>
+                            <strong>高市早苗首相 ↔ ペゼシュキアン・イラン大統領 電話会談（25分）</strong><br>
+                            ・停戦合意を「前向きな動きとして歓迎」<br>
+                            ・「ホルムズ海峡は世界の物流の要衝であり、国際公共財」と強調<br>
+                            ・日本関係船舶を含む全船舶の「航行安全確保」を早期・迅速に強く要請<br>
+                            ・「事態の沈静化（ホルムズ含む）が最重要」「外交を通じた最終合意を期待」<br>
+                            ・邦人1名（4月6日保釈）の早期完全解決も要請<br>
+                            ・両首脳は「意思疎通継続」で一致（攻撃開始後初の首脳協議）
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">3月9日以降</div>
+                        <div>
+                            <strong>茂木外相 ↔ イラン・アラーグチー外相 複数回（少なくとも3回）電話会談</strong><br>
+                            事態早期沈静化、民間施設攻撃停止、ホルムズ航行の自由・安全確保、核問題含む外交努力継続を要請。
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>2-2. 国内エネルギー対策</h3>
+                <ul>
+                    <li><strong>国家備蓄石油追加放出（第2弾）</strong>：4月10日 中東情勢関係閣僚会議で高市首相が表明。5月上旬以降約20日分放出。第1弾（官民含め約45〜50日分）と合わせ供給目詰まり解消。「原油の安定供給に万全を期す」。</li>
+                    <li><strong>代替調達ルート強化</strong>：米国・中央アジア・中南米・カナダ等から前年比2割超（4月）、過半（5月）にメド。年を越えて石油確保の見通しを強調。特別節電要請・補正予算は現時点で予定なし。</li>
+                    <li><strong>その他</strong>：塗料用シンナー等関連製品流通停滞解消指示。アジア諸国（UAE等）との相互協力も検討。</li>
+                </ul>
+                
+                <h3>2-3. 多国間・対米連携</h3>
+                <p>トランプ大統領に「日本の法律の範囲内（自衛隊派遣は慎重）」を説明。G7声明・40カ国超オンライン協議参加。船舶防護協力要請は「現時点で寄せられていない」。</p>
+            </section>
+            
+            <!-- 他国の状況 -->
+            <section>
+                <h2>3. 他国のイラン交渉・対応状況（比較分析）</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>国</th>
+                            <th>主な成果・交渉内容</th>
+                            <th>特徴・イラン側の扱い</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>中国</strong></td>
+                            <td>イラン最大原油買主（90%）。3隻以上通過確認。影の艦隊活用。</td>
+                            <td>戦略的関係最大限活用。「友好国」最上位扱い。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>韓国</strong></td>
+                            <td>フランスと共同ホルムズ協力合意（4月5日）。一部船舶通過。</td>
+                            <td>政府関与独自交渉活発。「政府非関与独自交渉」も活用。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>フランス（欧州）</strong></td>
+                            <td>マクロン大統領「武力再開非現実的」。国際エスコートミッション提案。英主導40カ国協議。</td>
+                            <td>二国間調整＋多国間圧力（制裁検討）の両立。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>インド・パキスタン・フィリピン・タイ</strong></td>
+                            <td>直接合意でタンカー通過許可（タイ：油槽船合意等）。</td>
+                            <td>南側代替ルート活用。「友好国」選別で柔軟。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>日本</strong></td>
+                            <td>首相・外相電話外交中心。多国間声明参加。</td>
+                            <td>他国比「積極的二国間独自交渉が目立たず」と指摘。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">イランは国を「友好度5段階」で分類し、通航条件を変動。友好国以外は革命防衛隊警護下「安全回廊」や南側ルートが必要。</p>
+            </section>
+            
+            <!-- 船舶・国内影響 -->
+            <section>
+                <h2>4. 船舶現状と国内影響</h2>
+                <div class="card">
+                    <strong>日本関係船舶</strong>：約42〜45隻足止め（エネルギー関連7割超）。通過実績は3隻目（商船三井LNGタンカー等）。日本人船員異常なし。<br>
+                    <strong>直近影響</strong>：4月4〜10日 日本着タンカー0隻。原油不足長期化懸念。塗料・化学製品流通停滞も深刻。
+                </div>
+                <p>高市首相は「必要な石油は確保されている」と生活不安払拭を優先するも、野党からは「目詰まりの本質は交渉不足」と批判。</p>
+            </section>
+            
+            <!-- SNS反応 -->
+            <section>
+                <h2>5. SNS（X）上の主な反応・情報（最新傾向 4月10〜12日）</h2>
+                <div class="card">
+                    <strong>全体傾向</strong>：政府批判優勢。「他国独自交渉で通過、日本置き去り」「高市外交の失敗」「トランプ頼み一辺倒」「憲法制約の言い訳」との声多数。
+                </div>
+                <ul>
+                    <li>「高市はイランと直接話せ」「フランス・韓国・中国は調整で通過。日本だけ遅れ」</li>
+                    <li>「自衛隊派遣口実作り？」「塗料不足は政府交渉不足のせい」</li>
+                    <li>肯定的少数：「電話会談は一歩」「多国間貢献している」</li>
+                    <li>最近増加：「停戦後も停滞」「石油危機を国民のせいにするな」</li>
+                </ul>
+                <p class="quote">「高市早苗はトランプに媚びるだけ。他国はイランと独自交渉でタンカー通過させているのに…」（複数投稿より）</p>
+            </section>
+            
+            <!-- 国際情勢の最新動向 -->
+            <section>
+                <h2>6. 国際情勢の最新動向（米イラン協議等）</h2>
+                <ul>
+                    <li>4月11日〜：パキスタン・イスラマバードで米イラン直接協議開始（夜通し継続中）。パキスタン首相が仲介。</li>
+                    <li>トランプ大統領：「イランと非常に深い交渉」「合意しようがしまいが我々が勝利」「ホルムズまもなく開放」「一掃作業開始」</li>
+                    <li>イラン側：「ホルムズで深刻な相違」「アメリカの過剰要求が進展を妨げている」</li>
+                    <li>機雷敷設可能性指摘・掃海活動も進行中。</li>
+                </ul>
+            </section>
+            
+            <!-- まとめと展望 -->
+            <section>
+                <h2>7. まとめと今後の展望</h2>
+                <p>高市政権は平和的・法的に慎重な対応を堅持しつつ、備蓄・代替調達で国内影響を最小化しようとしています。しかし、他国の積極的二国間交渉実績と比べ「外交の遅れ」が国内外で論点化。イラン側の「友好国選別」が鍵となっており、米イラン協議の結果（4月12日時点で継続中）が全てを左右します。</p>
+                <div class="card" style="text-align: center; font-size: 1.2rem;">
+                    <strong>今後の注視点</strong><br>
+                    ・米イラン協議の合意内容（ホルムズ完全開放・通航料問題）<br>
+                    ・船舶AISデータ動向<br>
+                    ・外務省・高市首相の追加発表<br>
+                    ・原油価格・国内物価への波及
+                </div>
+                <p class="note">本報告書は最新報道・公式発表・SNS傾向を追加統合・深化させたものです。状況は1日で大きく変わる可能性があります。</p>
+            </section>
+        </main>
+        
+        <div class="footer">
+            出典：日本経済新聞、朝日新聞、産経新聞、テレビ朝日、共同通信、外務省、Bloomberg等（2026年4月8〜12日報道）<br>
+            状況は刻々と変化します。最新情報は公式発表・船舶AISでご確認ください。
+        </div>
+    </div>
+</body>
+</html>
