@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原油市場分析レポート：2026年4月15日時点のファクトデータ</title>
+    <style>
+        :root {
+            --bg: #121212;
+            --surface: #1e1e1e;
+            --surface-light: #2a2a2a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent: #bb86fc;
+            --accent-alt: #03dac6;
+            --border: #333333;
+            --warning: #cf6679;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 28px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 32px 0 18px 0;
+            color: var(--accent-alt);
+            border-left: 5px solid var(--accent-alt);
+            padding-left: 18px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 22px 0 12px 0;
+            color: var(--accent);
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .highlight-box {
+            background: var(--surface-light);
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--surface-light);
+            color: var(--accent);
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        ul, ol {
+            margin: 14px 0 14px 24px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .data-tag {
+            display: inline-block;
+            background: var(--surface-light);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .direction-in {
+            color: var(--accent-alt);
+            font-weight: 600;
+        }
+
+        .direction-out {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .price-large {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-alt);
+        }
+
+        .warning-text {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .flex-col {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+
+        .footer-note {
+            margin-top: 36px;
+            padding: 22px 28px;
+            background: var(--surface-light);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 16px 12px; }
+            h1 { font-size: 1.5rem; }
+            .section { padding: 18px 16px; }
+        }
+        body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 32px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+       a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+       p { margin-bottom: 1em; }
+
+    </style>
+</head>
+<body>
+
+<h1>2026年4月15日 午前〜正午（日本時間）時点<br>原油市場参加者が重視する事実データ</h1>
+
+<!-- 
+【重要】原油市場参加者が重視する事実データ
+地政学リスク最高潮も原油は急落。市場は政治的発言を切り捨て、物理データで真実を見極めている。
+
+
+
+全体概要:
+米イラン協議決裂後、ホルムズ海峡は両国による相互封鎖状態へ移行した。
+
+しかし原油価格は逆に急落し、CFDは87.63ドルまで下落。この背景には、IEAが2026年世界石油需要を「増加73万b/d→減少8万b/d」へ大幅下方修正したことがある。市場は供給懸念より需要破壊を強く織り込み始めたのだ。
+
+船舶追跡データではホルムズ通過隻数が平時比91〜94%減、AIS消失率は最大50%に達し、衛星画像はKharg Islandでの積載継続と湾内浮体貯蔵1億バレル増加を捉えている。
+
+機関投資家はトランプ発言など米政府の「希望材料」をほぼ虚偽と見なし、AISと衛星という物理データのみで判断。日本では42〜45隻が湾内滞留し、ガソリン価格は190.8円/L（2026年3月16日時点で記録された公式な事実）まで急騰している（現在は163.9円）。
+
+マンデブ海峡は脅威段階で封鎖未発生。データは流動的であり、政治的発言に惑わされない冷徹な分析が求められる局面である。
+
+
+
+-->
+
+<!-- 質問背景 -->
+<div class="section">
+    <h2 style="margin-top: 0;">背景</h2>
+    <p><strong>米・イラン交渉決裂とホルムズ海峡の相互封鎖</strong><br>
+    2026年4月11〜12日の米イラン協議（於イスラマバード）は実質決裂。これを受けトランプ米大統領は4月13日より「逆封鎖」と称するイラン向け船舶の入峡制限措置を開始。イラン側は2月下旬以降、事実上の封鎖状態を維持しつつ通航料支払いを条件に選択的通過を認めてきた。現在、海峡はイランによる管理フェーズから米国とイランの双方向封鎖フェーズへ移行している。</p>
+    <p><strong>マンデブ海峡封鎖の危険性</strong><br>
+    イエメンの親イラン勢力フーシ派によるバブ・エル・マンデブ海峡封鎖の可能性が指摘されている。イラン国営メディアも紅海封鎖を示唆。サウジアラビアは米国に対し、報復としてのマンデブ封鎖を強く懸念しホルムズ封鎖解除を要請中。ただし<span class="warning-text">現時点では実際の封鎖は発生しておらず、脅威段階に留まる</span>。</p>
+    <p><strong>原油価格下落の主要因</strong><br>
+    地政学リスクの極大化にも関わらず価格が下落した背景には、①IEAが2026年の世界石油需要見通しを「+73万b/d → ▲8万b/d」へ大幅下方修正（需要破壊の明確化）、②イラン側の「交渉維持のため海峡通航一時停止検討」情報の流布、③トランプ大統領による「イランから電話」発言による一時的和平期待の再燃、④強い米ドルと高金利継続による需要減退圧力がある。市場は供給懸念よりも需要破壊を強く織り込んでいる。</p>
+</div>
+
+<!-- 船舶追跡データ (AIS) -->
+<div class="section">
+    <h2>1. 船舶追跡データ（AIS） ― ホルムズ海峡交通状況</h2>
+    <span class="data-tag">更新：2026年4月13〜15日 複数ソース統合</span>
+    <table>
+        <thead>
+            <tr><th>指標</th><th>平時基準</th><th>直近観測値</th><th>減少率</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>タンカー日次通過隻数（Vortexa）</td><td>約24隻/日</td><td>3月1日時点で4隻のみ、うち3隻はイラン船籍</td><td>約83%減</td></tr>
+            <tr><td>総通過隻数（AIS ONのみ）</td><td>約95.7隻/日</td><td>4月13日時点で約5.9〜11隻/日</td><td>91%〜94%減</td></tr>
+            <tr><td>AIS信号OFF（ダークシップ）</td><td>ほぼゼロ</td><td>3月15〜22日で全長290m超の船舶8隻を観測</td><td>—</td></tr>
+            <tr><td>AIS消失率</td><td>ほぼ100%受信</td><td>実際の通過量の最大50%が追跡システムから欠落</td><td>—</td></tr>
+        </tbody>
+    </table>
+    <p><strong>方向別詳細（Inbound / Outbound）</strong></p>
+    <ul>
+        <li><span class="direction-in">Inbound（ペルシャ湾へ入る方向）</span>：3月上旬以降、化学製品タンカーの新規入湾記録が長期にわたりゼロ。原油タンカーも極めて限定的。</li>
+        <li><span class="direction-out">Outbound（ペルシャ湾から出る方向）</span>：最小限の活動。主に制裁対象船舶（シャドーフリート）が高リスク許容で断続的に航行。LNG船は2月28日を最後に満載状態での通過記録なし。</li>
+        <li>イランによるAIS偽装（スプーフィング）が制裁対象船舶に対し数週間にわたり確認されている。</li>
+    </ul>
+    <p><strong>オマーン湾の滞留状況</strong><br>Windward社分析（3月26日）ではオマーン湾に約400隻を含む計686隻が滞留。多くのオペレーターは迂回判断前に海峡外で待機を選択。</p>
+</div>
+
+<!-- 衛星画像・港湾データ -->
+<div class="section">
+    <h2>2. 衛星画像・港湾データ（Kharg Island / 浮体貯蔵）</h2>
+    <span class="data-tag">更新：2026年4月13日 衛星画像分析</span>
+    <table>
+        <thead>
+            <tr><th>観測対象</th><th>観測データ</th><th>情報源</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Kharg Island 積載活動</td><td>米・イスラエル空爆後も平均3隻/日のVLCCが原油積載を継続。大幅な減少は確認されず。</td><td>NDTV Datafy / ESA Sentinel</td></tr>
+            <tr><td>代替輸出港 Jask</td><td>「忘れられた港」Jaskから数百万バレルの原油が出荷中。</td><td>The Times / 衛星画像</td></tr>
+            <tr><td>イラン浮体貯蔵（オマーン湾）</td><td>VLCC 10隻 + Suezmax 1隻、合計約2,100万バレル（4月13日時点）。</td><td>TankerTrackers.com / ESA Copernicus-2</td></tr>
+            <tr><td>湾内浮体貯蔵増加</td><td>ホルムズ封鎖により湾内浮体在庫が1億バレル増加。</td><td>IEA 4月月報</td></tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>Kharg Islandはイラン原油輸出の80〜90%を担う最重要ターミナル（能力最大700万b/d）。米軍は3月13日に軍事施設を空爆したが、積出施設は稼働継続。</li>
+    </ul>
+</div>
+
+<!-- 第三国情報 -->
+<div class="section">
+    <h2>3. 第三国情報（中国・インドなど）</h2>
+    <div class="flex-row">
+        <div class="flex-col">
+            <h3>インド</h3>
+            <ul>
+                <li>原油輸入の85%超（約550万b/d）を依存、約半分がホルムズ海峡経由。LNGの40〜55%も同海峡経由。</li>
+                <li>約7年ぶりにイラン産原油を購入。VLCC「Felicity」「Jaya」が計約400万バレルを輸送し沖合停泊中。</li>
+                <li>ロシア産原油購入に関する米国免除が4月11日に失効し供給逼迫が深刻化。</li>
+                <li>ホルムズ海峡経由の原油約300万b/d相当を既に喪失と分析。</li>
+                <li>戦略石油備蓄は約1.6億バレル（約30日分）で中国に比べ緩衝余力が限定的。</li>
+            </ul>
+        </div>
+        <div class="flex-col">
+            <h3>中国</h3>
+            <ul>
+                <li>世界最大の石油輸入国。戦略備蓄は約300日分と推定。</li>
+                <li>トランプ大統領による封鎖はアジア同盟国と中国に拡大打撃を与える可能性。</li>
+                <li>政府はガソリン・ジェット燃料輸出制限、備蓄取り崩し制限などの異例措置を実施。</li>
+                <li>ロシア産原油の調達拡大を模索中。</li>
+            </ul>
+            <h3>サウジアラビア</h3>
+            <ul>
+                <li>米国に対しホルムズ封鎖解除を強く要請。報復としてのマンデブ海峡封鎖を懸念。</li>
+                <li>紅海側Yanbu港からの石油タンカー出港が不可能になるリスク。</li>
+                <li>代替ルート拡充でも全体損失は日量1,300万バレル超。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- IEA・EIA統計 -->
+<div class="section">
+    <h2>4. IEA・EIA公式統計（需要・供給・在庫）</h2>
+    <span class="data-tag">IEA 4月月報（2026年4月14日）</span>
+    <table>
+        <thead>
+            <tr><th>指標</th><th>旧予測</th><th>新予測（4月）</th><th>変化</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>2026年世界石油需要</td><td>+73万b/d</td><td>▲8万b/d</td><td><span class="warning-text">81万b/d下方修正</span>（2020年以来初の年次需要縮小）</td></tr>
+            <tr><td>2026年世界石油供給</td><td>+110万b/d</td><td>▲150万b/d</td><td>「史上最大の供給中断」とIEAが定性</td></tr>
+            <tr><td>2026年第2四半期需要</td><td>—</td><td>前年比▲約150万b/d</td><td>新型コロナ以来最大の四半期需要減</td></tr>
+            <tr><td>3月世界供給</td><td>—</td><td>9,700万b/d（前月比▲1,010万b/d）</td><td>記録上最大の単月供給減少</td></tr>
+            <tr><td>3月累積供給損失</td><td>—</td><td>3.6億バレル</td><td>4月はさらに4.4億バレルまで拡大見込み</td></tr>
+        </tbody>
+    </table>
+    <p><strong>ホルムズ海峡通航量（IEAデータ）</strong></p>
+    <ul>
+        <li>4月初旬通航量：原油・LNG等合計で約380万b/d。危機前（2月）は2,000万b/d超。減少率約80%超。</li>
+        <li>代替ルート拡充により約720万b/dまで代替可能だが純損失は1,300万b/d超。</li>
+    </ul>
+    <p><strong>在庫データ</strong></p>
+    <ul>
+        <li>3月世界可観測在庫：8,500万バレル減少。うち中東域外在庫は2.05億バレル減少（660万b/d相当）。</li>
+        <li>米API週間原油在庫（4月14日更新）：610万バレル増加。需要減退のシグナル。</li>
+        <li>EIA週間在庫報告：4月15日（水）米東部時間9:30発表予定。前回値308.1万バレル増。</li>
+    </ul>
+    <p><strong>IEA警告</strong><br>「不足と高価格が続く限り需要破壊は拡大」「5月までに通航回復しなければアジア製油所で供給不足」「長期化すれば2026年後半に需要破壊が平均500万b/dに達する可能性」。</p>
+</div>
+
+<!-- 原油価格 -->
+<div class="section">
+    <h2>5. 原油価格（Brent・WTI・CFD 参考値）</h2>
+    <span class="data-tag">更新：2026年4月15日 取引データ</span>
+    <table>
+        <thead>
+            <tr><th>指標</th><th>価格</th><th>変動</th><th>時刻/出所</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>WTI原油先物（NYMEX）</td><td><span class="price-large">91.28</span> ドル/バレル</td><td><span class="warning-text">▼7.87%（▼7.80ドル）</span></td><td>4月15日 03:55（財聯社）</td></tr>
+            <tr><td>Brent原油先物（ICE）</td><td><span class="price-large">94.79</span> ドル/バレル</td><td><span class="warning-text">▼4.6%（▼4.57ドル）</span></td><td>4月15日 03:55（財聯社）</td></tr>
+            <tr><td>原油CFD（ユーザー報告）</td><td>88 ドル</td><td>—</td><td>ユーザー報告</td></tr>
+            <tr><td>Brent（4月14日朝）</td><td>90.41 ドル/バレル</td><td>▼0.30ドル</td><td>0849 GMT</td></tr>
+            <tr><td>実物市場スポット（Brent基準）</td><td>約130ドル/バレル</td><td>—</td><td>IEA報告執筆時点</td></tr>
+            <tr><td>実物一時的最高値</td><td>約150ドル/バレル</td><td>—</td><td>製油所代替調達競争で急騰</td></tr>
+            <tr><td>シンガポール中間留分</td><td>290ドル/バレル超</td><td>過去最高</td><td>IEA報告</td></tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>IEA事務局長は「現在の先物価格は危機の深刻さを反映していない」と警告。実物市場との乖離が拡大。</li>
+        <li>「イランから電話」とのトランプ発言を受け先物が100ドルを割り込む展開。</li>
+        <li>IEA加盟国は過去最大の4億バレルの戦略備蓄協調放出を実施済み。</li>
+    </ul>
+</div>
+
+<!-- 日本及び日本関連船舶 -->
+<div class="section">
+    <h2>6. 日本及び日本関連船舶の詳細</h2>
+    <span class="data-tag">更新：2026年4月13〜14日</span>
+    <table>
+        <thead>
+            <tr><th>項目</th><th>データ</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>ペルシャ湾内滞留日本関係船舶</td><td>約42〜45隻（うちエネルギー関連32隻）</td></tr>
+            <tr><td>日本人船員足止め</td><td>少なくとも24名が現地に残留</td></tr>
+            <tr><td>ホルムズ海峡通過実績（日本関係船）</td><td>商船三井LNG船「SOHAR LNG」（パナマ船籍）が日本時間4月2日に初通過。同社は合計2隻が通過と発表。</td></tr>
+            <tr><td>出港方向（Outbound）詳細</td><td>湾内から湾外への脱出が初めて確認。うち1隻は海峡経由でなくオマーン近海を航行した可能性あり。</td></tr>
+            <tr><td>入港方向（Inbound）詳細</td><td>米国「逆封鎖」開始により新規入湾判断が複雑化。現在新規入湾は事実上停止状態。</td></tr>
+        </tbody>
+    </table>
+    <p><strong>日本政府の対応</strong></p>
+    <ul>
+        <li>国家備蓄原油放出を3月26日より開始。</li>
+        <li>民間備蓄から15日分、国家備蓄から30日分（第1弾）を放出。5月上旬から国家備蓄第2弾約20日分を追加放出予定。</li>
+        <li>石油備蓄は国家・民間・産油国共同で合計約239日分と試算。</li>
+        <li>政府は「代替調達と備蓄放出で現時点では必要量を確保」と説明。</li>
+    </ul>
+    <p><strong>経済影響</strong></p>
+    <ul>
+        <li>日本の原油輸入の9割以上がホルムズ海峡経由、中東依存度約94〜95%。</li>
+        <li>レギュラーガソリン小売価格：紛争前158.5円/L → 3月16日190.8円/L。</li>
+        <li>軽油価格：146.6円/L → 178.4円/L。</li>
+        <li>第一生命経済研究所試算：標準4人家族で年間8.9万円支出増。</li>
+        <li>TOTOはユニットバス新規受注停止。石油由来ナフサ調達困難が原因。</li>
+        <li>三菱ケミカル・出光興産がナフサクラッカー稼働率引き下げ・停止を通知。</li>
+        <li>野村総合研究所エグゼクティブ・エコノミスト木内登英氏は「日本にとって事態はより悪化」と指摘。</li>
+    </ul>
+</div>
+
+<!-- 全体補足（追記内容を含む） -->
+<div class="section">
+    <h2>全体の補足</h2>
+    <div class="highlight-box">
+        <p><strong>市場参加者の判断優先順位と米国情報への割引</strong><br>
+        機関投資家・トレーダー・ヘッジファンドは、AISデータ、衛星画像、IEA/EIA統計などの物理データを最優先する。米国政府関係者による政治的「希望材料」（例：「イランから電話」「和平の可能性」「封鎖の影響は限定的」）は大幅に割り引いて判断している。<span class="warning-text">特にトランプ大統領、米政府当局者、主要メディアの発表については、市場参加者の間で「殆どが虚偽か、著しく誇張された情報」との認識が定着しており、実際の取引判断材料としては信頼性を極めて低く評価している。</span> AIS消失率50%という客観的事実が公式発表の信頼性の低さを裏付けており、シャドーフリートの動向や衛星による実態把握への依存度が高まっている。市場は政治的メッセージではなく、船舶の実際の動きと在庫統計で価格を形成している。</p>
+        <p><strong>マンデブ海峡：封鎖未発生</strong><br>
+        フーシ派による封鎖脅威が指摘され、イラン国営メディアも紅海封鎖を示唆しているが、現時点で実際の物流遮断は発生していない。サウジアラビアの懸念表明など情報戦の段階にある。</p>
+        <p><strong>データの流動性</strong><br>
+        本レポートの数値は2026年4月15日午前〜正午時点のものであり、ホルムズ海峡情勢、地政学的展開、原油価格は急速に変動する可能性がある。IEA自身も「予測は動的調整中であり下方修正余地あり」と認めている。米国「逆封鎖」の実施詳細、イランの反応、OPEC+動向により数値は大幅に変化し得る。</p>
+    </div>
+</div>
+
+<!-- フッター -->
+<div class="footer-note">
+    <strong>情報源</strong><br>
+    IEA「Oil Market Report」2026年4月14日付 / EIA週間在庫統計・STEO月報 / Vortexa、AXSMarine、Windward AIS船舶追跡データ / ESA Sentinel、Copernicus-2衛星画像分析（NDTV Datafy、TankerTrackers.com） / ロイター、ブルームバーグ、財聯社、日本経済新聞、時事通信、朝日新聞 / 経済産業省・資源エネルギー庁公式発表 / global-scm.com「ホルムズ海峡危機：情勢と実務リスク」 / 野村総合研究所 木内登英氏コラム / CNBC、AP、TASS、Defense News 各種報道<br><br>
+    本レポート作成日時：2026年4月15日 日本時間<br>
+    データは流動的であり、実際の取引判断には最新情報の確認が必要です。
+</div>
+
+</body>
+</html>
