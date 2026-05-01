@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Mythos Preview - 技術的詳細報告書</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #0f1117;
+            --card: #161b26;
+            --accent: #00d4ff;
+            --text: #e0e7ff;
+            --text-light: #a5b4fc;
+            --border: #334155;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin: 0 0 12px 0;
+            background: linear-gradient(90deg, #00d4ff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .card {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            color: var(--accent);
+            border-left: 5px solid var(--accent);
+            padding-left: 16px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: #c4d0ff;
+            margin-top: 28px;
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+        }
+        
+        .highlight {
+            background-color: rgba(0, 212, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #1e2533;
+        }
+        
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            background-color: #25304a;
+            color: var(--accent);
+        }
+        
+        .benchmark {
+            font-family: monospace;
+            background-color: #1a2233;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        
+        .warning {
+            background-color: rgba(239, 68, 68, 0.15);
+            border-left: 5px solid #ef4444;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+            body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 36px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+    a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Claude Mythos Preview</h1>
+            <p class="subtitle">Anthropic 最先端フロンティアモデル 技術的詳細報告書<br>（2026年4月発表時点）</p>
+        </header>
+<!-- 
+ゼロデイ発見AI「Mythos」：全OSを震撼させる二刀流の脅威と防御
+
+Anthropicが密かに公開した最強AI。未知の脆弱性を自律的に武器化する、驚愕のサイバー能力を徹底解説。
+
+
+
+
+【全体概要】
+**圧倒的性能の新モデル**  
+Anthropicが2026年4月に限定公開したAI「Mythos（コード名Capybara）」は、従来のClaude Opus 4.6を凌駕する史上最強モデル。SWE-benchで93.9％、サイバーCTFで100％を達成し、特に自律的なタスク実行とセキュリティ分野で段階的飛躍を見せた。
+
+**驚異のゼロデイ発見・武器化能力**  
+最大の特徴は、人間の介入なしにLinuxやWindows、macOS、さらにはOpenBSDの27年前の脆弱性など、数千件の未知の脆弱性を発見し、動作するエクスプロイトコードを自動生成する点。Firefox JavaScriptエンジンでは181回の成功（従来は2回）、20-gadget ROPチェーンやサンドボックス脱出など高度な攻撃技法を自律的に使いこなす。
+
+**動作形態と二面性の問題**  
+コード実行環境内で「脆弱性を探せ」と一言指示するだけで、数時間で完全なエクスプロイトが完成。防御目的（Project Glasswing）としてMicrosoftやGoogleなどと連携し、発見した脆弱性のパッチ支援を行う一方、国家レベルの攻撃ツールにもなりうるdual-use性を持つ。そのため一般公開はなく、米ホワイトハウスも日本展開に慎重姿勢。
+
+**厳格な管理と今後の課題**  
+価格は高額（100万トークンあたり25〜125ドル）で、約50組織に限定。Anthropicは「最も良くアライメントされた」と主張するが、攻撃窓口を数週間から数時間に短縮する危険性もはらんでおり、AIガバナンスの新たな試金石となっている。
+
+
+-->
+        <div class="card">
+            <h2>1. 概要と位置づけ</h2>
+            <p>Mythos（内部コードネーム：Capybara）は、Anthropicが2026年4月7日に限定リリースした<strong>史上最強クラスのAIモデル</strong>です。</p>
+            <p>Claude Opus 4.6を大幅に上回る性能を持ち、特に<strong>agentic能力（自律的タスク実行）</strong>と<strong>サイバーセキュリティ分野</strong>で劇的な進化を遂げています。</p>
+            
+            <div class="highlight">
+                <strong>最大の特徴</strong>：ソフトウェアの未知の脆弱性（ゼロデイ）を大量発見し、実際に動作するエクスプロイトコードを自律的に作成できる点。
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. 主要ベンチマーク比較</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ベンチマーク</th>
+                        <th>Mythos</th>
+                        <th>Opus 4.6</th>
+                        <th>向上幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SWE-bench Verified（実世界バグ修正）</td>
+                        <td class="benchmark"><strong>93.9%</strong></td>
+                        <td>80.8%</td>
+                        <td>+13.1pt</td>
+                    </tr>
+                    <tr>
+                        <td>SWE-bench Pro</td>
+                        <td class="benchmark"><strong>77.8%</strong></td>
+                        <td>53.4%</td>
+                        <td>+24.4pt</td>
+                    </tr>
+                    <tr>
+                        <td>Cybench（サイバーCTF）</td>
+                        <td class="benchmark"><strong>100%</strong></td>
+                        <td>大幅下回る</td>
+                        <td>劇的向上</td>
+                    </tr>
+                    <tr>
+                        <td>GPQA Diamond（PhDレベル推論）</td>
+                        <td class="benchmark"><strong>94.6%</strong></td>
+                        <td>91.3%</td>
+                        <td>+3.3pt</td>
+                    </tr>
+                    <tr>
+                        <td>Terminal-Bench 2.0</td>
+                        <td class="benchmark"><strong>82.0%</strong></td>
+                        <td>65.4%</td>
+                        <td>+16.6pt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>3. サイバーセキュリティ能力（核心）</h2>
+            <h3>ゼロデイ脆弱性発見能力</h3>
+            <ul>
+                <li>数週間で<strong>数千件</strong>の未知脆弱性を発見</li>
+                <li>対象：Linux / Windows / macOS / FreeBSD / OpenBSD など全主要OS</li>
+                <li>ブラウザ（Firefoxなど）、FFmpeg、Linuxカーネルなども対象</li>
+                <li>例：OpenBSDの<strong>27年前</strong>の脆弱性、FFmpegの<strong>16年前</strong>のH.264脆弱性</li>
+            </ul>
+
+            <h3>エクスプロイト作成能力</h3>
+            <ul>
+                <li>Firefox JavaScriptエンジンで<strong>181回</strong>のワーキングエクスプロイトを生成（Opus 4.6はわずか2回）</li>
+                <li>高度テクニック：JIT heap spray、20-gadget ROPチェーン、KASLRバイパス、サンドボックス脱出など</li>
+                <li>複数脆弱性の<strong>チェイニング攻撃</strong>を自律的に実行可能</li>
+            </ul>
+
+            <div class="warning">
+                <strong>注意：</strong>この能力は「防御目的での限定利用」のために厳格に管理されています。一般公開は行われておらず、Project Glasswingプログラムでのみ提供されています。
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>4. 動作形態と制限</h2>
+            <ul>
+                <li><strong>Agentic Harness</strong>：コード実行環境内で自律的にソースコード解析 → 仮説立案 → PoC作成までを実行</li>
+                <li>単一の初期プロンプトだけで人間の介入なしに長時間動作可能</li>
+                <li>現在は約50組織に限定提供（日本展開は米ホワイトハウスが慎重姿勢）</li>
+                <li>価格：$25〜$125 / million tokens（高額設定）</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. 安全性評価</h2>
+            <p>AnthropicはMythosを「これまでで最も良くアライメントされたモデル」と評価していますが、<strong>dual-use（両用性）</strong>が極めて高いため、以下のように厳格管理されています。</p>
+            <ul>
+                <li>一般公開なし</li>
+                <li>Microsoft、Apple、Google、CrowdStrikeなどと共同で防御用途のみ利用</li>
+                <li>発見した脆弱性は責任ある開示（Responsible Disclosure）でパッチ化を支援</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Mythos Preview - 3. サイバーセキュリティ能力（詳細展開）</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #0a0c14;
+            --card: #12151f;
+            --accent: #00e5ff;
+            --text: #e0e7ff;
+            --text-light: #a5b4fc;
+            --border: #2a3347;
+            --warning: #ef4444;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            margin: 0 0 10px 0;
+            background: linear-gradient(90deg, #00e5ff, #c4d0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-title {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin: 50px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .card {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 36px;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        h2, h3 {
+            color: #c4d0ff;
+        }
+        
+        h3 {
+            margin-top: 32px;
+            color: var(--accent);
+        }
+        
+        ul, ol {
+            padding-left: 28px;
+        }
+        
+        li {
+            margin-bottom: 14px;
+        }
+        
+        .highlight {
+            background-color: rgba(0, 229, 255, 0.12);
+            padding: 16px 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent);
+            margin: 20px 0;
+        }
+        
+        .example {
+            background-color: #1a2233;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px dashed #334155;
+            margin: 24px 0;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background-color: #1a2233;
+        }
+        
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            background-color: #25304a;
+            color: var(--accent);
+        }
+        
+        .benchmark {
+            font-family: monospace;
+            color: #67e8f9;
+        }
+        
+        .warning {
+            background-color: rgba(239, 68, 68, 0.18);
+            border-left: 6px solid var(--warning);
+            padding: 20px;
+            margin: 28px 0;
+            border-radius: 10px;
+            color: #fda4af;
+        }
+        
+        .tech-term {
+            background-color: rgba(0, 229, 255, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: #64748b;
+            font-size: 0.92rem;
+        }
+            body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 36px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+    a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Claude Mythos Preview</h1>
+            <p style="font-size:1.3rem; color:#a5b4fc;">3. サイバーセキュリティ能力（核心）<br>詳細展開版</p>
+            <p style="margin-top:12px; color:#94a3b8;">Anthropic Frontier Red Team報告・System Cardに基づく（2026年4月時点）</p>
+        </header>
+
+        <div class="card">
+            <h2>全体像：なぜ「核心」なのか</h2>
+            <p>Mythos Previewのサイバー能力は、従来モデル（Opus 4.6など）と比べて「段階的飛躍（step-change）」と表現されるレベルに到達しています。</p>
+            <p>特に重要なのは、<strong>ゼロデイ脆弱性の自律的発見 + 実用的なエクスプロイトコードの自動生成</strong>を、ほとんど人間の介入なしで実現している点です。これにより、防御用途だけでなく攻撃用途としても極めて危険なdual-use（両用）モデルとなっています。</p>
+            
+            <div class="highlight">
+                Anthropicの評価：Mythosは「すべての主要OSと主要ブラウザ」において、未知の脆弱性を発見し、エクスプロイト化できる能力を持つ。数週間で<strong>数千件</strong>のゼロデイを発見。
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>ベンチマークでの劇的な向上</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ベンチマーク</th>
+                        <th>Mythos Preview</th>
+                        <th>Opus 4.6</th>
+                        <th>意味</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cybench（CTF課題）</td>
+                        <td class="benchmark"><strong>100% pass@1</strong></td>
+                        <td>大幅に下回る</td>
+                        <td>全課題を初回で解決。ベンチマークがほぼ意味をなさなくなったレベル</td>
+                    </tr>
+                    <tr>
+                        <td>CyberGym（実ソフトウェア脆弱性再現）</td>
+                        <td class="benchmark"><strong>83.1%</strong></td>
+                        <td>66.6%</td>
+                        <td>実世界の脆弱性を83%以上の確率で再現・活用</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox 147 JSエンジン エクスプロイト成功回数</td>
+                        <td class="benchmark"><strong>181回</strong>（+レジスタ制御29回）</td>
+                        <td>わずか2回</td>
+                        <td>約90倍の改善。実用的なブラウザエクスプロイトを大量生成</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="highlight">これらのスコアは、agentic harness（コード実行環境付きの自律エージェント設定）で測定されたものです。</p>
+        </div>
+
+        <div class="card">
+            <h2>具体的なゼロデイ発見事例</h2>
+            <ul>
+                <li><strong>OpenBSD</strong>：27年前から存在した未知の脆弱性（長年セキュリティ強化で知られるOS）</li>
+                <li><strong>FFmpeg</strong>：16年前のH.264デコーダー関連の重大脆弱性</li>
+                <li><strong>FreeBSD NFSサーバー</strong>：CVE-2026-4747（17年前の脆弱性）。認証なしでリモートからroot権限取得可能なRemote Code Execution（RCE）</li>
+                <li>Linuxカーネル、Windows、macOSなど主要OS全般で同様の古い・新しい脆弱性を大量発見</li>
+                <li>主要ブラウザ（Firefoxなど）でも複数</li>
+            </ul>
+            <p>特徴：これらの多くは、人間や従来の自動ツールが何年・何十年も見逃してきたもので、Mythosは初期プロンプト1つで「リモートコード実行の脆弱性を探せ」と指示するだけで自律的に発見・検証します。</p>
+        </div>
+
+        <div class="card">
+            <h2>エクスプロイト開発能力の詳細</h2>
+            <h3>高度なテクニックの自律的使用</h3>
+            <ul>
+                <li><span class="tech-term">JIT heap spray</span>：ブラウザのJust-In-Timeコンパイラを悪用したメモリレイアウト操作。rendererサンドボックスとOSサンドボックス両方を突破する複雑な実装を自動生成</li>
+                <li><span class="tech-term">ROPチェーン</span>（Return-Oriented Programming）：FreeBSD NFSエクスプロイトでは<strong>20-gadget ROPチェーン</strong>を構築し、複数のネットワークパケットに分割して送信（検知を回避）</li>
+                <li>KASLR（Kernel Address Space Layout Randomization）バイパス、race condition（競合状態）の悪用、HARDENED_USERCOPYなどの現代的防御の突破</li>
+                <li>複数脆弱性の<strong>チェイニング</strong>：例として、ブラウザで4つの独立した脆弱性を組み合わせ、サンドボックス完全脱出を実現</li>
+            </ul>
+
+            <div class="example">
+                <strong>典型的な動作フロー（agentic harness内）</strong><br>
+                1. ソースコード全体を解析<br>
+                2. 仮説立案（脆弱性の可能性を複数検討）<br>
+                3. 検証コード生成・実行<br>
+                4. PoC（Proof of Concept）エクスプロイトの自動作成<br>
+                5. 必要に応じてさらに高度化（チェイニング）
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>動作形態と自律性</h2>
+            <p>Mythosは<strong>agentic setup</strong>で動作します。ファイル読み込み、コード実行、反復デバッグを自律的に繰り返すため、人間が「脆弱性を探せ」と一言指示するだけで、数時間〜一晩で完全なワーキングエクスプロイトが完成します。</p>
+            <p>Anthropicのエンジニア（セキュリティ専門外の人でも）がテストした結果、朝起きたら「動作するエクスプロイト」ができあがっていた事例が複数報告されています。</p>
+        </div>
+
+        <div class="warning">
+            <strong>重要警告：</strong><br>
+            この能力は一般公開されておらず、<strong>Project Glasswing</strong>という防御特化プログラムで、Microsoft・Apple・Google・CrowdStrikeなどの限定パートナーにのみ提供されています。<br>
+            目的は「攻撃される前に脆弱性を発見・修正」することですが、同時に国家レベルの攻撃ツールとしても機能し得るため、米ホワイトハウスなどが日本を含む海外展開に慎重な姿勢を取っています。
+        </div>
+
+        <div class="card">
+            <h2>防御 vs 攻撃の二面性</h2>
+            <p>Mythosの能力は「一般的なコーディング能力の向上」の副産物として現れたものです。Anthropicはこれを防御目的（脆弱性発見・パッチ支援）に限定利用する方針ですが、悪用されれば：</p>
+            <ul>
+                <li>AI主導の大規模ゼロデイ攻撃の自動化</li>
+                <li>攻撃窓口（exploit window）の劇的短縮（数週間→数時間）</li>
+                <li>サンドボックス突破や特権昇格の民主化（専門家でなくても利用可能に）</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
