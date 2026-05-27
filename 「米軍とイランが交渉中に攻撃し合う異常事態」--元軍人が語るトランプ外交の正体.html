@@ -1,0 +1,438 @@
+<!-- 
+
+【タイトル（クリックしたくなる見出し）】
+「米軍とイランが交渉中に攻撃し合う異常事態」--元軍人が語るトランプ外交の正体
+
+【導入文（約70文字／思わず読みたくなるタイプ）】
+**「交渉中なのに爆撃？」異例の米イラン衝突。元海軍大佐が「トランプ式外交」の危険性と軍の混乱を徹底解説。**
+
+---
+
+【全体概要：約400文字】
+
+**■ 「交渉中に戦闘」という異常な現状**  
+米国とイランは停戦交渉を続けながら、同時に軍事衝突を繰り返しています。米軍は5月25日、ホルムズ海峡周辺でイランのミサイル施設や機雷敷設船を「自衛」として攻撃。イラン側は「停戦違反であり戦争犯罪」と非難し、報復を宣言しました。
+
+**■ 実態のない「トランプ式外交」**  
+元海軍大佐のウィルカーソン氏は、米国がイランと直接対話しておらず、制裁と軍事力だけが手段になっていると指摘。これでは真の外交とは言えず、「世界に悪い前例を残している」と警鐘を鳴らします。
+
+**■ 国防総省内部の混乱**  
+また、ヘグセス国防長官がアパッチヘリによる民間行事への威嚇飛行の調査を中止させた問題に言及。軍の指揮系統が政治化され、明確な任務すら定義されていない現状を「軍事専門家から見れば大災害」と断じています。
+
+**■ 中東・ウクライナの連鎖危機**  
+イランは「イスラエルがレバノンを攻撃すればUAEを攻撃する」と警告。一方、ロシアはウクライナへの支援を続けるNATO諸国に対して核戦力演習で威圧。世界は複数の戦線で「より大きな戦争」の危険に直面しています。
+
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>米イラン衝突解説：交渉中に攻撃し合う異常事態</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0c10;
+            color: #e6edf3;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 言語切り替えボタン */
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .lang-btn {
+            background: #1f2a3a;
+            border: none;
+            color: #e6edf3;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: #facc15;
+            color: #0a0c10;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #2d3a4a;
+        }
+
+        /* 言語コンテンツ */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active-lang {
+            display: block;
+        }
+
+        /* 目次 */
+        .toc {
+            background: #11161f;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #2a3342;
+        }
+
+        .toc h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #facc15;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+        }
+
+        .toc li {
+            margin: 0;
+        }
+
+        .toc a {
+            color: #86efac;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: #facc15;
+            text-decoration: underline;
+        }
+
+        /* サブトピック小見出し */
+        .subtopic {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.8rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #2a3342;
+            display: inline-block;
+        }
+
+        /* スピーカースタイル */
+        .speaker {
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: -0.2px;
+        }
+        .speaker.neon { color: #86efac; border-left: 4px solid #86efac; padding-left: 12px; }
+        .speaker.larry { color: #facc15; border-left: 4px solid #facc15; padding-left: 12px; }
+
+        /* キーポイント箇条書き */
+        .key-points {
+            background-color: #1a2330;
+            border-left: 4px solid #facc15;
+            margin: 0.75rem 0 0.75rem 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            list-style-type: none;
+        }
+        .key-points li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .key-points li::before {
+            content: "•";
+            color: #facc15;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 通常の会話テキスト */
+        .dialogue-text {
+            margin: 0.5rem 0 0.5rem 0;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border-color: #2a3342;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .subtopic {
+                font-size: 1.1rem;
+            }
+        }    body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 36px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+    a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 言語切り替えボタン -->
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>  
+
+    <!-- 日本語版コンテンツ -->
+    <div id="lang-ja" class="lang-content active-lang">
+<h1>「米軍とイランが交渉中に攻撃し合う異常事態」--元軍人が語るトランプ外交の正体</h1>
+<br>
+<p>本稿は<b>『Col. Larry Wilkerson: US Fighter Jets Target Iranian Speedboats in Persian Gulf』（<a href="https://youtu.be/W6Tq8IdAMP0" target="_blank" rel="noopener noreferrer">https://youtu.be/W6Tq8IdAMP0</a>）</b>の内容を参考にして各項目を分析し、再構成した報告です。</p><br><br>
+
+        <!-- 目次 -->
+        <div class="toc">
+            <h3>📖 目次</h3>
+            <ul>
+                <li><a href="#ja-section1">1. 交渉中に戦闘？異常な米イラン関係</a></li>
+                <li><a href="#ja-section2">2. 「トランプ式外交」の実態</a></li>
+                <li><a href="#ja-section3">3. 国防総省内部の混乱と政治化</a></li>
+                <li><a href="#ja-section4">4. イランの報復戦略と中東連鎖</a></li>
+                <li><a href="#ja-section5">5. ウクライナ戦争とロシアの核シグナル</a></li>
+                <li><a href="#ja-section6">6. トランプ政権の特異性と危うさ</a></li>
+            </ul>
+        </div>
+
+        <div class="speaker neon">ネマ：</div>
+        <div class="dialogue-text">こんにちは、ラリー。昨夜から今朝にかけて、米国とイランの間で交戦がありました。米軍の戦闘機がペルシャ湾で高速艇を攻撃し、4人の船員が死亡。その後イランが対艦ミサイルで応酬し、さらにエスカレーションしました。イランの防空システムがMQ-9ドローンを撃墜し、F-35にも接近していたようです。交渉中に戦闘するという異常な状況をどう見ますか？</div>
+
+        <div id="ja-section1"></div>
+        <div class="speaker larry">ラリー・ウィルカーソン（元海軍大佐）：</div>
+        <div class="dialogue-text">それは「トランプ式外交」の手法です。</div>
+        <ul class="key-points">
+            <li>米国は制裁と軍事力を外交の中心に据えている。</li>
+            <li>相手が自らの要求に従わなければ、再爆撃を始める。</li>
+            <li>これが世界に対して設定している悪い前例であり、いずれ米国に跳ね返ってくる。</li>
+            <li>実際にはイラン外交官と米国の同等の地位の人物との直接接触は一度もない。</li>
+            <li>外交官ではなく、ジャレッド・クシュナーやスティーブ・ウィトコフのような人物が担当している。</li>
+        </ul>
+
+        <div class="subtopic">🔹 イスラエル・ネタニヤフ首相と米国の微妙な関係</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">ネタニヤフとトランプの関係で最も重要な要素があります。</div>
+        <ul class="key-points">
+            <li>エプスタイン・ファイル（黒材料）が本当にトランプ（特にメラニア）への影響力に使われているなら、なぜネタニヤフはそれを巧みに使わないのか？</li>
+            <li>結論：黒材料を持っているのはネタニヤフではなく、イスラエルの情報機関「モサド」かもしれない。</li>
+            <li>モサドはネタニヤフにうんざりしており、情報を差し控えている可能性がある。</li>
+            <li>イスラエル国防軍はレバノンで民間人を無差別に殺害しており、軍内部もあまり快く思っていない。</li>
+        </ul>
+
+        <div id="ja-section2"></div>
+        <div class="subtopic">⚡ 国防総省の混乱：アパッチヘリ事件と指揮系統の崩壊</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">クーパー提督の議会証言は問題外でした。「計画通りだ」と言ったのです。</div>
+        <ul class="key-points">
+            <li>「計画通り」という回答は無意味。敵と接触すれば計画はすぐに崩れる。</li>
+            <li>肝心なのは「任務を達成しているか」であり、そもそも任務とは何か？</li>
+            <li>トランプ大統領自身も、イランに対して与えた軍事任務を明確に答えられないだろう。</li>
+            <li>ナッシュビルの「ノーキングス」イベントに、アパッチ攻撃ヘリ2機が威嚇飛行した問題では、ヘグセス国防長官が調査を中止させた。</li>
+            <li>このような政治的行為に軍が使われるのは、統治不可能な軍事的災害である。</li>
+        </ul>
+
+        <div class="speaker neon">ネマ：</div>
+        <div class="dialogue-text">イスラエルはレバノン南部の「イエローライン」を越えています。ガザでも同じです。なぜ彼らはそうするのですか？</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">イスラエルは米国が中東から抜け出そうとするたびに、レバノンで何かを起こして米国を引き留めようとしているのです。</div>
+
+        <div id="ja-section3"></div>
+        <div class="subtopic">🌍 イランの報復：UAEへの脅しと交渉の行方</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">イランは明確な交換条件を出しました。</div>
+        <ul class="key-points">
+            <li>「イスラエルがレバノンを攻撃すれば、我々はUAEを攻撃する」とイランは宣言。</li>
+            <li>イラン中央銀行総裁らがカタールに凍結資産の解放交渉に赴いた。額は120億ドル。</li>
+            <li>実質的にUAEやサウジなどのGCC諸国が米国に代わってイランに支払っている構図。</li>
+            <li>米国は「何も譲っていない」ように見せかけたいが、それは難しくなっている。</li>
+        </ul>
+
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">トランプ政権には本当の外交官がいません。マルコ・ルビオですら外交官ではありません。</div>
+        <ul class="key-points">
+            <li>ルビオは「爆弾・銃弾・銃剣・制裁」の提唱者にすぎない。</li>
+            <li>アルメニアで希少鉱物に関する覚書を署名したが、それはイラン問題から目をそらすための二次的な成果。</li>
+            <li>実際には米国内にも十分なレアアースは存在する。ただ採掘する政治的意志がないだけ。</li>
+        </ul>
+
+        <div id="ja-section4"></div>
+        <div class="subtopic">🔥 ロシア・ウクライナ戦争の新段階と核の脅威</div>
+        <div class="speaker neon">ネマ：</div>
+        <div class="dialogue-text">ウクライナのドローンがロシア民間人を攻撃し、ロシアが「ルース」ミサイルで応酬しました。米政権の優先度が中東に移り、ウクライナが軽視されているのは危険ではありませんか？</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">非常に危険です。プーチンは疲れ切っています。そして彼は真剣です。</div>
+        <ul class="key-points">
+            <li>ロシアは5月21日まで、ソ連以来最大規模の核戦力演習を実施。明確なシグナル。</li>
+            <li>ラブロフ外相は「次はNATOの何かを破壊する」と警告。</li>
+            <li>米国がウクライナ支援を続ければ、ロシアはキーウの重要目標を破壊し、場合によってはゼレンスキー大統領の排除も狙う。</li>
+            <li>これはまさに核の火遊びであり、第一次世界大戦前の楽観的な愚かさを思い起こさせる。</li>
+        </ul>
+
+        <div id="ja-section5"></div>
+        <div class="subtopic">📉 トランプ政権の特異性：FDRと同じ手法を持つ「超無能」な大統領</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">トランプ大統領はフランクリン・ルーズベルトと同じやり方で統治しています。ただし決定的な違いがあります。</div>
+        <ul class="key-points">
+            <li>FDRは超有能だった。トランプは「超無能」であり、彼の唯一の才能は家族のために違法な巨額の金を稼ぐこと。</li>
+            <li>ルーズベルトは国家安全保障会議のプロセスを尊重したが、トランプは無視して独断専行する。</li>
+            <li>議会はもはや彼に何も強制しない。議会自体が彼のものだから。</li>
+            <li>彼は反キリストのように振る舞うが、自分では救世主だと思っている。</li>
+            <li>歴史上これほど異様な大統領は存在しない。</li>
+        </ul>
+
+        <div id="ja-section6"></div>
+        <div class="subtopic">🎙️ ポーランドとバルト諸国の危険な煽動</div>
+        <div class="speaker neon">ネマ：</div>
+        <div class="dialogue-text">ポーランドのシコルスキ氏は「プーチンは嘘つきで、交渉しても無駄だ」と言っています。</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">彼こそが本当に危険な人間です。</div>
+        <ul class="key-points">
+            <li>シコルスキのような人物は、ドイツとロシアという二つの隣国を敵に回す愚かさを繰り返している。</li>
+            <li>彼が自慢する「ポーランドに派遣される5,000人の米軍」は、現実にはおそらく派遣されない。</li>
+            <li>仮に派遣されても、冷戦時代と同じく、本当の抑止力は核兵器だけである。</li>
+            <li>その現実をドイツ人は非常に不安に思っていた。</li>
+        </ul>
+
+        <div class="speaker neon">ネマ：</div>
+        <div class="dialogue-text">ラリー、本日はありがとうございました。</div>
+        <div class="speaker larry">ラリー：</div>
+        <div class="dialogue-text">いつもながら大きな喜びです。金曜日にまたお会いしましょう。</div>
+    </div>
+
+    <!-- 英語版コンテンツ（日本語部分のみ表示のため簡易英語版） -->
+
+    <div id="lang-en" class="lang-content">
+<h1>"An abnormal situation where the US military and Iran attack each other during negotiations" -- A former military officer reveals the true nature of Trump's diplomacy.</h1>
+<br>
+<p>This paper is a report that analyzes and reconstructs each item based on the content of <b>『Col. Larry Wilkerson: US Fighter Jets Target Iranian Speedboats in Persian Gulf』（<a href="https://youtu.be/W6Tq8IdAMP0" target="_blank" rel="noopener noreferrer">https://youtu.be/W6Tq8IdAMP0</a>）</b>.</p><br><br>
+
+        <div class="toc">
+            <h3>📖 Table of Contents</h3>
+            <ul>
+                <li><a href="#en-section1">1. Fighting While Negotiating: US-Iran Chaos</a></li>
+                <li><a href="#en-section2">2. The "Trump Method" of Diplomacy</a></li>
+                <li><a href="#en-section3">3. Pentagon Crisis: Apache Incident & Chain of Command</a></li>
+                <li><a href="#en-section4">4. Iran's Retaliation Threat & Talks</a></li>
+                <li><a href="#en-section5">5. Russia-Ukraine: Nuclear Signals</a></li>
+                <li><a href="#en-section6">6. Trump vs. FDR: Same Method, Utter Incompetence</a></li>
+            </ul>
+        </div>
+
+        <div class="speaker neon">Neon:</div>
+        <div class="dialogue-text">Hello Larry. Last night US and Iran exchanged fire. US jets attacked speedboats, killing four. Iran responded with anti-ship missiles. An MQ-9 drone was hit, and an F-35 nearly got hit. Fighting while negotiating. What do you make of it?</div>
+
+        <div id="en-section1"></div>
+        <div class="speaker larry">Larry Wilkerson (former Army Colonel):</div>
+        <div class="dialogue-text">It's the Trump method of diplomacy.</div>
+        <ul class="key-points">
+            <li>The US now operates with sanctions and military force as the only tools.</li>
+            <li>If the other side doesn't comply, we start bombing again.</li>
+            <li>This sets a terrible precedent for the world, and it will come back at us.</li>
+            <li>There has been no direct contact between Iranian diplomats and US counterparts.</li>
+            <li>No real diplomats — only people like Jared Kushner and Steve Witkoff.</li>
+        </ul>
+
+        <div class="subtopic">⚡ Pentagon Chaos: Apache Helicopter Incident</div>
+        <div class="speaker larry">Larry:</div>
+        <div class="dialogue-text">Admiral Cooper's testimony was terrible. He said "things are going according to plan."</div>
+        <ul class="key-points">
+            <li>"Going according to plan" is meaningless. No plan survives contact with the enemy.</li>
+            <li>The real question: are you accomplishing your mission? But nobody can state the mission.</li>
+            <li>Two Apache helicopters flew over a "No Kings" event in Nashville as intimidation. The Army opened an investigation, but Hegseth ordered it stopped.</li>
+            <li>Using military assets for political messaging is a disaster for military professionalism.</li>
+        </ul>
+
+        <div class="subtopic">🌍 Iran's Quid Pro Quo: Attack Lebanon, We Attack UAE</div>
+        <div class="speaker larry">Larry:</div>
+        <ul class="key-points">
+            <li>Iran declared: if Israel attacks Lebanon, Iran will attack the UAE.</li>
+            <li>Iran is negotiating release of $12 billion in frozen assets via Qatar and GCC countries.</li>
+            <li>Effectively, the Gulf states are paying Iran on behalf of the US.</li>
+        </ul>
+
+        <div class="subtopic">🔥 Russia-Ukraine: Nuclear Drills and Direct Threats</div>
+        <div class="speaker larry">Larry:</div>
+        <ul class="key-points">
+            <li>Russia just completed its largest nuclear force exercise since the Soviet Union (ended May 21).</li>
+            <li>Lavrov warned: next time Russia will destroy something belonging to NATO.</li>
+            <li>Putin is serious about potentially hitting a NATO country if Ukrainian drone factories continue killing Russian civilians.</li>
+            <li>We are playing with fire — possibly nuclear fire — with the same pre-WWI stupidity.</li>
+        </ul>
+
+        <div class="subtopic">📉 Trump vs. FDR: Same Method, Opposite Competence</div>
+        <div class="speaker larry">Larry:</div>
+        <ul class="key-points">
+            <li>Trump governs like FDR — keeping everything close to his chest, ignoring the NSC process.</li>
+            <li>But FDR was supremely competent. Trump is a first-class idiot except for one skill: making illicit money for his family.</li>
+            <li>He believes he is Jesus, the savior. In reality, he acts like the antichrist the Bible describes.</li>
+            <li>No presidential historian has ever seen anything like him.</li>
+        </ul>
+
+        <div class="speaker neon">Neon:</div>
+        <div class="dialogue-text">Thank you, Larry, for being with us today.</div>
+        <div class="speaker larry">Larry:</div>
+        <div class="dialogue-text">Surely great pleasure as always. See you Friday.</div>
+    </div>
+</div>
+
+<script>
+    // 言語切り替え機能
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const jaContent = document.getElementById('lang-ja');
+    const enContent = document.getElementById('lang-en');
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            // ボタンのアクティブ切り替え
+            langBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            // コンテンツ切り替え
+            if (lang === 'ja') {
+                jaContent.classList.add('active-lang');
+                enContent.classList.remove('active-lang');
+            } else {
+                enContent.classList.add('active-lang');
+                jaContent.classList.remove('active-lang');
+            }
+        });
+    });
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
