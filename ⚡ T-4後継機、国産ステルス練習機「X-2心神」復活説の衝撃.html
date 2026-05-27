@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>T-4後継機 国産ステルス練習機 徹底解説 | 三菱・X-2心神の復活</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0a0c10;
+            color: #e6edf3;
+            font-family: 'Segoe UI', system-ui, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #0f1117;
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+            border: 1px solid #232832;
+        }
+        /* 言語切り替え */
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            background: #151b24;
+            padding: 0.5rem 1rem;
+            border-radius: 60px;
+            width: fit-content;
+            margin-left: auto;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #8e9aaf;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .lang-btn.active {
+            background: #facc15;
+            color: #0a0c10;
+        }
+        .lang-btn:not(.active):hover {
+            color: #facc15;
+        }
+        .lang-ja { display: block; }
+        .lang-en { display: none; }
+        body.en-mode .lang-ja { display: none; }
+        body.en-mode .lang-en { display: block; }
+
+        /* 目次 */
+        .toc {
+            background-color: #151b24;
+            padding: 1.2rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid #2a2f3a;
+        }
+        .toc h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #facc15;
+        }
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .toc li {
+            margin: 0;
+        }
+        .toc a {
+            color: #86efac;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .toc a:hover { color: #facc15; }
+
+        /* サブトピック */
+        .subtopic {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #2a3440;
+            color: #facc15;
+        }
+        /* スピーカー */
+        .speaker {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.2px;
+        }
+        .speaker.narrator {
+            color: #86efac;
+            border-left: 4px solid #86efac;
+            padding-left: 12px;
+        }
+        /* 短い会話テキスト */
+        .dialog-text {
+            margin-bottom: 0.5rem;
+        }
+        /* 重要ポイント */
+        .key-points {
+            background-color: #1a2330;
+            border-left: 4px solid #facc15;
+            margin: 0.75rem 0 0.75rem 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            list-style-type: none;
+        }
+        .key-points li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .key-points li::before {
+            content: "•";
+            color: #facc15;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        hr {
+            margin: 1.5rem 0;
+            border-color: #2a2f3a;
+        }
+        .footer {
+            font-size: 0.75rem;
+            text-align: center;
+            color: #6c7a8e;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #2a2f3a;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 1.2rem; }
+            .subtopic { font-size: 1.2rem; }
+        }
+    </style>
+    <script>
+        function setLanguage(lang) {
+            if (lang === 'en') {
+                document.body.classList.add('en-mode');
+                document.getElementById('btn-ja').classList.remove('active');
+                document.getElementById('btn-en').classList.add('active');
+            } else {
+                document.body.classList.remove('en-mode');
+                document.getElementById('btn-en').classList.remove('active');
+                document.getElementById('btn-ja').classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="lang-switch">
+        <button id="btn-ja" class="lang-btn active" onclick="setLanguage('ja')">日本語</button>
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">English (Same content)</button>
+    </div>
+
+    <!-- ==================== 日本語版 ==================== -->
+    <div class="lang-ja">
+        <h1 style="color:#facc15; font-size:1.7rem;">⚡ T-4後継機、国産ステルス練習機「X-2心神」復活説の衝撃</h1>
+
+
+<br><p>本稿は<b>『衝撃】なぜT-4後継機は三菱なのか？ボーイング絶望…！突如浮上した国産ステルス練習機実は「X-2心神」の復活だった！？T-2の再来「国産軽戦闘機」並行開発という胸熱すぎるシナ
+』（<a href="https://youtu.be/XDEHJ5hEKPE" target="_blank" rel="noopener noreferrer">https://youtu.be/XDEHJ5hEKPE</a>）</b>から引用させていただきました。</p><br>
+
+<!--
+【衝撃】T-4後継がX-2心神に決定？ボーイング蹴り国産ステルス練習機が日本を変える！
+
+T-4練習機の老朽化が深刻化し、F-35やGCAPへの訓練移行が不可能な危機に直面。日本はボーイングT-7A案を破棄し、急遽国産路線へ転換した。
+
+
+
+三菱重工が主導する新型機は、既に8割完成とされるX-2心神の技術を活用。ステルス性・高運動性・先進エンジン（XF9-1）を継承し、開発を大幅短縮。GCAPとの完全データリンク連動やAIサポートを備えた「空飛ぶシミュレーター」となる。
+
+川崎重工は無人戦闘機（ロイヤルウィングマン）分野へシフトし、役割分担を明確化。さらに同一構造での軽戦闘機平行開発も視野に。日々のスクランブル任務を軽戦闘機が担うことで、主力機（F-15・F-35）の寿命を温存するハイロー運用を実現する。
+
+この選択は単なる国産回帰ではなく、技術的優位性に基づく戦略。X-2の遺産とAI無人機が融合し、日本独自の次世代防衛システムを構築する画期的な計画だ。
+
+
+-->
+<!--
+**🚨 ボーイング蹴った！ T-4後継「国産ステルス機」X-2心神が復活する驚愕の真実**
+
+**老朽T-4の後継に米国ボーイング案をまさかの大逆転。伝説のX-2心神が軽戦闘機として再臨する国家戦略とは？**
+
+**【全体概要】**
+
+【全体概要】T-4後継機 国産ステルス計画の全貌
+【1. 危機：T-4ドルフィンの限界】
+1988年配備開始から約40年。T-4練習機はパーツ枯渇と機体老朽化で訓練維持さえ危ぶまれる。さらにアナログ世代の操縦系では、F-35や次期戦闘機GCAP（F-3）のデジタル戦闘機への移行が不可能に近い。「マニュアル車からF1マシン」という致命的なギャップが生じている。
+
+【2. 大逆転：ボーイングT-7A案の破棄】
+初等練習機で米国T-6が選定された流れから、中等練習機もボーイングT-7Aの日米共同開発が確実視された。しかし防衛省はこれを破棄。急遽「国産案」への方針転換を宣言した。理由は単なる国産主義ではなく、圧倒的な技術的優位性にあった。
+
+【3. 核心：X-2心神の遺伝子と8割完成説】
+国産案の主役は三菱重工。専門家の間では「新型機は既に8割完成している」と囁かれる。その根拠こそ先進技術実証機「X-2心神」の存在。ステルス性、カーボン複合材、超軽量機体、そしてIHI製XF9-1エンジン（推力15トン以上・推力変更ノズル）は世界最高水準。X-2の技術をそのまま転用すれば、ゼロからの開発より圧倒的短期間で実用化できる。
+
+【4. 残り2割と川崎の無人機シフト】
+残る2割は「ソフトウェア」と「GCAPとのデータリンク連動」。新型機はGCAPのミッションシステムを完全エミュレートする「空飛ぶシミュレーター」となる。一方、従来のT-4開発メーカー川崎重工は「AI無人戦闘機（ロイヤルウィングマン）」分野へ集中。三菱が有人機、川崎が無人機という役割分担が確立された。
+
+【5. もう一つの顔：軽戦闘機への平行開発】
+最大の衝撃は、同じ機体構造を持つ「軽戦闘機」の平行開発だ。これはT-2からF-1へ発展した伝説の思想の再来。必要性の背景には「スクランブル発進の激増」がある。現在、F-15・F-2・F-35といった主力機を毎日の偵察機追い出しに酷使し、機体寿命を浪費。有事に飛べなくなるリスクが現実化している。
+
+【6. 解決策：ハイロー・ミックス運用】
+新型軽戦闘機はX-2譲りのステルス性と高運動性を持ち、維持費は主力の数分の一。日々のスクランブルを軽戦闘機が担当し、F-15・F-35は大決戦のために温存する。これが「ハイロー・ミックス」と呼ばれる戦力維持の絶対手段。日本は「無難な共同開発」を捨て、自らの力で空の未来を切り開く道を選んだ。
+
+
+-->
+
+        <!-- 目次 -->
+        <div class="toc">
+            <h2>📑 目次</h2>
+            <ul>
+                <li><a href="#ja-sec1">🔹 1. T-4の老朽化という危機</a></li>
+                <li><a href="#ja-sec2">🔹 2. ボーイングT-7A案の破棄と国産転換</a></li>
+                <li><a href="#ja-sec3">🔹 3. 三菱主導・X-2心神の遺伝子</a></li>
+                <li><a href="#ja-sec4">🔹 4. 残り2割のミッションと川崎の無人機シフト</a></li>
+                <li><a href="#ja-sec5">🔹 5. 軽戦闘機としての平行開発構想</a></li>
+                <li><a href="#ja-sec6">🔹 6. スクランブル問題解決とハイロー運用</a></li>
+            </ul>
+        </div>
+
+        <!-- セクション1 -->
+        <h2 id="ja-sec1" class="subtopic">🔹 1. T-4の老朽化という危機</h2>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">T-4練習機「ドルフィン」の老朽化は限界を迎え、訓練維持すら危ぶまれています。ご存知でしょうか？</div>
+        <ul class="key-points">
+            <li>T-4は1988年配備開始から約40年経過。パーツ枯渇・不具合による飛行停止措置が発生。</li>
+            <li>現役の主力は第5世代ステルス戦闘機F-35と次期戦闘機「GCAP（F-3計画）」。</li>
+            <li>T-4はアナログ世代（丸いメーター）で、デジタル機とは操作思想が根本的に異なる。</li>
+            <li>T-4からF-35やGCAPへの移行は「マニュアル軽自動車からF1マシン」に相当し、訓練高度化に対応できない。</li>
+        </ul>
+
+        <!-- セクション2 -->
+        <h2 id="ja-sec2" class="subtopic">🔹 2. ボーイングT-7A案の破棄と国産転換</h2>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">当初はボーイングのT-7A（レッドホーク）を日米共同開発する路線が有力でした。しかし、防衛省は驚くべき決断を下しました。</div>
+        <ul class="key-points">
+            <li>初等練習機で米国T-6が選定された流れから、中等練習機もT-7Aベースが確実視された。</li>
+            <li>しかし日本はボーイング案を破棄し、急遽「国産案」へ方針転換。</li>
+            <li>その理由は「単なる国産こだわり」ではなく、圧倒的な技術的優位性があったため。</li>
+        </ul>
+
+        <!-- セクション3 -->
+        <h2 id="ja-sec3" class="subtopic">🔹 3. 三菱主導・X-2心神の遺伝子</h2>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">国産案の主役に指名されたのは三菱重工です。しかしゼロからの開発ではT-4引退に間に合いません。なぜ可能なのでしょうか？</div>
+        <ul class="key-points">
+            <li>三菱重工はT-2、F-1、F-2を手掛け、現在は次期戦闘機GCAP（F-3）を牽引する日本の航空宇宙産業のエース。</li>
+            <li>専門家の間では「この機体は既に8割完成している」と囁かれる。</li>
+            <li>その根拠は先進技術実証機「X-2心神」。ステルス性・カーボン複合材・超軽量・高運動性を実証済み。</li>
+            <li>IHI開発のエンジンXF9-1はセラミックス複合材を採用し、推力15トン以上。推力変更ノズルで超低速域でのコブラやフリップなどの変態機動を可能にした。</li>
+            <li>X-2のステルス機体構造・高運動性ノウハウ・エンジン技術をそのまま転用すれば、開発期間を大幅に短縮できる。</li>
+            <li>これがボーイング案を蹴って国産へ踏み切った最大の理由。</li>
+        </ul>
+
+        <!-- セクション4 -->
+        <h2 id="ja-sec4" class="subtopic">🔹 4. 残り2割のミッションと川崎の無人機シフト</h2>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">ハードウェアが8割完成なら、残り2割は何でしょうか？また、従来のT-4開発メーカーである川崎重工の役割は？</div>
+        <ul class="key-points">
+            <li>残り2割は「ソフトウェア開発」と「GCAPとの完全なデータリンク連動」。</li>
+            <li>未来の空戦は「クラウドシューティング」＝複数機・レーダー・AIがリアルタイム情報共有し敵を圧倒。</li>
+            <li>新型練習機はGCAPのミッションシステム・電子戦システム・AIサポートを完全エミュレートできる「空飛ぶGCAP専用シミュレーター」となる。</li>
+            <li>川崎重工は「無人戦闘機（ロイヤルウィングマン）」分野への集中を命じられた。</li>
+            <li>GCAP構想では有人戦闘機1機に対し、AI操縦の複数無人機がチームを組む戦術が不可欠。</li>
+            <li>日本の2大航空メーカーが役割分担：三菱が有人機（練習機・GCAP）、川崎がAI無人機を担当。</li>
+        </ul>
+
+        <!-- セクション5 -->
+        <h2 id="ja-sec5" class="subtopic">🔹 5. 軽戦闘機としての平行開発構想</h2>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">この計画には、練習機にとどまらない「もう一つの顔」があります。それは何でしょうか？</div>
+        <ul class="key-points">
+            <li>同じ機体構造を持った「軽戦闘機」としての平行開発が予測されている。</li>
+            <li>これはT-2超音速ジェット練習機からF-1支援戦闘機へ発展した伝説の開発思想の再来。</li>
+            <li>高性能な主力戦闘機がありながら軽戦闘機が必要な理由は「スクランブル発進の激増」。</li>
+            <li>周辺国の戦闘機・爆撃機・無人機の領空接近に対し、空自は24時間365日スクランブルを強いられている。</li>
+            <li>現在はF-15J、F-2、F-35といった「最高価値資産」を毎日の偵察機追い出しに酷使している。</li>
+            <li>その結果、機体寿命が急激に減少。有事の際に主力機が飛べなくなるリスクがある。</li>
+        </ul>
+
+        <!-- セクション6 -->
+        <h2 id="ja-sec6" class="subtopic">🔹 6. スクランブル問題解決とハイロー運用</h2>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">では、この新型軽戦闘機はどのように問題を解決するのでしょうか？</div>
+        <ul class="key-points">
+            <li>X-2譲りのステルス性・高運動性を持ち、維持費は主力戦闘機の数分の一。</li>
+            <li>GCAP譲りの最新AIレーダーとデータリンクを搭載し、偵察機・無人機を完全に補足・威嚇する能力を持つ。</li>
+            <li>日々のスクランブル発信は「軽戦闘機」が担当し、F-15・F-2・F-35は大決戦のために温存する。</li>
+            <li>これは「ハイロー・ミックス運用」と呼ばれる戦力維持の絶対的な手段。</li>
+            <li>日本は「無難な共同開発」ではなく、自らの力で空の主導権を切り開く道を選んだ。</li>
+            <li>X-2の技術、IHIのエンジン、川崎のAI無人戦闘機が統合され、世界が羨む新しい防衛システムが誕生する。</li>
+        </ul>
+        <div class="speaker narrator">ナレーター：</div>
+        <div class="dialog-text">皆さんは今回の内容をどう思われましたか？コメントで教えてください。それでは次回の動画でお会いしましょう。さようなら。</div>
+
+        <div class="footer">📌 出典：YouTube「【衝撃】なぜT-4後継機は三菱なのか？...」を基に再構成 / 2026年5月時点の防衛報道まとめ</div>
+    </div>
+
+    <!-- ==================== 英語版（日本語と同じ内容だが、切り替え機能維持のため） ==================== -->
+    <div class="lang-en">
+        <h1 style="color:#facc15; font-size:1.7rem;">⚡ Japan's Next-Gen Stealth Trainer: The Return of X-2 Shinshin</h1>
+        
+        <div class="toc">
+            <h2>📑 Table of Contents</h2>
+            <ul>
+                <li><a href="#en-sec1">🔹 1. The T-4 Aging Crisis</a></li>
+                <li><a href="#en-sec2">🔹 2. Rejecting Boeing T-7A for Domestic Development</a></li>
+                <li><a href="#en-sec3">🔹 3. Mitsubishi-led Project & X-2 Shinshin DNA</a></li>
+                <li><a href="#en-sec4">🔹 4. The Remaining 20% Mission & Kawasaki's UAV Shift</a></li>
+                <li><a href="#en-sec5">🔹 5. Parallel Development as a Light Fighter</a></li>
+                <li><a href="#en-sec6">🔹 6. Solving the Scramble Problem with High-Low Mix</a></li>
+            </ul>
+        </div>
+
+        <h2 id="en-sec1" class="subtopic">🔹 1. The T-4 Aging Crisis</h2>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">The T-4 trainer "Dolphin" has reached its limit. Are you aware that even training sustainability is at risk?</div>
+        <ul class="key-points">
+            <li>T-4 entered service in 1988, now about 40 years old. Parts depletion and flight suspensions due to malfunctions.</li>
+            <li>Current main forces are F-35 stealth fighters and the next-generation GCAP (F-3).</li>
+            <li>T-4 is analog (round gauges), completely different operation philosophy from digital fighters.</li>
+            <li>Transitioning from T-4 to F-35/GCAP is like driving a manual kei car then jumping into an F1 machine. The training gap is critical.</li>
+        </ul>
+
+        <h2 id="en-sec2" class="subtopic">🔹 2. Rejecting Boeing T-7A for Domestic Development</h2>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">Initially, a joint Japan-US development based on Boeing's T-7A Red Hawk seemed certain. But Japan made a surprising decision.</div>
+        <ul class="key-points">
+            <li>Given the T-6 selection for primary trainers, a T-7A-based medium trainer seemed logical.</li>
+            <li>However, Japan scrapped the Boeing plan and abruptly shifted to a "domestic" proposal.</li>
+            <li>The reason was not mere nationalism but overwhelming technological advantage.</li>
+        </ul>
+
+        <h2 id="en-sec3" class="subtopic">🔹 3. Mitsubishi-led Project & X-2 Shinshin DNA</h2>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">Mitsubishi Heavy was chosen to lead. But from-scratch development wouldn't meet the T-4 retirement deadline. How is it possible?</div>
+        <ul class="key-points">
+            <li>Mitsubishi built T-2, F-1, F-2, and now leads GCAP (F-3) development — Japan's aerospace ace.</li>
+            <li>Experts whisper: "This aircraft is already 80% complete."</li>
+            <li>The basis: The X-2 Shinshin technology demonstrator — proven stealth, carbon composite, ultra-lightweight, super maneuverability.</li>
+            <li>IHI's XF9-1 engine uses ceramic matrix composites, 15+ tons thrust, thrust-vectoring nozzles enabling cobra/flip maneuvers at near-stall speeds.</li>
+            <li>X-2's stealth airframe, maneuverability, and engine tech can be directly repurposed, massively shortening development time.</li>
+            <li>This is the real reason Japan rejected Boeing and chose domestic development.</li>
+        </ul>
+
+        <h2 id="en-sec4" class="subtopic">🔹 4. The Remaining 20% Mission & Kawasaki's UAV Shift</h2>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">If hardware is 80% done, what is the remaining 20%? And what about Kawasaki Heavy, the original T-4 maker?</div>
+        <ul class="key-points">
+            <li>The remaining 20% is software development and full data-link integration with GCAP.</li>
+            <li>Future air combat = "cloud shooting" — multiple aircraft, radars, AI sharing real-time intel to overwhelm enemies.</li>
+            <li>The new trainer will be a "flying GCAP simulator," fully emulating GCAP's mission systems, electronic warfare, and AI support.</li>
+            <li>Kawasaki Heavy was assigned to focus on unmanned combat aircraft ("Loyal Wingman") instead.</li>
+            <li>GCAP concept requires one manned fighter to team with multiple AI-controlled unmanned aircraft.</li>
+            <li>Japan's two major aerospace firms split roles: Mitsubishi on manned aircraft (trainer/GCAP), Kawasaki on AI drones.</li>
+        </ul>
+
+        <h2 id="en-sec5" class="subtopic">🔹 5. Parallel Development as a Light Fighter</h2>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">This plan has "another face" beyond just a trainer. What is it?</div>
+        <ul class="key-points">
+            <li>Parallel development as a "light fighter" using the exact same airframe is predicted.</li>
+            <li>This echoes the legendary evolution from T-2 supersonic trainer to F-1 support fighter.</li>
+            <li>The need for a light fighter despite having high-end fighters is due to the surge in scramble launches.</li>
+            <li>Neighboring countries' fighters, bombers, and drones constantly approach Japan's airspace, forcing 24/7 scrambles.</li>
+            <li>Currently, precious assets like F-15J, F-2, and F-35 are wasted on daily interceptions.</li>
+            <li>This rapidly consumes airframe life, risking unavailability during real emergencies.</li>
+        </ul>
+
+        <h2 id="en-sec6" class="subtopic">🔹 6. Solving the Scramble Problem with High-Low Mix</h2>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">How will this new light fighter solve the problem?</div>
+        <ul class="key-points">
+            <li>Inherits X-2's stealth and maneuverability, with operating costs a fraction of main fighters.</li>
+            <li>Equipped with GCAP-derived AI radar and data-link, capable of fully tracking and deterring reconnaissance drones and aircraft.</li>
+            <li>Daily scramble missions will be handled by the "light fighter," preserving F-15s, F-2s, and F-35s for major contingencies.</li>
+            <li>This is a "high-low mix" strategy — essential for long-term force sustainability.</li>
+            <li>Japan chose to forge its own path rather than a "safe" joint development.</li>
+            <li>X-2's technology, IHI's engine, and Kawasaki's AI drones will integrate into a world-class air defense system.</li>
+        </ul>
+        <div class="speaker narrator">Narrator:</div>
+        <div class="dialog-text">What do you think about this? Please share your thoughts in the comments. See you in the next video. Goodbye.</div>
+
+        <div class="footer">📌 Source: YouTube "Why T-4 Successor is Mitsubishi? Boeing Desperate..." Reconstructed summary as of May 2026.</div>
+    </div>
+</div>
+</body>
+</html>
