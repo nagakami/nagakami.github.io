@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>イラン戦争緊急分析：元CIAアナリストが語る全面戦争の危機</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0c10;
+            color: #e6edf3;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            line-height: 1.65;
+            padding: 2rem 1.5rem;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 見出し */
+        h1 {
+            font-size: 1.9rem;
+            text-align: center;
+            color: #ffcc00;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #2a2f3a;
+            padding-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+
+        /* 目次ボックス */
+        .toc {
+            background: #11161f;
+            border-left: 5px solid #facc15;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .toc h2 {
+            font-size: 1.4rem;
+            color: #facc15;
+            margin-bottom: 0.8rem;
+        }
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1.2rem;
+        }
+        .toc li {
+            margin: 0;
+        }
+        .toc a {
+            color: #7fb8ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            background: #1e2632;
+            padding: 0.2rem 0.8rem;
+            border-radius: 25px;
+            display: inline-block;
+        }
+        .toc a:hover {
+            color: #ffcc00;
+            background: #2a3440;
+            text-decoration: none;
+        }
+
+        /* 話者ブロック */
+        .speaker {
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: -0.2px;
+        }
+        /* 各話者のスタイル */
+        .speaker.larry {
+            color: #86efac;
+            border-left: 4px solid #86efac;
+            padding-left: 12px;
+        }
+        .speaker.glenn {
+            color: #facc15;
+            border-left: 4px solid #facc15;
+            padding-left: 12px;
+        }
+        /* 短い会話の通常テキスト */
+        .dialog-text {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+        /* 重要ポイントの箇条書きボックス */
+        .key-points {
+            background-color: #1a2330;
+            border-left: 4px solid #DC143C;
+            margin: 0.75rem 0 1rem 1rem;
+            padding: 0.7rem 1rem;
+            border-radius: 16px;
+            list-style-type: none;
+        }
+        .key-points li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.3rem;
+            line-height: 1.55;
+        }
+        .key-points li::before {
+            content: "•";
+            color: #facc15;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0;
+        }
+
+        /* サブトピック見出し */
+        .subtopic {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #4caf50;
+            margin: 1.8rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px dashed #2a3a4a;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border-color: #2a2f3a;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6a7c8f;
+            border-top: 1px solid #1f2a36;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 650px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            .subtopic { font-size: 1.2rem; }
+        }    body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 36px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+    a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+/* 話者のkey-pointsは同パターンで同じ色を割り当てる */
+        .key-points { background-color: #1a2330; border-left: 4px solid #DC143C; margin: 0.75rem 0 0.75rem 1rem; padding: 0.5rem 1rem; border-radius: 16px; list-style-type: none; }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>【要約】イランが交渉を破棄<br>核の閾値と全面戦争</h1>
+
+<!--
+「イラン、核の一線を越える？交渉破棄で世界経済と中東戦争が最終局面へ」
+イランが米国との協議を破棄、ホルムズ封鎖を宣言。元CIAアナリストが警告する全面戦争と核危機の行方。
+
+
+
+【全体概要】
+イランは東海岸時間午前10時、米国との対話終了を宣言した。理由はイスラエルがレバノン停戦合意を守らず、パレスチナ人殺害を継続しているためだ。イランはホルムズ海峡とバベルマンデブ海峡の完全封鎖を発表し、米国に24時間の猶予を与えた。トランプ大統領は即座にネタニヤフに電話したが、両者の発表内容は真っ向から矛盾している。
+
+軍事面では、今後24時間以内にイランが弾道ミサイルとドローンで北イスラエルを再攻撃する可能性が高い。ヒズボラは光ファイバー式FPVドローンという新戦術を導入。電子戦に完全に免疫があり、すでに推定400台以上のメルカバ戦車が破壊された。米軍には有効な軍事オプションがなく、トランプは人質危機を恐れている。
+
+さらに深刻なのは、パキスタン外相がマルコ・ルビオに伝えた情報だ。イランは交渉離脱に続き、NPTから脱退し核装置の爆発日を設定する可能性がある。この情報は「協議離脱」が的中した時点で無視できない現実味を帯びている。
+
+経済的には前代未聞のショックが進行中だ。LNG供給の25％、石油の20％、肥料原料の35％、コンピューターチップ製造に必須のヘリウム44％が同時に喪失している。中国は410億ドル相当の米国債を売却し、石油取引はドルから人民元へ移行しつつある。
+
+最後にラリー・ジョンソン氏は、イスラエルの問題点を「傲慢さと不合理性」と指摘。客観的な誤りを示しても聞かず、常に敵を過小評価する構造的な欠陥があると結論づけた。
+
+
+-->
+
+<p>本稿は<b>『Larry Johnson: Iran Abandons Talks & Threatens to Retaliate Against Israel』（<a href="https://youtu.be/e03waQsmDkY" target="_blank" rel="noopener noreferrer">https://youtu.be/e03waQsmDkY</a>）</b>の内容を参考にして各項目を分析し、再構成した報告です。</p><br>
+
+<b><a href="Larry C. Johnson（ラリー・C・ジョンソン）の履歴・経歴.html" target="_blank" rel="noopener noreferrer">Larry C. Johnson（ラリー・C・ジョンソン）の履歴・経歴</a></b>
+<br>
+<b><a href="Glenn Diesen（グレン・ディーセン）の履歴・経歴.html" target="_blank" rel="noopener noreferrer">Glenn Diesen（グレン・ディーセン）の履歴・経歴</a></b>
+<br><br>
+
+
+    <!-- 目次 (アンカー付き) -->
+    <div class="toc">
+        <h2>📑 この議論のセクション</h2>
+        <ul>
+            <li><a href="#sec1">🔹 1. イラン、交渉離脱とホルムズ封鎖の宣言</a></li>
+            <li><a href="#sec2">🔹 2. トランプとネタニヤフの相反する電話内容</a></li>
+            <li><a href="#sec3">🔹 3. イランの報復準備 ─ 北部イスラエル住民に退避警告</a></li>
+            <li><a href="#sec4">🔹 4. ヒズボラの新戦術：光ファイバーFPVドローン</a></li>
+            <li><a href="#sec5">🔹 5. 米軍の限界と中東の新たな安全保障構想</a></li>
+            <li><a href="#sec6">🔹 6. イランの核開発リスク ─ パキスタン経由の情報</a></li>
+            <li><a href="#sec7">🔹 7. グローバル経済への壊滅的打撃</a></li>
+            <li><a href="#sec8">🔹 8. イスラエルの不合理な楽観主義と傲慢さ</a></li>
+        </ul>
+    </div>
+
+    <!-- ========== セクション1 ========== -->
+    <div id="sec1" class="subtopic">⚡ イラン、交渉離脱とホルムズ封鎖の宣言</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">番組に戻ってきていただきありがとうございます。元CIAアナリストで、米国務省テロ対策室にも勤務したラリー・ジョンソンさんです。イラン戦争が急速に激化しています。イランは米国との協議から撤退し、ホルムズ海峡封鎖をほのめかしています。全体像を整理していただけますか？</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>東海岸時間の午前10時頃、イランは「米国との対話は終わった」と宣言した。</li>
+        <li>当初の停戦合意は「イスラエルがレバノン全体への攻撃を停止する」というものだったが、イスラエルはそれを守らず、パレスチナ人殺害も続けている。</li>
+        <li>イランはホルムズ海峡とバベルマンデブ海峡の完全封鎖を発表。米国に24時間の猶予を与え、当初の合意に戻るよう求めた。</li>
+        <li>この発表後1時間以内にトランプ大統領はネタニヤフに電話した。</li>
+    </ul>
+
+    <!-- ========== セクション2 ========== -->
+    <div id="sec2" class="subtopic">📞 トランプとネタニヤフ ─ 食い違う公式発表</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">トランプ大統領は「ベイルート爆撃は行わない」と主張していますが、ネタニヤフは全く別のバージョンを語っています。混乱しています。</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>トランプのバージョン：電話は素晴らしく、ネタニヤフはベイルートを爆撃しないと約束した。</li>
+        <li>ネタニヤフのバージョン：トランプの言うことなど聞いていない。</li>
+        <li>さらにスモトリッチ、カッツ国防相、ベン・グビルなど閣僚からも異なる発言が出ており、イスラエルは攻撃を止めていない。</li>
+        <li>イランのIRGC（イスラム革命防衛隊）スポークスマンは「北イスラエルに住む人は退避せよ。我々はそちらを攻撃する」と明確な警告を発した。</li>
+    </ul>
+
+    <!-- ========== セクション3 ========== -->
+    <div id="sec3" class="subtopic">🚀 報復寸前：今後24時間以内の弾道ミサイル攻撃リスク</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">イランは報復すると言っています。現実的に何が起きるのでしょうか？</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>今後24時間以内に、イランは弾道ミサイルとドローンで北イスラエルを再攻撃する可能性が高い。</li>
+        <li>米軍はまだ「スピンアップ」（航空任務命令の発行）しておらず、既存の計画を検証中である。</li>
+        <li>2月28日のアル・マナブ学校誤爆事件では、古い情報のまま計画を使ったために少女たちが殺された。そのため現在は二重チェックが必須となっている。</li>
+        <li>トランプがすぐにネタニヤフに電話したことは示唆的だが、ベイルートと南レバノンへの攻撃が続けば、24時間以内にイランの報復が現実となる。</li>
+    </ul>
+
+    <!-- ========== セクション4 ========== -->
+    <div id="sec4" class="subtopic">🎯 ヒズボラの新戦術：光ファイバーFPVドローンがもたらす戦場の変容</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">イスラエルはヒズボラを倒せると思い込んでいるようですが、現実はどうですか？</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>ヒズボラは新しい戦術を採用：光ファイバーケーブル付きのFPVドローンを使用。</li>
+        <li>これらのドローンは電子戦対抗手段（ジャミング）に完全に免疫がある。</li>
+        <li>オペレーターは地下壕から操作し、身をさらす必要がない。2006年のRPG戦術とは全く異なる。</li>
+        <li>推定400台以上のメルカバ戦車が破壊された。これはイスラエルにとって大きな損失。</li>
+        <li>ヒズボラはイスラエルが南レバノンから撤退するまで戦いを止めない。</li>
+    </ul>
+
+    <!-- ========== セクション5 ========== -->
+    <div id="sec5" class="subtopic">🌍 中東の新安全保障アーキテクチャ ─ 「NATO軽量版」と米軍撤退の可能性</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">米国は傍観していられるのでしょうか？また、「西アジア版NATO」のような話も聞こえてきます。</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>米国には良い軍事オプションがない。トランプはジミー・カーター時代のような人質危機を恐れている。</li>
+        <li>イランはドローン撃墜に非常に長けており、F-16やF-35すら撃墜される可能性がある。</li>
+        <li>水面下でパキスタン、サウジアラビア、カタールが交渉している：「西アジアNATO（NATO軽量版）」という新たな安全保障枠組みを作り、米国をペルシャ湾から撤退させる計画。</li>
+        <li>この枠組みにはトルコ、サウジアラビア、イラン、パキスタン（四大国）に加え、イラク、クウェート、バーレーン、カタール、UAE、オマーンを含む。米軍プレゼンスはゼロになる。</li>
+        <li>カタールはアル・ウデイド空軍基地（米軍の中東最大基地）閉鎖を検討中。もし実現すれば極めて大きな出来事。</li>
+    </ul>
+
+    <!-- ========== セクション6 ========== -->
+    <div id="sec6" class="subtopic">☢️ 核の閾値：NPT離脱と核実験の噂</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">イランが交渉を離脱したのは単なる圧力戦術ですか？それとも本気で核の閾値を越えるのでしょうか？</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>ペペ・エスコバルと私が入手した情報（確認中）によると、パキスタン外相がマルコ・ルビオに明確に伝えた：「この問題が解決しなければ、イランは協議から完全撤退する（これすでに現実化）、NPT（核不拡散条約）から脱退する、そして核装置の爆発日を設定する」。</li>
+        <li>イランが独自の核装置を持っているのか、それともパキスタンや北朝鮮から提供されたのかは確認中。</li>
+        <li>ただし「協議離脱」の予言は的中した。NPT脱退と核実験の脅威は現実的な可能性として無視できない。</li>
+        <li>イランのフラストレーションは本物であり、中国・ロシア・パキスタンの全面的な支援を受けている。</li>
+    </ul>
+
+    <!-- ========== セクション7 ========== -->
+    <div id="sec7" class="subtopic">📉 世界経済への前代未聞のショック ─ ヘリウム・肥料・LNGの同時喪失</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">エネルギー戦争で米国は儲かるという議論もありますが、本当でしょうか？</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>これは「西洋のファンタジー」である。中国とロシアは金と銀の購入を増やし、中国は2日前に410億ドル相当の米国債を売却した。</li>
+        <li>石油購入はドル（ペトロダラー）ではなく、元（人民元）で行われる割合が増えている。</li>
+        <li>世界は前例のない経済ショックに見舞われている：LNG供給の25％喪失、石油の20％喪失、肥料用の尿素・硫黄の35％喪失、ヘリウムの44％喪失（ヘリウムはコンピューターチップ製造に必須）。</li>
+        <li>現代史上、このような同時多角的な供給ショックは記憶にない。</li>
+        <li>トランプの経済顧問ケビン・ハセットが「4～5週間で通常価格に戻る」と主張したが、石油専門家アート・バーマンは「それは嘘だ」と断言している。</li>
+    </ul>
+
+    <!-- ========== セクション8 ========== -->
+    <div id="sec8" class="subtopic">🧠 なぜイスラエルは自滅的な戦争を選ぶのか？ ─ 傲慢さと不合理性の構造</div>
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">最後の質問です。イスラエルは明らかに戦線を拡大しすぎています。なぜそんなに熱心にイランとの戦争を再開しようとするのですか？負けが予想できるのに。</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">【重要ポイント】</div>
+    <ul class="key-points">
+        <li>問題は、あなたが「合理的・論理的な人物」だからだ。イスラエルはそうではない。</li>
+        <li>個人的な経験（20年前にイスラエル警察の訓練を行った）から言うと、彼らには「傲慢な要素」がある。自分たちの方が賢く、何を知っていると仮定する。</li>
+        <li>客観的に誤りを示しても聞かない。2歩も3歩も先を考えない。</li>
+        <li>具体例：イスラエル軍は半自動拳銃の装填方法を誤って教えている（撃つ直前にスライドを引いて装填する方法）。これは時間を無駄にし、近距離では相手に銃を奪われる危険がある。しかし彼らは「自分の訓練方法が正しい」と信じて疑わない。</li>
+        <li>同じ精神構造がここでも働いている。「ヒズボラを倒せる。大丈夫だ」と過小評価し続ける。2006年の経験からヒズボラは地下要塞を強化し、光ファイバーFPVドローンを使っているのに。</li>
+        <li>彼らは常に敵を過小評価する。</li>
+    </ul>
+
+    <div class="speaker glenn">グレン：</div>
+    <div class="dialog-text">画面上で見たのですが、イランのIRGCが米イスラエル共同の「サリサ」船を巡航ミサイルで攻撃したと発表しました。さあ、始まりましたね。今日は本当にありがとうございました。</div>
+
+    <div class="speaker larry">ラリー：</div>
+    <div class="dialog-text">いつもお招きいただき感謝しています、グレン。ありがとう。</div>
+
+    <footer>
+        元CIAアナリスト ラリー・ジョンソン × グレン対話 | 情報源：Sonar21, Pepe Escobar, パキスタン外交筋
+    </footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--
+Welcome back to the program. We are joined again by Larry Johnson, a former CI analyst who also worked at the US State Department's Office of
+Counterterrorism and who's also a prolific writer on the website Soner 21 and I will leave a link in the
+description. So, thank you for coming back on, Larry. There's a lot of things to go through here. their parents that
+the Iran war is escalating quickly now and well it seems very likely we're going to go back to large scale warfare
+that is uh well over the past few days we already seen that the US have struck Iran and um and Iran has retaliated
+o we see that the Israel's bombing of Lebanon has intensified and u uh this
+now yeah they will start bombing Beirut it seems or then it seems and uh the US
+apparently have given given a green light to do so. Iran then has responded
+by um by arguing that all fronts are linked to the ceasefire. In other words, you can't attack Lebanon then will
+attack you. uh Iran has then withdrawn from the talks with the US and you know the media there's rumors anything such
+as uh well a lot of things that could be done for example Iran could shut down the Red Sea uh it's hard to follow this
+is all happening very very fast so I was hoping if you could give a nice overview over what we're looking at here yeah so it started off about 10:00 this
+morning uh Eastern East Coast time so I guess that's like 3:00 p.m. your time. You're 5 hours different from me.
+6. Okay. So, that's 4:00 your time. Uh, which means you're up past your bedtime. Thanks for doing this.
+Um, and Iran said, "Okay." U, we're not we're done talking to the United States. Because the initial
+ceasefire, the agreement was that Israel would not attack Lebanon, not just Beirut, not attack Lebanon. It
+would stop its attacks. of the Palestinians and instead they're continuing. So we're out. We're not we're not going to we're not going to
+have any more talks. We're closing the straight of Hormuz. Now up to this point Iran has allowed a number of ships to go
+through and they said we're going to shut it down completely again. Complete shut down and we're going to close the
+traight of Babel Mandab. That's going to be shut down. They haven't shut it down yet. Um, I think they were giving
+the United States basically 24 hours to see if they would go back to the original agreement that was signed.
+Um, this got Trump's attention because within an hour of that
+announcement, Trump's on the phone with BB Netanyahu. Now, here's where it gets confusing.
+Uh Trump's version is he had a great call and BB's going to no they're not going to bomb Beirut, but that's not that's not what Iran's
+asking for. This is not just don't bomb Beirut. Stop bombing Lebanon and stop killing Palestinians. Stop.
+Well, Israel's not willing to stop. And since that phone call, Trump's given one version and BB Netanyahu is given a completely different version.
+And then you've got the people like Smootric weighing in and Israel Catz the defense minister weighing in and Bendy
+Gavir weighing in. So and it looks like Israel has not stopped and and so then here's concerning point.
+uh one of the spokesman for the IRGC in Iran, the Iranian Revolutionary Guard
+Corps said issued the warning, if you live in northern Israel, they refer to it as the occupi northern occupied
+territories. If you're in northern Israel, you want to get out because we're going to hit you.
+So they made unambiguous.
+So, I I think within within the next 24 hours, you're going to see Iran re-engage Israel with ballistic missiles
+and drones that will be targeting northern Israel.
+So, this this looks like it's heating up. Now, what's the United States doing so far with on the military side of the
+house? Um, they're not spinning up. They And what what do I mean by spinning up?
+where you know basically the air tasking orders go out where you tell this squadron, okay, these are your targets.
+This is where you're going to hit. This is when you're going to launch. Now, a lot of that's pre-programmed, but before
+you don't just because these were planned maybe six weeks ago, eight weeks ago. So, you don't just grab it and say, "Okay, yeah, it was good eight weeks
+ago. Let's launch." No, you got to go through and check them. You know, that's how they got into trouble with killing
+those girls at the school at al-manab uh in in on February 28th. They used some existing plans that had been planned
+before with dated information. They hadn't updated it. They hadn't checked it. So now, you know, I think one of the
+consequences of that for new air tasking orders, they go in and have to verify and double check.
+So, um, it was instructive that Trump didn't waste any time getting on the phone with Netanyahu.
+Now, Netanyahu's was telling the exact opposite that he's not listening to Trump. Trump claiming that BB Netanyahu
+listened to him. So, we'll we'll see. Uh the only we'll know whether or not the if the attacks continue in Beirut and in southern Lebanon
+then uh I think we're going to see Iran strike Israel within the next 24 hours.
+Well, this should have been the key lesson from the war though that Iranians are able to deter by going up the
+escalation ladder with the United States. So this whole idea that the US and Israel can simply say, well, let's
+do a limited ceasefire. we won't strike Beirut if you don't hit Israel. Uh but again, it's open season on the southern parts of Lebanon. The idea that they
+would be able to u well decide how the war should be fought. Uh there's no indications that
+Iran would go along with this. So again, this seems very very predictable. But what do you think is the calculation now
+in Tel Aviv? I mean, are the Israelis their their bombing of Lebanon? Is it uh
+deliberately to prevent Trump from making any extended ceasefire or peace deal with the Iranians or is this just
+um you know well they're just going along with their usual business?
+Yeah. No. Well, I think it's a combination of the two. I don't think it's an eitheror. Um they've uh they're
+convinced that they can beat Hezbollah or they think they can and that's why they want to bomb blow up that destroy
+that suburb. You know, as cats or Bir was saying, flatten it, flatten it, flatten it, you know, do give it the
+Gaza treatment. But you know the thing we're seeing now with the tactics that Hezbollah have employed with the first
+you know the first person point of view uh drones that that are fiber optic. Number one
+they are uh they are immune to electronic warfare countermeasures.
+Number two the drone operators they don't have to expose themselves.
+you know, it's not it's not like in 2006 when they were shooting an RPG, you know, shoulder fired. You had to get out
+and sort of, you know, be visible. If you could see the tank, the tank could see you. Um, and so they lost some
+personnel that way. This this reduces Hezbollah's casualties and they usually get to do it from underground bunkers.
+So um that and then the volume I don't know what percentage
+of uh you know actual casualties you know killed in action by wounded. Uh some of the public sources suggest show
+it's well over a thousand wounded. Um uh the official death toll was like 24. I I think that's I think that's not true.
+That's entirely too low. Um, but an estimated 400 Marava tanks have been
+destroyed. That's a lot of tanks. I mean, Israel's got thousands, you know, I think a couple of thousand, but this
+is still a significant loss of tanks. And if you're hit losing tanks, that means you're losing personnel.
+Now, whether they're being killed or wounded, you know, that's a whole another thing. So, um, Hezbollah is not
+going to stop this until Israel withdraws from southern Lebanon, goes back into northern, uh, Israel now. And
+that brings back Iran's threat, telling them, "Get the hell out of northern Israel because we're going we're going to hit you." That was the message.
+Um you because you don't tell people to vacate that area just because you know you're trying to uh you know create business for a moving company.
+They're they're going to hit it.
+Yeah. Well, I saw that uh the Israeli National Security Minister Ben was um
+making the point that uh they should uh well at any opportunity they should say yes when it's possible to the United States and no when necessary. And the
+his his argument was when it comes to attacking Lebanon, it's time to say no to the Americans that or the American
+president that this is something that Israel will do irrespective of what Trump says. uh which which kind
+of can be seen as another way now of pulling the United States back into the war because uh if they begin now to
+intensify the attacks on Lebanon, Iran will then retaliate, do you think it's any chance that the Americans will sit
+on the sideline or is that or Yeah, I think I I think initially yes.
+Um because America doesn't have any good military options. These are all um Trump
+uh according to uh Robert Barnes and I I think Barnes has good enough contact still despite him being seen as a critic
+now of Trump. He was Trump's lawyer, but he he he said that, you know, Trump was terrified of getting back into a Jimmy
+Carter situation where you got American hostages being held in Iran because, you know, day one, day two, day three, you
+know, the news media starts keeping track of how long they're being held hostage, which becomes a measure of your
+own incompetence. So, um, this is, um, Trump's not eager to get back into that.
+And, uh, you know, when you look at the Iran has become pretty adept at shooting down drones.
+So, if you can shoot down a drone, you can potentially also take down a an F-16 or an F-18 or an F-35
+or an F-22 or an A-10. Those are like the four major categories. five major categories of aircraft that are in theater.
+Well, Trump, you know, he took to social media as well. He was making the point that because of uh you know, his call,
+as you said, to Netanyahu that they're not going to march on Beirut. So, essentially, he took care of business.
+But, uh uh yeah, I mean, where did that come from? Who was talking about marching on Beirut? Yeah, that was I mean, is Israel did it?
+What? Last time they did that was like 1982, I believe. 44 years ago or 34 years ago.
+That'd be 44 years ago. So, yeah, they've done it before. And then they they go up and then they get picked off
+and killed and wounded and then they retreat and go back to Israel. So, but what is the negotiation tactic here though? because it looks like Trump is
+abotaging himself at times because, you know, they're trying to move along the negotiations with the Iranians and then
+uh suddenly Trump decides to as elevate the the demands of the United States when the initial demands weren't
+acceptable anyways to the Iranians. So, um you know, it's it's it's not as if the Israelis are alone in sabotaging
+these talks. He he seems to be doing this quite well on his own. Well, in fact, it the the the eerie parallels
+with the negotiations with the Russians over Ukraine because the Iranian position has been unchanged since the
+outset of the war when they laid out, you know, the 10point then the 14-point plan and it was always sanctioned
+immediate sanction relief, return the frozen assets, recognize we control the straight of horm news uh delay comments
+on the nuclear program. You know, they haven't very they haven't deviated from that. It's the United States that
+keeps, you know, trying to change what what we're going to talk about or what the position is. And Iran keeps, you know, they thought that they actually
+had some agreement on that. So, um and then the United States, Trump backed away again. So that's why that that was
+I think it the frustration with Trump coupled with the actions of Israel in Lebanon that are just you know become
+untenable. They've killed close to 4,000 people now just in the last uh two weeks or last let's see last four weeks. So
+this this cease fire started really went into effect like April 15th
+and uh so it's lasted from April 15th through all you know 45 days
+o you know close to 7 weeks uh a little over seven weeks now or coming on seven
+weeks but uh you know now Iran's been with the United States trying to get
+lip ships through the straight of Hormuz that has led to these new confrontations and then led to Iran
+hitting the base in Kuwait. Now notice it doesn't appear that any of these flights are originating out of Saudi
+Arabia in particular. Qatar uh is um to the as well. Um if they were then it
+Iran would be targeting those bases in those countries. So far, the only country it's targeting is Kuwait.
+So, um, and this has been, uh, I'm told, uh, one of the issues that's been worked
+behind the scenes with the Pakistanis and, uh, the, um, uh, and the Saudis
+and and the Qataris that they're negotiating to get the US out. The US is going to be out of the
+Persian Gulf. If you get this new security architecture, you get sort of a a new ruling uh let's call it NATO light
+ort of NATO for West Asia which will include Turkey, Saudi Arabia, Iran and Pakistan,
+you know, sort of the big four which uh you know could could be and
+then you know Iraq could join in as well but but the goal would be to bring in Iraq. Bring in Kuwait, Bahrain,
+Qatar, as well as United Arab Emirate and Oman. Make them all a joint responsibility for security with no US presence.
+Well, then the NATO analogy might not be ideal because in uh you know in in security arrangement one usually divides
+because NATO is a military block where you know country A and C A sorry A and B seek security against
+country C which was Russia here right but like in this other security arrangements they might well they might be discussing now in the Middle East
+it's not security against the non-member but security with the other members because I don't think anyone would suspect that Iran and Saudi Arabia would
+omehow allay up against the United States so you know that's not going to happen so it is but but no but I I agree I think this is this very significant
+and I think it's in the interest of Iran as well not to make it um well or to reduce the zero or some aspect of this whole thing. Um, so what do you think is
+the significance of Iran walking away from this talks? Because I sometimes think think about the way Trump was negotiating with the tariffs that is
+first he'll come say, "Oh, I'll put 50% tariff on you and then he'll scale it back to 15 and then the counterpart should be walking away being happy even
+though there was nothing there before." Uh, and it seems a little bit like that's what it tried to do with Lebanon as well, saying, "Okay, we're not gonna
+bomb the southern suburbs of Beirut. So now Iran should be happy, but you know, at least, you know, this is what we'll
+give you." And, you know, you should meet us halfway. You should let us bomb the hell out of southern Lebanon at least. Uh, but the Iranians walking
+away. They, you know, this is interesting because they've so far for a variety of reasons probably
+uh kept talks open all the time. They were willing to to talk to the Americans. Why do you think this is just um a a pressure tactic or have they
+given up on the ability to make, you know, have any diplomacy?
+No, I think I I think they've reached sort of a a moment
+of a clear break. uh the you know if the United States is not going to be serious, they're not going to stay tied
+to this. So Pepe Escobar and I we received some information the other day, but we have it and Pepe's in the process
+of confirming it. We'll find out. Uh I'm supposed to hook up with him in about an hour at 5:30.
+U we're going to be on a channel hosted by Zulfikar Ali. It's called powers shift.
+But what we heard was last Friday now and and we we're we're
+confident in the reliability of the information, but uh you'll understand why I'm a little hesitant with some of the final
+details. the foreign minister of Pakistan spoke to Marco Rubio and uh told him in in no uncertain terms
+he said here is this is where Iran is right now if this uh if if if this does not get
+resolved um Iran is going to withdraw from the talks which has now happened
+it's going to withdraw all from the NPT, the non-prololiferation treaty,
+and it's going to set a date for a detonation of a nuclear device. Yeah.
+Now, so when I when I went to, okay, are you saying, and this is what Pepe's busy
+trying to confirm, are you saying that Iran has its own nuclear device now,
+or have they been given it by another country like Pakistan or like North Korea?
+And our source says I asked I asked my source that he's going to get back to me.
+So I know that's that's one thing we're trying to verify, but so far what we were told Friday about they're going to
+withdraw, they've now withdrawn. So that turned out to be true. We'll see if this NPT thing is true.
+And if those two things have being true, then I'm going to say they may not be bullshitting about the other. I don't, you know, like I said, I can't confirm
+that yet. We're trying to get it confirmed, but it shows that the the the the frustration level with Iran is real.
+and they are acting not on their own because they've had the full backing up to this point of China,
+Russia and the the uh the Chinese are working primarily through Pakistan and
+o Pakistan has played a lead role. Now this this has got you know this has created some of the confusion in the west because people say well Pakistan is
+o closely aligned with the United States.
+Yeah, but um it is um
+that has been true and and the history of it goes way back to you know the 50s with CIA. Um
+the uh and then the role that Pakistan played in supporting CIA operations against uh the Soviets when they were in
+Afghanistan in the 1980s. And then the all the Pakistani contractors who made
+millions of dollars off of the United States government who was needing to get supplies trucked in from ports, you
+know, Karachi into Afghanistan to support the 20-year presence of the United States in Afghanistan.
+But that said, there's also been a close relationship between Pakistan and Iran as they fought against the Beluchis.
+So the the Beluchcci population, you know, the Baluchaan movement has been a thorn in the side of both
+Pakistan and Iran. And so they've actually cooperated on that. uh than um Pakistan's relationships with the Saudi
+with the Saudis where they've actually signed in the last you know two or three weeks a a security deal with the Saudis.
+Oh. Um, this is what what's happening is the United States, the ineffectiveness of
+the US military uh attack on Iran, I think has awakened a lot of doubts about
+the reliability of the United States anymore. And then so that's that's having a rippling effect as it affects a
+variety of these different relationships. Um this other this source also told us though or was in writing to
+us that uh the Saudis and Qataris have made
+a decision as as well as Oman to uh get the you know distance themselves from the United States and uh Qatar is
+talking about closing aloud air force base that would be huge if that takes place because that is the largest US
+face uh and has been for good lord 30 years uh in in that region. So this this
+thing's in flux. But the fact that Iran, you know, I said we were told in that document on Friday they were going to
+withdraw from the process. They did that today.
+So I've got to, you know, so that source got that information right. I don't know. I can't tell you about the other two.
+Well, I truly hope they're not going to use a nuclear device. That would be very disruptive and well, it would
+alienate their partners, you know. Also, they've been scoring a lot of points in the in the way in the terms of how people view Iran. Like, I've never seen
+this kind of support for Iran. This was unthinkable. Uh I remember 20 23 years ago during the invasion of Iraq, if anyone would have said that there would
+be this much sympathy for Iran, it would be hard to right uh to to believe. But uh um but again I can understand why the Iranians
+are at least walking away now because you know saying enough is enough on these talks because it's worth remembering that if we go back the the
+US agreed to use the 10-point plan of Iran as a point of departure and then walked it all back and and now slowly
+introducing more and more violence a little bit like in Gaza that is yeah here's a ceasefire but we'll still kill Palestinians every day and now
+essentially it's the same thing this attacks on Lebanon. Uh they continued also hostility against Iran. I mean
+there is no real ceasefire. So what what they're demanding from the Iranians is you know you live by your commitments, we'll walk away.
+It just but how I I think and let me emphasize they weren't talking about using it
+against somebody but it was to demonstrate we got it so leave us alone
+as a way to do it as a deterrent for a future attack. I think that was that was how I understood was the intent again uh
+but we don't know is it their own is it is it been they've been provided you know we know that North Korea for
+example has been providing some missiles as well and I got into the discussion I forget with who but initially I said
+well well you know Iran Iran can't hit the United States I said well if the
+latest missile that North Korea has, if they provided that to Iran from Thrron,
+that missile covers the distance to San Francisco.
+So, they absolutely could hit New York or Washington DC. So yeah, this and I
+mean and we're getting into some, you know, uh it sounds like crazy territory, but uh again, put yourself in well, we
+know how America reacts when we get attacked on 911 and how we you know, we perceive that we've been attacked by this by this
+foreign threat. We man, we go around the world to track down and kill the people responsible ostensibly. Um, so why do we
+why do we think that they won't that Iran won't do the same thing? Sorry, my dog. Hey, quiet down.
+Sorry, Dan. Norris. Uh, but what do you think is likely to happen now? Because again, just you
+know, Ron has said they're going to they walking away from the talks and more or less warned that they are prepared now to retaliate against Israel. So, what
+expect to see now? Because uh I I don't see any way to get back on the
+diplomatic track now. Again, I hope I'm wrong, but uh uh but it's the most likely scenario now that Iran begins to launch missiles towards Israel.
+Yeah.
+The US will then have to decide whether or not it gets pulled back into this and uh then we're back into full allout war.
+Yeah. Yeah. we may that may be very well where we're headed. Um and uh only only
+this time the growing economic pressures on the global economy will become more
+and more important. Let's note that, you know, Trump is uh he's been playing
+games with the um oil insert asserting that oh, you know, we're America, we're energy independent.
+Well, we're not. Yeah. Yes. with light crude.
+Yeah, we we're energy independent with that crude, but that's that's used to make gasoline and maybe aviation fuel,
+but you know that price is going up because there are shortage of there's a 20% shortage around the world. But
+diesel comes from heavy crude and the United States is a net importer of that. It imports it. It doesn't
+produce enough. It has to import it from Mexico, from Canada. Canada's been the number one source. Now, Venezuela used
+to get it from uh the Saudis. Uh it could have got it from the Russians, but we stopped trading with the Russians on that account. And Russia's, you know,
+ending more of it to uh China. So, that's one of the reasons here in the States. I don't know what the situation is for you in Norway, the discrepancy
+between your, if you will, your gasoline, your petrol price, and your diesel price, but here in the United
+States, it's about a $2 difference, buck 50 to $2 difference because the diesel has to be processed in a different way
+and it comes from a different source. So as those that price is going to continue to go up and so this this is where we
+get into the the impact of the global economy if uh because you you've got price of computer chips going through
+the through the roof now why because the helium 44% of it came out of Qatar it's not coming out and that helium is used
+to make computer chips and so without the helium you don't make computer chips so that I think this whole economic
+cloud that's hanging over the world will be another factor in here. I mean, we're we're in unprecedented territory. We
+don't have any historical example to point to. I you know, I don't think any there's never at least in modern history can you point to a period. Yeah, this is
+where we lost uh 25% of uh the liquid natural gas supply and 20% of the oil
+and 35% of the ura and sulfur used to make fertilizer and 44% of the helium
+that and these go to different sectors of the economy. Never have we had that kind of shock that I can that I can
+recall and I'll leave the the history judgments to you. you're you're far more qualified on that. But then how does
+that impact against the backdrop of this war that now Iran is basically uh it
+looks like they're they're prepared now to re-engage is if Israel if for no other reason to stop Israel from attacking uh Hezbollah and stop it from attacking the Lebanese.
+Yeah. Now after all these years of making more efficient economies, decades of good globalization to have it all unraveled in such a rapid pace, it's
+very destabilizing. But uh but often, you know, you hear about Iran in the context of these other energy wars, for
+example, going after Venezuela. I I keep hearing the argument though that the United States as an energy exporter will
+u make a lot of money from this uh energy shortages. Uh it will I guess uh
+restore some of the strength of the petro dollar given that people will have to pay the US and US dollars. uh they
+they um they refer to u the ability to cut off uh China of course from Iran in
+energy. So it will be energy wise will be good for America bad for uh China as its peer competitor. Do you see do you
+ee any credibility to this or is this just oversimplification?
+Yeah, it's a western fantasy. Um because you know, look at what both Russia and China have done in the last week.
+They've continued to increase their purchase of gold, increase their purchase of silver, and
+uh just the two days ago uh China sold off $41 billion worth of US Treasury bonds.
+So a significant number and this comes against time when you're having to the
+Japanese are going to actually have to sell because they're their their debt situation's going so much worse. So the they're going have to raise some cash.
+They sell those bonds. So the the and the purchases of oil are increasingly being made with yuan not with the petro
+dollar but with the yuan. So the ons almost almost becoming the pro yuan and um
+the what supply that Iran is getting out of the Persian Gulf is going it's it's going into the yuan. Russia as well is
+elling they're selling yuan not dollars. So the dollar is starting to come under real pressure and you're not
+looking at a global economic situation that's stable and healthy. uh the you know the Trump people uh you know I
+think I've mentioned it on some other uh broadcasts but Danny Davis did an interview with a with a geologist who's
+an oil expert named Art Burman and he did that last Friday and that is an
+outstanding I mean Burman really knows the stuff and he he's he's not political
+and he's not emotional he's uh just the facts guy, but when he lays these facts
+out, it makes you sit there and go, "Oh, I didn't know that." And uh so it's uh you know, he thinks
+we're in for some real trouble. And it's been uh you know, he was he was commenting on like Kevin Hlett who's a a
+White House adviser on the economy and he made some claim about oh you know the oil is going to be back down. we're going to be back to normal prices in
+four weeks or five weeks. And and Bourbon said he's lying. This is just
+not true. So, um this now this this added factor of instead of, you know,
+we're on the cusp of peace, we're going back to war. That that is what the signal saying unless we get a complete
+reversal in position. But we got the IRGC spokesman saying and he's, you know, no, he wasn't being vague at all.
+He's just telling, "Hey, you people in northern Israel, get out for your own safety." I I I would take that seriously.
+Yeah. Now, it doesn't seem like a bluff when it could be, you know, it would make any sense. Uh but my my last
+question is just about Israel that is why why this enthusiasm to restart the war with Iran though because as I understand it from you know even
+tatements from the IDF they are very overextended and they also know that the United States um irrespective of any
+will to support Israel um they don't actually have the capabilities that is uh right the 40-year war drained the US to a
+large extent if if the US can't achieve chieve its objectives in terms of defeating Iran. The Israelis are already
+overextended. Why why go into this? I mean, there's a lot to lose here at what appears to be quite predictably, you
+know, a losing bet. Okay. So, your problem is you are a rational, logical person. Uh you don't think with emotion.
+I'm not saying you're unemotional, but you know, you know the difference between your brain and your heart.
+Israel doesn't. Um, and I just from my own personal experience with having worked with them, done some training. I
+did some training, you know, 20 years ago for Israeli police.
+Um, there is an arrogant factor where they they just assume that they
+know more than you, that they're smarter than you, and that they know what they're doing. And even though you could
+objectively sit down and show them that they're wrong, they won't listen to that. They and they don't necess they
+don't think it through two or three steps ahead.
+And I mean it's something as simple and let me just illustrate with a semi-automatic pistol. Anybody that's familiar with that knows it has a a
+magazine that holds ammunition. You put that into the magazine well. You grab the back of the slide. You pull it back
+and then release it like a slingshot and it chambers around. The Israeli army
+trains its off trains everybody not to do that. They walk around with an unloaded gun and they wait until they
+ay wait until you've got a threat where you pull it out and then quickly cycle it to chamber around.
+Well, the reason they do that is their training is so lousy that in the past people would still shoot themselves
+because they'd put their finger on the trigger when they weren't supposed to.
+So instead of properly training them, they came up with this as a method. And so even though I can go show them with a stopwatch that doing that adds at least
+ to the time from when you draw to have to engage a target. And plus, if that target is close, you know,
+with an arms length of you, when you're up there trying to cycle your gun, they can grab it. That's just an illustration. But that is what that same
+mentality is what transfers over here that, oh yeah, we can we're going to go in and we're going to kill Hezbollah.
+We'll stop them. And then you go, but yeah, now they're they've for they've they've got more fortifications
+underground after the experience of 2006.
+And now they're using FPV drones with with fiber optic cable.
+You're going to you're going to face a tougher a tougher fight. No, no, no, we're not. They're they're no good. You know, they underestimate the enemy
+always. So, I don't know if that helps explain it, but that's that's been my experience with them. Yeah.
+Well, I see up on my screen here that Iran's IRGC announced it targeted USIsraeli
+uh uh MSE Sarisa ship with a cruise missile. So, yeah, the Here we go. Here we go.
+Here we go. So, um, well, it seems at least more likely than not that, uh, this escalation cannot be stopped now.
+Uh, again, I hope I'm wrong, but, uh, thanks again. I know you have a lot of commitments today, so I'll let you go.
+Thanks again for your time.
+Hey, my friend. I always appreciate the invitation, Glenn. Thank you so much.
+
+-->
