@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>パワーシフト：中東の地殻変動と核の新段階</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0a0c10;
+            color: #e6edf3;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #0f1217;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .sub {
+            color: #8b949e;
+            border-left: 3px solid #2d4a6e;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .toc {
+            background: #11161f;
+            border-radius: 24px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0 2rem 0;
+            border: 1px solid #23272e;
+        }
+        .toc h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: #facc15;
+        }
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+        }
+        .toc li {
+            margin: 0;
+        }
+        .toc a {
+            color: #86efac;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px dotted #2d4a6e;
+            transition: 0.2s;
+        }
+        .toc a:hover {
+            color: #ffffff;
+            border-bottom-color: #facc15;
+        }
+        .section {
+            scroll-margin-top: 1.5rem;
+            margin-top: 2.2rem;
+        }
+        .subtopic {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: rgba(250, 204, 21, 0.1);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            color: #facc15;
+            letter-spacing: -0.2px;
+        }
+        .speaker {
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: -0.2px;
+        }
+        .speaker.zulfikar {
+            color: #86efac;
+            border-left: 4px solid #86efac;
+            padding-left: 12px;
+        }
+        .speaker.larry {
+            color: #facc15;
+            border-left: 4px solid #facc15;
+            padding-left: 12px;
+        }
+        .speaker.pepe {
+            color: #7aa2f7;
+            border-left: 4px solid #7aa2f7;
+            padding-left: 12px;
+        }
+        .speaker.nema {
+            color: #ffb347;
+            border-left: 4px solid #ffb347;
+            padding-left: 12px;
+        }
+        .speaker.mirandi {
+            color: #c084fc;
+            border-left: 4px solid #c084fc;
+            padding-left: 12px;
+        }
+        .key-points {
+            background-color: #1a2330;
+            border-left: 4px solid #DC143C;
+            margin: 0.75rem 0 0.75rem 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            list-style-type: none;
+        }
+        .key-points li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .key-points li::before {
+            content: "•";
+            color: #facc15;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .short-talk {
+            margin: 0.5rem 0;
+        }
+        hr {
+            margin: 1rem 0;
+            border-color: #23272e;
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #5c6a7a;
+            border-top: 1px solid #1f242c;
+            padding-top: 1.5rem;
+        }
+        a {
+            color: inherit;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.2rem;
+            }
+            .subtopic {
+                font-size: 1.1rem;
+            }
+        }    body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }        h1 { color: #ffcc00; font-size: 36px; text-align: center; margin-bottom: 20px; }        h2 { color: #0ff736; font-size: 26px; margin-top: 40px; }        h3 { color: #4caf50; }        h4 { color: #4caf50; }        strong { color: #ffb347; }        small { color: #ffb347; }        b { color: #ffb347; } 
+    a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+/* 話者のkey-pointsは同パターンで同じ色を割り当てる */
+        .key-points { background-color: #1a2330; border-left: 4px solid #DC143C; margin: 0.75rem 0 0.75rem 1rem; padding: 0.5rem 1rem; border-radius: 16px; list-style-type: none; }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>米中ロが激変させる中東秩序：イランの核閾値突破とドル終焉の衝撃</h1>
+    <div class="sub">イラン、パキスタン、中国の新たな連携 ― 核の閾値と地政経済の大変動</div>
+
+<!--
+「米中ロが激変させる中東秩序：イランの核閾値突破とドル終焉の衝撃」
+
+イランが交渉離脱、パキスタン仲介の裏で中国が暗躍。核開発と石油枢軸の崩壊がドル支配を終わらせる。
+
+
+
+【全体概要】
+■ 中東の地殻変動と新たな連合
+イランはレバノンとパレスチナでの戦闘停止、封鎖解除を条件に核協議から離脱。パキスタンは単独行動できず、全て中国の代理として機能している。サウジやカタールは米国の安全保障傘を離れ、中国・ロシア・パキスタンが保証する新たな枠組みに移動。パキスタン軍最高司令官はイラン最高指導部と直接連携し、リージョナルなパワーバランスが完全に書き換えられつつある。
+
+■ 核の新段階とロシアの関与
+イランはロシアから核兵器のノウハウを獲得。北朝鮮も過去10年間にわたり専門知識を供与した。モフタバ・カメニイ元最高指導者の息子は「いざとなれば2週間で核爆弾製造。存亡の危機ならファトワを変更し使用可」と宣言。カメニイ・ドクトリン（核は反イスラム）はもはや放棄され、イランは正式にNPT脱退と核実証実験の可能性に動いている。
+
+■ 港湾統合と経済的大津波
+イランのチャーバハル港とパキスタンのグワーダル港は事実上統合。パキスタン提督がイランの相手と共に艦隊を巡回し、中国にとって中央アジアへの新玄関口となった。同時に世界の石油供給20％、LNG25％、半導体に不可欠なヘリウム44％が遮断。米国は40兆ドル債務を抱え、ペトロダラー体制は崩壊。ドルは3〜5年以内に基軸通貨の座を失う。
+
+
+-->
+
+<br><p>本稿は<b>『Ex-CIA & Escobar EXPOSE Iran has become NUCLEAR POWER』（<a href="https://youtu.be/8y3XB9xUcnc" target="_blank" rel="noopener noreferrer">https://youtu.be/8y3XB9xUcnc</a>）</b>の内容と各種補足報告から再構成した資料です。</p><br>
+<b><a href="Zulfikar Ali Bhutto（ズルフィカル・アリ）の履歴・経歴.html" target="_blank" rel="noopener noreferrer">Zulfikar Ali Bhutto（ズルフィカル・アリ）の履歴・経歴</a></b>
+<br>
+<b><a href="Larry C. Johnson（ラリー・C・ジョンソン）の履歴・経歴.html" target="_blank" rel="noopener noreferrer">Larry C. Johnson（ラリー・C・ジョンソン）の履歴・経歴</a></b>
+<br>
+<b><a href="Pepe Escobar（エミリオ・”ペペ”・エスコバル）の経歴.html" target="_blank" rel="noopener noreferrer">Pepe Escobar（エミリオ・”ペペ”・エスコバル）の経歴</a></b>
+<br>
+<br>
+
+
+    <!-- 目次 -->
+    <div class="toc">
+        <h3>📑 目次</h3>
+        <ul>
+            <li><a href="#sec-opening">🔹 1. 番組開始の宣言</a></li>
+            <li><a href="#sec-withdrawal">🔹 2. 交渉離脱とイランの三条件</a></li>
+            <li><a href="#sec-pak-china">🔹 3. パキスタン＝中国の後方連携</a></li>
+            <li><a href="#sec-russia-knowhow">🔹 4. 核技術の供与元はロシア</a></li>
+            <li><a href="#sec-fatwa">🔹 5. モフタバ・カメニイの核発言</a></li>
+            <li><a href="#sec-ports">🔹 6. チャーバハルとグワーダルの統合</a></li>
+            <li><a href="#sec-security">🔹 7. 新しい安全保障傘とサウジ・カタール</a></li>
+            <li><a href="#sec-economic">🔹 8. 経済的津波とドルの終焉</a></li>
+            <li><a href="#sec-closing">🔹 9. 番組の展望と謝辞</a></li>
+        </ul>
+    </div>
+
+    <!-- ========= セクション 1 ========= -->
+    <div class="section" id="sec-opening">
+        <div class="subtopic">🔹 1. 番組開始の宣言</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>40年以上、私はグローバル金融の機構の中で働いてきました。その経験が教えてくれたのは、権力は演説やサミットだけでは動かないということです。権力は通貨、決済システム、エネルギー回廊、金融制裁、資本の流れ、諜報網を通じて動きます。</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>ホルムズ海峡の危機は単なる「地域的な火種」ではありません。それは破局です。イランはレッドラインを引き、パキスタンはテヘランとワシントンの最重要バックチャンネルになりました。</div>
+        <div class="key-points">
+            <li>現在の状況は「地域紛争」ではなく完全な「破局(rupture)」である。</li>
+            <li>パキスタンがイランと米国の間の重要なバックチャンネルになっている。</li>
+            <li>中国はもはや傍観者ではなく、米国はユーラシアから徐々に排除されている。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 2 ========= -->
+    <div class="section" id="sec-withdrawal">
+        <div class="subtopic">🔹 2. 交渉離脱とイランの三条件</div>
+        <div class="speaker larry">ラリー：</div>
+        <div>私の理解では、イランは三つのことを言いました。レバノンでの戦闘を止めること、パレスチナでの戦闘を止めること、そして封鎖を解除すること。それが済むまで核問題は話し合わないと。</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>イランは驚くほど忍耐強かった。パキスタン側の仲介は長すぎた。手順は明確でした。第一に戦争を全て止める。第二にホルムズ海峡を議論する。第三段階で核問題を議論する。この順番は何週間も変わっていません。</div>
+        <div class="key-points">
+            <li>イランの交渉離脱は本日の事実であり、三つの要求が満たされるまで核協議は無い。</li>
+            <li>バンダル・アッバス付近の事件、米軍によるカシュム島爆撃、イランからのクウェート空軍基地への応酬は「忍耐の限界」を示している。</li>
+            <li>モフセン・レザイー（最高指導者のトップ軍事アドバイザー）は「我々の忍耐には限界がある」と明言した。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 3 ========= -->
+    <div class="section" id="sec-pak-china">
+        <div class="subtopic">🔹 3. パキスタン＝中国の後方連携</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>パキスタンが行うことは全て中国の代理です。パキスタンは単独では行動できません。彼らにはその余裕がありません。</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>中国は背景にいるスペシャリストです。表に出ずに広範囲に調整することの専門家です。</div>
+        <div class="key-points">
+            <li>パキスタンの行動は全て「中国の代理」であり、パキスタンは自力で行動できる余裕を持たない。</li>
+            <li>中国はバックグラウンドで調整を極めて巧みに行い、決して直接的に姿を現さない。</li>
+            <li>イランの最高指導部はパキスタン軍最高司令官アシム（元帥）から直接助言を受けている。</li>
+            <li>アシムはIRGCのトップ及び政治的指導部へ直接リンクしている。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 4 ========= -->
+    <div class="section" id="sec-russia-knowhow">
+        <div class="subtopic">🔹 4. 核技術の供与元はロシア</div>
+        <div class="speaker larry">ラリー：</div>
+        <div>イランは自分で原爆を建造したのか、それともパキスタン、北朝鮮、中国からの贈り物なのか？</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>私はその質問を我々のコンタクトにぶつけました。その答えは「ロシアからノウハウを得た」というものです。中国やパキスタンではなく、ロシアです。</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>北朝鮮も忘れてはいけません。2010年代を通じて、北朝鮮の代表団が平壌からテヘランへほぼ絶え間なく往復していました。</div>
+        <div class="key-points">
+            <li>イランはロシアから核兵器のノウハウを獲得した。ロシアが製造したのではない。</li>
+            <li>同時に過去10年間、北朝鮮の代表団がイランを訪問し、専門知識を共有していた。</li>
+            <li>イランがNPT（核拡散防止条約）から脱退し、核爆発のデモ（実証）を行う可能性がある。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 5 ========= -->
+    <div class="section" id="sec-fatwa">
+        <div class="subtopic">🔹 5. モフタバ・カメニイの核発言</div>
+        <div class="speaker larry">ラリー：</div>
+        <div>モフタバ・カメニイ元最高指導者の息子が言った。「いざとなったら核爆弾を作れ。2週間あればできる。攻撃され存亡の危機になればファトワは変わる。使用してもよい」</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>これは極めて重要です。カメニイ・ドクトリンは「核爆弾は反イスラム的」というものですが、今やそれは完全に終わりました。イランは今、存亡の戦争にあります。</div>
+        <div class="key-points">
+            <li>モフタバ・カメニイは「押し問答になれば核爆弾を製造せよ。2週間で可能」と発言。</li>
+            <li>存亡の危機に瀕した場合、核使用を許可するファトワが出されると明言。</li>
+            <li>モフタバは長年にわたりIRGC指導部と非常に緊密な関係を築いてきた。</li>
+            <li>シーア派神学上も「主権的抵抗」として、今や存在の脅威に対し核は有効なレバレッジとなる。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 6 ========= -->
+    <div class="section" id="sec-ports">
+        <div class="subtopic">🔹 6. チャーバハルとグワーダルの統合</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>チャーバハル（イラン）とグワーダル（パキスタン）は姉妹港になりました。3ヶ月前には想像もできなかったことです。イランはグワーダルを自国港のように使っています。パキスタンは「港を統合しよう。共通の利益だ」と判断しました。</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>私は個人的に知る提督から直接確認しています。過去6週間、パキスタンの最新鋭の軍艦がチャーバハルとグワーダルをイランの相手と共に巡回しています。それは一隻ではなく、一群の艦隊です。</div>
+        <div class="key-points">
+            <li>イラン南東部チャーバハル港とパキスタン南部グワーダル港は事実上統合され、姉妹港として機能。</li>
+            <li>イラン港が封鎖されているため、パキスタンはグワーダルをイラン港のように開放。</li>
+            <li>中国にとってはアフガニスタンと中央アジアへの玄関口となり、地経学的に「マーベラス・ニューヨーク・チーズケーキ」のような状況。</li>
+            <li>パキスタンの提督（フル・アドミラル）がイランのカウンターパートと共に両港を継続的に巡回している。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 7 ========= -->
+    <div class="section" id="sec-security">
+        <div class="subtopic">🔹 7. 新しい安全保障傘とサウジ・カタール</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>カタールとサウジアラビアは米国の安全保障傘から離脱しつつあります。彼らは中国、ロシア、パキスタンが保証する安全保障傘へと移動しています。私は本人の口から直接聞きました。100％保証します。</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>パキスタンはサウジとイランの仲介で大きな役割を果たしてきました。今後6〜9か月で、パキスタン・イラン・サウジ・カタール・アゼルバイジャン・トルコ、そしてエジプトの間で大きな進展があるでしょう。</div>
+        <div class="key-points">
+            <li>サウジとカタールは米国の安全保障傘を離脱。中露パキスタンによる新たな傘に移動。</li>
+            <li>パキスタンはサウジアラビアとイランの接近において主導的役割。</li>
+            <li>イスラマバードでの初の米伊間接会談には、パキスタン・トルコ・サウジ・エジプトが参加。</li>
+            <li>翌日、パキスタン外相は中国の王毅外相と直接会談し、全ての動きは中国が駆動している。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 8 ========= -->
+    <div class="section" id="sec-economic">
+        <div class="subtopic">🔹 8. 経済的津波とドルの終焉</div>
+        <div class="speaker larry">ラリー：</div>
+        <div>世界の石油供給の20％、LNGの25％、尿素硫黄の35％、ヘリウムの44％が遮断されています。ヘリウムはAIデータセンターの半導体製造に不可欠です。これから来る経済的な津波をほとんどの国はまだ実感していません。</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>私はキッシンジャーとビル・サイモンが石油をペトロダラーに変換する取り組みの一部でした。今やそれは終わりました。米国は40兆ドルの債務を抱え、ペトロダラーはもはやそれを支えられません。ドルは準備通貨でなくなります。</div>
+        <div class="key-points">
+            <li>世界は歴史上類を見ない経済変動の中にあり、石油・LNG・硫黄・ヘリウムの供給途絶は半導体・農業・冶金に直撃。</li>
+            <li>米国の債務は40兆ドル。ペトロダラー体制は崩壊しつつある。</li>
+            <li>ドルは間もなく基軸通貨ではなくなる（3〜5年のスパン）。</li>
+            <li>トランプは戦略的思考者ではなく、彼の決断は結果を考えない即効性に基づいている。</li>
+        </div>
+    </div>
+
+    <!-- ========= セクション 9 ========= -->
+    <div class="section" id="sec-closing">
+        <div class="subtopic">🔹 9. 番組の展望と謝辞</div>
+        <div class="speaker larry">ラリー：</div>
+        <div>これは『パワーシフト』の初航海です。ズルフィカル・アリのビジョンであり、私たちはパートナーとして迎えられました。毎週、私たちが分析とインテリジェンス情報をお届けします。</div>
+        <div class="speaker zulfikar">ズルフィカル・アリ：</div>
+        <div>この情報を信頼してくれてありがとう。この男性は地域からの直接検証済みの情報にアクセスできます。彼はテーブルに座っている当事者です。彼の唯一の目的は事実を正すことです。</div>
+        <div class="speaker pepe">ペペ：</div>
+        <div>ありがとうございました。この番組は10ヶ国語に翻訳されます。</div>
+        <div class="speaker larry">ラリー：</div>
+        <div>感謝します。ペペ、少し休んでください。</div>
+        <div class="short-talk">（※挨拶・別れの言葉は原文通り保持）</div>
+        <div class="key-points">
+            <li>この番組はズルフィカル・アリのビジョンに基づき、ラリー・ジョンソンとペペ・エスコバルが週次で分析を提供。</li>
+            <li>元CIA及び国家安全保障の内部経験、そして北京・モスクワ・西アジアへの深いアクセスを持つ専門家が参加。</li>
+            <li>情報源は「テーブルに着いている人物」であり、直接かつ検証済みの地域情報を提供。金銭的な対価は一切受け取っていない。</li>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
