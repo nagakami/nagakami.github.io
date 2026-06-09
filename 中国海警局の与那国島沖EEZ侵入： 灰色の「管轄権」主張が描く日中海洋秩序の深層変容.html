@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>灰色の管轄権：与那国島沖EEZ侵入と日中海洋秩序の深層変容</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0c12;
+            font-family: 'Segoe UI', 'Noto Sans CJK JP', 'Noto Sans JP', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            color: #e6edf3;
+            padding: 2rem 1rem;
+        }
+
+        /* ダークモードメインコンテナ */
+        .analysis-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #11151f;
+            border-radius: 32px;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(66, 153, 225, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(0px);
+        }
+
+        /* ヘッダー装飾 */
+        .header-glow {
+            background: linear-gradient(145deg, #0f172a 0%, #080c18 100%);
+            padding: 2rem 2rem 1.8rem 2rem;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            letter-spacing: -0.01em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffcc00 20%, #ffdd55 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #0ff736;
+            border-left: 4px solid #0ff736;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* リード（導入）ボックス */
+        .lead-box {
+            background: rgba(15, 25, 45, 0.8);
+            margin: 1.8rem 2rem;
+            padding: 1.4rem 1.8rem;
+            border-radius: 28px;
+            border-left: 6px solid #ffcc00;
+            backdrop-filter: blur(2px);
+            font-weight: 400;
+            color: #cfdeff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* セクション共通 */
+        section {
+            padding: 0 2rem 1.5rem 2rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #2d3748;
+            display: inline-block;
+            letter-spacing: -0.3px;
+            background: linear-gradient(120deg, #f0f3fa, #b9c8ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #ffdd88;
+        }
+
+        .highlight {
+            color: #ffcc66;
+            font-weight: 500;
+        }
+
+        .metric-badge {
+            background: #1e2a3e;
+            border-radius: 24px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #ffcc88;
+            display: inline-block;
+        }
+
+        /* メカニズムグリッド */
+        .mechanism-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .mechanism-card {
+            background: #0f1622;
+            border-radius: 28px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #293544;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 12px -8px black;
+        }
+
+        .mechanism-card strong {
+            color: #ffcc66;
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* プレイヤー分析カード群 */
+        .players-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .player-card {
+            flex: 1;
+            min-width: 260px;
+            background: #0d1221;
+            border-radius: 32px;
+            padding: 1.5rem;
+            border-top: 4px solid;
+            transition: transform 0.1s ease;
+        }
+
+        .player-card.china {
+            border-top-color: #e53e3e;
+        }
+        .player-card.japan {
+            border-top-color: #3182ce;
+        }
+        .player-card.alliance {
+            border-top-color: #90cdf4;
+        }
+
+        .player-card h4 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .face, .real, .fear {
+            margin-top: 0.75rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #4a5568;
+        }
+
+        /* シナリオボックス */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .scenario-card {
+            background: #0b1120;
+            border-radius: 28px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #283344;
+        }
+        .scenario-card .probability {
+            font-size: 0.9rem;
+            background: #1f2a3e;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* 比喩 蜘蛛の巣引用 */
+        .metaphor {
+            background: #0a101e;
+            border-radius: 24px;
+            padding: 1rem 1.6rem;
+            margin: 1rem 0;
+            font-style: italic;
+            border-left: 4px solid #ffcc00;
+            color: #cbd5ff;
+        }
+
+        /* 時間差効果 */
+        .time-lag {
+            background: rgba(255,200,50,0.08);
+            border-radius: 24px;
+            padding: 1rem 1.6rem;
+            margin: 1rem 0;
+        }
+
+        footer {
+            margin-top: 2rem;
+            background: #070b12;
+            padding: 1.2rem 2rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #6c86a3;
+            border-top: 1px solid #1e2a3a;
+        }
+
+        a {
+            color: #ffcc66;
+            text-decoration: none;
+        }
+
+        @media (max-width: 720px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            section {
+                padding: 0 1.2rem 1rem 1.2rem;
+            }
+            .lead-box {
+                margin: 1rem;
+            }
+        }
+
+        hr {
+            border-color: #253341;
+            margin: 1rem 0;
+        }
+
+        .small-note {
+            font-size: 0.85rem;
+            color: #98a9c7;
+        }
+        .flow-text {
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+<div class="analysis-container">
+    <div class="header-glow">
+        <h1>中国海警局の与那国島沖EEZ侵入<br>— 灰色の「管轄権」主張が描く日中海洋秩序の深層変容</h1>
+        <!-- 
+与那国島沖で中国が「管轄権」主張！ 日本のEEZを揺るがす“灰色の戦略”の正体とは？
+
+2026年6月、中国海警が与那国島沖の日本のEEZで「管轄権」を主張。単なる航行では済まされない深層を解剖する。
+
+
+
+【全体概要】
+はじめに：事件の核心
+2026年6月、中国海警局の船2隻が沖縄・与那国島沖の日本の排他的経済水域（EEZ）内で航行し、「中国の管轄区域だ」と主張。これは尖閣諸島を超え、南西諸島全域へ挑戦圏を拡大する象徴的行為である。
+
+背景と戦略の構造
+中国の主張の根拠は2021年施行の海警法にあり、「管轄海域」を曖昧に定義し国内法で国際法を上書きする手法だ。東シナ海に「蜘蛛の巣」のように網を張り、台湾有事を見据えた灰色ゾーン戦略の一環と見なせる。2012年の尖閣国有化以降、中国公船の活動は常態化し、2025年には過去最多の357日を記録。与那国沖への拡大はその延長線上にある。
+
+メカニズムとプレイヤー
+中国は海警を「第二海軍」化し、予算と情報戦で日常的管轄を演出。日本は海上保安庁中心の警察対応にとどまり、非軍事領域での劣勢が顕著だ。中国にとって台湾包囲網と第一列島線突破が核心的利益であり、日本は南西諸島防衛線崩壊の恐怖に直面する。米・比・台湾との連携深化が今後の分岐点となる。
+
+シナリオと結論
+現実的なのは消耗戦（確率60%）、悲観的には衝突エスカレーション（25%）。与那国島住民の不安増大や防衛費膨張など日本への影響は深刻。この「灰色の海」でどちらの常識が勝つかが、インド太平洋の未来秩序を決する。
+
+
+-->
+
+        <div class="subhead">日本最西端の孤島が、静かなる前線となる — 表層の「航行」ではなく、構造的な力学を解剖する</div>
+    </div>
+
+    <div class="lead-box">
+        <strong>📌 導入（リード）</strong><br>
+        2026年6月、中国海警局の船2隻が沖縄県与那国島沖の日本の排他的経済水域（EEZ）内で堂々と航行し、海上保安庁の呼びかけに対して「これは中国の管轄区域だ」と明確に主張しました。<br><br>
+        これは単なる一過性の「航行」ではありません。与那国島は台湾からわずか110km、日本本土から遥かに離れた最西端の島です。ここで中国が「管轄権」を声高に主張した瞬間、日本が実効支配する海洋空間に対する中国の挑戦が、尖閣諸島周辺を超えて南西諸島全域へと拡大したことを象徴します。<br><br>
+        表面的には「いつもの中国の海洋活動」と思われがちですが、実際には台湾有事シナリオ下での日本西南シフトと連動した、長期的な灰色ゾーン戦略の進化形です。なぜ今、このタイミングで、そしてこの海域で？ そこにこそ本質があります。
+    </div>
+
+    <section>
+        <h2>背景と構造の可視化</h2>
+        <p>与那国島沖のEEZは、国連海洋法条約（UNCLOS）上、日本が資源管理権を持つ海域です。中国はこれを認めず、「中国の管轄海域」として扱う姿勢を鮮明にしています。この主張の根底には、<span class="highlight">中国海警法（2021年施行）</span>の影響が色濃くあります。同法は海警の活動範囲を「中華人民共和国の管轄海域」と曖昧に定義し、国内法を盾に国際法の枠を超えた執行を可能にします。</p>
+        
+        <div class="metaphor">
+            🕸️ <strong>比喩で言えば</strong>、これは中国が東シナ海に張る「蜘蛛の巣」の一部です。尖閣を核に、南西諸島沿いに網を広げ、台湾東部海域や日比EEZ境界画定交渉（2026年5月合意）への対抗も含みます。日本・フィリピンの動きに対し、中国は即座に台湾東部で海警単独パトロールを実施。
+        </div>
+
+        <p><strong>歴史的経緯を振り返れば</strong>、2012年の尖閣諸島国有化以降、中国公船の接続水域航行は常態化。2025年には357日確認という過去最多を記録し、2026年も高水準が続いています。尖閣での「領海」侵入や漁船接近も繰り返され、与那国島沖への拡大は自然な延長線上です。</p>
+        
+        <p><span class="metric-badge">制度的欠陥</span> として、日本は海上保安庁中心の「警察力」対応に留まっていますが、中国は海警を「第二海軍」化し、武器使用権限を強化。非軍事・準軍事の灰色ゾーンで優位を築いています。</p>
+    </section>
+
+    <section>
+        <h2>メカニズムの解剖</h2>
+        <div class="mechanism-grid">
+            <div class="mechanism-card"><strong>💰 お金の流れ</strong><br>中国海警の巨大艦隊維持は国家予算で支えられ、海洋権益拡大が経済安全保障（資源、漁業、ルート）と直結します。</div>
+            <div class="mechanism-card"><strong>📡 情報の流れ</strong><br>AISデータや公船活動の公開を通じ、中国は「日常的管轄」を演出。日本側は監視強化（電子戦部隊配備など）で対抗するが、情報戦では中国の主張が国際的に拡散されやすい。</div>
+            <div class="mechanism-card"><strong>⚡ 権力の流れ</strong><br>習近平体制下、海警は党・国家の海洋強国戦略の実行部隊。与那国沖主張は、台湾有事時の「内海化」準備と見なせる。与那国島～台湾間の海峡を中国の影響下に置くことで、日本支援を物理的に困難に。</div>
+            <div class="mechanism-card"><strong>🧠 恐怖と欲望の流れ</strong><br>中国にとって、台湾統一と第一列島線突破は核心的利益。日本にとっては南西諸島防衛線崩壊の恐怖。双方の「合理的行動」として、互いの行動がエスカレーションを助長する悪循環。</div>
+        </div>
+        <div class="time-lag">
+            ⏳ <strong>時間差効果</strong> — 今日の「航行」は即時衝突を生まないが、繰り返せば既成事実化し、国際法の解釈を変える副作用を蓄積します。
+        </div>
+    </section>
+
+    <section>
+        <h2>プレイヤー分析（多面的利害）</h2>
+        <div class="players-wrapper">
+            <div class="player-card china">
+                <h4>🇨🇳 中国（海警局・中央政府）</h4>
+                <div class="face"><span class="highlight">表の顔</span> : 法執行と主権防衛。</div>
+                <div class="real"><span class="highlight">本音</span> : 台湾包囲網構築と日本牽制。海警法で国内法優位を主張。</div>
+                <div class="fear"><span class="highlight">最も恐れること</span> : 台湾独立加速や、日本・フィリピン・豪などによる包囲網強化。内部では軍 vs 海警の役割調整の亀裂も潜在。</div>
+                <div class="small-note">制約：米日同盟の本格介入リスク、経済相互依存。</div>
+            </div>
+            <div class="player-card japan">
+                <h4>🇯🇵 日本（政府・海上保安庁・自衛隊）</h4>
+                <div class="face"><span class="highlight">表の顔</span> : 冷静・毅然とした法に基づく対応。</div>
+                <div class="real"><span class="highlight">本音</span> : 南西諸島防衛力強化（与那国駐屯地拡大、ミサイル配備計画）。</div>
+                <div class="fear"><span class="highlight">最も恐れること</span> : 灰色ゾーンでの「負け」による抑止力低下と、台湾有事時の孤立。内部では防衛省 vs 外務省の温度差も。</div>
+                <div class="small-note">制約：憲法・専守防衛の制約、予算・人的資源の限界。</div>
+            </div>
+            <div class="player-card alliance">
+                <h4>🇹🇼🇺🇸🇵🇭 台湾・米国・フィリピン</h4>
+                <div>日本との連携深化が鍵だが、中国は「介入阻止」の楔を打ち込もうとしている。与那国沖はまさにそのテストケース。</div>
+                <div class="small-note" style="margin-top:8px;">日米比台の連携強化は今後の分岐点。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>シナリオ分岐と今後の展開</h2>
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <div class="probability">📊 現実的膠着シナリオ (確率60%)</div>
+                <p>中国は定期的にEEZ内活動を続け、日本は監視・抗議を強化。偶発衝突を避けつつ、心理的・法的主張の消耗戦。分岐点は日米共同訓練の拡大や、中国の台湾周辺軍事演習の激化。</p>
+            </div>
+            <div class="scenario-card">
+                <div class="probability">⚠️ 悲観的エスカレーションシナリオ (確率25%)</div>
+                <p>日本・フィリピンEEZ交渉進展や台湾情勢緊迫で、中国が与那国沖・尖閣での「法執行」（検査・立ち入り）を試み、衝突発生。台湾有事の前哨戦化。分岐点は2026-2027年の日米防衛ガイドライン更新。</p>
+            </div>
+            <div class="scenario-card">
+                <div class="probability">🕊️ 楽観的緩和シナリオ (確率15%)</div>
+                <p>米中・日中首脳会談で海洋ルール合意が進み、活動が抑制。ただし、構造的対立が残る限り一時的。</p>
+            </div>
+        </div>
+        <p>日本への影響は深刻です。与那国島住民の不安増大、漁業・観光への悪影響、南西諸島全体の防衛費増大、そして「台湾有事＝日本有事」の現実化です。経済面ではサプライチェーン見直し圧力も強まります。</p>
+    </section>
+
+    <section>
+        <h2>結び／総括</h2>
+        <p>与那国島沖の出来事は、中国がUNCLOSの解釈を自国優位にねじ曲げ、「管轄海域」という曖昧概念で事実上の支配圏を広げようとする戦略の表れです。日本は短期的に「警察対応」で耐えつつ、長期的に同盟強化・抑止力向上・ルール形成で対抗せざるを得ません。</p>
+        <div class="time-lag" style="background:#111927;">
+            🔍 <strong>私たちが注視すべきは</strong>、次の一隻の行動ではなく、中国海警の活動パターンの変化、日米比台の連携深化、そして与那国をはじめとする南西諸島の「人間の防衛力」（住民含む）です。この灰色の海で、どちらの「常識」が勝つのか——それは、単なる領海問題を超え、インド太平洋の未来秩序を決する問いです。
+        </div>
+        <hr>
+        <p class="small-note">（本分析は公開情報・歴史的文脈・構造的力学に基づく総合判断です。2026年6月時点の最新動向を反映。）</p>
+    </section>
+
+</div>
+</body>
+</html>
