@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【分析】ダグラス・マクレガー大佐<br>「トランプは『免罪符』を求めている——米国はイランに敗北したから」　第１部（全4部）</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #c9d1d9;
+            --accent-yellow: #f0c040;
+            --accent-green: #3fb950;
+            --accent-orange: #d2991d;
+            --accent-blue: #58a6ff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.4);
+            --radius: 12px;
+            --font-body: 'Segoe UI', 'Inter', 'Yu Gothic', 'Hiragino Sans', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Segoe UI', 'Inter', 'Yu Gothic', 'Hiragino Sans', system-ui, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.85;
+            padding: 2rem 1.5rem;
+            max-width: 820px;
+            margin: 0 auto;
+            letter-spacing: 0.02em;
+            word-break: break-word;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .report-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .report-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 600;
+            color: #f0c040;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.4rem;
+        }
+        .report-header .meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .report-header .meta span {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .btn-row {
+            text-align: center;
+            margin: 1.5rem 0 2rem;
+        }
+        .btn-print {
+            display: inline-block;
+            background: #238636;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.6rem 1.8rem;
+            border: 1px solid #2ea043;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+            text-decoration: none;
+        }
+        .btn-print:hover {
+            background: #2ea043;
+            border-color: #3fb950;
+        }
+
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 2.8rem;
+            box-shadow: var(--shadow);
+        }
+        .toc h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .toc a {
+            display: block;
+            padding: 0.35rem 0;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px dotted transparent;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .toc a:hover {
+            color: #a5d6ff;
+            border-bottom: 1px dotted var(--border);
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: #3fb950;
+            margin: 3rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 5px solid #3fb950;
+        }
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c9d1d9;
+            margin: 2rem 0 0.8rem 0;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+        }
+
+        .speaker-host {
+            color: #f0c040;
+            font-weight: 700;
+        }
+        .speaker-macgregor {
+            color: #3fb950;
+            font-weight: 700;
+        }
+        .speaker-trump {
+            color: #ffb347;
+            font-weight: 700;
+        }
+        .speaker-netanyahu {
+            color: #58a6ff;
+            font-weight: 700;
+        }
+        .speaker-iran {
+            color: #4caf50;
+            font-weight: 700;
+        }
+        .speaker-keane {
+            color: #c9d1d9;
+            font-weight: 700;
+        }
+
+        .quote {
+            border-left: 4px solid #d2991d;
+            background: #1c2128;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            color: #e6edf3;
+            font-style: italic;
+            box-shadow: var(--shadow);
+        }
+
+        .highlight {
+            background: #14281b;
+            border-left: 5px solid #3fb950;
+            padding: 1.3rem 1.6rem;
+            border-radius: 0 10px 10px 0;
+            margin: 2rem 0;
+            color: #e6edf3;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+        }
+
+        .analysis-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            padding-left: 0.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem 0 1.5rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8b949e;
+            margin-top: 2rem;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 0;
+                max-width: 100%;
+            }
+            .btn-row { display: none; }
+            .toc a { color: #0366d6; }
+            .quote, .highlight, .analysis-block {
+                background: #f6f8fa;
+                border-left-color: #333;
+                color: #111;
+                box-shadow: none;
+            }
+            h2 { color: #111; border-left-color: #333; }
+            .speaker-host, .speaker-macgregor, .speaker-trump, .speaker-netanyahu, .speaker-iran, .speaker-keane { color: #111; }
+        }
+            a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }        a:hover { color: #a8d1ff; text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+    <div class="report-header">
+        <h1>【分析】ダグラス・マクレガー大佐<br>「トランプは『免罪符』を求めている——米国はイランに敗北したから」　第１部（全4部）</h1>
+
+<!--
+トランプがイランに完敗！「免罪符」求めてネタニヤフを裏切る衝撃取引の全貌
+
+トランプが自ら読み上げるというイラン密約がリークされ、中東が大揺れ！　マクレガー大佐が暴露する「米国敗北」の衝撃真相とは…
+
+
+
+【全体概要】
+トランプ政権はイランとの了解覚書で「全戦線即時恒久停戦」を提案し、特にレバノンを含む ceasefire を求めている。これに対しネタニヤフは自国利益を優先し、ヒズボラとの戦いを存亡の戦いと位置づけ停戦に難色を示した。
+
+マクレガー大佐は、米国がイランとの対立で実質敗北したと分析。トランプは「免罪符」を求め、早期に中東から手を引きたい意向だと指摘する。一方、イランはシオニストのレバノン攻撃を一切容認せず、ヒズボラを守る強い姿勢を崩していない。
+
+核心はガザ問題にある。イスラエルは占領地を「ガザ化」する方針を続け、パレスチナ国家実現は不可能となった。大イスラエル計画とヒズボラ壊滅への執着が和平を阻む最大の障壁だ。
+
+さらに大佐は、サイクス・ピコ体制の崩壊を指摘。中東の人工国家群が終焉を迎え、イラン・トルコのような文明的国家が台頭する時代だと分析。トランプがイスラエル・ロビーの影響から脱し、米国の利益を優先できるかが今後の鍵となる。
+
+-->
+
+<p>本稿は<b>『Col Douglas Macgregor: Trump Seeks 'Get out of Jail ' Card Since US Lost in Iran』（<a href="https://youtu.be/y8zhwctLKfI" target="_blank" rel="noopener noreferrer">https://youtu.be/y8zhwctLKfI</a>）</b>の内容を参考にして各項目を分析し、再構成した報告です。</p><br>
+
+
+        <p class="meta"><span>話者：</span> 司会（ダン）＆ ダグラス・マクレガー大佐（国防・外交政策アナリスト） </p>
+    </div>
+
+
+    <!-- 目次 -->
+    <div class="toc">
+        <h3>📑 目次</h3>
+        <a href="#intro">はじめに：トランプ自ら読み上げるという取引条件</a>
+        <a href="#obama-criticism">トランプのオバマ批判とJCPOA</a>
+        <a href="#deal-announcement">40回目の終戦合意発表</a>
+        <a href="#lebanon-ceasefire">第1項目：レバノンを含む全戦線での即時かつ恒久的な戦争終結</a>
+        <a href="#netanyahu-response">ネタニヤフの応答：我々には我々自身の利益がある</a>
+        <a href="#get-out-of-jail">敗戦後のトランプの「免罪符」</a>
+        <a href="#hezbollah-existential">ネタニヤフにとってヒズボラとの戦いは存亡をかけたもの</a>
+        <a href="#iran-celebrity">イスラム世界の著名なリーダーとして台頭するイラン</a>
+        <a href="#greater-israel">大イスラエル計画と後戻りできない地点</a>
+        <a href="#iran-lebanon-stance">レバノン問題に関するイランの立場：シオニストの攻撃は一切容認しない</a>
+        <a href="#trump-hezbollah">トランプのヒズボラ観：イスラエルは戦いが長すぎる</a>
+        <a href="#gaza-core">核心的問題：ガザと「ガザ化」</a>
+        <a href="#palestinian-state">パレスチナ国家の不可能性</a>
+        <a href="#sykes-picot">サイクス・ピコ体制の終焉：人工的構築物と文明的国家</a>
+    </div>
+
+    <!-- はじめに -->
+    <h2 id="intro">はじめに：トランプ自ら読み上げるという取引条件</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> トランプ大統領は、必要とあらば演壇に立ち、自ら文書を読み上げてでも、イランとの了解覚書の取引条件を公開すると述べています。そして信じてください、その内容を本当に知りたがっている人々は大勢います。なぜなら、本日リークされた内容は、多くの人々、特にイスラエルや、アメリカ国内のイスラエル強力支持者たちを大いに動揺させているからです。今日はそのすべてを掘り下げ、実際に何が起きているのか、そもそも金曜日に取引が署名されるのかどうかを見極めようと思います。それらすべてを、我々の良き友人であるダグラス・マクレガー大佐と議論します。大佐は国防・外交政策アナリストであり、元国防長官顧問で、高位の勲章を受けた戦闘退役軍人でもあります。ダグ、いつもながら番組へようこそ。プエルトリコのビーチの美女たちから離れて、我々に加わっていただけて嬉しいです。</p>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> いやあ、こういう話はビーチから離れるのに十分な強さですよ。まったく、実に多くのことが動いていますからね。もっとも難しかったのは——私はあなたがラリー・ジョンソンのようなパーティー服で登場するのを期待していたんですよ。実は私もそうしようかと考えました。ラリーのシャツとほぼ同じものを持っているので、番組が終わる前にそれを披露するかもしれません。誰にもわかりませんよ。でも、面白い話が一つあって——後で実際にそれに着替えるつもりなんです。しかし、楽しい話に入る前に、まずは暗く陰鬱な部分を見ておきましょう。</p>
+
+    <h2 id="obama-criticism">トランプのオバマ批判とJCPOA</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> お見せしたいのは——トランプ大統領は今日G7に出席していますが、この後、放送が終わる前にその話もするつもりです。ただ、まずは彼がこの了解覚書に関して人々が抱いてきた多くの質問に答えた内容をお伝えします。というのも、これまでに公開された唯一のものは、イラン側が相互合意されたと述べて公開した内容だけだったからです。トランプの発言は次の通りです。</p>
+    <p><span class="speaker-trump">トランプ大統領：</span> 私はそれを公開するだけでなく、おそらく記者会見を開いて、一言一句読み上げるつもりです。報道機関が正確に伝えられるようにするためです。なぜなら、これは極めて重要な文書だからです。そして、オバマとは違います。彼は最悪のJCPOAで中東を破壊するところでした——あれは核兵器への道でした。私のものは核兵器に対する壁です。というのも、「我々はすでに合意を持っていた」と言う人々がいる。言い換えれば、彼はそのために大金を支払った。我々は何も支払っていない。</p>
+    <p><span class="speaker-host">司会（ダン）：</span> ダグ、ここでお聞きします。トランプがオバマの計画は核兵器への道だったが、私の計画はその前に立ちはだかる壁だ、と繰り返し根拠のない話をしているのを、実際に信じる人はいるのでしょうか？次に何が来るか誰にもわかりませんが、この二点について、買っている人はいるのでしょうか？</p>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> まあ、おそらく有権者の約30%はオバマ批判を聞くのが好きなのでしょう。だから、トランプがオバマを批判すれば、その層からは少し拍手がもらえます。しかし、結局のところ、これは何なのか。</p>
+
+    <h2 id="deal-announcement">40回目の終戦合意発表</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> 誰かが私に、これは39回目の終戦合意発表だと言っていました。</p>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> つまり、実際には40回目ですね、数え続ければ。まあ、我々はその中身を見なければなりません。もしかすると——あなたは内容をご覧になったかどうかわかりませんが、私は見ていません。様々な関係者の声を聞こうとしましたが、私が発見したことの一つは、イラン側が言っていることと我々が言っていることが、まったく同じではないということです。</p>
+
+    <h2 id="lebanon-ceasefire">第1項目：レバノンを含む全戦線での即時かつ恒久的な戦争終結</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> ええ、そうです。実際、いくつかの情報が出てきています。ここで早速そのいくつかに飛び込みましょう。今朝、マーク・ティーセンをはじめとする数人が激怒している記事が出ていました。彼らは「こんなものを見ているなんて信じられない」と言っていました。しかし、ここにいくつかの条件があります。特に話したいのは最初の項目です。第1項目：「イラン・イスラム共和国とアメリカ合衆国は、現在の戦争における同盟国と共に、本了解覚書の署名と同時に、レバノンを含む全戦線における戦争の即時かつ恒久的な終結を宣言する。」そして、これは多くの方面で大きな動揺を引き起こしています。とりわけベンヤミン・ネタニヤフにとっては、彼がすべての国民に国家安全保障に必要だと語っていることの核心だからです。</p>
+
+    <h2 id="netanyahu-response">ネタニヤフの応答：我々には我々自身の利益がある</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> 本日、彼がその問題について質問された時の発言です。「イランを詐欺にかけろ。」細かい文字が読めなかった方のために説明すると、彼は「もし合意にその条項が含まれているなら、あなたはそれに従うつもりか。なぜなら、あなたはさらに進むと言っていたではないか」と問われました。すると彼はこう答えました。「いいか、あれはトランプ大統領の取引だ。彼が核計画とイランの武装解除を終わらせられる限り、彼は好きなことをしていい。しかし、我々には我々自身の利益があり、それも追求する。」つまり、彼はそれに従うとは確約しませんでした。これが——少なくとも本日リークされた内容の第1項目ですが——金曜日の署名前に、取引そのものを破綻させることになるのでしょうか？</p>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> 可能性はあります。繰り返しますが、それはトランプ大統領次第です。彼が求めているのは、何と呼ぶのでしょうか——「免罪符」です。言い換えれば、我々はイランとの戦争に敗れたばかりです。これを終わらせ、これ以上の困難を伴わずに、いわば夜陰に紛れて立ち去りたいのです。彼はその能力を与えてくれる一枚の紙を探しているのです。</p>
+
+    <h2 id="get-out-of-jail">敗戦後のトランプの「免罪符」</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> 問題は——以前にも話したと思いますが——ネタニヤフ氏、そして率直に言ってイスラエル人にとって、ヒズボラとの戦いは存亡をかけたものだということです。彼らは知っています。ヒズボラに関しては、ヒズボラの壊滅か、イスラエルの降伏以外に結果はあり得ないのです。そしてイスラエル人はヒズボラに降伏するつもりはありません。</p>
+
+    <h2 id="hezbollah-existential">ネタニヤフにとってヒズボラとの戦いは存亡をかけたもの</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> イスラエルが過去に試みてきたこと、そして現在行っていることは、イランをヒズボラから切り離すことです。それは起こっていませんし、機能していません。そして今、それが起こるという証拠も見当たりません。</p>
+
+    <h2 id="iran-celebrity">イスラム世界の著名なリーダーとして台頭するイラン</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> 実際、私たちが目にしているのは、イランがイスラム世界の著名なリーダーとして台頭しているということであり、それは中東、北アフリカ、その他全域にわたるすべてのスンニ派イスラム教徒の王子たちやエリートたちを大いに悔しがらせています。つまり、イランが主導権を握っているのです。イランはヒズボラを見捨てたりはしません。</p>
+
+    <h2 id="greater-israel">大イスラエル計画と後戻りできない地点</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> もう一つのことは、大イスラエル計画がいまだに存在していることです。そして、ネタニヤフ氏が前に進み出て、「我々はガザで行っていること、レバノンで行っていること、シリアで行っていることを止める。さらに、エジプト、ヨルダン、サウジアラビアの至る所で計画しているすべてのことも止める」と言うのを期待するなら——彼はそうするつもりはありません。ですから、彼にとってここは後戻りできない地点であり、彼は自身の表明した目標から離れることはできないと思います。</p>
+
+    <h2 id="iran-lebanon-stance">レバノン問題に関するイランの立場：シオニストの攻撃は一切容認しない</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> なるほど、では彼が表明した目標から離れられないのは一つのことです。トランプ大統領がお前にそれらから離れるよう命じる、というのは別の話です。しかし、ここでイラン側が言っていることを見てみましょう。アラグチ外相もレバノン問題に関するイランの立場を問われました。</p>
+    <p><span class="speaker-iran">アラグチ・イラン外相：</span> 今後、シオニストの実体によるレバノンへのいかなる軍事攻撃も、決して容認されることはない。イスラエルによるレバノン領土の占領継続は、了解覚書の違反である。</p>
+    <p><span class="speaker-host">司会（ダン）：</span> そして今朝のニュースでは、「トランプが了解覚書を熟考する中、イランはイスラエルがレバノンから撤退しない限り取引に署名しないとヒズボラが主張」と報じられています。つまり、ご覧の通り、一方の陣営と他方の陣営がこれほど離れているように見え、トランプはその間を通り抜ける道を探しているわけです。これはどう決着するのでしょうか？</p>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> 現時点までに、我々のほとんどは、トランプ大統領はイスラエル・ロビーとその代理人たち、億万長者の支持者たちなど、米国内の勢力によって何らかの強制下に置かれてきたと結論づけてきました。我々はそれが真実かどうかを、まさにこれから知ることになります。トランプ大統領は真に独立した主体なのか？ 米国の利益がイスラエル国家やイスラエル・ロビーの利益を凌駕し、あるいは矛盾する場合でも、米国の利益のために卓越した行動を取る立場にあるのか？ 我々は待って見守らなければなりません。判断を下すには時期尚早だと思います。金曜日に何が起こるか見てみましょう。しかし現時点では、イスラエルとワシントンの間にかなりの距離が生まれていることは非常に明白です——それは主にトランプ大統領について言えることですが、なぜなら、議会の議員たちは、あの現金を受け取り続ける側にいることに非常に熱心で、彼らは何があってもイスラエルに味方し、連携するでしょうから。そしてもちろん、彼らには個人的な結果はほとんど伴いません——誰かが彼らの選挙区や州で異議を唱えない限りは。というのも、彼らは米国の安全保障に責任を負っていないからです。理論上はそうですが、実際にはそれが彼らの最優先事項の一つではないことを我々は知っています。</p>
+
+    <h2 id="trump-hezbollah">トランプのヒズボラ観：イスラエルは戦いが長すぎる</h2>
+    <p><span class="speaker-host">司会（ダン）：</span> そして、興味深いですね。あなたは「トランプ大統領がどう反応するか見てみよう」と言います。彼はまた——今日、三者すべてがヒズボラに関する見解を問われました。そして、トランプ大統領の発言はこうです。</p>
+    <p><span class="speaker-trump">トランプ大統領：</span> イスラエルはヒズボラとあまりにも長く戦いすぎている。そしてあまりにも多くの人々が殺されている。誰かを探すたびにアパートを一棟倒す必要はない。なぜなら、それらのアパートには多くの人々が住んでおり、彼ら全員がヒズボラではない——それは私が言えることだ。そして私はイスラエルに、シリアにヒズボラを始末させろと提案した。正直に言って、彼らの方がよりうまくやると私は思うからだ。</p>
+    <p><span class="speaker-host">司会（ダン）：</span> つまり、第一に——トランプが、イスラエルがガザとレバノンの両方で攻撃したものすべてについて、「ああ、あれはヒズボラの拠点だった、ハマスの拠点だった」というイスラエルの主張を、実際に否定したのは、私が知る限りこれが初めてです。今回は彼は「いや、違った。そんなはずがない」と言っているのです。それで、これは——あなたが言ったことには二つの点がありますが、まずこれを見てみましょう。これはトランプが、手を引いてこの人たちを自由にさせる方向に動き始めているということでしょうか？</p>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> 見守る必要があります。繰り返しますが、あなたが尋ねているのは9万ドルの質問です。彼はイスラエルの利益から逸脱できるのか？ 言い換えれば、彼は新しく異なる方向に進むことができるのか？ 我々は、彼が取り組んでいる核心的問題が何なのかを本当に理解する必要があります。トランプ大統領自身、これを完全に理解していないとさえ思います。</p>
+
+    <h2 id="gaza-core">核心的問題：ガザと「ガザ化」</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> 現在、地域における核心的問題は何なのか？ 地域における核心的問題はガザです。そしてそれは、イスラエルの指導部が、自分たちが所有したいすべてのものをガザ化しようとする決意です。言い換えれば、南レバノンであれ、レバノンの大部分であれ、南シリアであれ、シリアの大部分であれ——彼らが行くところはどこでも、まずガザ化のプロセスが実行されなければならないのです。それが問題なのです。そして、それが対処されるまで、いかなる解決も得られないでしょう。この惨事に終止符は打たれません。では、どうやってそれに対処するのか？ まず、イスラエル人が現在ヨルダン川西岸で行っていること——村を破壊し、キリスト教徒であれイスラム教徒であれ、彼らにとっては何の違いもありません——を止めさせなければなりません。そして、イスラエル国内で起こっているすべてのことを、国家内部で管理し直さなければなりません。現在、ユダヤ人民兵が独立して活動しており、入植者、イスラエル市民がいます。彼らはイスラエル国防軍の分子と潜在的に緩く結びついています。しかし、私が言いたいのは、もはやそれは始まりの頃のような統一国家ではないということです。それが問題です。</p>
+
+    <h2 id="palestinian-state">パレスチナ国家の不可能性</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> そして最後に、何らかの形のパレスチナ国家が存在しなければならないことを受け入れなければ、いかにして何事も解決できるというのでしょうか？ それは不可能です。イスラエル人がそれを不可能にしました。パレスチナ国家は存在しえません。そしてイスラエル人は、自らを中東の残りの地域に統合したり、同化させたりするつもりはありません。彼らは過去にそれを拒否してきました。今、絶対にそれをするつもりはありません。そして率直に言って、彼らがどうやってそれができるのか私には見えません。どうやって隣人全員に、お前たちは人間以下だ、動物だ、生きる価値がないと言っておきながら、米国大統領や他の誰かが署名した何らかの新合意の後に、両手を広げて迎え入れられることを期待できるのでしょうか？ 私はそれが起こるとは思えません。</p>
+
+    <h2 id="sykes-picot">サイクス・ピコ体制の終焉：人工的構築物と文明的国家</h2>
+    <p><span class="speaker-macgregor">ダグラス・マクレガー大佐：</span> そして最後に、現在の中東の人々の観点から見ると、このサイクス・ピコの背景があります。彼らはサイクス・ピコ協定を見て、「あれは終わった」と言っています。そして、この「終わった」という状況の一部はイスラエルだけではありません。すべてです。中東のこれらすべての国家、主にアラビア半島の国家は、本物の国民国家ではありません。それらは人工的構築物です。第一次世界大戦の産物です。それにはイスラエルも含まれます。ヨルダンも含まれます。これらすべての場所です。これがこの地域に住む人々の態度です。彼らは「我々には変化が必要だ」と言い、それはこれらの人工的構築物の消滅を意味します。今、人々は「それは不可能だ。それはできない」と言います。これまでは不可能でしたが、地域内で物事は変化しており、そこに住む人々の態度も変化しています。そして、トルコ人とイラン人は共に文明的国家的な国家の内側に座しています。言い換えれば、トルコ人——これはオスマン帝国の後継国家です。そしてイランはペルシャの後継国家です。これらの人々は、自分たちが誰であり何であるかについて、何らかのジレンマの中にいるわけではありません。彼らは外国の勢力が入ってきて支え、存在し続けることを保証することに依存していません。アンカラの指導部やテヘランの指導部が、中東で何をなすべきかについて内々に何を考えているか、想像することしかできません。彼らが皆、同じことに関心を持っていることは確かです。彼らは皆、現在の現状が消え去ることを望んでおり、それが大きな問題なのです。</p>
+
+
+
+
+
+
+
+</body>
+</html>
