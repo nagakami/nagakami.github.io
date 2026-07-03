@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロシアの報復攻撃とIRGCの戦略</title>
+    <style>
+        /* ----- 全体のリセットとベース ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #2A2520;       /* 外側のダーク背景 */
+            display: flex;
+            justify-content: center;
+            padding: 2.5rem 1rem;
+            font-family: 'EB Garamond', Georgia, 'Noto Serif JP', 'Hiragino Mincho Pro', serif;
+            color: #EDE6D8;
+            line-height: 1.78;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* ----- メイン ― 紙面のようなカード ----- */
+        main {
+            max-width: 680px;
+            width: 100%;
+            background-color: #2F2924;        /* 紙面色 */
+            padding: 2.8rem 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 150, 0.04) inset;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        /* 紙目のような微細なノイズ (CSS生成) */
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            border-radius: 4px;
+            z-index: 0;
+        }
+
+        /* すべてのコンテンツをノイズの上に表示 */
+        main > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ----- タイポグラフィ & カラー ----- */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #E3C78A;          /* 見出し・強調色 */
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-size: 2.0rem;
+            text-align: center;
+            margin-bottom: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(227, 199, 138, 0.2);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        h2 {
+            font-size: 1.45rem;
+            margin-top: 2.0rem;
+            margin-bottom: 0.6rem;
+            border-left: 4px solid #E3C78A;
+            padding-left: 0.8rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+            color: #D7CCB8;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            color: #EDE6D8;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        a {
+            color: #C4B49A;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(196, 180, 154, 0.3);
+            transition: border 0.2s;
+        }
+        a:hover {
+            border-bottom: 1px solid #E3C78A;
+            color: #E3C78A;
+        }
+
+        /* ----- 引用 (.quote) と 強調 (.highlight) ----- */
+        .quote {
+            display: block;
+            margin: 1.6rem 0;
+            padding: 1.2rem 1.6rem;
+            background: rgba(227, 199, 138, 0.06);
+            border-left: 4px solid #E3C78A;
+            font-style: italic;
+            color: #F0E9D9;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            border-radius: 0 2px 2px 0;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+        }
+        .quote::before {
+            content: "“";
+            font-size: 2.2rem;
+            color: #E3C78A;
+            line-height: 0.8;
+            margin-right: 0.2rem;
+            opacity: 0.6;
+            font-family: Georgia, serif;
+        }
+        .quote::after {
+            content: "”";
+            font-size: 2.2rem;
+            color: #E3C78A;
+            line-height: 0.8;
+            margin-left: 0.2rem;
+            opacity: 0.6;
+            font-family: Georgia, serif;
+        }
+
+        .highlight {
+            display: block;
+            margin: 1.6rem 0;
+            padding: 1.0rem 1.6rem;
+            background: rgba(227, 199, 138, 0.12);
+            border: 1px solid rgba(227, 199, 138, 0.25);
+            border-radius: 4px;
+            color: #F0E9D9;
+            font-weight: 500;
+            font-size: 1.02rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+        .highlight strong {
+            color: #E3C78A;
+            font-weight: 600;
+        }
+
+        /* 動画情報ブロック */
+        .video-meta {
+            background: rgba(215, 204, 184, 0.06);
+            padding: 0.8rem 1.2rem;
+            border-radius: 4px;
+            margin: 0.6rem 0 1.8rem 0;
+            font-size: 0.9rem;
+            color: #D7CCB8;
+            border-left: 2px solid #4d443b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .video-meta span {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        /* 引用番号 (上付き) */
+        sup {
+            font-size: 0.7rem;
+            vertical-align: super;
+            color: #E3C78A;
+            font-weight: 600;
+            margin: 0 0.1rem;
+            padding: 0 0.1rem;
+            border-radius: 2px;
+            cursor: default;
+        }
+        sup a {
+            color: #E3C78A;
+            border-bottom: none;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        sup a:hover {
+            text-decoration: underline;
+            color: #f0dba0;
+        }
+
+        /* 引用一覧 (末尾) */
+        .references {
+            margin-top: 2.8rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid rgba(215, 204, 184, 0.15);
+            font-size: 0.9rem;
+            color: #D7CCB8;
+        }
+        .references h3 {
+            color: #E3C78A;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            border-bottom: none;
+        }
+        .references ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        .references li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.8rem;
+            text-indent: -1.8rem;
+            border-bottom: 1px dotted rgba(215, 204, 184, 0.08);
+            padding-bottom: 0.4rem;
+        }
+        .references li strong {
+            color: #E3C78A;
+            font-weight: 500;
+            margin-right: 0.4rem;
+        }
+        .references a {
+            color: #C4B49A;
+            word-break: break-all;
+        }
+        .references a:hover {
+            color: #E3C78A;
+        }
+
+        /* 補助要素 */
+        .small-note {
+            font-size: 0.85rem;
+            color: #bfb4a2;
+            margin-top: -0.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ----- 印刷用スタイル ----- */
+        @media print {
+            body {
+                background: white;
+                padding: 0.3in;
+                color: black;
+            }
+            main {
+                max-width: 100%;
+                background: white !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0.2in;
+                color: black;
+            }
+            main::before {
+                display: none;
+            }
+            h1, h2, h3, .highlight, .quote, .video-meta, sup, .references {
+                color: black !important;
+                border-color: #666 !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+            .quote {
+                border-left: 4px solid #333;
+                background: #f5f5f5;
+            }
+            .highlight {
+                border: 1px solid #444;
+                background: #f0f0f0;
+            }
+            a {
+                color: #222 !important;
+                border-bottom: 1px dotted #555;
+            }
+            .references {
+                border-top: 1px solid #aaa;
+            }
+            .video-meta {
+                border-left: 2px solid #aaa;
+                background: #f9f9f9;
+            }
+            p {
+                color: black;
+            }
+        }
+
+        /* 画面サイズ調整 */
+        @media (max-width: 500px) {
+            main {
+                padding: 1.6rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            body {
+                font-size: 17px;
+                padding: 1rem 0.6rem;
+            }
+            .quote, .highlight {
+                padding: 0.8rem 1.0rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <!-- タイトル -->
+        <h1>ロシアの大規模報復と<br>イラン・ホルムズ海峡の攻防</h1>
+
+<!--
+
+ロシアが一斉報復！イランは米国を蹴り、ホルムズ海峡で年間400億ドルを叩き出す──2026年夏、地政学の実像
+
+ロシアのミサイルがキーウを焼き、イランは米国の提案を一蹴。西側メディアが伝えない『戦略的忍耐』の裏側とは？
+
+
+【全体概要】
+ロシアはウクライナによる無人機攻撃への報復として、キーウを中心に軍事施設・エネルギーインフラへ大規模なミサイル・ドローン攻撃を敢行した。標的はアントノフ無人機工場やレーダー生産拠点など全て軍事関連であり、ウクライナが掲げる「戦争をロシアに持ち帰る」という民間人狙撃の戦術とは明確に一線を画す。西側メディアはロシアの疲弊を喧伝するが、実際にはロシア経済は制裁下でも成長を続け、プーチン政権の支持率は79％前後を維持。ルーブルは高パフォーマンスを記録している。
+
+同時にイランは、米国が提示した凍結資産6億ドルの解除提案を拒否し、ホルムズ海峡の通行料で最大年間400億ドルを得る構えを示した。イラン議会議長は「中国との真の戦略的パートナーシップ」を宣言し、米国との妥協を完全に否定。核時代の抵抗戦略として、焦らず時間を買い、国力再建とレジスタンス強化に専念する姿勢を明確にした。
+
+米国は内部で医療債務・ホームレス・学生ローンなど社会問題が深刻化し、「エプスタイン・クラス」と呼ばれる支配層が国民を顧みない構造が露呈。多極化の流れは米国内部の変革なしには完結せず、中国・ロシア・イランは帝国の後継ではなく独立した文明の再興を目指す。2026年夏の地政学は、ロシアとイランが「時間」を武器に、米国のプロパガンダと内部崩壊を静かに待つ構図となっている。
+
+
+-->
+
+        <!-- 動画情報 -->
+        <div class="video-meta">
+            <span>📺 チャンネル: <strong>（動画制作者）</strong></span>
+            <span>📅 公開: 2026年7月3日</span>
+            <span>🎬 元動画: <a href="https://youtu.be/Z6gjWb7BeHw" target="_blank">Putin Rains MISSILE HELL …</a></span>
+        </div>
+
+        <!-- ===== 本文 ===== -->
+
+        <!-- 要約 -->
+        <h2>要約</h2>
+        <p>ロシアはウクライナによる無人機攻撃への報復として、キーウを中心に軍事施設・エネルギーインフラへ大規模なミサイル・ドローン攻撃を実施した。同時に、イランはホルムズ海峡の通行料を巡る米国との交渉で譲歩を拒否し、自らの地政学的優位を堅持。西側メディアは「ロシア弱体化」のプロパガンダを流すが、現実にはロシア経済は堅調で、戦場でもロシアが主導権を握る。イランは核時代の抵抗戦略として、焦らずに時間を買い、国力の再構築を進める。</p>
+
+        <!-- 論点 / 提言 -->
+        <h2>論点 ── 消耗戦とプロパガンダの力学</h2>
+        <p>ロシアの攻撃はあくまで軍事目標に限定されており、<strong>「戦争をロシアに持ち帰る」</strong>というウクライナ・NATOのスローガンとは対照的である。西側メディアはロシアの疲弊を強調するが、実際にはロシア経済は制裁下でも成長を続け、プーチン政権の支持率は依然として79％前後と高い。</p>
+        <p>イランは米国との間接交渉において、凍結資産解除とホルムズ海峡の支配権を譲らない姿勢を明確にした。イランは「交渉そのもの」を時間稼ぎの手段とし、戦力を温存しながら次なる段階に備えている。</p>
+
+        <!-- 重要引用 (quote) -->
+        <div class="quote">
+            ロシア国防省の発表では、キーウのアントノフ工場（無人機生産施設）をはじめ、レーダー工場、電子戦システム拠点など、<strong>全てが軍事関連</strong>の標的であった。
+        </div>
+
+        <p>ウクライナ側は「476機以上のドローンと74発のミサイルを迎撃」と発表するが、防空能力は過大評価されがちであり、迎撃ミサイルの誤作動による民間被害も報告されている<sup><a href="#ref1">[1]</a></sup>。一方、ロシア国営通信タスは「ウクライナによるテロ攻撃への報復」として、この攻撃を位置づけている。</p>
+
+        <!-- 核心ハイライト -->
+        <div class="highlight">
+            <strong>結局これが大事：</strong> ロシアは軍事インフラに限定した報復で「戦略的忍耐」を続ける。イランはホルムズ海峡をカードに、米国との交渉で一歩も譲らない。両者とも「時間」を武器にしている。
+        </div>
+
+        <h2>プロパガンダ戦争の構図</h2>
+        <p>西側メディアは「プーチンが燃料不足を認めた」と報じるが、その発言は「深刻ではない」との但し書き付きであり、意図的に歪曲されている<sup><a href="#ref2">[2]</a></sup>。実際、ロシア・ルーブルは近年最もパフォーマンスの良い通貨の一つであり、GDPも堅調に推移している。</p>
+        <p>米国・NATOは戦場での劣勢を覆すため、無人機攻撃を「戦況を変える」と過剰に喧伝する。しかし、ロシアは自らの軍需産業を強化し、段階的にウクライナの戦力を削ぐ戦略を取っている。</p>
+
+        <div class="quote">
+            ウクライナの無人機は灯油を満載し、爆発を大きく見せかけている。これはマーク・サボット氏が指摘する通り、<strong>視覚的プロパガンダ</strong>に過ぎない。
+        </div>
+
+        <h2>イランの抵抗戦略 ── ホルムズ海峡と核の現実</h2>
+        <p>イランは米国からの6億ドル凍結資産解除の提案を拒否。代わりに海峡通行料で最大年間400億ドルの収入を得る構えだ<sup><a href="#ref3">[3]</a></sup>。イラン議会議長アリー・ラリジャニは「血はエルサレム解放で報いる」「中国との真の戦略的パートナーシップを築く」と明言し、米国との妥協を否定した。</p>
+        <p>イラン指導部は、<strong>「米国は約束を守らない」</strong>という歴史的教訓から、いかなる合意も一時的なものと見做している。焦って総力戦に踏み切れば、イスラエルの「サムソン・オプション」（核使用）を誘発するリスクがあるため、抵抗は長期戦を前提とする。</p>
+
+        <div class="highlight">
+            <strong>核時代の抵抗：</strong> イランは「勝ち急ぎ」をせず、経済再建と同盟強化に専念する。それが結果的にレジスタンス全体の利益になる。
+        </div>
+
+        <h2>米帝国のジレンマ ── 内部崩壊の兆し</h2>
+        <p>スコット・ベッセント財務長官（当時）は「中国だけがイラン原油を買う」と嘲笑するが、それはむしろ米国の影響力低下を露呈している。米国は自国民に対しても、医療債務・学生ローン・ホームレスなど深刻な社会問題を抱え、<strong>「エプスタイン・クラス」</strong>と呼ばれる支配層が国民を顧みない。</p>
+        <p>多極化の流れは米国の内部変革なしには完結しない。中国・ロシア・イランは帝国の後継ではなく、あくまで独立した文明の再興を目指す。米国内での民衆運動が、最終的な変革の鍵を握る。</p>
+
+        <!-- 結語（核心一文） -->
+        <div class="quote" style="border-left-color: #B8A080; background: rgba(227, 199, 138, 0.04);">
+            <strong>核心一文：</strong> ロシアは軍事報復で「強者の忍耐」を、イランはホルムズ海峡で「交渉の不落」を示し、米国は内部崩壊とプロパガンダの虚構にのみ依存する――これが2026年夏の地政学的現実である。
+        </div>
+
+        <!-- 引用一覧 -->
+        <section class="references">
+            <h3>📖 引用一覧</h3>
+            <ol>
+                <li id="ref1"><strong>[1]</strong> ウクライナ非常事態庁発表 (2026年7月2日) — キーウでの死者18名・負傷90名。迎撃率の過大評価について言及。 <a href="https://www.aljazeera.com" target="_blank">Al Jazeera 報道</a></li>
+                <li id="ref2"><strong>[2]</strong> ウラジーミル・プーチン大統領インタビュー（タス通信）— 「燃料不足は地域的だが致命的ではない」と発言。西側メディアは「深刻」と誤報。 <a href="https://tass.com" target="_blank">タス通信</a></li>
+                <li id="ref3"><strong>[3]</strong> ウォール・ストリート・ジャーナル (2026年7月3日) — 「イラン、米国の凍結資産解除提案を拒否。海峡通行料で年400億ドル要求」。 <a href="https://www.wsj.com" target="_blank">WSJ</a></li>
+                <li><strong>[4]</strong> 元動画: <a href="https://youtu.be/Z6gjWb7BeHw" target="_blank">"Putin Rains MISSILE HELL on Ukraine as Iran's BOMBSHELL Stuns Trump"</a> (2026年7月3日)</li>
+            </ol>
+
+    </main>
+</body>
+</html>
