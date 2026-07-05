@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>報告書 — 日本のイラン国葬欠席に関する分析</title>
+<style>
+  /* === E Ink Dark Mode 基盤 === */
+  :root {
+    --bg: #1a1a1a;
+    --bg-raised: #222222;
+    --fg: #c8c8c8;
+    --fg-dim: #8a8a8a;
+    --fg-bright: #e0e0e0;
+    --accent: #a0a0a0;
+    --border: #333333;
+    --border-light: #2a2a2a;
+    --highlight: #d4d4d4;
+    --tag-bg: #2c2c2c;
+    --marker: #b0b0b0;
+  }
+
+  @font-face {
+    font-family: 'MonoEink';
+    src: local('Noto Sans Mono'), local('Source Han Mono'), local('MS Gothic'), local('monospace');
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 15px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'MonoEink', 'Noto Sans Mono', 'Courier New', monospace;
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+    padding: 2rem 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+
+  /* === E Ink 粒子感オーバーレイ === */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.008) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.005) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+  }
+
+  /* === ヘッダーブロック === */
+  .report-header {
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .report-header .classification {
+    font-size: 0.7rem;
+    color: var(--fg-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .report-header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--fg-bright);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .report-header .meta {
+    font-size: 0.72rem;
+    color: var(--fg-dim);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .report-header .meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .report-header .meta .dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 0;
+  }
+
+  /* === セクション共通 === */
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    color: var(--fg-dim);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--accent);
+  }
+
+  .section h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--fg-bright);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .section h3 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--highlight);
+    margin: 1rem 0 0.4rem 0;
+  }
+
+  .section p {
+    margin-bottom: 0.7rem;
+    text-align: justify;
+  }
+
+  /* === 記憶保持ブロック（ハイライトカード） === */
+  .memory-block {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+    position: relative;
+  }
+
+  .memory-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .memory-block .mb-label {
+    font-size: 0.62rem;
+    color: var(--fg-dim);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.3rem;
+  }
+
+  .memory-block .mb-content {
+    font-size: 0.88rem;
+    color: var(--fg-bright);
+    line-height: 1.75;
+  }
+
+  .memory-block .mb-content strong {
+    color: var(--highlight);
+    font-weight: 700;
+  }
+
+  /* === タグ === */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.6rem 0;
+  }
+
+  .tag {
+    font-size: 0.62rem;
+    background: var(--tag-bg);
+    color: var(--fg-dim);
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--border-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* === リスト === */
+  .analysis-list {
+    list-style: none;
+    counter-reset: dmg;
+    padding: 0;
+  }
+
+  .analysis-list li {
+    counter-increment: dmg;
+    position: relative;
+    padding: 0.5rem 0 0.5rem 2.2rem;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.88rem;
+  }
+
+  .analysis-list li:last-child {
+    border-bottom: none;
+  }
+
+  .analysis-list li::before {
+    content: counter(dmg, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--fg-dim);
+    font-weight: 700;
+  }
+
+  .analysis-list li strong {
+    color: var(--highlight);
+  }
+
+  /* === 構造化テーブル === */
+  .struct-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.8rem 0;
+    font-size: 0.82rem;
+  }
+
+  .struct-table th {
+    text-align: left;
+    font-size: 0.62rem;
+    color: var(--fg-dim);
+    letter-spacing: 0.12em;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .struct-table td {
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+    color: var(--fg);
+  }
+
+  .struct-table td:first-child {
+    color: var(--fg-dim);
+    white-space: nowrap;
+    width: 6rem;
+  }
+
+  .struct-table td:last-child {
+    color: var(--fg-bright);
+  }
+
+  /* === 分離線 === */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 1.5rem 0;
+  }
+
+  /* === フッター === */
+  .report-footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border);
+    font-size: 0.65rem;
+    color: var(--fg-dim);
+    text-align: center;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+
+  /* === 引用ブロック === */
+  blockquote {
+    border-left: 2px solid var(--border);
+    padding: 0.4rem 1rem;
+    margin: 0.6rem 0;
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+  }
+
+  /* === レスポンシブ === */
+  @media (max-width: 600px) {
+    body {
+      padding: 1.2rem 1rem;
+      font-size: 14px;
+    }
+    .report-header h1 {
+      font-size: 1.1rem;
+    }
+    .struct-table td:first-child {
+      width: auto;
+    }
+  }
+
+  /* === 印刷最適化 === */
+  @media print {
+    body { background: #fff; color: #000; }
+    :root {
+      --bg: #fff;
+      --bg-raised: #f5f5f5;
+      --fg: #222;
+      --fg-dim: #666;
+      --fg-bright: #000;
+      --accent: #999;
+      --border: #ccc;
+      --border-light: #ddd;
+      --highlight: #000;
+      --tag-bg: #eee;
+      --marker: #555;
+    }
+    body::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== ヘッダー ====== -->
+<header class="report-header">
+  <div class="classification">分析報告書 // ANALYSIS REPORT</div>
+  <h1>日本のイラン国葬欠席に関する構造分析<br>——記憶保持重視フォーマット——</h1>
+  <div class="meta">
+    <span><span class="dot"></span>作成日時: 2026-07-05</span>
+    <span><span class="dot"></span>対象記事: 「日本よ、なぜイランを見捨てたのか」</span>
+    <span><span class="dot"></span>分類: 外交分析 / 記憶保持優先</span>
+  </div>
+</header>
+
+<!--
+報告書 — 日本のイラン国葬欠席に関する分析
+
+日本がイラン国葬を完全無視…100カ国が駆けつけたのに、なぜ日本は欠席したのか。
+2026年7月4日、イラン前最高指導者ハメネイ師の国葬に100カ国以上が参列する中、日本政府は代表を一人も送らなかった。米国顔色を伺う“属国外交”の決定的瞬間か…
+
+
+
+【全体概要】
+事象概要
+2026年7月4日、テヘランでアリ・ハメネイ師の国葬が執り行われた。米国・イスラエル攻撃により2月末に死亡した指導者の葬儀に、約100カ国以上が代表を派遣。日本だけが政府代表をゼロとし、国際的に大きな注目を集めた。
+
+原因構造
+日本欠席の主因は米国からの報復を恐れたためと分析される。一方、ロシア（メドベージェフ）、中国（副委員長）、インド、パキスタン、NATO加盟国のトルコなど、米国と様々な関係にある国々が揃って参列。この非対称性が日本の対米従属の極致を象徴している。
+
+影響分析
+欠席によりイラン新政権との関係修復が極めて困難化。中東諸国全体からの信頼を失い、「米国操り人形」のレッテルが定着する恐れがある。短期的にイラン関係の冷え込み、中長期ではエネルギー交渉不利や日本の外交発言力低下を招く可能性が高い。
+
+論理構造の評価
+記事は国葬参列を「国家の礼儀と未来投資」と位置づけ、単一原因（米国恐怖）への帰属と他国との対比論証で日本の判断異常性を強調。規範的訴求として多様な外交の重要性を主張しているが、安全保障上の他の考慮事項は十分に議論されていない。
+
+記憶保持要点
+ハメネイ国葬に100カ国参列、日本だけ欠席、他国は米国関係問わず参加という非対称性が「独立判断力の欠如」を浮き彫りにした出来事として記憶されるべきである。（約398文字）
+
+
+-->
+
+<!-- ====== セクション1: 事象概要 ====== -->
+<section class="section">
+  <div class="section-label">Section 01</div>
+  <h2>事象概要 —— 何が起きたか</h2>
+
+  <div class="memory-block">
+    <div class="mb-label">核心事実</div>
+    <div class="mb-content">
+      <strong>2026年7月4日</strong>、テヘランでハメネイ師（イラン前最高指導者）の国葬が執行。<strong>約100カ国以上</strong>が代表を派遣した中、<strong>日本は政府代表を一人も送らなかった</strong>。
+    </div>
+  </div>
+
+  <table class="struct-table">
+    <thead>
+      <tr><th>項目</th><th>詳細</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>対象行事</td>
+        <td>アリ・ハメネイ師国葬（テヘラン）</td>
+      </tr>
+      <tr>
+        <td>死因</td>
+        <td>2026年2月末、米国・イスラエル共同攻撃により殺害</td>
+      </tr>
+      <tr>
+        <td>参列国数</td>
+        <td>約100カ国以上</td>
+      </tr>
+      <tr>
+        <td>主要参列者</td>
+        <td>ロシア（メドベージェフ元大統領）、中国（全人代常務副委員長）、パキスタン（シャリフ首相）、インド（高官級代表団）、トルコ他</td>
+      </tr>
+      <tr>
+        <td>日本の対応</td>
+        <td>政府代表ゼロ。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tag-row">
+    <span class="tag">ハメネイ師</span>
+    <span class="tag">国葬</span>
+    <span class="tag">2026/7/4</span>
+    <span class="tag">100カ国参列</span>
+    <span class="tag">日本欠席</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ====== セクション2: 原因構造 ====== -->
+<section class="section">
+  <div class="section-label">Section 02</div>
+  <h2>原因構造 —— なぜ日本は欠席したか</h2>
+
+  <div class="memory-block">
+    <div class="mb-label">一次原因</div>
+    <div class="mb-content">
+      <strong>米国からの報復忌避</strong>。ハメネイ師は米国の攻撃で殺害された人物であるため、国葬への参列を「米国敵対行為への加担」と米国に解釈されることを過度に懸念。
+    </div>
+  </div>
+
+  <h3>対比構造 —— 同じ条件で異なる判断をした国々</h3>
+
+  <table class="struct-table">
+    <thead>
+      <tr><th>国</th><th>米国との関係</th><th>国葬への対応</th><th>判断の根拠（推定）</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ロシア</td>
+        <td>敵対・制裁下</td>
+        <td>参列（元大統領）</td>
+        <td>反米陣営の結束</td>
+      </tr>
+      <tr>
+        <td>中国</td>
+        <td>戦略競争関係</td>
+        <td>参列（副委員長）</td>
+        <td>エネルギー権益・多極化</td>
+      </tr>
+      <tr>
+        <td>インド</td>
+        <td>戦略パートナー</td>
+        <td>参列（高官団）</td>
+        <td>エネルギー依存・独自外交</td>
+      </tr>
+      <tr>
+        <td>パキスタン</td>
+        <td>援助受取国</td>
+        <td>参列（首相）</td>
+        <td>イスラム圈の結束</td>
+      </tr>
+      <tr>
+        <td>トルコ</td>
+        <td>NATO加盟国</td>
+        <td>参列</td>
+        <td>地域大国としての地位</td>
+      </tr>
+      <tr>
+        <td><strong>日本</strong></td>
+        <td><strong>同盟国</strong></td>
+        <td><strong>欠席</strong></td>
+        <td><strong>米国顔色察知</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="memory-block">
+    <div class="mb-label">構造的特徴</div>
+    <div class="mb-content">
+      <strong>対米従属の極致</strong> —— 米国と同盟関係にある国（日本）が、他の全ての国（敵対国・競争国・NATO同盟国を含む）と異なる判断を下した。この非対称性が「独立国家としての判断力の欠如」を浮き彫りにする。
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag">米国報復忌避</span>
+    <span class="tag">対米従属</span>
+    <span class="tag">非対称判断</span>
+    <span class="tag">NATO参対比</span>
+    <span class="tag">インド対比</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ====== セクション3: 影響分析 ====== -->
+<section class="section">
+  <div class="section-label">Section 03</div>
+  <h2>影響分析 —— 何が失われたか</h2>
+
+  <ol class="analysis-list">
+    <li>
+      <strong>イランとの関係修復の極端な困難化</strong><br>
+      国葬欠席は「日本はイランを軽視している」という新政権への強烈なシグナル。エネルギー交渉・経済協力・中東和平関与の全領域で「欠席国」としての烙印が押される。
+    </li>
+    <li>
+      <strong>中東諸国全体からの信頼喪失</strong><br>
+      100カ国が参列する国際儀礼に欠席することは、「日本は中東への関与意欲がない」との宣言に等しい。長年の積み上げが一事件で逆転されうる。
+    </li>
+    <li>
+      <strong>「米国の操り人形」レッテルの自己適用</strong><br>
+      ロシア・中国・インド・トルコがそれぞれ自国国益で行動した中、日本だけが米国の意向に準拠。この差は「独立判断不能国」という国際的認知を固定化する。
+    </li>
+  </ol>
+
+  <div class="memory-block">
+    <div class="mb-label">影響の時間軸</div>
+    <div class="mb-content">
+      <strong>短期:</strong> イラン新政権との冷え込み<br>
+      <strong>中期:</strong> 中東全域での日本の発言力低下・エネルギー交渉の不利化<br>
+      <strong>長期:</strong> 「米国依存以外の外交路線を持たない国」という構造的認知の定着
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag">イラン関係悪化</span>
+    <span class="tag">中東信頼喪失</span>
+    <span class="tag">操り人形レッテル</span>
+    <span class="tag">短中長期影響</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ====== セクション4: 論理構造の評価 ====== -->
+<section class="section">
+  <div class="section-label">Section 04</div>
+  <h2>論理構造の評価 —— 記事の主張構造</h2>
+
+  <table class="struct-table">
+    <thead>
+      <tr><th>論理要素</th><th>内容</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>前提</td>
+        <td>国葬への参列は「指導者個人への評価」ではなく「国家としての礼儀と未来への投資」である</td>
+      </tr>
+      <tr>
+        <td>事実認定</td>
+        <td>100カ国が参列し日本が欠席。</td>
+      </tr>
+      <tr>
+        <td>因果推論</td>
+        <td>欠席の唯一の理由は米国報復への恐怖。他の説明が存在しない。</td>
+      </tr>
+      <tr>
+        <td>対比論証</td>
+        <td>米国と多様な関係を持つ5カ国（露・中・印・パ・ト）が全て参列した事実により、日本の判断の異常性を基準化。</td>
+      </tr>
+      <tr>
+        <td>帰結</td>
+        <td>日本は「独立した判断ができない国」として世界に晒された。</td>
+      </tr>
+      <tr>
+        <td>規範的訴求</td>
+        <td>真の安全保障＝多様な国との関係構築。米国一辺倒は属国の外交。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    「国葬への参列は、その国の指導者個人への評価ではなく、国家としての礼儀と未来への投資である」——本記事の中核命題。
+  </blockquote>
+
+  <div class="tag-row">
+    <span class="tag">対比論証</span>
+    <span class="tag">帰結推論</span>
+    <span class="tag">規範的訴求</span>
+    <span class="tag">単一原因帰属</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ====== セクション5: 記憶保持サマリー ====== -->
+<section class="section">
+  <div class="section-label">Section 05</div>
+  <h2>記憶保持サマリー —— 定着すべき要点</h2>
+
+  <div class="memory-block">
+    <div class="mb-label">5行記憶フレーム</div>
+    <div class="mb-content">
+      <strong>①</strong> 2026年7月4日、ハメネイ師国葬に100カ国以上が参列。<br>
+      <strong>②</strong> 日本のみが政府代表ゼロ。<br>
+      <strong>③</strong> 理由は米国報復への恐怖。露・中・印・パ・トルコ（NATO加盟国）は全て参列。<br>
+      <strong>④</strong> 影響: イラン関係悪化・中東信頼喪失・「米国操り人形」認知の固定化。<br>
+      <strong>⑤</strong> 記事の主張: 国葬参列＝礼儀と未来投資。欠席は独立国としての自殺行為。
+    </div>
+  </div>
+
+  <div class="memory-block">
+    <div class="mb-label">キーワード連想マップ</div>
+    <div class="mb-content">
+      ハメネイ国葬 → 100カ国参列 → 日本欠席 → 米国恐怖 → 対米従属の極致 → ロシア参列・中国参列・インド参列・トルコ参列（NATO） → 非対称性の決定的証明 → イラン関係破壊・中東信頼消失・操り人形化 → 「2026年7月、日本は世界から孤立する道を選んだ」
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ====== セクション6: 分析者注記 ====== -->
+<section class="section">
+  <div class="section-label">Section 06</div>
+  <h2>分析者注記</h2>
+
+  <p>本報告書は対象記事の<strong>主張構造と事実認定を中立に整理</strong>したものであり、記事の結論（高市首相の選択が「愚か」である等）についての真偽判断は保留する。ただし、以下の構造的特徴は記録する。</p>
+
+  <ol class="analysis-list">
+    <li>
+      <strong>単一原因への帰属</strong> —— 記事は欠席の理由を「米国報復への恐怖」のみに帰属させている。安全保障上の別の考慮（人質問題、テロ対策、同盟協調のコスト等）の可能性は論じられていない。
+    </li>
+    <li>
+      <strong>対比の有効性</strong> —— 「米国と何らかの関係を持ちながら参列した国々」を列挙する論法は論理的に強力。特にNATO加盟国（トルコ）の参列は、日本の判断を相対化する上で決定的なエビデンスとして機能する。
+    </li>
+    <li>
+      <strong>規範論の混入</strong> —— 「真の独立国は～」「属国のそれだ」といった規範的表現は、事実分析ではなく価値判断である。記憶保持の観点では「記事の結論部分」として分離して記憶することが適切。
+    </li>
+    <li>
+      <strong>時期の仮定性</strong> —— 本記事は2026年7月を舞台としている。
+    </li>　
+  </ol>
+
+  <div class="tag-row">
+    <span class="tag">単一原因帰属</span>
+    <span class="tag">対比論法の有効性</span>
+    <span class="tag">規範論混入</span>
+    <span class="tag">未来事象含む</span>
+    <span class="tag">中立整理</span>
+  </div>
+</section>
+
+
+</body>
+</html>
