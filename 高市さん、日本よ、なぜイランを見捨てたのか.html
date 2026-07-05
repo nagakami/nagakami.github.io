@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高市さん、日本よ、なぜイランを見捨てたのか</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1e1a17;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            font-family: 'EB Garamond', 'Noto Serif JP', Georgia, serif;
+        }
+
+        .paper {
+            max-width: 680px;
+            width: 100%;
+            background-color: #2a2520;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(60, 55, 48, 0.3) 0%, transparent 70%),
+                radial-gradient(ellipse at 80% 20%, rgba(50, 45, 38, 0.2) 0%, transparent 60%),
+                repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.01) 0px, rgba(255, 255, 255, 0.01) 2px, rgba(0, 0, 0, 0.01) 2px, rgba(0, 0, 0, 0.01) 4px);
+            color: #ede6d8;
+            padding: 48px 36px;
+            border-radius: 4px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(255, 255, 255, 0.04),
+                inset 0 0 80px rgba(0, 0, 0, 0.4);
+            font-size: 18px;
+            line-height: 1.78;
+            letter-spacing: 0.02em;
+        }
+
+        @media print {
+            body {
+                background-color: #1e1a17;
+                padding: 0;
+            }
+            .paper {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 40px 32px;
+                background-image: radial-gradient(ellipse at 20% 50%, rgba(60, 55, 48, 0.2) 0%, transparent 70%);
+            }
+        }
+
+        h1 {
+            font-family: 'EB Garamond', 'Noto Serif JP', serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-align: center;
+            letter-spacing: 0.06em;
+            margin-top: 0.2em;
+            margin-bottom: 0.1em;
+            color: #f0e9d9;
+            border-bottom: 1px solid rgba(237, 230, 216, 0.15);
+            padding-bottom: 0.6em;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 0.9em;
+            color: #b9ae9b;
+            letter-spacing: 0.04em;
+            margin-top: -0.1em;
+            margin-bottom: 1.6em;
+        }
+
+        h2 {
+            font-family: 'EB Garamond', 'Noto Serif JP', serif;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+            color: #f0e9d9;
+            border-bottom: 1px solid rgba(237, 230, 216, 0.1);
+            padding-bottom: 0.15em;
+        }
+
+        h3 {
+            font-family: 'EB Garamond', 'Noto Serif JP', serif;
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-top: 1.6em;
+            margin-bottom: 0.4em;
+            color: #ede6d8;
+        }
+
+        p {
+            margin-bottom: 0.8em;
+            text-indent: 0em;
+            word-break: break-word;
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 0.8em 1.6em;
+            margin: 1.2em 0;
+            border-left: 3px solid rgba(237, 230, 216, 0.3);
+            background: rgba(255, 255, 255, 0.03);
+            color: #e8dfce;
+            font-size: 0.97em;
+            line-height: 1.7;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .quote::before {
+            content: "“";
+            font-size: 2.2em;
+            line-height: 0.6;
+            color: rgba(237, 230, 216, 0.2);
+            margin-right: 4px;
+            float: left;
+        }
+
+        .highlight {
+            background: rgba(237, 230, 216, 0.08);
+            padding: 0.1em 0.4em;
+            border-radius: 2px;
+            font-weight: 600;
+            color: #f2ecdf;
+            border-bottom: 1px solid rgba(237, 230, 216, 0.15);
+        }
+
+        .core-underline {
+            text-decoration: underline;
+            text-decoration-color: rgba(237, 230, 216, 0.3);
+            text-underline-offset: 3px;
+            font-weight: 600;
+            color: #f0e9d9;
+        }
+
+        .memory-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid rgba(237, 230, 216, 0.25);
+            padding: 1em 1.6em;
+            margin: 1.6em 0;
+            border-radius: 0 3px 3px 0;
+            font-size: 0.96em;
+            color: #e2daca;
+        }
+
+        .memory-box strong {
+            color: #f0e9d9;
+            font-weight: 600;
+        }
+
+        .country-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2em 0.8em;
+            margin: 0.6em 0 1em 0;
+            padding: 0.4em 0.8em;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 3px;
+            font-size: 0.95em;
+            color: #d6cdbb;
+        }
+
+        .country-list span {
+            white-space: nowrap;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(237, 230, 216, 0.08);
+            margin: 2em 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.75em;
+            color: #7f7566;
+            letter-spacing: 0.04em;
+            margin-top: 1.5em;
+        }
+
+        @media (max-width: 600px) {
+            .paper {
+                padding: 28px 18px;
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 23px;
+            }
+            h2 {
+                font-size: 19px;
+            }
+            .quote {
+                padding: 0.6em 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+
+    <h1>高市さん、日本よ、なぜイランを見捨てたのか</h1>
+    <p class="subtitle">—— 高市政権の「沈黙」という選択を問う</p>
+
+<!--
+高市首相「イラン国葬ボイコット」の衝撃——日本はなぜ世界から孤立を選んだのか。
+100カ国が参列したイラン最高指導者国葬に、日本だけが姿を見せなかった。高市政権の「米国恐怖外交」が招いた大失策か——日本国民が知るべき衝撃の裏側。
+
+
+
+**全体概要**  
+高市政権がイラン前最高指導者ハメネイ師の国葬に政府代表を派遣しなかったことを強く批判する論考である。
+
+**外交選択の疑問**  
+2026年7月、約100カ国が参列する中、日本は公式代表を送らなかった。これは単なる欠席ではなく、米国への過度な配慮による「明確なメッセージ」だと指摘。ロシア・中国・インドなど他国が自国利益を優先して参列する中、日本だけが「米国の顔色を窺う」選択をしたと非難している。
+
+**代償と長期影響**  
+この決定はイランとの関係悪化、中東諸国からの信頼喪失、「米国の操り人形」という国際的イメージの定着を招くと警告。日本企業によるイラン原油交渉にも悪影響を及ぼす可能性を挙げ、短期的な「安全保障配慮」が長期的な国益を損なう「未来を見ない外交」だと批判している。
+
+**国家としての独立性**  
+国葬参列は指導者個人への評価ではなく、国家間の礼儀と将来への投資だと主張。高市政権の対米従属体質を問題視し、日本国民に対し「本当にこれで国益か」と問いかける。一国民としての深い憂慮を込め、日本外交の危機を警告する内容だ。
+
+
+-->
+
+    <p>2026年7月4日、イラン首都テヘランで前最高指導者アリ・ハメネイ師の国葬が始まった。米国とイスラエルの攻撃で2月末に殺害された同師の葬儀には、<span class="highlight">約100カ国</span>の政府要人らが弔問に訪れたとされる。ロシア、中国、パキスタンなど各国の弔問団が施設を訪れ、ハメネイ師を追悼した。</p>
+
+    <p><span class="core-underline">そして日本は——いなかった。</span></p>
+
+    <!-- ===== セクション1 ===== -->
+    <h2>「不参列」という選択の重み</h2>
+
+    <p>日本政府（外務省・首相官邸など）の公式派遣に関する報道は、少なくとも本稿執筆時点では確認できない。100カ国近くが参列する国際儀礼において、<span class="highlight">日本だけが「参列しない」という選択をした</span>のである。</p>
+
+    <p>これは単なる「都合がつかなかった」では済まされない。<span class="core-underline">外交上の明確なメッセージ</span>だ。イランは中東の要衝であり、ペルシャ湾岸の安定に直結する国だ。原油輸送の生命線であるホルムズ海峡を抑え、人口約8,800万を擁する地域大国である。そんな国の最高指導者の国葬に、<span class="highlight">日本は参列しなかった</span>。</p>
+
+    <!-- ===== セクション2 ===== -->
+    <h2>「米国報復」の恐怖に怯える矮小国家</h2>
+
+    <p>なぜ高市政権はこのような選択をしたのか。推測するに、<span class="highlight">米国からの報復を恐れた</span>のである。ハメネイ師は米国の攻撃で殺害された。国葬に参列すれば、米国を「敵対国」扱いするイランの儀式に加担したと見なされることを、過度に警戒したのだろう。</p>
+
+    <p>しかし考えてほしい。ロシアは参列した。中国は参列した。パキスタンは参列した。<span class="core-underline">これら全ての国が、米国と何らかの関係を持ちながら、毅然と参列している</span>のである。</p>
+
+    <div class="country-list">
+        <span>🇷🇺 ロシア</span>
+        <span>🇨🇳 中国</span>
+        <span>🇮🇳 インド</span>
+        <span>🇵🇰 パキスタン</span>
+        <span>🇹🇷 トルコ</span>
+        <span>🇸🇦 サウジアラビア</span>
+        <span>🇪🇬 エジプト</span>
+        <span>🇩🇪 ドイツ</span>
+        <span>🇫🇷 フランス</span>
+        <span>🇬🇧 イギリス</span>
+    </div>
+
+    <p>米国と同盟関係にある日本だけが、「米国が怒るかもしれない」という恐怖のあまり、国際社会の常識から逸脱した行動を取った。これは<span class="core-underline">対米従属の極致</span>であり、独立した国家としての判断力を疑われる行為だ。</p>
+
+    <!-- ===== セクション3 ===== -->
+    <h2>「未来を見ない外交」の致命的代償</h2>
+
+    <p>この選択の愚かさは、<span class="highlight">中長期的な日本外交のダメージ</span>にある。</p>
+
+    <h3>第一に、イランとの関係修復は極めて困難になる。</h3>
+    <p>国葬は一国の最高指導者に対する最大級の敬意の表明である。その場にいなかったことは、イラン新政権に「日本はわれわれを軽視している」という強いメッセージとして受け取られるだろう。今後、イランとの経済協力、エネルギー交渉、中東和平への関与——その全てにおいて、日本は「参列しなかった国」として扱われる。実際、日本企業3社がイラン産原油の購入に向けてイラン政府と協議を始めたとの報道もあるが、今回の不参列がその交渉に影を落とすことは必定だ。</p>
+
+    <h3>第二に、中東諸国全体からの信頼を損なう。</h3>
+    <p>約100カ国が参列する国際行事に欠席することは、中東全域に対して「日本はこの地域に関与する気がない」と宣言するに等しい。日本は長年、中東の平和と安定に貢献してきたが、この一件でその積み重ねが一瞬で色あせる。</p>
+
+    <h3>第三に、「米国の操り人形」というレッテルを自ら貼ったことだ。</h3>
+    <p>ロシア、中国、パキスタン——いずれも自国の国益を優先し、米国の顔色を窺うことなく判断した。日本だけが違った。<span class="core-underline">この差は決定的である</span>。</p>
+
+    <div class="quote">
+        国葬への参列は、その国の指導者個人への評価ではなく、国家としての礼儀と未来への投資である。高市政権はこの基本を忘れたのか。
+    </div>
+
+    <!-- ===== セクション4 ===== -->
+    <h2>日本国民への警告——我々はどこに向かっているのか</h2>
+
+    <p>高市政権は言うかもしれない。「安全保障上の配慮だ」と。しかし本当の「安全保障」とは、<span class="highlight">多様な国との関係を構築し、いかなる有事にも対応できるネットワークを築くこと</span>ではないのか。</p>
+
+    <p>米国一辺倒の外交は、米国が求める時に米国のために動く「属国」のそれだ。真の独立国は、同盟国であっても自らの判断で行動する。今回の選択は、<span class="core-underline">日本が「独立した判断ができない国」であることを世界に晒した</span>のである。</p>
+
+    <p>イランという国をどう評価するかは別の問題だ。しかし<span class="highlight">国葬への参列は、その国の指導者個人への評価ではなく、国家としての礼儀と未来への投資</span>である。高市政権はこの基本を忘れたのか。</p>
+
+    <div class="memory-box">
+        <strong>日本国民よ、考えてほしい。</strong> 我々はこのような「未来を見ない」「米国の顔色を窺うことだけに終始する」外交を是とすべきなのか。100カ国近くが参列する国際儀礼から自ら退くことが、本当に日本の国益なのか。
+    </div>
+
+    <p>歴史はこの選択を厳しく評価するだろう。<span class="core-underline">「2026年7月、日本は世界から孤立する道を選んだ」</span> と。</p>
+
+    <p style="margin-top:1.4em; font-weight:600; color:#f0e9d9;">一国民として、私は深い憂慮とともに、ここに警告を発する。</p>
+
+    <hr>
+
+    <p class="footer-note">
+        2026年7月 · 一国民からの警告<br>
+        日本外交の危機を憂う
+    </p>
+
+</div>
+</body>
+</html>
