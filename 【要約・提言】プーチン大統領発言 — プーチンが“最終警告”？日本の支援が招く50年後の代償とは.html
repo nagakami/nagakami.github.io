@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【要約・提言】プーチン大統領発言ーープーチンが“最終警告”？　日本の支援が招く50年後の代償とは</title>
+  <style>
+    /* E Ink ダークモード デザイン */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #2A2520;  /* 暖かみのある暗い紙色 */
+      color: #EDE6D8;            /* 柔らかいオフ白 */
+      font-family: Georgia, 'Noto Serif JP', 'EB Garamond', serif;
+      font-size: 18px;
+      line-height: 1.78;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .eink-container {
+      max-width: 680px;
+      width: 100%;
+      background-color: #2A2520;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255, 235, 200, 0.04);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    /* 微かな紙のテクスチャ (SVG ノイズ) */
+    .eink-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      pointer-events: none;
+      border-radius: 4px;
+    }
+
+    /* すべての要素を相対的に重ねる */
+    .eink-container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: Georgia, 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: 0.02em;
+      color: #F0E9D9;
+      text-align: center;
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
+      border-bottom: 1px solid rgba(237, 230, 216, 0.15);
+      padding-bottom: 0.75rem;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #b8ad9a;
+      text-align: center;
+      margin: 0.75rem 0 1.5rem 0;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(237, 230, 216, 0.08);
+      padding-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: Georgia, 'Noto Serif JP', serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #F0E9D9;
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      border-left: 4px solid #a38d7a;
+      padding-left: 0.8rem;
+    }
+
+    h3 {
+      font-family: Georgia, 'Noto Serif JP', serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #EDE6D8;
+      margin-top: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      color: #EDE6D8;
+    }
+
+    strong, b {
+      color: #f0e3d0;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .quote {
+      border-left: 4px solid #a38d7a;
+      padding: 0.75rem 1.2rem;
+      margin: 1.2rem 0;
+      background: rgba(0, 0, 0, 0.2);
+      color: #e6ddd0;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+      font-size: 1rem;
+    }
+
+    .highlight {
+      background: rgba(200, 170, 140, 0.08);
+      border: 1px solid #a38d7a;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      color: #F0E9D9;
+      font-weight: 600;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(237, 230, 216, 0.12);
+      margin: 2.2rem 0;
+    }
+
+    .speaker-putin {
+      color: #EDE6D8;
+    }
+
+    .warning-box {
+      background: rgba(30, 20, 15, 0.6);
+      border: 2px solid #9a7a5a;
+      padding: 1.2rem 1.5rem;
+      margin: 1.8rem 0;
+      color: #f0e3d0;
+      border-radius: 4px;
+    }
+
+    .strategist-section {
+      border-top: 3px solid #6a5b4a;
+      padding-top: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .strategist-section .meta {
+      border-bottom: none;
+      padding-bottom: 0;
+      text-align: left;
+      color: #b8ad9a;
+      font-size: 0.85rem;
+    }
+
+    /* リンクはダークモードでも視認性を保つ */
+    a {
+      color: #c9b69a;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(200, 180, 160, 0.2);
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #ede0ce;
+      border-bottom: 1px solid #a38d7a;
+    }
+
+    /* 印刷最適化 (PDF保存時) */
+    @media print {
+      body {
+        background-color: #2A2520 !important;
+        padding: 0.2in;
+      }
+      .eink-container {
+        box-shadow: none !important;
+        padding: 0.1in;
+        max-width: 100%;
+      }
+      .eink-container::before {
+        opacity: 0.03;
+      }
+      .section-divider {
+        border-top: 1px solid #4a4038;
+      }
+    }
+
+    /* 小画面対応 */
+    @media (max-width: 500px) {
+      body {
+        padding: 0.8rem 0.5rem;
+      }
+      .eink-container {
+        padding: 1rem 0.8rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* 追加の微調整：低コントラストで目に優しい */
+    ::selection {
+      background: #5a4c3e;
+      color: #f5ede4;
+    }
+  </style>
+</head>
+<body>
+<div class="eink-container">
+
+  <h1>【要約・提言】プーチン大統領発言<br>プーチンが“最終警告”？<br>日本の支援が招く50年後の代償とは</h1>
+
+<!--
+プーチンが“最終警告”？　日本の支援が招く50年後の代償とは
+
+プーチンは戦場で勝つだけでなく、日本を「扇動者」として法的に追い込む準備を進めている。この罠に気づかず、日本は自らの首を絞めている。
+
+
+
+【全体概要】
+プーチンは軍事会議において、民間インフラへの攻撃が激化するほど安全保障地帯を拡大するという論理を明示した。これは単なる防衛措置ではなく、領土拡大を事後的に正当化する枠組みの宣言である。また、コンスタンチノフカの解放をドンバス全域制圧の鍵と位置づけ、停戦交渉の前提を「既成事実の固定」に置く意図を確認させた。
+
+最も重要なのは「戦争延長の扇動者」への責任追及を明言した点である。これは武器供与国・日本に対する将来的報復の法的根拠づくりであり、相手の自壊を待つ戦略を同時に採用していることが読み取れる。
+
+一方、日本の対ロシア政策には三つの構造的欠陥がある。対話チャネルの完全断絶による北方領土解決の永遠の閉鎖、国際法上の「武力紛争関与」基準を満たす法的リスク、そしてアメリカの戦略への無防備な従属である。アメリカの関与が縮小すれば、日本は単独で報復に直面する。
+
+したがって、提言として非公式チャネルの絶対維持、支援の赤線文書化、そして北方領土の「共同管理」枠組みの極秘シミュレーション開始を求めている。日本は今すぐ「ウクライナの支援者」から「東アジアの均衡維持者」への再定義を行わなければ、五十年後の外交選択肢は消滅する。
+
+
+-->
+
+  <p class="meta">動画情報：クリムリン公式チャンネル / 公開日：2026年7月　<br>内容：ロシア連邦大統領の軍事会議における発言（要約・提言）</p>
+
+<br><p>本稿は<b>『"Russia Will Expand the Security Zone if Ukraine Attacks Continue" | RU-EN』（<a href="https://youtu.be/LHS__pPEgPg" target="_blank" rel="noopener noreferrer">https://youtu.be/LHS__pPEgPg</a>）</b>から引用させていただきました。</p><br>
+
+  <hr class="section-divider">
+
+  <h2>民間インフラ攻撃と安全保障地帯の拡大</h2>
+
+  <p class="speaker-putin">非常に感謝します。指摘しておきたいことがあります。</p>
+
+  <p class="speaker-putin">相手方が我々の民間インフラ施設を攻撃しようとすればするほど、もちろん第一に、これらの施設を保護し、民間人を守るために必要なあらゆる措置を講じなければなりませんが、相手方がこのような試みを重ねれば重ねるほど、我々は隣接する領土において<strong>より大規模な安全保障地帯</strong>を確立しなければならなくなります。</p>
+
+  <p class="speaker-putin">この点は、この地域が本日議論している他の領土と同様に、<strong>歴史的にロシアの土地</strong>でもあるという事情を考慮すると、特に重要です。</p>
+
+  <hr class="section-divider">
+
+  <h2>コンスタンチノフカ解放の戦略的意義</h2>
+
+  <p class="speaker-putin">この会議のこの部分はそろそろ終了とし、その後、いくつかの具体的な事項について別途協議します。しかし、以下の点に注目したいと思います。</p>
+
+  <p class="speaker-putin">ロシア連邦軍は、特別軍事作戦の地域において<strong>戦略的イニシアチブを確信を持って維持</strong>しており、コンスタンチノフカの解放は重大な戦略的意義を持ちます。</p>
+
+  <p class="speaker-putin">周知の通り、この都市はドンバスの<strong>重要な交通の要衝</strong>であり、<strong>大規模な工業中心地</strong>です。二万五千の住宅を擁しています。</p>
+
+  <p class="quote">比較のために申し上げますと、スムイのような地域中心都市がわずか三万戸余りですから、規模としては同程度です。</p>
+
+  <p class="speaker-putin">南部集団の部隊によるコンスタンチノフカの占領は、<strong>クラマトルスクおよびスロビャンスク</strong>、ならびにドンバスの他の要塞化された地域へのさらなる前進のための<strong>直接的な道を開くもの</strong>です。</p>
+
+  <p class="highlight">これは間違いなく、ドネツク人民共和国の全領土を解放するための鍵です。</p>
+
+  <hr class="section-divider">
+
+  <h2>緩衝地帯の創設と北部集団の任務</h2>
+
+  <p class="speaker-putin">緩衝地帯の創設について――これについては再度触れますが――これもまた、関連性の重要な一部であり、全体的目標を達成するための重要な一部です。</p>
+
+  <p class="speaker-putin">北部集団の部隊編成および軍事部隊は、この任務を成功裏に遂行しており、相手方の編成を<strong>ロシア国境からさらに後方へと押し戻し続けています</strong>。</p>
+
+  <p class="speaker-putin">この成果における決定的な役割は、間違いなく我々の兵士および将校に帰属します。</p>
+
+  <p class="speaker-putin">戦闘行動の過程において、彼らは自己犠牲的な献身と祖国への愛、軍同志の絆、戦闘の兄弟愛といった、<strong>ロシア軍事伝統の最も優れた資質</strong>を示しています。</p>
+
+  <p class="quote">全要員に対し、日常的に示している勇気と英雄主義について、私の心からの感謝の言葉をお伝えください。</p>
+
+  <p class="speaker-putin">そして当然のことながら、前に述べたように、最も際立った功績を上げた者全員を<strong>国家の勲章</strong>に推薪しなければなりません。</p>
+
+  <hr class="section-divider">
+
+  <h2>相手方の情報・宣伝工作への対応</h2>
+
+  <p class="speaker-putin">次に、相手方が実施している情報・宣伝工作について少し触れたいと思います。これは、戦場におけるキエフ政権の<strong>架空のいわゆる「成功」</strong>を強調するものです。</p>
+
+  <p class="speaker-putin">キエフ政権自体、ならびにいわゆる「欧州の偽りの平和主義者」――その真の目的は平和ではなく、<strong>ウクライナ人を最後の一人まで戦わせることでロシアとの戦争を継続</strong>することにあります――が、両者ともに、その発言と実践的行動を通じて、我々の彼らの真の意図に関する推測を一貫して裏付けています。</p>
+
+  <h3>欧州連合首脳の声明への批判</h3>
+
+  <p class="speaker-putin">注目すべきは、二〇二六年六月七日付の一部欧州連合首脳の共同声明において、彼らがキエフ政権による無人機技術の――彼らの表現によれば――<strong>「革新的な」</strong>使用を歓迎していると述べていることです。</p>
+
+  <p class="quote">私はすでにこの件について公に述べました。もちろん純粋に修辞的な問いを投げかけました。彼らが意味しているのは、我々の民間施設への攻撃、民間インフラへの攻撃、民間人と子供を乗せた輸送車両への攻撃、学生寮への攻撃も含まれているのかどうか、ということです。</p>
+
+  <p class="speaker-putin">これらすべてが、この種の攻撃を<strong>奨励</strong>していることを意味しているのかどうか。</p>
+
+  <p class="speaker-putin">しかし、この関連で強調したいのは、ウクライナの軍事産業複合体のインフラおよびその機能を支える施設に対する<strong>大規模な協調打撃</strong>の実施を継続しなければならないということです。</p>
+
+  <p class="speaker-putin">これらの構想が流布され、実践に移されている以上、我々はそれに相応しく対応しなければなりません。適切な提案を提出してください。</p>
+
+  <hr class="section-divider">
+
+  <h2>戦争延長の扇動者への分析と将来の対応</h2>
+
+  <p class="speaker-putin">また、ウクライナにおける戦争を延長するあらゆる扇動者の関与の度合いを引き続き分析し、特に各者の<strong>実際の戦闘行動への直接的関与</strong>を評価しなければなりません。この分析は、将来の責任ある意思決定のために必要です。</p>
+
+  <p class="speaker-putin">いずれにせよ、必要となる状況が生じる可能性があります。</p>
+
+  <hr class="section-divider">
+
+  <h2>相手方の架空の成功と挑発的行動への警戒</h2>
+
+  <p class="speaker-putin">では、戦場における相手方の架空の成功について。</p>
+
+  <p class="speaker-putin">第一に、彼らの物語と偽りの主張を支えるため、相手方が<strong>挑発的・テロリスト的性質の特定の行動</strong>に出る可能性があることを念頭に置かなければなりません。</p>
+
+  <p class="speaker-putin">彼らは、自分たちの<strong>偽りの成果</strong>の主張を正当化するために、小規模な部隊によるものであっても、大々的な宣伝を伴う侵入行動を仕掛ける可能性があります。我々はこれらの潜在的な侵入に備えなければなりません。</p>
+
+  <p class="speaker-putin">そして、キエフ政権の頭目たちの成功に関する自慢的な発言――我々が知っている通り、実際には存在しない成功ですが――は、結局のところ<strong>我々の有利に働く</strong>ものです。</p>
+
+  <p class="speaker-putin">これらの演者は――彼らは他に何もできるわけではなく、他に何の訓練も受けていないのですが――それでもなお、その行動と発言によって、間違いなく<strong>彼ら自身と彼らの後援者を混乱</strong>させています。</p>
+
+  <p class="highlight">繰り返しますが、これは我々の有利に働きます。その一方で、ロシア連邦軍の各集団の指揮官は、着実に、合理的に、一貫して行動しなければなりません。</p>
+
+  <p class="speaker-putin">彼らは当然のことながら、これらの条件下で自然に生じる困難を克服し、我々の戦闘員の命を守るために必要かつ可能なあらゆることを行い、<strong>ロシア連邦軍参謀本部が策定した特別軍事作戦計画</strong>に厳密に従って任務の無条件の遂行を確保しなければなりません。</p>
+
+  <p>引用、ここまで。　以下は提言。</p>
+
+  <hr class="section-divider">
+
+  <div class="strategist-section">
+    <h2>国家戦略家（一国民）としての深層分析</h2>
+
+    <p class="meta" style="text-align:left;">役職：国家戦略家／使命：国家百年の計に基づく日本の永続的繁栄と生存の設計</p>
+
+    <h3>プーチン発言の真意――日本が読み取るべき三つの地政学信号</h3>
+
+    <p>今回のプーチン発言を表面的に読めば、単なる軍事会議での状況報告と指示に見える。しかし、国家百年の視座から分析すれば、この発言には<strong>三つの意図的な信号</strong>が埋め込まれている。</p>
+
+    <p>第一に、「民間インフラへの攻撃が増えれば、安全保障地帯を拡大する」という論理は、<strong>領土拡大の事後的正当化の枠組み</strong>を明示したものである。これは既に占領した領土のみならず、今後さらに西方へと緩衝地帯を拡大する意思の宣言である。</p>
+
+    <p>第二に、コンスタンチノフカの解放を「ドネツク人民共和国全領土解放の鍵」と位置づけたことは、<strong>作戦の最終目標が依然としてドンバス全域の完全制圧</strong>にあることを確認したものであり、停戦交渉の前提条件がロシア側にとって「既成事実の固定」にあることを再確認させる。</p>
+
+    <p>第三に、そして日本にとって最も重要なのが、<strong>「戦争を延長する扇動者の直接的関与を分析し、将来の責任ある意思決定に必要である」</strong>という発言である。これは、武器供与や情報支援を行う国々――日本を含む――に対する<strong>将来的な報復の根拠を準備する</strong>という明確な意図を示している。</p>
+
+    <h3>日本の現状認識――甘い希望論の危険性</h3>
+
+    <p>現在の日本政府の対ロシア政策は、制裁措置とウクライナ支援を軸に構築されている。短期的には国際社会での評価を得られるが、五十年単位で見れば、この政策には<strong>三つの深刻な構造的欠陥</strong>が存在する。</p>
+
+    <p>第一に、ロシアという核保有国との関係を完全に断絶させることで、<strong>北方領土問題の解決の道を自ら永久に閉ざす</strong>ことである。歴史を振り返れば、領土問題は力の均衡が変化した時にのみ解決の窓が開く。日本がロシアとの対話のチャネルをすべて閉じれば、その窓が開いた時にアクセスする手段を持たない。</p>
+
+    <p>第二に、プーチンが明示した「扇動者への責任追及」の枠組みが、将来的に日本に対して行使される可能性である。日本が供与した装備がロシア領内で使用され、ロシア側に人的被害が生じた場合、<strong>国際法上の「武力紛争への関与」の基準</strong>に照らして、日本の法的地位が極めて危うくなる。これは五十年後の日本の外交的選択肢を根本的に制約する。</p>
+
+    <p>第三に、最も辛辣な現実を指摘しなければならない。日本のウクライナ支援は、アメリカの戦略に完全に従属したものである。しかしアメリカは自らの領土が脅かされることはなく、<strong>リスクの非対称性</strong>が存在する。アメリカが方針を転換した場合――トランプ政権下で既にその兆候は顕在である――日本は単独でロシアの報復に直面する構造にある。</p>
+
+    <h3>五十年後の日本のために今すべきこと</h3>
+
+    <p>以下の提言は、時の政権が代わっても変わらない国家の深層戦略として構想される。</p>
+
+    <p><strong>一、対ロシア・ダイアログ・チャネルの絶対的維持。</strong>公然たる外交関係を凍結していても、非公式の情報伝達ルートは一つも閉じてはならない。スイスや第三国を経由した秘密チャネルの維持に毎年予算を計上し、人脈の断絶を防ぐ。これは百年の計である。</p>
+
+    <p><strong>二、支援の「赤線」の明確化と遵守。</strong>致命的攻撃兵器の供与は絶対に避ける。プーチンの「扇動者分析」という言葉は、五年後・十年後に法的根拠として引用される可能性がある。日本が「直接的戦闘行動への関与」の基準を満たさないよう、<strong>支援内容の厳格な限界線</strong>を政府内で文書化し、一切の逸脱を禁じる。</p>
+
+    <p><strong>三、北東アジアの多極秩序への準備。</strong>アメリカの関与が縮小する世界を五十年後に生きる日本は、ロシア・中国のいずれとも完全に敵対できない地政学的現実に直面する。北方領土問題は「返還」という二項対立ではなく、「共同管理・経済利用」という第三の枠組みについて、<strong>今から研究機関に極秘でシミュレーション</strong>を開始すべきである。</p>
+
+    <div class="warning-box">
+      <strong>警告：</strong>プーチンの発言の中で最も恐るべきは「我々の有利に働く」という結論部分である。相手の自壊を待つ戦略をロシアは採用している。日本がキエフ政権や欧州の「偽りの平和主義者」と同じ構造に組み込まれること――それこそが、プーチンが日本を「扇動者」として分類する十分な理由となる。日本は今すぐ、自らの立ち位置を<strong>「ウクライナの支援者」から「東アジアの均衡維持者」へと再定義</strong>しなければならない。この転換が遅れれば遅れるほど、五十年後の日本の外交的選択肢は消滅していく。
+    </div>
+
+    <p class="highlight">核心メッセージ：プーチンは戦場での勝利を確信しつつ、同時に「戦争を延長する側」への報復の法的準備を進めている。日本はアメリカの戦略に従属するままではなく、自国の五十年後の生存可能性を軸に、対ロシア政策の「赤線」と「脱出ルート」を今のうちに確保しなければならない。それが国家戦略家としての確信である。</p>
+
+  </div>
+
+</div>
+</body>
+</html>
