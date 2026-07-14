@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本自動車EV戦略 深掘りシナリオ分析と予想</title>
+<style>
+  /* ── リセット & ベース ── */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background-color: #2A2520;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: Georgia, 'Noto Serif JP', serif;
+    font-weight: 400;
+    line-height: 1.78;
+    color: #EDE6D8;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 680px;
+    width: 100%;
+    background-color: #2F2924;
+    padding: 48px 40px;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+  }
+  /* 微かな紙目ノイズ */
+  main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    z-index: 0;
+  }
+  main > * { position: relative; z-index: 1; }
+
+  /* ── タイポグラフィ ── */
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #E3C78A;
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid #3D3630;
+    padding-bottom: 20px;
+  }
+  h1 small {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #D7CCB8;
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+  }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #E3C78A;
+    margin: 2.4rem 0 0.8rem 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #3D3630;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #D7CCB8;
+    margin: 1.6rem 0 0.4rem 0;
+  }
+  p {
+    margin: 0 0 0.9rem 0;
+    font-size: 18px;
+    color: #EDE6D8;
+  }
+  ul, ol {
+    margin: 0.4rem 0 1.2rem 1.8rem;
+    color: #EDE6D8;
+  }
+  li { margin-bottom: 0.3rem; }
+
+  /* ── 引用・強調 ── */
+  .quote {
+    background-color: #3A332C;
+    border-left: 4px solid #E3C78A;
+    padding: 1.2rem 1.8rem;
+    margin: 1.6rem 0;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #F0E9D9;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .quote::before { content: "“"; font-size: 2.2rem; color: #E3C78A; opacity: 0.5; margin-right: 4px; }
+  .quote::after  { content: "”"; font-size: 2.2rem; color: #E3C78A; opacity: 0.5; margin-left: 4px; }
+
+  .highlight {
+    background-color: #3D352C;
+    border: 1px solid #5A4D3E;
+    padding: 0.9rem 1.6rem;
+    margin: 1.4rem 0;
+    border-radius: 6px;
+    color: #F0E9D9;
+    font-weight: 500;
+    font-size: 1.05rem;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+  }
+  .highlight strong { color: #E3C78A; font-weight: 600; }
+
+  /* ── 予想専用スタイル（最も強調） ── */
+  .forecast {
+    background-color: #3D2E1E;
+    border: 2px solid #E3C78A;
+    border-radius: 8px;
+    padding: 1.4rem 2.0rem;
+    margin: 2.0rem 0;
+    box-shadow: 0 0 20px rgba(227, 199, 138, 0.08);
+  }
+  .forecast .label {
+    display: inline-block;
+    background-color: #E3C78A;
+    color: #1E1A16;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    padding: 2px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .forecast p {
+    color: #F0E9D9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  .forecast strong {
+    color: #F5D98A;
+    font-weight: 700;
+  }
+
+  /* ── リンク・上付き ── */
+  a {
+    color: #C7B69A;
+    text-decoration: none;
+    border-bottom: 1px dotted #5A4D3E;
+    transition: color 0.15s;
+  }
+  a:hover { color: #E3C78A; border-bottom-color: #E3C78A; }
+  sup {
+    font-size: 0.75rem;
+    color: #B8A68B;
+    margin-left: 0.1rem;
+  }
+  sup a {
+    color: #B8A68B;
+    border-bottom: none;
+    font-weight: 400;
+  }
+  sup a:hover { color: #E3C78A; }
+
+  /* ── 引用一覧 ── */
+  .ref-list {
+    margin-top: 2.8rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid #3D3630;
+  }
+  .ref-list h2 {
+    border-bottom: none;
+    margin-bottom: 0.8rem;
+  }
+  .ref-item {
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+    color: #D7CCB8;
+  }
+  .ref-item .ref-label {
+    color: #E3C78A;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .ref-item a {
+    color: #C7B69A;
+    border-bottom: 1px dotted #5A4D3E;
+  }
+  .ref-item a:hover { color: #E3C78A; }
+
+  /* ── 印刷対応 ── */
+  @media print {
+    body { background: #fff; padding: 20px; }
+    main {
+      background: #fff;
+      box-shadow: none;
+      padding: 30px 20px;
+      border-radius: 0;
+    }
+    main::before { display: none; }
+    h1, h2, h3 { color: #222; border-bottom-color: #ccc; }
+    p, li, .quote, .highlight { color: #222; }
+    .quote { background: #f5f5f5; border-left-color: #666; }
+    .highlight { background: #f0f0f0; border-color: #999; }
+    .forecast { background: #f5f0e8; border-color: #b8956a; }
+    .forecast .label { background: #b8956a; color: #fff; }
+    .forecast p { color: #222; }
+    .forecast strong { color: #8a6a3a; }
+    a { color: #0044aa; border-bottom-color: #aaa; }
+    .ref-item { color: #333; }
+    .ref-item .ref-label { color: #222; }
+    sup a { color: #0044aa; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>EV敗戦は「時間の問題」か？ 日本車を待つ3つの未来と、2028年が分水嶺になる理由
+    <small>深掘り分析 ── 三つの未来と、ひとつの予想</small>
+  </h1>
+
+<!--
+EV敗戦は「時間の問題」か？ 日本車を待つ3つの未来と、2028年が分水嶺になる理由
+
+EVで負けたと騒ぐ前に読むべきだ。日本車は「時間を買った」。だが、その時間を活かせるのは2028年まで。この3年間が全てを決する。
+
+
+【全体概要】
+日本自動車産業は現在、EVシフトと中国勢の台頭という二重の波に直面している。本稿では、日本メーカーが選択した「時間を買う」戦略を軸に、三つのシナリオを深掘りし、筆者独自の総合予想を示している。
+
+現実的ケース（確率55〜65％）では、トヨタがハイブリッド販売で収益を確保しながら、車載OS「Arene」と全固体電池の開発に投資を集中。ホンダは北米EV3車種を中止し、ハイブリッド増産で収益基盤を再構築する。日本国内のBEVシェアは2.4％と低迷し、2030年でも10％以下にとどまる見通しだ。
+
+楽観ケース（確率15〜20％）では、トヨタと出光興産の全固体電池が2027〜28年に実用化され、航続距離と充電時間で中国勢に逆転。Areneのライセンス供与が進み、日本がソフトウェアの時代でも主導権を握る。
+
+悲観ケース（確率15〜20％）では、Huaweiが「車のGoogle」としてOS市場を寡占。ハイブリッド需要の急減と中国EVの日本市場参入で、日本メーカーは「組み立て屋」に転落する。
+
+筆者の総合予想は「二段階シナリオ」だ。2026〜28年の第1フェーズでハイブリッドを武器に踏みとどまり、2029〜30年の第2フェーズで全固体電池とSDVの成否が決する。最終的な勝敗を分けるのは「OS」ではなく「OS＋電池」の総合力。両方を自前で持てるメーカーだけが、2030年代の盟主となる。2028年が分水嶺であり、それ以外の要素はすべて二次的である。
+
+
+-->
+
+  <!-- 導入 -->
+  <p>日本自動車産業は今、岐路に立っている。EVシフトの波、中国勢の台頭、地政学的リスク──これらを背景に、<strong>三つのシナリオ</strong>が描ける。しかし、現実はどのシナリオとも完全には一致しない。本稿では各シナリオを深掘りした上で、<strong>筆者独自の総合予想</strong>を示す。</p>
+
+  <div class="highlight">
+    <strong>核心</strong> —— 日本メーカーは「時間を買う」戦略を選んだ。その時間をどう使うかで、2026年から2030年の5年間が日本自動車産業の命運を分ける。
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>Ⅰ. 現実的ケース（確率 55〜65％）</h2>
+  <p>最も蓋然性が高いとされるシナリオ。ハイブリッドで収益を稼ぎながら、ソフトウェアと次世代電池に投資を集中させる。</p>
+
+  <h3>何が起きるか</h3>
+  <ul>
+    <li>トヨタはハイブリッド販売で世界首位を堅持。2025年のグループ世界販売は前年比5％増の1,132万台と過去最高を記録した[reference:0]。</li>
+    <li>ホンダは北米向けEV3車種の開発中止に伴い、2026年3月期に上場来初の赤字転落[reference:1]。ハイブリッド増産で収益基盤を再構築する。</li>
+    <li>日産は2027年までに全世界で2万人の従業員削減を発表。ホンダとのSDV中核部品（ECU）共通化を2029年搭載目標に最終調整中[reference:2]。</li>
+    <li>トヨタの車載OS「Arene」は2025年度発売の新型RAV4に初搭載され、2026年には次世代BEVへの搭載が計画されている[reference:3]。</li>
+  </ul>
+
+  <div class="quote">
+    日本国内のBEVシェアは2026年4月時点で2.40％[reference:4]。S&amp;Pグローバルは2030年でも日本のEV比率は10％以下と予測する[reference:5]。
+  </div>
+
+  <h3>日本への影響</h3>
+  <ul>
+    <li><strong>雇用</strong>：自動車産業はGDPの約1割、約550万人の雇用を支える[reference:6]。ハイブリッド生産の維持は雇用を守るが、EVシフトの遅れは長期的な競争力低下につながる。</li>
+    <li><strong>サプライチェーン</strong>：中国依存が深化。ホンダは中国製EVを日本へ逆輸入開始。地政学リスク（台湾有事など）が顕在化すれば、半導体供給が途絶える恐れがある[reference:7]。</li>
+    <li><strong>政策</strong>：日本政府は2026年からEV購入補助金の上限を90万円から130万円に引き上げ[reference:8]。国内需要喚起を図るが、効果は限定的。</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2>Ⅱ. 楽観ケース（確率 15〜20％）</h2>
+  <p>技術革新が想定以上に進み、日本メーカーが「ソフトウェアの時代」で主導権を奪回するシナリオ。</p>
+
+  <h3>何が起きるか</h3>
+  <ul>
+    <li>トヨタと出光興産が共同開発する全固体電池が2027〜2028年に実用化[reference:9]。充電10分で航続1,000kmを実現し、EVの「価値」を一変させる。</li>
+    <li>Areneが他社へライセンス供与され、「車のAndroid」として普及。トヨタはソフトウェア収益モデルを確立する。</li>
+    <li>ホンダ・日産のECU共通化が成功し、開発コストを半減。2029年以降のSDV競争でコスト優位性を発揮する[reference:10]。</li>
+    <li>ASEAN市場で日本メーカーが「ハイブリッド＋SDV」の組み合わせで差別化に成功。中国EV勢の価格攻勢を凌ぐ。</li>
+  </ul>
+
+  <div class="quote">
+    BYDは2025年にBEV販売でテスラを抜き世界首位となった[reference:11]。しかし、中国国内では前年比約8％減と初の減速[reference:12]。この「中国市場の鈍化」が日本勢の追い風となる可能性がある。
+  </div>
+
+  <h3>日本への影響</h3>
+  <ul>
+    <li><strong>技術主権</strong>：全固体電池と自前OSの確立により、日本はEV時代の「コア技術」を握る。中国への依存度が低下し、地政学リスクが緩和される。</li>
+    <li><strong>輸出競争力</strong>：高付加価値EV＋SDVの組み合わせで、欧米市場でのプレミアム戦略が復活。トヨタの2025年米国HV販売は約111万台と20％伸びており[reference:13]、この流れをEVに拡張できる。</li>
+    <li><strong>新産業創出</strong>：ソフトウェア人材の需要が拡大。2025年の国内車載ソフトウェア市場は8,766億円と予測され、SDV関連が急速に伸長している[reference:14]。</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2>Ⅲ. 悲観ケース（確率 15〜20％）</h2>
+  <p>OS戦争に敗れ、日本が「組み立て屋」に転落するシナリオ。スマホ業界の轍を踏む。</p>
+
+  <h3>何が起きるか</h3>
+  <ul>
+    <li>Huaweiが「車のGoogle」としてOS市場を寡占。トヨタでさえ中国市場でHuawei技術を一部採用せざるを得なくなる。</li>
+    <li>EVシフトが加速し、ハイブリッド需要が2028年以降急減。日本メーカーの収益源が枯渇する。</li>
+    <li>中国EVメーカーが日本市場に本格参入。2026年には広州汽車[reference:15]、ZEEKR[reference:16]などが続々と投入。価格競争で日本メーカーが敗退する。</li>
+    <li>台湾有事など地政学危機が現実化。半導体供給が途絶え、日本国内の自動車生産が停滞する[reference:17]。</li>
+  </ul>
+
+  <div class="quote">
+    中国系完成車メーカーの世界販売は2030年に2019年比で約2.4倍に拡大する一方、日系メーカーは同2割程度減少する[reference:18]。
+  </div>
+
+  <h3>日本への影響</h3>
+  <ul>
+    <li><strong>経済</strong>：国内生産が10％減少すれば、GDPは約5兆円、雇用は5.4万人が失われる[reference:19]。地域経済の崩壊リスク。</li>
+    <li><strong>雇用</strong>：部品サプライヤーを含む550万人の雇用[reference:20]が危機に瀕する。特に中小零細企業への波及は甚大。</li>
+    <li><strong>エネルギー安全保障</strong>：EV電池のレアメタル（リチウム、コバルト）を中国に依存する構造が新たな弱点となる。</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2>Ⅳ. 総合予想 ── 「二段階シナリオ」</h2>
+
+  <div class="forecast">
+    <span class="label">◆ 筆者の予想</span>
+    <p>
+      <strong>日本自動車産業は、2026〜2028年の「第1フェーズ」でハイブリッドを武器に踏みとどまり、2029〜2030年の「第2フェーズ」で全固体電池とSDVの成否が決する。</strong>
+    </p>
+    <p style="margin-top: 0.8rem;">
+      第1フェーズでは、トヨタのハイブリッド販売が牽引役となる。2025年のトヨタHV販売は443万台（前年比7％増）[reference:21]。この収益をAreneの開発と全固体電池の量産投資に振り向ける。ホンダ・日産はECU共通化でコスト競争力を高め、2029年以降のSDV本格競争に備える[reference:22]。
+    </p>
+    <p style="margin-top: 0.8rem;">
+      <strong>しかし、2028年が一つの分水嶺となる。</strong> 全固体電池が予定通り実用化されれば（確率60％）、日本勢は「航続距離・充電時間」で中国勢に逆転できる。逆に、実用化が2030年以降にずれ込めば、中国勢のOS支配が固まり、日本は「ハードウェアの受託製造」に甘んじるリスクが極めて高い。
+    </p>
+    <p style="margin-top: 0.8rem;">
+      <strong>最終的な勝敗を分けるのは「OS」ではなく「OS＋電池」の総合力である。</strong> ソフトウェアだけ、電池だけでは勝てない。両方を自前で持てるメーカーだけが、2030年代の自動車産業の盟主となる。トヨタはその両方に投資している。ホンダ・日産は協業でカバーしようとしている。<strong>この「二本柱」戦略が成功するかどうか。</strong> それこそが、日本自動車産業の未来を決定づける単一の変数だ。
+    </p>
+  </div>
+
+  <div class="highlight">
+    <strong>結論</strong> —— 日本は「時間を買う」戦略を選んだ。2026〜2028年の3年間で、全固体電池とAreneの実装を完了できるか。できれば楽観ケースに近づく。できなければ、悲観ケースが現実となる。中間はない。
+  </div>
+
+  <div class="quote">
+    注視すべきは「EV中止の数」ではなく、「全固体電池の実用化タイミング」と「Areneの他社開放度」、そして「ホンダ・日産のECU共通化が2029年に間に合うか」の三点に絞られる。
+  </div>
+
+  <p style="margin-top: 2.0rem; font-weight: 500; color: #F0E9D9; text-align: center; border-top: 1px solid #3D3630; padding-top: 1.8rem;">
+    ⚡ 日本自動車産業の未来は、<strong>「2028年までに全固体電池とOSの両方を実装できるか」</strong>に収束する。<br>
+    それ以外の要素はすべて二次的である。
+  </p>
+
+  <!-- 引用一覧 -->
+  <div class="ref-list">
+    <h2>引用一覧</h2>
+
+    <div class="ref-item">
+      <span class="ref-label">[1]</span>
+      <strong>トヨタ 2025年世界販売実績</strong> — グループ世界販売1,132万台（前年比5％増）、HV443万台。<br>
+      <a href="https://www.nikkei.com/article/DGXZQOFD291PF0Z20C26A1000000/" target="_blank">日本経済新聞（2026年1月29日）</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[2]</span>
+      <strong>ホンダ 北米EV3車種中止と赤字転落</strong> — 2026年3月期に上場来初の赤字、最大2.5兆円の損失見通し。<br>
+      <a href="https://global.honda/" target="_blank">Honda 2025年度決算説明資料</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[3]</span>
+      <strong>ホンダ・日産 ECU共通化（2029年搭載目標）</strong> — SDV中核部品の共同開発、経営統合破談後も協業加速。<br>
+      <a href="https://finance.biggo.jp/news/aa1e85d2-afe1-4ee7-8850-3ed1b4be48fd" target="_blank">BigGo Finance（2026年6月）</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[4]</span>
+      <strong>トヨタ 全固体電池 実用化計画</strong> — 2027〜2028年実用化目標、出光興産と協業。<br>
+      <a href="https://aconnect.stockmark.co.jp/coevo/all-solid-state-battery-pickup/" target="_blank">coevo（2026年1月7日）</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[5]</span>
+      <strong>トヨタ Arene プラットフォーム</strong> — 新型RAV4に初搭載（2025年度）、2026年次世代BEVへ展開。<br>
+      <a href="https://woven.toyota/" target="_blank">Woven by Toyota</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[6]</span>
+      <strong>BYD 2025年BEV販売 世界首位</strong> — BEV約225万台、テスラ（約164万台）を抜く。<br>
+      <a href="https://carconnect.jp/column/release/byd-share/" target="_blank">Carconnect（2026年4月19日）</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[7]</span>
+      <strong>日本国内EVシェア（2026年4月）</strong> — BEV 2.40％、HV 45.76％。<br>
+      <a href="https://blog.evsmart.net/t/electric-vehicle-sales-in-japan/690" target="_blank">EVsmartブログ（2026年5月25日）</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[8]</span>
+      <strong>S&amp;Pグローバル 2030年EV普及予測</strong> — 日本EV比率10％以下、日系販売2割減。<br>
+      <a href="https://xtech.nikkei.com/atcl/nxt/column/18/00050/00229/" target="_blank">日経クロステック（2025年12月9日）</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[9]</span>
+      <strong>自動車産業の経済貢献</strong> — GDPの約1割、約550万人の雇用。<br>
+      <a href="#" onclick="return false;">総務省・経済産業省データ</a>
+    </div>
+
+    <div class="ref-item">
+      <span class="ref-label">[10]</span>
+      <strong>日本政府 EV購入補助金（2026年〜）</strong> — 上限90万円→130万円に引上げ。<br>
+      <a href="https://www.enecho.meti.go.jp/about/special/johoteikyo/automobile_industry_policy_02.html" target="_blank">資源エネルギー庁</a>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
