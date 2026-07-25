@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>日本予測 2026-2027</title>
+  <!-- フォント: EB Garamond + Noto Serif JP (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* リセット＋ベース */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #2A2520;  /* 暖かみのある暗い紙色 */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.4rem 1.2rem 4rem 1.2rem;
+      min-height: 100vh;
+      font-family: 'EB Garamond', 'Noto Serif JP', Georgia, 'Times New Roman', serif;
+      line-height: 1.78;
+      color: #EDE6D8;  /* 柔らかいオフ白 */
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* 紙の質感と微かな影（E Inkらしい奥行き） */
+    .paper {
+      max-width: 680px;
+      width: 100%;
+      background-color: #2F2923;  /* 背景よりわずかに明るい紙色 */
+      padding: 2.8rem 2.4rem 3.2rem 2.4rem;
+      border-radius: 4px;
+      box-shadow: 
+        0 8px 24px rgba(0,0,0,0.5),
+        0 2px 6px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255, 235, 210, 0.08);
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    /* テクスチャオーバーレイ (微細な紙のざらつき) */
+    .paper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 300px 300px;
+      pointer-events: none;
+      border-radius: 4px;
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+    }
+
+    /* 本文基本スタイル */
+    h1, h2, h3, h4, p, .block, .meta, .quote, .highlight, ul, ol, .appendix {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'EB Garamond', 'Noto Serif JP', serif;
+      font-weight: 600;
+      font-size: 2.2rem;
+      letter-spacing: 0.04em;
+      color: #F0E9D9;
+      border-bottom: 1px solid rgba(237, 230, 216, 0.15);
+      padding-bottom: 0.6rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .subhead {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 400;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      color: #D3C9BA;
+      margin-top: -0.2rem;
+      margin-bottom: 2rem;
+      border-left: 2px solid #A68E7A;
+      padding-left: 1rem;
+      opacity: 0.9;
+    }
+
+    h2 {
+      font-family: 'EB Garamond', 'Noto Serif JP', serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      color: #F0E9D9;
+      border-bottom: 1px solid rgba(180, 160, 140, 0.2);
+      padding-bottom: 0.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 500;
+      font-size: 1.25rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: #E8DFD3;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      text-align: justify;
+      word-break: break-word;
+      color: #EDE6D8;
+    }
+
+    /* 引用・印象的な抜き出し */
+    .quote {
+      font-family: 'EB Garamond', 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 450;
+      line-height: 1.7;
+      padding: 1.2rem 1.6rem;
+      margin: 1.6rem 0 1.8rem 0;
+      background: rgba(200, 180, 160, 0.08);
+      border-left: 4px solid #B8A088;
+      border-radius: 0 4px 4px 0;
+      color: #F0E9D9;
+      font-style: italic;
+      letter-spacing: 0.01em;
+      box-shadow: inset 0 1px 6px rgba(0,0,0,0.2);
+    }
+
+    /* ハイライト (結局これが大事) */
+    .highlight {
+      background: rgba(220, 190, 120, 0.18);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 500;
+      color: #F2EADA;
+      box-shadow: 0 0 0 1px rgba(220, 190, 120, 0.15);
+    }
+
+    /* 重要強調: 薄い黄色ハイライト (数値・警告・決定的事実) */
+    .hl-yellow {
+      background: rgba(210, 180, 90, 0.25);
+      padding: 0.05rem 0.25rem;
+      border-radius: 3px;
+      font-weight: 500;
+      color: #F5EDDD;
+    }
+
+    /* 薄い赤下線 (地政学的転換点・重大主張) */
+    .ul-red {
+      text-decoration: underline;
+      text-decoration-color: #C97A6B;
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 0.08rem;
+      font-weight: 500;
+    }
+
+    /* 青下線 (法的・構造的条項) */
+    .ul-blue {
+      text-decoration: underline;
+      text-decoration-color: #7A9EB3;
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 0.08rem;
+      font-weight: 500;
+    }
+
+    /* 文字色変更 (薄い赤・薄いシアン) */
+    .text-red {
+      color: #DBA48E;
+      font-weight: 500;
+    }
+    .text-cyan {
+      color: #AAC7D4;
+      font-weight: 500;
+    }
+
+    /* 強調の補助: ボールド＋控えめ */
+    strong, b {
+      font-weight: 600;
+      color: #F2EBDF;
+    }
+
+    /* 箇条書き・リスト */
+    ul, ol {
+      margin: 0.8rem 0 1.2rem 1.6rem;
+      padding-left: 0.8rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+      color: #E5DCD0;
+    }
+
+    /* 付録テーブル風 */
+    .appendix-block {
+      background: rgba(160, 140, 120, 0.08);
+      border: 1px solid rgba(180, 160, 140, 0.15);
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 0.8rem 0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    .appendix-block p {
+      margin-bottom: 0.3rem;
+    }
+    .appendix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 1.2rem;
+      margin: 0.6rem 0 0.2rem 0;
+    }
+    .appendix-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(180, 160, 140, 0.15);
+      padding: 0.2rem 0;
+    }
+    .appendix-label {
+      color: #C9BCAE;
+    }
+    .appendix-value {
+      font-weight: 500;
+      color: #F0E9D9;
+    }
+
+    /* 免責事項 */
+    .disclaimer {
+      margin-top: 2.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(180, 160, 140, 0.2);
+      font-size: 0.85rem;
+      color: #B8AB9C;
+      letter-spacing: 0.02em;
+      line-height: 1.6;
+    }
+
+    /* 印刷対応 (PDF保存) */
+    @media print {
+      body {
+        background-color: #1F1B18;
+        padding: 0.3in;
+      }
+      .paper {
+        box-shadow: none;
+        background-color: #2A2520;
+        padding: 0.2in;
+        max-width: 100%;
+      }
+      .paper::before {
+        opacity: 0.2;
+      }
+      .hl-yellow { background: rgba(210, 180, 90, 0.2); }
+      .ul-red { text-decoration-color: #B06A5A; }
+      .ul-blue { text-decoration-color: #5D7F94; }
+      .text-red { color: #C9927C; }
+      .text-cyan { color: #95B7C7; }
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 500px) {
+      body { font-size: 16px; padding: 1rem 0.5rem; }
+      .paper { padding: 1.6rem 1.2rem; }
+      h1 { font-size: 1.8rem; }
+      .quote { font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+      .appendix-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="paper">
+
+  <h1>今後12ヶ月の日本予測：日本が直面する“最悪の1年”/h1>
+
+<!-- 
+
+今後12ヶ月の日本予測：日本が直面する“最悪の1年”
+
+ホルムズと紅海が封鎖された今、日本に残された時間はあとわずか。原油130ドル、計画停電、食料危機…1年後のあなたの生活はどうなる？
+
+
+全体概要
+地政学危機の起点：2026年7月時点でホルムズ海峡の実質封鎖と紅海フーシ派封鎖が進行中。原油価格は急騰し、日本の中東依存構造が最大の脆弱性となる。米イラン衝突は2026年末まで続き、海峡正常化は2027年後半以降と予測される。
+
+2026年8-10月：エネルギー・物流危機の本格化。原油110-150ドル台、LNG・ナフサ不足で電力逼迫・計画停電の検討開始。円安進行（170円台）、日経平均下落、食料価格15-20%上昇。物流麻痺でコンビニ品薄、ガソリン200円超。
+
+2026年11-2027年1月：日常崩壊フェーズ。軽油不足でトラック輸送3割停止、計画停電日常化。失業率上昇、買いだめ・社会不安拡大。金融面では貸し渋り・地方銀行危機が表面化。
+
+2027年2-5月：政治・社会・経済の連鎖崩壊。高市政権支持率急落・崩壊、新卒内定取消、食料生産減、医療崩壊。円は190-210円台、GDP大幅縮小。
+
+2027年6-7月：総括と転換点。政権崩壊・総選挙、金融システム再編、製造業壊滅。生活水準は一世代後退する一方、分散型エネルギーや地域完結型経済へのパラダイムシフトの芽も生まれる。
+
+全体として、日本はエネルギー安全保障・財政・政治リーダーシップの三重弱点を暴露され、GDP15%縮小・失業率5-7%などの深刻危機を迎えるが、危機が持続可能社会への転換点となる可能性も示唆される。
+
+
+-->
+  <div class="subhead">— 2026年8月〜2027年7月 — 経済・政治・エネルギー・食料・物流の複合危機を月次で読む</div>
+
+  <p>本予測は、2026年7月25日時点で既に現実化している「ホルムズ海峡の事実上の封鎖」と「バブ・エル・マンデブ海峡におけるフーシ派の海上封鎖宣言」という二重の地政学的ショックを起点とします。 原油価格は7月だけで約40%急騰し、ブレント先物は100ドル台に復帰。日本はエネルギー自給率が<span class="hl-yellow">12.6%</span>と極めて低く、中東原油への依存度は<span class="hl-yellow">90%超</span>——この構造的脆弱性が、今後12ヶ月の日本を世界で最も深刻な打撃を受ける国にするでしょう。</p>
+
+  <div class="quote">⚠ 予測の前提<br>・米イラン間の軍事応酬は少なくとも2026年末まで継続<br>・ホルムズ海峡の完全正常化は2027年後半以降（専門家試算：正常化後も250〜275日要）<br>・バブ・エル・マンデブ海峡の封鎖はイラン・フーシ派連携により長期化<br>・日本の政権交代・金融システム危機は2027年前半に顕在化</div>
+
+  <!-- 一 -->
+  <h2>一、2026年8月 — 夏の終わり、狂騒の最終局面</h2>
+  <h3>8月2026</h3>
+  <p><span class="text-cyan">【経済・株式市場】</span> 日経平均は7月の急落（64,611円、前日比▲1,811円）を受けて、8月上旬は6万円台前半での不安定な推移。半導体関連株への売りが続く一方、ディフェンシブ銘柄（医薬品・保険・食品）への逃避が加速。米連邦準備制度理事会（FRB）の利上げ観測が強まり、円相場は1ドル165円台へ。日本銀行は「供給制約が起点のインフレには金融政策は無力」との立場を堅持。</p>
+  <p><span class="text-cyan">【エネルギー】</span> ブレント原油は1バレル110ドル前後で推移。日本の石油備蓄は国家備蓄（約145日分）に加え、民間備蓄も含めれば約240日分が確保されているが、LNG（液化天然ガス）備蓄は極めて脆弱——国内発電所のLNGタンクには約2〜3週間分しかなく、スポット市場での調達競争が激化。電力会社は既に「燃料調整費」の上限引き上げを申請。</p>
+  <p><span class="text-cyan">【物流・物資】</span> ナフサ（粗製ガソリン）不足が深刻化。包装資材（ストレッチフィルム）の品薄が倉庫現場を直撃——倉庫1棟あたり月50ケース消費するが、入荷が滞るケースが続出。食品メーカーは包装の簡略化（カラーロゴからモノクロ化）を余儀なくされる。軽油供給の優先順位がトラック輸送に集中し、倉庫内のフォークリフト用軽油が不足する懸念が現実化し始める。</p>
+  <p><span class="text-cyan">【政治・社会】</span> 高市早苗首相の支持率は約50%を維持するが、与党内から「中東政策の見直し」を求める声が表面化。8月15日の終戦記念日には、エネルギー危機を背景にした大規模な平和集会が東京・大阪で開催される見通し。</p>
+
+  <!-- 二 -->
+  <h2>二、2026年9月 — 秋の訪れとともに忍び寄る「物理的断絶」</h2>
+  <h3>9月2026</h3>
+  <p><span class="text-cyan">【地政学】</span> 米軍のイラン空爆は18〜20夜連続に達する。イランはバーレーンの米軍施設だけでなく、アマゾンのデータセンターを攻撃するなど戦術を多様化。フーシ派は紅海でサウジ船籍のタンカー攻撃を継続し、「封鎖」を実効化。</p>
+  <p><span class="text-cyan">【エネルギー・電力】</span> 世界の石油化学能力の約20%がブロックされ、エチレン能力の約12%がオフライン。アジア向けナフサ供給の40%が即時喪失。日本の電力会社はLNG調達に苦戦し、火力発電の稼働率が低下。政府は「需給逼迫警告」を発出し、大口需要家への電力使用制限を検討開始。</p>
+  <p><span class="text-cyan">【金融・為替】</span> 円相場は1ドル170円台に突入。日銀の為替介入は「効果なし」と市場で評価され、円安が加速。輸入物価の上昇が小売価格に転嫁され始め、スーパーの食料品価格は前年比で15〜20%上昇。日経平均は6万円割れが目前に。</p>
+  <p><span class="text-cyan">【社会・生活】</span> ガソリン価格が全国平均でリッター200円を突破。通勤・通学の負担が急増し、在宅勤務の再拡大が始まる。学校では「冷房使用の制限」が導入され、熱中症警戒アラートが毎日のように発令される。</p>
+
+  <!-- 三 -->
+  <h2>三、2026年10月 — 「二重封鎖」の本格化と日本経済の崖</h2>
+  <h3>10月2026</h3>
+  <p><span class="text-cyan">【地政学】</span> <span class="ul-red">ホルムズ海峡とバブ・エル・マンデブ海峡の「二重封鎖」が完全に定着。</span> 世界のエネルギー供給量の約7%を担う紅海ルートが事実上遮断。サウジアラビアは原油輸出の70%以上を紅海沿岸のヤンブー港に依存しているため、大打撃。代替ルートである喜望峰回りは輸送日数が約2週間増加し、コストが倍増。</p>
+  <p><span class="text-cyan">【エネルギー・燃料】</span> 原油価格は1バレル130〜150ドルで推移。日本のガソリン補助金制度は財政の限界に達し、段階的縮小を余儀なくされる。LNGスポット価格が前年比で3倍超に高騰。電力会社は「燃料費調整額」の上限を撤廃し、家庭の電気代は前年同月比で倍増。</p>
+  <p><span class="text-cyan">【株式市場・企業】</span> 日経平均は5万5千円台まで下落。輸出企業は円安メリットを享受するものの、原材料高と海外需要減退で業績見通しが悪化。特に自動車産業は部品調達の混乱とエネルギーコスト高で生産調整に追い込まれる。中小企業の倒産が月間1000件超に達する見込み。</p>
+  <p><span class="text-cyan">【食料】</span> 日本の食料自給率はカロリーベースで38%。輸入依存度の高い小麦・大豆・トウモロコシの価格が高騰。パン・麺類・食用油の価格が毎週のように改定され、「食料インフレ」が家計を直撃。政府は緊急輸入のための予算を計上するが、船腹不足で輸入自体が遅延。</p>
+
+  <!-- 四 -->
+  <h2>四、2026年11月 — 物流麻痺と「モノが届かない」日常</h2>
+  <h3>11月2026</h3>
+  <p><span class="text-cyan">【物流】</span> 軽油不足が物流網の核心を直撃。トラック運送会社の約3割が「燃料確保が困難」と回答。国土交通省には約9,500件の「資材が入手できない」との相談が寄せられる。コンビニエンスストアの棚から弁当・おにぎりが消え始め、店内は「品切れ」の札で埋まる。EC（電子商取引）の配送遅延が常態化。</p>
+  <p><span class="text-cyan">【石油化学製品不足】</span> ナフサ不足がプラスチック・医薬品・肥料・塗料・アスファルトに波及。農業用ビニールハウスの資材が入手困難になり、冬季野菜の生産に影響。医薬品の包装材不足が一部のジェネリック医薬品の供給を制限。</p>
+  <p><span class="text-cyan">【政治】</span> 高市内閣の支持率が急落。野党は「エネルギー政策の失敗」を追及し、臨時国会で首相不信任決議案を提出。与党内でも「内閣改造」を求める声が強まる。</p>
+  <p><span class="text-cyan">【社会】</span> 都市部を中心に「買いだめ」が再燃。トイレットペーパー・水・保存食が店頭から消える。ディスカウントストアには開店前から行列ができ、「物々交換」の情報がSNSで拡散し始める。</p>
+
+  <!-- 五 -->
+  <h2>五、2026年12月 — 暗い年末、クリスマスイルミネーションの消えた街</h2>
+  <h3>12月2026</h3>
+  <p><span class="text-cyan">【エネルギー危機の深化】</span> LNG備蓄が危険水準に達する。政府は「計画停電」の実施を発表——地域ごとに1日2〜4時間の停電が強制される。病院・重要インフラを除き、電力使用が厳しく制限される。クリスマスシーズンのイルミネーションはほぼ全域で中止。</p>
+  <p><span class="text-cyan">【金融システム】</span> 年末の資金決算を前に、企業の現金確保競争が激化。銀行は貸出を抑制し、「貸し渋り」が中小企業を直撃。地方銀行の一部が経営破綻の危機に瀕し、預金保険機構が緊急融資を検討。日経平均は5万円割れの水準まで下落。</p>
+  <p><span class="text-cyan">【円相場・物価】</span> 円相場は1ドル180円台に。輸入インフレが止まらず、年間消費者物価上昇率は4%超。年末ボーナスは多くの企業で「支給なし」または「半減」——街からは「活気」が消え、異様な静寂が広がる。</p>
+  <p><span class="text-cyan">【外交】</span> 日本政府は米国に対し「中東和平への仲介」を要請するが、米国は自国の軍事作戦に集中しており応じる余裕なし。日本は単独でイランとの対話ルートを模索するが、米国との同盟関係に配慮して実行に移せず——「外交の空白」が露呈。</p>
+
+  <!-- 六 -->
+  <h2>六、2027年1月 — 年明け、日本は「生存モード」へ</h2>
+  <h3>1月2027</h3>
+  <p><span class="text-cyan">【計画停電の日常化】</span> 首都圏を含む広域で計画停電が実施される。スマートフォンのバッテリー確保が最大の関心事となり、モバイルバッテリーは「戦略物資」と化す。停電によりエレベーターが停止し、高層マンションの住民は買い物にも困難を強いられる。</p>
+  <p><span class="text-cyan">【物流の崩壊】</span> 軽油不足がピークに達し、全国の配送網の約4割が機能不全に。スーパーの野菜・鮮魚コーナーは「入荷なし」の日が続く。地方では「移動販売車」が貴重な物資供給源となるが、それも燃料不足で運行本数を減らす。</p>
+  <p><span class="text-cyan">【雇用・社会】</span> 企業の採用凍結が相次ぎ、新卒の内定取り消しが社会問題化。派遣社員・非正規雇用の契約更新が大幅に抑制され、失業率が5%を突破。生活保護申請が急増し、自治体の窓口は混乱。</p>
+  <p><span class="text-cyan">【医療】</span> 停電により医療機器の稼働に支障が出始める。人工透析患者の受け入れ調整が困難になり、一部病院では「緊急時の対応」を取らざるを得なくなる。医薬品の供給遅延も慢性化。</p>
+
+  <!-- 七 -->
+  <h2>七、2027年2月 — 寒さと停電、そして「孤立」</h2>
+  <h3>2月2027</h3>
+  <p><span class="text-cyan">【寒波とエネルギーの限界】</span> 厳冬期に計画停電が重なり、暖房が使えない時間帯が発生。北海道・東北地方では室温が5度以下になる世帯が続出。高齢者の低体温症による死亡が相次ぎ、社会問題化。</p>
+  <p><span class="text-cyan">【食料危機の顕在化】</span> 農業用燃料・肥料の不足で国産野菜の生産量が前年比30%減。輸入小麦の価格は前年比で2倍超。パン・麺類の価格が高騰し、学校給食のメニュー変更が全国で発生。政府は「米の緊急放流」を決定するが、流通網の混乱で現場に届かない。</p>
+  <p><span class="text-cyan">【金融】</span> 地方銀行の経営破綻が現実化。預金保険法に基づくペイオフ（預金保険による保護）が発動される事態に。預金者の間で「現金の引き出し」が加速し、銀行の窓口には長蛇の列。</p>
+  <p><span class="text-cyan">【社会不安】</span> 各地で「物資の配給」を求めるデモが発生。一部では暴徒化し、スーパーやコンビニへの略奪事件が報道される。政府は治安維持のための警察官の増員を発表するが、対応は追いつかない。</p>
+
+  <!-- 八 -->
+  <h2>八、2027年3月 — 年度末、企業の「大淘汰」</h2>
+  <h3>3月2027</h3>
+  <p><span class="text-cyan">【企業倒産ラッシュ】</span> 年度末の決算を前に、エネルギーコストを吸収できなかった中堅・中小企業が連日のように倒産。特に運輸・物流・製造業・外食産業が壊滅的打撃。月間倒産件数は戦後最多の2,000件超に。</p>
+  <p><span class="text-cyan">【銀行システム危機】</span> 不良債権が雪崩れ込み、主要銀行の自己資本比率が国際基準を下回る懸念。日本銀行は「特別融資」を実施するが、市場の信認は揺らぐ。国債の格下げが相次ぎ、日本の財政に対する国際的な信用が失墜。</p>
+  <p><span class="text-cyan">【政治の混乱】</span> 高市内閣の支持率は20%台にまで低下。野党は内閣不信任決議を再提出し、与党からも「首相交代」を求める声が噴出。しかし、後任候補が名乗りを上げない「政治の空白」状態に陥る。</p>
+  <p><span class="text-cyan">【生活】</span> 電気代・ガス代・ガソリン代が前年比で2〜3倍に。食費は家計の約半分を占めるまでに膨れ上がる。多くの家庭が「暖房を切る」「風呂の回数を減らす」などの節約を強いられる。</p>
+
+  <!-- 九 -->
+  <h2>九、2027年4月 — 「新しい門出」なき新年度</h2>
+  <h3>4月2027</h3>
+  <p><span class="text-cyan">【新卒採用の崩壊】</span> 内定取消しが大規模化し、新卒の約3人に1人が「就職先がない」状況に。を背景に、若年層の間で「日本に未来はない」という絶望感が広がる。海外への留学・ワーキングホリデー申請が前年比で倍増。</p>
+  <p><span class="text-cyan">【政権交代】</span> ついに高市内閣が総辞職。後継首相の選出をめぐり国会は紛糾し、約2週間の「首相不在」期間が発生。最終的に、中道派の有力議員が暫定政権を樹立するが、連立与党の枠組みは極めて不安定。</p>
+  <p><span class="text-cyan">【エネルギー政策の転換】</span> 新内閣は「エネルギー緊急事態宣言」を発出し、家庭用小規模太陽光発電（プラグインPV）の規制緩和を検討開始。しかし、導入には数年単位の時間がかかり、当面の危機への効果は限定的。</p>
+  <p><span class="text-cyan">【物価・賃金】</span> 春季労使交渉（春闘）では、物価高を反映した賃上げ要求が相次ぐが、企業の業績悪化で応じられる企業はごく一部。実質賃金は前年比で5%以上減少。「インフレと賃金の悪循環」が加速。</p>
+
+  <!-- 十 -->
+  <h2>十、2027年5月 — 社会の分断と「排除」の論理</h2>
+  <h3>5月2027</h3>
+  <p><span class="text-cyan">【社会不安の頂点】</span> 各地で大規模なデモが頻発。物資不足と政府の対応の遅れに対する市民の怒りが爆発。一部では「外国人排斥」を掲げる過激な団体が活動を活発化。の抗議デモとは異なる、新たな分断の構図が浮上。</p>
+  <p><span class="text-cyan">【食料・農業】</span> 農業用燃料・肥料の不足が続き、2027年の米の作付け面積が前年比で20%減少。政府は「輸入米の緊急確保」に乗り出すが、世界的な食料不足の中で調達競争が激化。スーパーでは「米1合」の小分け販売が始まる。</p>
+  <p><span class="text-cyan">【外交の孤立】</span> 新内閣は米国に対して「ホルムズ海峡の安全確保」を求めるが、米国は自国の戦略を優先。日本は「単独でのエネルギー調達ルート確保」を模索するが、ロシア・中国との関係悪化もあり、国際的な孤立が深まる。</p>
+  <p><span class="text-cyan">【医療崩壊】</span> 医薬品の供給不足に加え、医療従事者の疲弊が限界に。地方の中小病院では診療科目の縮小・休診が相次ぐ。「受け入れ拒否」が日常化し、救急搬送のたらい回しが社会問題化。</p>
+
+  <!-- 十一 -->
+  <h2>十一、2027年6月 — 政権の崩壊と新たな秩序の胎動</h2>
+  <h3>6月2027</h3>
+  <p><span class="text-cyan">【政権崩壊】</span> 暫定政権もまた崩壊。衆議院解散・総選挙が実施されるが、投票率は戦後最低を記録——有権者の「政治不信」が頂点に。選挙結果は大政党の衰退と小政党の乱立をもたらし、連立交渉は長期化。</p>
+  <p><span class="text-cyan">【金融システムの再編】</span> 主要銀行の資本注入が不可避となる。日本銀行は「事実上の国債直接引き受け」に踏み切り、金融の「財政ファイナンス」化が始まる。円相場は1ドル200円台に突入——日本円の「安全通貨」としての地位は完全に喪失。</p>
+  <p><span class="text-cyan">【エネルギー】</span> 夏場の電力需要ピークを前に、政府は「強制節電令」を発動。工場の操業短縮が広がり、製造業の生産指数は前年比で20%減。GDPは四半期ベースで年率換算▲5%超のマイナス成長。</p>
+  <p><span class="text-cyan">【国際社会の動き】</span> 世界の中央銀行が協調して「新たな通貨体制」の構築を議論開始。日本は交渉に参加するものの、経済的な発言力は著しく低下。「財政主権の一部委譲」を求められる可能性が現実味を帯びる。</p>
+
+  <!-- 十二 -->
+  <h2>十二、2027年7月 — 一年後の日本、暗闇の先に見えるもの</h2>
+  <h3>7月2027</h3>
+  <p><span class="text-cyan">【経済】</span> 日経平均は4万円台前半まで下落。東証プライム市場の時価総額はピーク時から半分以下に。日本の名目GDPはこの1年間で約15%縮小。世界経済フォーラムの競争力ランキングでは、日本は先進国中最下位に転落。</p>
+  <p><span class="text-cyan">【エネルギー】</span> ホルムズ海峡の完全再開はまだ見通せず。日本の電力供給能力はピーク時の約65%にまで低下。「2027年夏」は記録的な猛暑と電力不足が重なり、過去最悪の熱中症死者数が予想される。</p>
+  <p><span class="text-cyan">【社会・生活】</span> 都市部から地方への「脱出」が加速。しかし、地方のインフラも脆弱であり、受け入れによる新たな地域間対立が発生。「自給自足」を掲げるコミュニティが各地に生まれるが、その多くは持続可能性に疑問符がつく。</p>
+  <p><span class="text-cyan">【希望の芽】</span> 一方で、この危機を契機に「分散型エネルギー」への関心が爆発的に高まる。家庭用太陽光発電・蓄電池の導入申請が前年比で10倍以上に。地域通貨や物々交換ネットワークが新たな経済の形として台頭し始める。「大量生産・大量消費」から「地域完結型」へのパラダイムシフトが、苦しみの中で始まろうとしている。</p>
+
+  <!-- 総括 (ハイライト) -->
+  <div class="quote" style="border-left-color: #C9A87C;">
+    <span class="highlight">📌 この一年を総括すれば</span><br>
+    日本は「エネルギー安全保障の失敗」「財政の脆弱性」「政治のリーダーシップ不足」という三重の構造的弱点を、地政学的ショックによって暴露された。GDPは約15%縮小し、国民の生活水準は一世代前の水準にまで引き下げられた。しかし、この危機が「持続可能な社会」への転換点となる可能性もまた、確かに存在する。
+  </div>
+
+  <!-- 付録 -->
+  <h3 style="margin-top: 2rem;">付録：主要指標の推移見通し</h3>
+  <div class="appendix-block">
+    <div class="appendix-grid">
+      <div class="appendix-item"><span class="appendix-label">日経平均</span><span class="appendix-value">64,611円 → 40,000〜45,000円</span></div>
+      <div class="appendix-item"><span class="appendix-label">円相場（対ドル）</span><span class="appendix-value">163.89円 → 190〜210円</span></div>
+      <div class="appendix-item"><span class="appendix-label">ブレント原油</span><span class="appendix-value">$100〜110 → $120〜160</span></div>
+      <div class="appendix-item"><span class="appendix-label">消費者物価上昇率</span><span class="appendix-value">約3% → 4〜6%</span></div>
+      <div class="appendix-item"><span class="appendix-label">失業率</span><span class="appendix-value">約2.6% → 5〜7%</span></div>
+      <div class="appendix-item"><span class="appendix-label">電力供給能力（対ピーク比）</span><span class="appendix-value">約90% → 約65%</span></div>
+    </div>
+  </div>
+
+  <!-- 免責事項 -->
+  <div class="disclaimer">
+    <strong>免責事項：</strong> 本予測は2026年7月25日時点の公開情報と地政学・経済学の分析に基づくシナリオであり、未来の出来事を確定的に予言するものではありません。実際の展開は、外交交渉の進展、軍事衝突の帰結、国際協調の有無などによって大きく変わり得ます。本稿の内容を投資判断・人生設計の根拠として用いることは避け、常に最新の公式情報と専門家の助言を参照の上、自己責任で行動してください。
+  </div>
+
+</div> <!-- /paper -->
+</body>
+</html>
