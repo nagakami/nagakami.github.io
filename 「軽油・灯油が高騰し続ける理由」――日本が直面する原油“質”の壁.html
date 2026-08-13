@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本における石油製品価格予測とサワークルード供給の現実</title>
+    <style>
+        /* E Ink Mode / Dark Theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #1a1a1a;
+            color: #d0d0d0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-image: radial-gradient(ellipse at 20% 50%, rgba(40,40,40,0.3) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 50%, rgba(30,30,30,0.3) 0%, transparent 60%);
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #3a3a3a;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.8rem;
+            color: #ececec;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 2.2rem;
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+            border-left: 4px solid #5a7a9a;
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-top: 1.6rem;
+            margin-bottom: 0.6rem;
+            color: #cccccc;
+        }
+        .badge-yes {
+            color: #8fbc8f;
+            font-weight: 600;
+        }
+        .badge-no {
+            color: #d99b8a;
+            font-weight: 600;
+        }
+        .badge-warn {
+            color: #e6c87a;
+            font-weight: 600;
+        }
+        ul, ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        li {
+            margin-bottom: 0.4rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0 1.8rem;
+            font-size: 0.95rem;
+            background-color: #212121;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px #2f2f2f;
+        }
+        th {
+            background-color: #2c2c2c;
+            color: #e8e8e8;
+            font-weight: 500;
+            padding: 0.8rem 0.6rem;
+            text-align: left;
+            border-bottom: 2px solid #3f3f3f;
+        }
+        td {
+            padding: 0.7rem 0.6rem;
+            border-bottom: 1px solid #2f2f2f;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .highlight-box {
+            background-color: #262626;
+            border-left: 4px solid #7a9a5a;
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .highlight-box strong {
+            color: #e0e0e0;
+        }
+        .footnote {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            border-top: 1px solid #333;
+            padding-top: 1.2rem;
+            margin-top: 2rem;
+        }
+        .emphasis {
+            background-color: #2a2a2a;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            color: #f0e68c;
+            font-weight: 500;
+        }
+        .danger {
+            color: #e07b6c;
+            font-weight: 600;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 2rem 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            table { font-size: 0.85rem; }
+            th, td { padding: 0.5rem 0.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>⛽ とサワークルード供給の深刻なジレンマ</h1>
+
+<!--
+タイトル：
+日本の燃料危機は「量」ではなく「質」で起きている　サワークルード不足が灯油、軽油・航空燃料を直撃
+
+導入文：
+ホルムズ危機を乗り越え「量」は確保できた。しかし日本の製油所は中東産サワークルード前提で設計されており、適した原油が事実上足りない。軽油・航空燃料の高騰は構造的ジレンマの結果だ。
+
+
+**全体概要**
+2026年のホルムズ海峡危機を受け、日本は原油調達の「量」では大きな進展を見せた。高市首相は7月の代替調達率が前年比ほぼ100%に達する見通しを発表し、2028年3月まで安定供給が可能だと表明した。中東依存から米国や中南米、アフリカなどへの多様化が進んだ結果だ。
+
+しかし深刻なのは「質」の問題である。日本の製油所は中東産サワークルード（中重質・高硫黄原油）の処理を前提に設計されており、米国産ライトスイート原油へのシフトにより軽油・航空燃料・灯油といった中間留分の生産量が構造的に減少している。
+
+その結果、軽油は高止まり、航空燃料は特に高騰し、灯油も高値圏で推移する見通しが強まっている。製油所稼働率の低下や適合原油の不足が、価格上昇の根本要因だ。量は確保できても適した原油が足りないという構造的ジレンマが、燃料価格を押し上げている。
+
+-->
+<!--
+「軽油・灯油が高騰し続ける理由」――日本が直面する原油“質”の壁
+
+ホルムズ危機を乗り越え「量」は確保できた。しかし日本の製油所は中東産サワークルード前提で設計されており、適した原油が事実上足りない。軽油・航空燃料の高騰は構造的ジレンマの結果だ。
+
+
+
+【全体概要】
+2026年6月、日本政府はホルムズ海峡を迂回する原油代替調達を前年比100％達成したと発表した。しかし、この「量の確保」の成功は、別の深刻な構造問題を浮き彫りにした。日本の製油所は中東産の特定サワークルード（中質・酸性）の処理を前提に設計されており、代替として増えた米国産ライトスイート原油などは設備に適合しない。その結果、4月の国内製油所稼働率は約67.8％に低下し、軽油・ジェット燃料・灯油といった中間留分の生産量が構造的に減少している。
+
+2026年下半期から2027年にかけて、これらの製品価格は歴史的高値圏で推移すると見られる。特にジェット燃料は供給制約が最も顕著でアジアで取り合い状態が続き、軽油は物流コストを直撃する。灯油も冬季需要で再上昇リスクをはらむ。原油価格自体は2027年にやや軟化する見通しだが、製品価格は従来水準には戻らず、「安い燃料」の時代は終焉したと言わざるを得ない。
+
+政府・業界はブレンド混合や紅海ルート活用、備蓄取り崩しで対応するが、いずれも緊急避難的な「つなぎ」に過ぎない。中長期的には製油所の設備改修や需要構造の転換（EV・代替燃料）が迫られるが、少なくとも2026〜2027年は価格高騰が日常化する。調達量の確保と設備適合性のジレンマこそが、現在の日本石油政策の核心的課題である。
+
+
+-->
+
+<h2>政府発表</h2>
+<p>
+  2026年6月11日、高市早苗首相は中東情勢に関する関係閣僚会議で、<span class="badge-yes">7月の原油代替調達率が前年同月比で約100%（実質的に全量をホルムズ海峡迂回ルートで調達）</span>に達する見通しを発表しました。これは、それまで約94%を中東に依存し、その93%をホルムズ海峡経由で輸入していた日本にとって、<strong>歴史的な調達構造の転換点</strong>です。
+</p>
+<h2>事実</h2>
+<p>
+  2026年、日本はホルムズ海峡危機という前例のない事態に直面し、<strong>「量」としての原油調達先の多様化</strong>には一定の成功を収めました。しかし、その裏で、<span class="danger">「質」に起因する深刻な構造的問題</span>が顕在化しています。本稿では、入手可能な最新のデータと業界関係者の証言に基づき、軽油、航空燃料、灯油の価格見通しと、<strong>「製油所に適したサワークルードが事実上不足している」</strong>という現実について、奇譚なく解説します。
+</p>
+
+<h2>1. 軽油・航空燃料（ジェット燃料）・灯油の価格予測（2026-2027年）</h2>
+
+<h3>▸ 価格に影響を与える根本要因</h3>
+<ul>
+    <li><strong>原料構成の変化</strong>：中東産サワークルードから米国産ライトスイートクルードへのシフトにより、<span class="badge-warn">軽油・ジェット燃料・灯油といった中間留分の生産量が構造的に減少</span>しています。これは、日本の製油所が中東産原油の処理に最適化されているためです。</li>
+    <li><strong>需給逼迫</strong>：イラン情勢を発端とする供給不安により、商業在庫は「あと数週間分」という極めて逼迫した状態にあります。IEAも同様の懸念を示しています。</li>
+    <li><strong>コスト増</strong>：代替調達ルートの長距離化や、スイート原油のプレミアム上昇（ブレント・ドバイEFSスプレッドの拡大）が製品価格に転嫁されます。</li>
+</ul>
+
+<h3>▸ 製品別価格見通し（2026年下半期〜2027年）</h3>
+<table>
+    <thead>
+        <tr>
+            <th>製品</th>
+            <th>2026年下半期の見通し</th>
+            <th>2027年の見通し</th>
+            <th>主な理由</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>軽油</strong></td>
+            <td><span class="danger">高止まり（現状の高価格帯が持続）</span></td>
+            <td><span class="badge-warn">徐々に下落も、従来水準よりは高値</span></td>
+            <td>中間留分の生産量減少が直撃。物流・運輸業界への影響が懸念される。需要減少（不況による需要減少）（2027年予想）でやや緩和も、構造的な供給制約が価格を下支え。</td>
+        </tr>
+        <tr>
+            <td><strong>航空燃料<br>（ジェット燃料）</strong></td>
+            <td><span class="danger">非常に高値（製品中最も高い水準）</span></td>
+            <td><span class="badge-warn">大幅な下落も、歴史的平均よりは高め</span></td>
+            <td>供給制約が最も顕著。既にアジアで取り合い状態。バークレイズは紛争終結（現状見込み無し）で第3四半期に750ドル/トン、第4四半期に730ドル/トンへの下落を見込む。しかし需給構造の変化は長期化。</td>
+        </tr>
+        <tr>
+            <td><strong>灯油</strong></td>
+            <td><span class="danger">高値圏で推移</span></td>
+            <td><span class="badge-warn">需要期（冬）に応じて変動も、高めの水準</span></td>
+            <td>軽油・ジェット燃料と同様に中間留分。冬季の需要増で価格が再び上昇するリスクあり。</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="highlight-box">
+    <p><strong>📊 市場コンセンサス（2026年6月時点）</strong></p>
+    <ul>
+        <li><strong>ブレント原油</strong>：2026年平均予想は<strong>82ドル/バレル</strong>（華泰証券）、2027年平均は<strong>70ドル/バレル</strong>に軟化。</li>
+        <li><strong>ジェット燃料</strong>：バークレイズは2026年第3四半期に<strong>750ドル/トン</strong>、第4四半期に<strong>730ドル/トン</strong>へ下落すると予測。</li>
+        <li><strong>リスク要因</strong>：地政学リスクの再燃や備蓄補充需要（戦略備蓄の回復）により、価格の下値は固い。</li>
+    </ul>
+</div>
+
+<h2>2. 【最重要項目】製油所に適したサワークルードは本当に供給されていないのか？</h2>
+
+<p>
+  結論から言えば、<span class="danger">「日本の製油所が本来処理することを前提に設計された『中東産の特定サワークルード』の代替供給は、事実上、極めて困難な状況」</span>です。これは単なる「量」の問題ではなく、「設備適合性」という物理的・経済的制約に起因します。
+</p>
+
+<h3>▸ 現実を証明する5つの根拠</h3>
+<ol>
+    <li>
+        <strong>稼働率の低下という証拠</strong>：日本の製油所の稼働率は、紛争勃発後の4月時点で<strong>約67.8%</strong>にまで低下しました。これは、代替原油が従来の操業ノウハウや設備に適合せず、<span class="badge-no">能力を発揮できない</span>ことを示しています。
+    </li>
+    <li>
+        <strong>代替可能量の限界</strong>：エネルギー調査会社Rystad Energyのアナリストは、「日本は短期的に非中東産原油の配合比率を<strong>30～50%</strong>まで引き上げられる可能性があるが、<span class="danger">中東供給を完全に代替することは困難</span>」と明言しています。
+    </li>
+    <li>
+        <strong>製油所の設計上の制約</strong>：日本の主要製油所は、<span class="emphasis">中質のサウジアラビア産原油</span>などを処理することを前提に、1960〜70年代の高度成長期に建設されました。以来、需要減少を見越して大規模な設備更新は行われておらず、非中東産原油への対応には根本的な制約があります。
+    </li>
+    <li>
+        <strong>製品構成の歪み</strong>：米国産ライトスイート原油に切り替えると、<span class="badge-warn">ガソリン・ナフサの生産量は増える一方で、軽油・ジェット燃料の生産量が減少</span>します。これは日本の需要構成（軽油・ジェット燃料需要が大きい）と逆行するもので、現在の価格高騰の主要因です。
+    </li>
+    <li>
+        <strong>業界幹部の証言</strong>：出光興産は「非中東系原油の処理には製油所設備に関する課題がある」と認めています。また、大手トレーダーや複数の製油所の原料担当者は、供給源の多様化（米国・アフリカ・アジア太平洋から5〜8%を目標）を進める一方で、<span class="emphasis">経済性や適合性の課題が常に付きまとう</span>と証言しています。
+</li>
+</ol>
+
+<h3>▸ では、日本はどう対応しているのか？</h3>
+<div class="highlight-box">
+    <p><strong>💡 現実的な対応策とその限界</strong></p>
+    <ul>
+        <li><strong>ブレンド（混合）</strong>：中東産サワークルードと米国産スイートクルードを混合し、性状を調整。しかし、これは<strong>「つなぎ」</strong>に過ぎず、安定した品質と歩留まりを保証するものではありません。</li>
+        <li><strong>紅海ルートの活用（事実上封鎖されている）</strong>：サウジアラビアの紅海積み出し原油（Arab Super Lightなど）の調達を継続・拡大することで、ホルムズ海峡に依存しない中東産原油の確保を試みています。</li>
+        <li><strong>備蓄の取り崩し</strong>：国家備蓄を活用することで、短期的な需給ギャップを埋めていますが、これは<strong>「時間稼ぎ」</strong>であり、根本的な解決にはなりません。</li>
+    </ul>
+</div>
+
+<h2>3. 総括：構造的ジレンマと今後の展望</h2>
+
+<p>
+  日本は「量」としての原油調達先の多様化に成功しつつありますが、それは<strong>「処理できる原油の種類」という質的な制約</strong>を浮き彫りにしました。現在の状況は、以下のような構造的ジレンマを露呈しています。
+</p>
+<ul>
+    <li><span class="badge-yes">調達量の確保（7月以降、前年比100%の見込み）</span> ↔ <span class="badge-no">適した原油の不足（設備適合性の問題）</span></li>
+    <li><span class="badge-yes">供給源の多様化（米国・中南米・アフリカ等）</span> ↔ <span class="badge-no">製品構成の歪み（中間留分不足）とコスト上昇</span></li>
+</ul>
+<p>
+  このジレンマは、中長期的には、<strong>製油所の設備改修や新規投資</strong>、あるいは<span class="emphasis">需要構造そのものの変化（EV化や代替燃料へのシフト）</span>を加速させる可能性があります。しかし、少なくとも2026〜2027年にかけては、軽油・航空燃料・灯油の価格は歴史的な高値圏で推移し、<strong>「安い燃料」の時代は終焉</strong>を迎えたと言わざるを得ません。
+</p>
+
+<p class="footnote">
+  ※ 本分析は2026年8月時点の政府公表データ、業界専門誌（S&P Global Platts, Argus）、証券会社レポート（華泰証券、バークレイズ）、及び国際エネルギー機関（IEA）の見解に基づきます。地政学的リスクにより、予測は大きく変動する可能性があります。
+</p>
+
+</body>
+</html>
