@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本人が今、本当に心配している5つのこと ｜ 2026年夏 現場の声</title>
+    <style>
+        /* ========== リセット & 基本 ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e8e0d8;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif JP', serif;
+            line-height: 1.9;
+            padding: 2rem 1.2rem;
+        }
+
+        /* ========== コンテナ ========== */
+        .paper {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            padding: 3rem 2.8rem;
+            border-radius: 12px;
+            border: 1px solid #2e2e2e;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ========== ヘッダー ========== */
+        .header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #2e2e2e;
+            margin-bottom: 2.5rem;
+        }
+
+        .header-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #8a7e6e;
+            border: 1px solid #2e2e2e;
+            padding: 4px 18px;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #f0e8e0;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        .header h1 .accent {
+            color: #d49a6a;
+        }
+
+        .header-sub {
+            font-size: 0.95rem;
+            color: #9a8e7e;
+            margin-top: 0.8rem;
+            font-style: italic;
+            border-left: 3px solid #d49a6a;
+            padding-left: 1.2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            font-size: 0.78rem;
+            color: #6a5e4e;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #d49a6a;
+            opacity: 0.5;
+        }
+
+        /* ========== 導入文 ========== */
+        .intro {
+            background: #1e1e1e;
+            padding: 1.8rem 2.2rem;
+            border-radius: 8px;
+            border-left: 4px solid #d49a6a;
+            margin-bottom: 2.8rem;
+        }
+
+        .intro p {
+            font-size: 0.95rem;
+            color: #c8c0b8;
+            line-height: 2;
+            margin-bottom: 0.8rem;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro em {
+            color: #d49a6a;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* ========== セクション ========== */
+        .section {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 3rem;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* ========== ランク ========== */
+        .rank {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .rank-num {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 900;
+            font-size: 2.6rem;
+            color: #d49a6a;
+            opacity: 0.6;
+            line-height: 1;
+        }
+
+        .rank-line {
+            flex: 1;
+            max-width: 60px;
+            height: 1px;
+            background: #3a3a3a;
+        }
+
+        /* ========== タイトル ========== */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f0e8e0;
+            margin-bottom: 4px;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            line-height: 1.4;
+        }
+
+        .section-sub {
+            font-size: 0.85rem;
+            color: #8a7e6e;
+            margin-bottom: 1.6rem;
+            font-weight: 300;
+        }
+
+        /* ========== データカード ========== */
+        .data-card {
+            background: #181818;
+            border: 1px solid #2a2a2a;
+            border-left: 3px solid #d49a6a;
+            padding: 1.4rem 1.8rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+        }
+
+        .data-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6a5e4e;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .data-card p {
+            font-size: 0.88rem;
+            color: #c0b8b0;
+            line-height: 1.9;
+            margin-bottom: 0.6rem;
+        }
+
+        .data-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-card strong {
+            color: #e8d0b8;
+            font-weight: 600;
+        }
+
+        .data-card .highlight {
+            color: #d49a6a;
+            font-weight: 600;
+        }
+
+        .source-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            color: #5a4e3e;
+            background: #1e1e1e;
+            padding: 2px 12px;
+            border-radius: 12px;
+            margin-top: 6px;
+            font-family: 'Helvetica Neue', sans-serif;
+            border: 1px solid #2a2a2a;
+        }
+
+        /* ========== 左右比較グリッド ========== */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .compare-card {
+            padding: 1.4rem 1.6rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            background: #161616;
+        }
+
+        .compare-card.left {
+            border-left: 4px solid #7a9a6a;
+        }
+
+        .compare-card.right {
+            border-left: 4px solid #b08a6a;
+        }
+
+        .compare-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .compare-label.left {
+            color: #8aaa7a;
+        }
+
+        .compare-label.right {
+            color: #c09a7a;
+        }
+
+        .compare-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .compare-label.left::before {
+            background: #8aaa7a;
+        }
+
+        .compare-label.right::before {
+            background: #c09a7a;
+        }
+
+        .compare-card p {
+            font-size: 0.85rem;
+            color: #b8b0a8;
+            line-height: 1.85;
+        }
+
+        .compare-card p + p {
+            margin-top: 0.6rem;
+        }
+
+        .compare-card .quote {
+            color: #8a7e6e;
+            font-size: 1.2rem;
+            font-family: 'Georgia', serif;
+            opacity: 0.4;
+            margin-right: 2px;
+        }
+
+        /* ========== 私見ボックス ========== */
+        .insight {
+            background: #1a1a1a;
+            border: 1px solid #2e2e2e;
+            border-radius: 8px;
+            padding: 1.4rem 1.8rem;
+            border-top: 3px solid #d49a6a;
+        }
+
+        .insight-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #d49a6a;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .insight-label::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #d49a6a;
+            opacity: 0.6;
+        }
+
+        .insight p {
+            font-size: 0.88rem;
+            color: #c8c0b8;
+            line-height: 1.95;
+        }
+
+        .insight p + p {
+            margin-top: 0.6rem;
+        }
+
+        .insight em {
+            color: #d49a6a;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* ========== 結論 ========== */
+        .conclusion {
+            text-align: center;
+            padding-top: 2.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .conclusion-line {
+            width: 40px;
+            height: 1px;
+            background: #3a3a3a;
+            margin: 0 auto 2rem;
+        }
+
+        .conclusion p {
+            font-size: 1.0rem;
+            color: #b0a898;
+            line-height: 2.2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .conclusion .strong {
+            color: #d49a6a;
+            font-weight: 600;
+        }
+
+        /* ========== フッター ========== */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2a2a2a;
+            font-size: 0.7rem;
+            color: #5a4e3e;
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            color: #7a6a5a;
+            text-decoration: none;
+            border-bottom: 1px dotted #3a3a3a;
+        }
+
+        .footer a:hover {
+            color: #d49a6a;
+            border-bottom-color: #d49a6a;
+        }
+
+        /* ========== フェードイン ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== レスポンシブ ========== */
+        @media (max-width: 700px) {
+            .paper {
+                padding: 1.6rem 1.2rem;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .data-card {
+                padding: 1rem 1.2rem;
+            }
+
+            .compare-card {
+                padding: 1rem 1.2rem;
+            }
+
+            .insight {
+                padding: 1rem 1.2rem;
+            }
+
+            .intro {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .header-meta {
+                gap: 0.8rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ========== 印刷 ========== */
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+            }
+            .paper {
+                background: #fff;
+                border: none;
+                box-shadow: none;
+            }
+            .data-card,
+            .compare-card,
+            .insight,
+            .intro {
+                background: #f5f5f5;
+                border-color: #ccc;
+            }
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ========== アニメーション制御 ========== */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper">
+
+        <!-- ===== ヘッダー ===== -->
+        <header class="header">
+            <div class="header-label">Social Voice Report 2026</div>
+            <h1>日本人が今、<br><span class="accent">本当に心配している</span>5つのこと</h1>
+
+<!--
+「給料上がったのに生活は楽にならない…」、日本人が本当に心配している5つの不安
+
+ニュースでは語られない、スーパーのレジや夜の布団の中でふと襲う「このままで大丈夫？」——2026年夏、普通の日本人が抱える本当の不安5つを暴露します。
+
+
+
+【全体概要】
+2026年8月時点で、普通の日本人が日常で感じる漠然とした不安を5つに絞った。ニュースの見出しではなく、生活の実感に根ざした「コントロール感の喪失」が共通の糸だ。
+
+1つ目は老後への不安。実質賃金は6ヶ月連続で増加したものの、物価高が相殺し「給料は上がったが生活は楽にならない」という乖離が続く。設備投資の減少も将来の不透明感を強めている。
+
+2つ目は子どもの教育。高所得層と低所得層で教育費格差は約56倍。中学受験の過熱と塾費用の負担が、親世代の就職氷河期トラウマと重なり「背中を押せない」ジレンマを生む。
+
+3つ目は医療アクセス。2026年夏の千葉豪雨で複数の病院が浸水・停電し手術中止が相次いだ。想定外の複合災害が「病気になっても診てもらえるのか」という不安を現実化した。
+
+4つ目は国の安全保障。防衛白書が中国を「最大の戦略的挑戦」と位置づけ「新たな危機の時代」を宣言。戦争や国の存続への存在論的な不安が、政策論を超えて広がっている。
+
+5つ目は核と平和への揺らぎ。76％が無核三原則を支持し核共有に反対する一方、現実の脅威との間で引き裂かれる。SNSで繋がりながら「誰にも話せない孤独」が深まっている。
+
+これらはすべて「自分の努力だけでは人生をコントロールできない」という感覚で繋がる。左右の政策論だけでは届かない、日常の声に耳を傾ける必要がある。
+
+
+-->
+
+            <p class="header-sub">2026年夏 — 日常の不安を、左右の視点から読み解く</p>
+            <div class="header-meta">
+                <span><span class="dot"></span>分析基準日：2026年8月</span>
+                <span><span class="dot"></span>対象：全国の一般生活者</span>
+                <span><span class="dot"></span>手法：世論調査・経済統計・メディア分析の統合</span>
+            </div>
+        </header>
+
+        <!-- ===== 導入 ===== -->
+        <div class="intro fade-in">
+            <p>
+                ニュースの見出しには「物価高」「少子化」「安全保障」といった言葉が並ぶ。しかし、スーパーのレジで、職場の休憩室で、SNSのタイムラインで、人々が実際に呟いている不安は、もっと<em>曖昧で、体感的で、消えない</em>ものだ。
+            </p>
+            <p>
+                この報告は、2026年8月時点の国内世論調査・経済統計・メディア分析を統合し、<em>「普通の日本人が日常で感じている漠然とした不安」</em>を五つに絞り込んだものである。
+            </p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 1位 -->
+        <!-- ============================================================ -->
+        <section class="section fade-in">
+            <div class="rank">
+                <span class="rank-num">01</span>
+                <span class="rank-line"></span>
+            </div>
+            <h2 class="section-title">「このまま働き続けて、老後はどうなるんだろう」</h2>
+            <p class="section-sub">— 実質賃金は持ち直したが、物価高と設備投資減少が生む不透明感</p>
+
+            <div class="data-card">
+                <div class="data-label">▼ 最新データ（2026年8月）</div>
+                <p>
+                    2026年6月の所定内給与は前年比<span class="highlight">3.4％増</span>と6ヶ月連続の3％超え（毎月勤労統計）。実質賃金も6ヶ月連続で増加し、物価上昇を上回る賃上げが定着しつつある。
+                </p>
+                <p>
+                    しかし、4-6月期実質GDPは年率1.1％増にとどまり、<span class="highlight">実質設備投資は2四半期連続のマイナス（-1.2％）</span>。高市内閣の支持率は8月第2週時点で47.1％に回復したが、<span class="highlight">物価高対策を重視する有権者は59.3％</span>に達している（Yahoo!ニュース世論調査）。
+                </p>
+                <span class="source-tag">出典：毎月勤労統計（2026.6）／野村アセットマネジメントレポート（2026.8.5）／Yahoo!ニュース世論調査（2026.8.16）</span>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-card left">
+                    <div class="compare-label left">リベラル系の視点</div>
+                    <p><span class="quote">「</span>賃上げが一部の大企業に偏り、中小企業・非正規には届いていない。K字型経済の構造は変わっていない。必要なのは最低賃金の大幅引き上げと再分配の強化だ。</p>
+                </div>
+                <div class="compare-card right">
+                    <div class="compare-label right">保守系の視点</div>
+                    <p><span class="quote">「</span>日本経済はインフレ経済へと局面を転換した。賃上げと株高で家計の金融資産は過去5年で398兆円増えた。課題は実質成長と生産性向上であり、規制改革が鍵だ。</p>
+                </div>
+            </div>
+
+            <div class="insight">
+                <div class="insight-label">私見</div>
+                <p>
+                    マクロ指標が改善しても「景気実感がない」理由は、<em>「賃上げ」と「物価上昇」の綱引き</em>にある。給料が上がっても、食料品・光熱費の値上がりがそれを相殺している。現場の実感は「給料は上がったけど、生活は楽になっていない」——この乖離が老後不安をより深いものにしている。
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 2位 -->
+        <!-- ============================================================ -->
+        <section class="section fade-in">
+            <div class="rank">
+                <span class="rank-num">02</span>
+                <span class="rank-line"></span>
+            </div>
+            <h2 class="section-title">「子どもに同じ思いをさせたくない、でも背中を押せない」</h2>
+            <p class="section-sub">— 教育費格差56倍と、過熱する中学受験が生む親のジレンマ</p>
+
+            <div class="data-card">
+                <div class="data-label">▼ 最新データ（2026年8月）</div>
+                <p>
+                    総務省家計調査によると、<span class="highlight">教育費は高所得層と低所得層で約56倍の格差</span>。学習塾の年間総額は中学生で30万〜50万円、高校生でも同水準に達し、<span class="highlight">塾費用を「負担」と感じる保護者は75.4％</span>（WAKERZ調査）。
+                </p>
+                <p>
+                    特に中学受験の過熱が顕著で、富裕層が教育を「リターンのある投資」と捉える傾向が、<span class="highlight">世代を超えた格差の固定化</span>を加速させている。
+                </p>
+                <span class="source-tag">出典：総務省家計調査（2026）／WAKERZ調査（2026.8.4）</span>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-card left">
+                    <div class="compare-label left">リベラル系の視点</div>
+                    <p><span class="quote">「</span>教育は公的財だ。家庭の経済力が子どもの未来を決める構造を変えなければならない。高等教育の無償化拡大と奨学金の給付化が不可欠だ。</p>
+                </div>
+                <div class="compare-card right">
+                    <div class="compare-label right">保守系の視点</div>
+                    <p><span class="quote">「</span>問題は高卒でも安定して暮らせる職種が減ったことだ。職業教育の振興と産業競争力の強化で『学歴以外の道』を復活させるべきだ。無償化は大学の値崩れを招く。</p>
+                </div>
+            </div>
+
+            <div class="insight">
+                <div class="insight-label">私見</div>
+                <p>
+                    56倍という数字は、「努力すれば報われる」という社会の神話を根底から揺るがす。注目すべきは、<em>親世代が抱える「就職氷河期の傷跡」</em>だ。「大学に行かせたい」という願望と「自分の経験上、学歴は人生を保証しない」という経験知が矛盾し、親は決断できない。両陣営とも「制度論」に終始するが、<em>世代間トラウマの連鎖</em>にアプローチする議論が欠けている。
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 3位 -->
+        <!-- ============================================================ -->
+        <section class="section fade-in">
+            <div class="rank">
+                <span class="rank-num">03</span>
+                <span class="rank-line"></span>
+            </div>
+            <h2 class="section-title">「病気になっても、きちんと見てもらえるのだろうか」</h2>
+            <p class="section-sub">— 想定外の豪雨が病院を直撃する「複合災害」の現実</p>
+
+            <div class="data-card">
+                <div class="data-label">▼ 最新データ（2026年8月）</div>
+                <p>
+                    2026年8月、千葉県を襲った記録的豪雨により、<span class="highlight">千葉大学医学部附属病院が排水処理設備冠水で19日の手術を全て取りやめ</span>た。千葉県内では<span class="highlight">最大25か所の医療施設が浸水被害</span>を受け、一部は電源浸水による停電で全診療科休診に追い込まれた。
+                </p>
+                <p>
+                    また、熊本地震（2026年7月）被災地では、避難生活の長期化に伴う<span class="highlight">エコノミークラス症候群・便秘・不眠などの二次的健康被害</span>が顕在化している。
+                </p>
+                <span class="source-tag">出典：日テレNEWS 千葉豪雨報道（2026.8.17）／日テレNEWS 熊本地震報道（2026.8.16）</span>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-card left">
+                    <div class="compare-label left">リベラル系の視点</div>
+                    <p><span class="quote">「</span>医療崩壊は長年の医療費抑制策とインフラ老朽化対策の遅れが原因だ。ハザードマップの想定を超える災害が頻発する今、病院のBCP（事業継続計画）強化が急務だ。</p>
+                </div>
+                <div class="compare-card right">
+                    <div class="compare-label right">保守系の視点</div>
+                    <p><span class="quote">「</span>財源に限りがある以上、効率的な資源配分を避けて通れない。都市部への医師偏在是正には地域枠の拡大が必要だ。オンライン診療などテクノロジーによる効率化も加速すべきだ。</p>
+                </div>
+            </div>
+
+            <div class="insight">
+                <div class="insight-label">私見</div>
+                <p>
+                    「想定外」が日常化している。ハザードマップで安全とされた病院が機能不全に陥る——これは<em>「災害は他人事」という意識そのものを覆す</em>。両陣営とも「マクロな需給」を論じるが、<em>「夜中に子どもが高熱を出したらどこに行けばいいのか」というミクロな不安</em>に応える視点が欠落している。
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 4位 -->
+        <!-- ============================================================ -->
+        <section class="section fade-in">
+            <div class="rank">
+                <span class="rank-num">04</span>
+                <span class="rank-line"></span>
+            </div>
+            <h2 class="section-title">「日本はこのままで大丈夫なのだろうか」</h2>
+            <p class="section-sub">— 2026年版防衛白書が示す「再軍事化」の加速と国民の揺らぎ</p>
+
+            <div class="data-card">
+                <div class="data-label">▼ 最新データ（2026年8月）</div>
+                <p>
+                    2026年8月、高市政権下で初の<span class="highlight">防衛白書（全598ページ）</span>が公表された。白書は、中国を「<span class="highlight">これまでにない最大の戦略的挑戦</span>」と位置づけ、「新たな危機の時代」を宣言した。
+                </p>
+                <p>
+                    特に<span class="highlight">宇宙・サイバー・電磁波・認知</span>という「新たな戦略的フロンティア」への作戦領域拡大や、<span class="highlight">遠距離攻撃能力の強化</span>に言及している。高市内閣支持率は47.1％に回復したが、自民党支持率は27.9％と依然として伸び悩む。
+                </p>
+                <span class="source-tag">出典：防衛白書（2026年版）／Yahoo!ニュース世論調査（2026.8.16）</span>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-card left">
+                    <div class="compare-label left">リベラル系の視点</div>
+                    <p><span class="quote">「</span>防衛白書は『再軍事化』の正当化だ。危機を誇張し、仮想敵を作り出し、軍事拡張に道を開く。特に台湾問題を『日本有事』と結びつける論理は極めて危険だ。</p>
+                </div>
+                <div class="compare-card right">
+                    <div class="compare-label right">保守系の視点</div>
+                    <p><span class="quote">「</span>現実の脅威を直視しなければならない。中国の軍事拡張、北朝鮮の核・ミサイル開発は幻想ではない。防衛費GDP2％目標達成と敵基地攻撃能力の保有が平和を維持する現実的な道だ。</p>
+                </div>
+            </div>
+
+            <div class="insight">
+                <div class="insight-label">私見</div>
+                <p>
+                    このテーマで特徴的なのは、<em>人々の不安が「政策の選択」ではなく「存在論的な不安」</em>にまで昇華している点だ。「もし戦争になったら」「日本という国はなくなるのか」。白書が「新たな危機の時代」を宣言すればするほど、その言葉の重みは国民の日常に沈んでいく。両陣営とも「何をすべきか」を論じるが、<em>人々は「この人についていけばなんとかなる」という感覚</em>を求めている。論理ではなく、説明責任のあるリーダーシップの姿が問われている。
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 5位 -->
+        <!-- ============================================================ -->
+        <section class="section fade-in">
+            <div class="rank">
+                <span class="rank-num">05</span>
+                <span class="rank-line"></span>
+            </div>
+            <h2 class="section-title">「誰に話しても、この孤独はわかってもらえない」</h2>
+            <p class="section-sub">— 76％が「無核三原則」を支持する背景にある、深い平和への希求</p>
+
+            <div class="data-card">
+                <div class="data-label">▼ 最新データ（2026年8月）</div>
+                <p>
+                    日本世論調査協会の最新調査（2026年8月）によると、<span class="highlight">76％の国民が「無核三原則」の堅持を支持</span>し、<span class="highlight">77％が「核共有」構想に反対</span>している。
+                </p>
+                <p>
+                    広島・長崎では8月に入り<span class="highlight">「無核三原則の堅持」「兵器輸出解禁反対」を訴える大規模な集会・デモ</span>が連日行われている。高市政権の「核オプション」発言に対する不安が顕在化している。
+                </p>
+                <span class="source-tag">出典：日本世論調査協会（2026.8）</span>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-card left">
+                    <div class="compare-label left">リベラル系の視点</div>
+                    <p><span class="quote">「</span>76％という数字は、国民が戦争と核を本能的に拒絶している証拠だ。非核三原則の法的強化と平和外交の再構築こそが求められている。</p>
+                </div>
+                <div class="compare-card right">
+                    <div class="compare-label right">保守系の視点</div>
+                    <p><span class="quote">「</span>『核共有』議論は現実の抑止力をどう確保するかという観点から検討すべきだ。理想論だけでは国を守れない。国民の平和願望を尊重しつつも、現実的な選択肢を提示する責任が政治にはある。</p>
+                </div>
+            </div>
+
+            <div class="insight">
+                <div class="insight-label">私見</div>
+                <p>
+                    76％という数字は、日本人の<em>「核に対するアレルギー」</em>が色あせていないことを示す。しかし同時に、この数字は<em>「現実の脅威」と「理想」の間で引き裂かれる国民の姿</em>でもある。SNSで何万人と繋がりながら「誰にも話せない」と感じる孤独感は、<em>「自分たちの未来を誰が守るのか」という根源的な不安</em>と通底している。両陣営が「制度」や「政策」を論じる前に、この存在論的な不安に耳を傾けることが、政治の第一歩ではないだろうか。
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 結論 -->
+        <!-- ============================================================ -->
+        <div class="conclusion fade-in">
+            <div class="conclusion-line"></div>
+            <p>
+                五つの不安は、それぞれ独立しているようで、底では一本の糸で繋がっている。
+            </p>
+            <p>
+                それは <span class="strong">「自分の人生が、自分の努力だけではコントロールできなくなっている」</span> という感覚だ。
+            </p>
+            <p style="margin-top: 1.2rem;">
+                左派も右派も、この感覚に真正面から向き合わなければ、<br>
+                どの政策も人々の胸に届くことはない。
+            </p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- フッター -->
+        <!-- ============================================================ -->
+        <footer class="footer">
+            出典：毎月勤労統計（2026.6）／野村アセットマネジメントレポート（2026.8.5）／Yahoo!ニュース世論調査（2026.8.16）／総務省家計調査（2026）／WAKERZ調査（2026.8.4）／日テレNEWS千葉豪雨・熊本地震報道（2026.8）／日本世論調査協会（2026.8）／防衛白書（2026年版）<br>
+            本報告は特定の政治的立場を支持するものではありません。
+        </footer>
+
+    </div>
+    <!-- /paper -->
+
+    <!-- ===== フェードインスクリプト ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const targets = document.querySelectorAll('.fade-in');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReduced) {
+                targets.forEach(el => el.classList.add('visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            targets.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
