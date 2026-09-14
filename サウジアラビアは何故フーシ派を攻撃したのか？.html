@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サウジアラビアは何故フーシ派を攻撃したのか？</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== E Ink ダークモード 基本設定 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: #2A2520;
+            color: #EDE6D8;
+            font-family: 'EB Garamond', 'Noto Serif JP', Georgia, serif;
+            line-height: 1.78;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.8rem 1.6rem 3.5rem;
+            position: relative;
+            /* 紙の質感：微かなテクスチャ */
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(255, 245, 230, 0.015) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 245, 230, 0.01) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(255, 245, 230, 0.008) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* 紙の影 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0.12) 0%, transparent 6%, transparent 94%, rgba(0,0,0,0.12) 100%);
+            z-index: 0;
+        }
+
+        /* コンテンツを前面に */
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== 見出し ===== */
+        h1 {
+            font-family: 'EB Garamond', 'Noto Serif JP', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: #F0E9D9;
+            line-height: 1.4;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid rgba(237, 230, 216, 0.12);
+            padding-bottom: 0.9rem;
+        }
+
+        h2 {
+            font-family: 'EB Garamond', 'Noto Serif JP', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #E8DCC8;
+            margin-top: 2.4rem;
+            margin-bottom: 0.9rem;
+            letter-spacing: 0.015em;
+            line-height: 1.5;
+        }
+
+        h3 {
+            font-family: 'EB Garamond', 'Noto Serif JP', Georgia, serif;
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: #E0D5C0;
+            margin-top: 1.8rem;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* ===== 段落 ===== */
+        p {
+            margin-bottom: 1.1rem;
+            text-align: justify;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* ===== リスト ===== */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.2rem;
+        }
+
+        ul li {
+            padding: 0.5rem 0 0.5rem 1.4rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+        }
+
+        ul li::before {
+            content: "―";
+            position: absolute;
+            left: 0;
+            color: #B8A88A;
+            font-weight: 400;
+        }
+
+        /* ===== 区切り線 ===== */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(237, 230, 216, 0.15), transparent);
+            margin: 2.2rem 0;
+        }
+
+        /* ===== 強調 ===== */
+        strong {
+            font-weight: 600;
+            color: #F0E9D9;
+        }
+
+        /* 薄い黄色の背景ハイライト（数値・警告・決定的な事実） */
+        .highlight {
+            background-color: rgba(255, 230, 150, 0.13);
+            color: #F5E6B8;
+            padding: 0.1em 0.25em;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        /* 薄い赤色の下線（地政学的転換点・重大な主張） */
+        .underline-red {
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 120, 100, 0.5);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+
+        /* 青色の下線（法的・構造的な条項） */
+        .underline-blue {
+            text-decoration: underline;
+            text-decoration-color: rgba(100, 180, 255, 0.45);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+
+        /* 文字色の変更（薄い赤） */
+        .text-red {
+            color: #E8A090;
+        }
+
+        /* 文字色の変更（薄いシアン） */
+        .text-cyan {
+            color: #90C8D8;
+        }
+
+        /* ===== 引用 ===== */
+        .quote {
+            border-left: 3px solid rgba(237, 230, 216, 0.2);
+            padding: 0.8rem 1.2rem;
+            margin: 1.6rem 0;
+            font-style: italic;
+            color: #D8CDB8;
+            background-color: rgba(255, 245, 230, 0.025);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .quote p {
+            margin-bottom: 0.4rem;
+        }
+
+        /* ===== メタ情報ボックス ===== */
+        .meta-box {
+            background-color: rgba(255, 245, 230, 0.035);
+            border-left: 3px solid rgba(200, 180, 150, 0.4);
+            padding: 1rem 1.3rem;
+            margin-bottom: 2rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .meta-box p {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .meta-box .url {
+            color: #A8B8C8;
+            word-break: break-all;
+            font-size: 0.85rem;
+        }
+
+        /* ===== 結論ボックス ===== */
+        .conclusion-box {
+            background-color: rgba(255, 245, 230, 0.03);
+            border: 1px solid rgba(237, 230, 216, 0.1);
+            border-radius: 6px;
+            padding: 1.4rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .conclusion-box p {
+            margin-bottom: 0.6rem;
+        }
+
+        .conclusion-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== フッター ===== */
+        .footer {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(237, 230, 216, 0.1);
+            font-size: 0.8rem;
+            color: #A89880;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* ===== 印刷対応 ===== */
+        @media print {
+            body {
+                background-color: #2A2520 !important;
+                color: #EDE6D8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+
+            .meta-box,
+            .conclusion-box,
+            .quote {
+                background-color: rgba(255, 245, 230, 0.05) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: rgba(255, 230, 150, 0.18) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            h1, h2, h3 {
+                color: #F0E9D9 !important;
+            }
+
+            .footer {
+                color: #A89880 !important;
+            }
+        }
+
+        /* ===== レスポンシブ ===== */
+        @media (max-width: 600px) {
+            html {
+                font-size: 16px;
+            }
+
+            body {
+                padding: 1.8rem 1rem 2.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.15rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+        }
+
+        /* ===== 選択時の色 ===== */
+        ::selection {
+            background-color: rgba(255, 230, 150, 0.2);
+            color: #F0E9D9;
+        }
+
+        ::-moz-selection {
+            background-color: rgba(255, 230, 150, 0.2);
+            color: #F0E9D9;
+        }
+
+        /* ===== スクロールバー ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2A2520;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(237, 230, 216, 0.15);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(237, 230, 216, 0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 動画タイトルとURL ===== -->
+    <div class="meta-box">
+        <p><strong>動画タイトル：</strong>「U.S. Launches a New Military Operation! Iran Instantly Strikes Back Hard! | John Mearsheimer」</p>
+        <p class="url"><strong>URL：</strong>https://youtu.be/THEATwy4lNg</p>
+        <p style="margin-top:0.6rem; font-size:0.9rem; color:#C8B898;">
+            <strong>要約：</strong>米国はイランに対して電撃的勝利を想定して軍事作戦を開始しましたが、イランはクウェート・ヨルダン・バーレーンなどの米軍拠点に対して即時かつ大規模な反撃を実施しました。ジョン・ミアシャイマー氏は、戦略爆撃・海上封鎖・地上侵攻のいずれも失敗に終わり、現在は「報復の応酬」に陥っていると分析しています。ホルムズ海峡の封鎖により世界の石油供給の約<span class="highlight">20%</span>が影響を受け、精密兵器の枯渇が米国の新たな制約となっています。イスラエルはイランのミサイルを恐れて戦線から距離を置き、代わりにレバノンのヒズボラとの戦いに注力しています。
+        </p>
+    </div>
+
+    <!-- ===== 本文 ===== -->
+    <h1>「サウジアラビアは何故フーシ派を攻撃したのか？」</h1>
+
+    <p>ミアシャイマー氏が「理解に苦しむ」と述べたサウジアラビアのフーシ派攻撃ですが、公開情報を調査すると、同国にとって<span class="highlight">「これ以上ないほど合理的な判断」</span>であったことが見えてきます。以下、奇譚のない分析をお伝えします。</p>
+
+    <hr>
+
+    <h2>直接の引き金：イラン機の着陸阻止</h2>
+
+    <p>2026年7月13日、サウジアラビアが支援するイエメン政府軍が、<span class="underline-red">サヌア国際空港の滑走路を空爆</span>しました。表向きの理由は「イラン革命防衛隊の高官葬儀に出席したフーシ派代表団を乗せたイラン機の着陸を阻止するため」です。しかし、この攻撃は単なる着陸阻止ではなく、<span class="underline-red">4年間続いた非公式停戦を一方的に破棄する</span>ものでした。</p>
+
+    <hr>
+
+    <h2>なぜサウジは「平和」を自ら壊したのか</h2>
+
+    <h3>① 石油輸出ルートの生命線がフーシ派に握られた</h3>
+
+    <p>これが最も本質的な理由です。<span class="highlight">ホルムズ海峡がイランによって事実上封鎖された</span>結果、サウジアラビアは石油輸出の<span class="highlight">70%以上を紅海ルートに依存</span>せざるを得なくなりました。東部の油田からヤンブー港までパイプラインで送り、そこから紅海を南下してアジア市場へ輸送するルートです。</p>
+
+    <p>ところが、フーシ派は2026年7月に<span class="underline-red">紅海でのサウジ船舶に対する海上封鎖を宣言</span>し、この新たな生命線を直接脅かしました。さらにフーシ派は紅海沿岸のモカ港や戦略的ペリム島を占領し、<span class="underline-red">バベル・マンデブ海峡の制圧を進めていました</span>。この海峡を封鎖されれば、サウジの石油輸出は<span class="highlight">完全に停止</span>します。</p>
+
+    <p>サウジにとってこれは「<span class="highlight">経済的存亡の危機</span>」であり、フーシ派の進出を黙認することは自国の破滅を意味しました。</p>
+
+    <h3>② 米国に「見捨てられた」ことによる自衛の必要性</h3>
+
+    <p>サウジのムハンマド・ビン・サルマン皇太子は、フーシ派の攻勢を受けて<span class="underline-red">トランプ大統領に二度電話し、米軍によるフーシ派直接攻撃を要請</span>しました。しかしトランプ大統領は<span class="highlight">これを拒否</span>し、代わりに「情報提供と標的データ」のみを約束しました。</p>
+
+    <p>米国がイランとの戦争に集中するあまり、サウジの紅海の危機に介入しないと判断したのです。ミアシャイマー氏が「米国は信頼できない」と指摘した通りの状況で、サウジは<span class="underline-red">自力で紅海の安全を確保するしかない</span>と判断しました。</p>
+
+    <h3>③ フーシ派の要求が「受け入れ不可能」だった</h3>
+
+    <p>フーシ派は和平交渉の中で、サウジに対して以下を要求していました：</p>
+    <ul>
+        <li><strong>イエメンへの旅行・経済封鎖の全面解除</strong></li>
+        <li><strong>戦争賠償金の支払い</strong></li>
+        <li><strong>イエメンからの完全撤退（サウジのイエメン政府支援の終了）</strong></li>
+    </ul>
+
+    <p>サウジ当局者はこれらの要求を「過大（excessive）」と見なし、<span class="highlight">「フーシ派との和平は不可能」</span>という認識を強めていました。外交交渉の完全な決裂が、軍事行動への転換を促しました。</p>
+
+    <h3>④ フーシ派のイデオロギー的脅威</h3>
+
+    <p>見落とされがちですが、フーシ派のイデオロギー的目標には<span class="underline-red">メッカとメディナの「解放」</span>が含まれています。サウジアラビアにとって、これは<span class="highlight">国家の正統性そのものへの脅威</span>です。聖地を守ることはサウジ王家の存在理由の根幹であり、フーシ派の勢力拡大は<span class="underline-red">体制転覆のリスク</span>と隣り合わせでした。</p>
+
+    <hr>
+
+    <h2>ミアシャイマー氏の分析との整合性</h2>
+
+    <p>ミアシャイマー氏は「サウジがなぜイランと同盟するフーシ派と争いを始めたのか理解に苦しむ」と述べました。しかし、上記の文脈を踏まえると、サウジの行動は<span class="highlight">「攻撃」ではなく「防衛」</span>として理解できます。</p>
+
+    <p>実際、AP通信の分析も「サウジアラビアは<span class="underline-red">イランとの戦争を望んでいなかった</span>が、<span class="underline-red">最悪のシナリオが現実になりつつある</span>」と指摘しています。サウジにとって、フーシ派の紅海制圧は「<span class="highlight">戦争を仕掛けられた</span>」も同然の事態だったのです。</p>
+
+    <p>ただし、ミアシャイマー氏の批判が完全に的外れというわけでもありません。サウジの空爆は、<span class="underline-red">フーシ派の反撃を招き、モカ港やドゥバブなど紅海沿岸の主要拠点をわずか18時間で失う</span>という結果を招きました。この意味で、ミアシャイマー氏の「戦略的誤算」という評価には一定の妥当性があります。</p>
+
+    <hr>
+
+    <h2>結論：サウジの理由ーー何故フーシ派勢力を攻撃したのか</h2>
+
+    <div class="conclusion-box">
+        <p>サウジアラビアがフーシ派の空港を攻撃した理由は、<span class="highlight">①紅海石油ルートの防衛</span>、<span class="highlight">②米国の支援拒否による自衛の必要性</span>、<span class="highlight">③フーシ派の非現実的な要求への失望</span>、<span class="highlight">④聖地防衛という体制の根幹に関わる脅威</span>という、<span class="underline-red">四重の合理的動機</span>に基づいています。</p>
+
+        <p>ミアシャイマー氏の「理解に苦しむ」という発言は、<span class="underline-blue">米国の視点から見た戦略的整合性</span>を基準にしたものであり、サウジアラビアの<span class="underline-red">国家存亡に関わる切実な事情</span>を十分に考慮していない可能性があります。しかし、結果としてこの攻撃がフーシ派の更なる拡大を招いた点では、同氏の<span class="highlight">「戦術的には誤算」</span>という指摘もまた、正確であると言わざるを得ません。</p>
+    </div>
+
+    <!-- ===== フッター ===== -->
+    <div class="footer">
+        <p>出典：YouTube動画「U.S. Launches a New Military Operation! Iran Instantly Strikes Back Hard! | John Mearsheimer」</p>
+        <p>URL：https://youtu.be/THEATwy4lNg</p>
+    </div>
+
+</body>
+</html>
