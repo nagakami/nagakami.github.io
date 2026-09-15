@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要約：サウジパイプライン停止とアジア精製業者の sour crude 価格ショック</title>
+    <style>
+        /* E Ink ダークモード — 紙のような読み心地 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif JP', serif;
+            line-height: 1.8;
+            padding: 2rem 1.5rem;
+            max-width: 860px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        h1 {
+            color: #ffb74d;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+        }
+
+        /* 概要ボックス */
+        .meta-box {
+            background: #1e1e1e;
+            border-left: 4px solid #ff8a65;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+            border-radius: 0 6px 6px 0;
+            font-size: 1rem;
+            color: #d0d0d0;
+        }
+        .meta-box p {
+            margin-bottom: 0.5rem;
+        }
+        .meta-box p:last-child {
+            margin-bottom: 0;
+        }
+        .meta-box .url {
+            font-size: 0.85rem;
+            color: #9e9e9e;
+            word-break: break-all;
+        }
+
+        /* 目次 */
+        .toc {
+            background: #161616;
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #2a2a2a;
+        }
+        .toc h2 {
+            color: #ffb74d;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            padding-left: 0;
+        }
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+        .toc li::before {
+            content: counter(toc-counter) ". ";
+            color: #ffb74d;
+            font-weight: 600;
+            margin-right: 0.3rem;
+        }
+        .toc a {
+            color: #b0b0b0;
+            text-decoration: none;
+            border-bottom: 1px dotted #444;
+        }
+        .toc a:hover {
+            color: #ffb74d;
+            border-bottom-color: #ffb74d;
+        }
+
+        /* セクション区切り — 厳守デザイン */
+        .section-divider {
+            color: #8ab4f8;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            margin: 2.2rem 0 1.8rem;
+            background: rgba(138, 180, 248, 0.06);
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8ab4f8, transparent);
+        }
+        .section-divider .mark {
+            color: #ffb74d;
+            font-size: 0.9rem;
+            letter-spacing: 0;
+        }
+
+        /* 見出し（h2） */
+        h2 {
+            color: #ffb74d;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #2a2a2a;
+            letter-spacing: 0.02em;
+        }
+
+        /* リスト項目 */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        li {
+            background: #1a1a1a;
+            border-left: 4px solid #4fc3f7;
+            padding: 0.9rem 1.2rem;
+            margin-bottom: 0.7rem;
+            border-radius: 0 6px 6px 0;
+            transition: border-color 0.25s ease, background 0.25s ease;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+        li:hover {
+            border-left-color: #ffb74d;
+            background: #1f1f1f;
+        }
+        li strong {
+            color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        /* ハイライト */
+        .highlight {
+            color: #ffab91;
+            font-weight: 600;
+        }
+        .price {
+            color: #ffd54f;
+            font-weight: 700;
+        }
+
+        /* フッター */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #2a2a2a;
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.6;
+        }
+        footer p {
+            margin-bottom: 0.2rem;
+        }
+
+        /* 小さい画面 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            li {
+                padding: 0.7rem 0.9rem;
+                font-size: 0.92rem;
+            }
+            .section-divider {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- タイトルとURL -->
+    <h1>ラリー・ジョンソン：攻撃後のサウジ・パイプライン停止 — アジア精製業者がサワー原油価格ショックに備える</h1>
+<!--
+トランプの嘘が暴かれる…サウジパイプライン停止でアジアが価格ショックに震える理由
+
+ディーゼルが史上初6ドル超！トランプはウクライナを非難しますが、本当の犯人はイラン紛争とサウジ停止です。備蓄も危険水域へ…
+
+
+
+
+【全体概要】
+ディーゼル価格の異常高騰が世界を襲っています。トランプ大統領はロシア・ウクライナ戦争を主因と主張しますが、ジョンソン氏はこれを事実の逆転だと批判しています。実際の主因はイラン関連紛争によるホルムズ海峡の供給途絶と、サウジアラビア東西パイプラインの停止によるサワークルード不足、さらに精製能力の限界にあると指摘されています。
+
+市場データではディーゼルクラックスプレッドが史上最高の約107ドル／バレルに達し、通常の20〜40ドルを大きく超えました。製油所稼働率は97％でフル稼働でも追いつかず、米国ディーゼル在庫は1951年以来の最低水準です。戦略石油備蓄も2億8500万バレルまで減少し、1982年以来の最低で物理的崩壊リスクが指摘されています。
+
+サウジパイプラインの修理には3〜5週間かかり、アジア精製業者は価格ショックに備えています。イエメンとの衝突が続き、代替供給も不十分です。ロシア国内は戦争支持が強く、欧州は影響力を失いつつあります。ガザ関連の証言も国際司法の無力さを浮き彫りにしています。
+
+-->
+
+    <div class="meta-box">
+        <p><strong>動画タイトル：</strong>Larry Johnson: Saudi Pipeline Shutdown After Attacks: Asian Refiners Brace for Sour Crude Price Shock</p>
+        <p class="url"><strong>URL：</strong>https://youtu.be/A6JpQgopi_0</p>
+<br>        <p><strong>要約：</strong>2026年9月14日時点のディーゼル価格高騰と精製危機をめぐり、トランプ前大統領が「ロシア・ウクライナ戦争が主因」と主張したことを、ラリー・ジョンソン氏がデータに基づき反論しています。真因は中東産サワー原油の供給途絶と精製能力不足にあり、サウジの東西パイプライン停止がアジア向け供給を直撃。戦争継続と制裁が危機を増幅させていると指摘しています。</p>
+    </div>
+
+    <!-- 目次 -->
+    <nav class="toc">
+        <h2>目次</h2>
+        <ol>
+            <li><a href="#sec1">ロシア社会と戦争支持の実情</a></li>
+            <li><a href="#sec2">トランプの「ディーゼル危機」非難とデータの反証</a></li>
+            <li><a href="#sec3">クラックスプレッドが示す真の原因：精製能力不足</a></li>
+            <li><a href="#sec4">サウジ東西パイプライン停止とアジア精製業者への打撃</a></li>
+            <li><a href="#sec5">供給途絶の連鎖：ホルムズ封鎖から戦略石油備蓄放出まで</a></li>
+            <li><a href="#sec6">米国の戦略石油備蓄の枯渇と紅海危機</a></li>
+            <li><a href="#sec7">サウジ・イエメン紛争と外交的解決の不在</a></li>
+            <li><a href="#sec8">欧州の無力さと産業空洞化</a></li>
+            <li><a href="#sec9">ガザ紛争と国際法の無力</a></li>
+            <li><a href="#sec10">結論：偽情報と現実の価格</a></li>
+        </ol>
+    </nav>
+
+    <!-- ===== セクション1 ===== -->
+    <div class="section-divider" id="sec1">
+        <span class="mark">◆</span> ロシア社会と戦争支持の実情 <span class="mark">◆</span>
+    </div>
+    <h2>ロシア社会と戦争支持の実情</h2>
+    <ul>
+        <li><strong>ロシアの繁栄と戦争支持：</strong>ラリー・ジョンソン氏はロシア滞在中、6階建てモールの2フロアがフードコートになるなど社会の活気を報告。ドゥーマ選挙を控え、政党間で社会問題の意見は異なるものの、<span class="highlight">戦争支持ではほぼ普遍的一致</span>が見られるとしています。</li>
+        <li><strong>プーチン批判の限界：</strong>「プーチンは弱腰だ」との批判は一部にあるものの、<span class="highlight">辞任要求には至っていない</span>とジョンソン氏。プーチン氏は戦争コストを理解し最小化を図っているが、強硬姿勢を取れば国民の熱烈な支持を得られると分析しています。</li>
+    </ul>
+
+    <!-- ===== セクション2 ===== -->
+    <div class="section-divider" id="sec2">
+        <span class="mark">◆</span> トランプの「ディーゼル危機」非難とデータの反証 <span class="mark">◆</span>
+    </div>
+    <h2>トランプの「ディーゼル危機」非難とデータの反証</h2>
+    <ul>
+        <li><strong>トランプの発言：</strong>2026年9月14日、米国ディーゼル価格が史上初めて<span class="price">1ガロン6ドル</span>を突破した中、トランプ氏は「世界のディーゼル価格上昇は主にロシア・ウクライナ戦争が原因であり、イランではない」とソーシャルメディアに投稿。ゼレンスキー氏にはロシアのディーゼル施設攻撃を止めるよう要求したとされています。</li>
+        <li><strong>ジョンソン氏の反論：</strong>「ウクライナによるロシア製油所攻撃は事実だが、<span class="highlight">原因の順位付けが逆転している</span>」とジョンソン氏。市場データはトランプ氏の主張と逆を示しているとし、自身の記事「The Wrong War」で「トランプは自身のイラン戦争が引き起こしたディーゼル危機をロシアのせいにしている」と批判しています。</li>
+        <li><strong>交渉ごとの虚偽：</strong>トランプ氏が「イランと交渉中」と繰り返し主張してきたが、そのレトリックが機能しなくなり、<span class="highlight">代替の説明を模索している</span>と見られます。</li>
+    </ul>
+
+    <!-- ===== セクション3 ===== -->
+    <div class="section-divider" id="sec3">
+        <span class="mark">◆</span> クラックスプレッドが示す真の原因：精製能力不足 <span class="mark">◆</span>
+    </div>
+    <h2>クラックスプレッドが示す真の原因：精製能力不足</h2>
+    <ul>
+        <li><strong>クラックスプレッドとは：</strong>原油と精製品の間のマージンを示す指標で、<span class="highlight">原油不足か精製能力不足か</span>を判別するものです。通常は<span class="price">20〜40ドル</span>の範囲で推移します。</li>
+        <li><strong>2026年の異常値：</strong>ディーゼル・クラックは2026年8月17日に<span class="price">約102ドル</span>の史上最高値を記録し、9月初旬には<span class="price">107ドル</span>を突破。これは世界が原油そのものではなく、<span class="highlight">中間留分（ディーゼル・灯油）の精製能力不足</span>に苦しんでいることを示しています。</li>
+        <li><strong>精製所の限界：</strong>製油所は<span class="highlight">稼働率約97%</span>でフル稼働しているものの追いつかず、貯蔵タンクはほぼ空。米国在庫は2026年8月時点で<span class="highlight">1951年以来の最低月次水準</span>に落ち込んでいます。</li>
+        <li><strong>構造的背景：</strong>過去10年間の製油所閉鎖と投資不足に加え、ペルシャ湾からの原油供給途絶が重なっています。</li>
+    </ul>
+
+    <!-- ===== セクション4 ===== -->
+    <div class="section-divider" id="sec4">
+        <span class="mark">◆</span> サウジ東西パイプライン停止とアジア精製業者への打撃 <span class="mark">◆</span>
+    </div>
+    <h2>サウジ東西パイプライン停止とアジア精製業者への打撃</h2>
+    <ul>
+        <li><strong>ロイター報道：</strong>アジアの製油所は、サウジアラビアの東西パイプライン停止を受け、<span class="highlight">サワー原油の供給逼迫と価格上昇</span>に備えているとロイターが報じています。</li>
+        <li><strong>ホルムズ封鎖の影響：</strong>ホルムズ海峡封鎖により、アジアの製油所向けサワー原油供給の<span class="highlight">約20%</span>が遮断されました。当初は海上タンカーと戦略石油備蓄の放出で遅延していたものの、<span class="highlight">2026年8月1日以降は代替供給が存在しない</span>状況です。</li>
+        <li><strong>イラン戦争の影響：</strong>米軍機がディーゼルを大量消費したことも、ディーゼル不足に寄与しているとジョンソン氏は指摘しています。</li>
+        <li><strong>復旧期間：</strong>AP通信によると、東西パイプラインの損傷修復には<span class="highlight">3〜5週間</span>かかるとされています。</li>
+    </ul>
+
+    <!-- ===== セクション5 ===== -->
+    <div class="section-divider" id="sec5">
+        <span class="mark">◆</span> 供給途絶の連鎖：ホルムズ封鎖から戦略石油備蓄放出まで <span class="mark">◆</span>
+    </div>
+    <h2>供給途絶の連鎖：ホルムズ封鎖から戦略石油備蓄放出まで</h2>
+    <ul>
+        <li><strong>初期段階：</strong>ホルムズ封鎖直後はタンカーが目的地へ航行を続け、<span class="highlight">2026年4月5日までに積荷を降ろし終了</span>。製油所は十分な原料を確保していました。</li>
+        <li><strong>戦略石油備蓄の放出：</strong>4月5日以降、戦略石油備蓄の取り崩しが原油供給とディーゼル生産のギャップを遅延させました。</li>
+        <li><strong>現在の逼迫：</strong>2026年8月1日以降、代替供給がなくなり、製油所はサワー原油確保に奔走。ディーゼル生産が滞っています。</li>
+        <li><strong>供給源の脆弱性：</strong>米財務長官スコット・ベセント氏が語った「通信路の多様化」「新パイプライン」構想は、サウジの事例が示すように<span class="highlight">極めて脆く、もろい</span>とジョンソン氏は指摘しています。</li>
+    </ul>
+
+    <!-- ===== セクション6 ===== -->
+    <div class="section-divider" id="sec6">
+        <span class="mark">◆</span> 米国の戦略石油備蓄の枯渇と紅海危機 <span class="mark">◆</span>
+    </div>
+    <h2>米国の戦略石油備蓄の枯渇と紅海危機</h2>
+    <ul>
+        <li><strong>戦略石油備蓄の低下：</strong>米国の戦略石油備蓄は<span class="price">2億8,500万バレル</span>まで減少し、<span class="highlight">1982年11月以来の最低水準</span>、総容量の約40%にまで落ち込んでいます。</li>
+        <li><strong>備蓄の物理的限界：</strong>塩洞窟から石油を汲み出す際に水を注入するため、備蓄量が少なすぎると洞窟の壁が弱まり崩壊する危険があります。ジョンソン氏は「<span class="highlight">底を掻き始めている</span>」と表現しています。</li>
+        <li><strong>紅海の脆弱性：</strong>誰が攻撃したかは不明（フーシ派もイラク抵抗勢力も否認）ですが、サウジはイラクと米国の関与を疑い、イラク政府にテロ支援国家指定を示唆。イラク政府は拒否しています。</li>
+        <li><strong>パイプラインの脆弱性：</strong>イエメンとの紛争が続く限り、パイプラインは攻撃・損傷を受け続けるとジョンソン氏は警告しています。</li>
+        <li><strong>供給量の比較：</strong>以前はペルシャ湾から<span class="highlight">1日2,000万バレル</span>が出荷されていましたが、サウジは<span class="highlight">400万バレル</span>を出荷しており、世界供給の約23%がスエズ運河経由で輸送されていました。現在はそれも失われています。</li>
+    </ul>
+
+    <!-- ===== セクション7 ===== -->
+    <div class="section-divider" id="sec7">
+        <span class="mark">◆</span> サウジ・イエメン紛争と外交的解決の不在 <span class="mark">◆</span>
+    </div>
+    <h2>サウジ・イエメン紛争と外交的解決の不在</h2>
+    <ul>
+        <li><strong>サウジの軍事行動：</strong>サウジは過去24時間で<span class="highlight">54回の空爆</span>をF-15タイフーン戦闘機で実施し、タイズ、ラヒジュ、ジャフ、マリブなどを標的にしました。アンサール・アッラー（フーシ派）が報道しています。</li>
+        <li><strong>外交的解決の欠如：</strong>サウジはGCC諸国、パキスタン、トルコ、米国、エジプトなどと協議していますが、イエメンとの交渉による外交的解決を模索する兆候は見られません。</li>
+        <li><strong>紛争の帰結：</strong>ジョンソン氏は「サウジは勝てない戦いを選んだ」とし、フーシ派がメッカ・メディナを掌握する可能性にも言及。サウジは「倍賭け」を続け、経済問題が悪化すると見ています。</li>
+        <li><strong>トランプの不作為：</strong>トランプ氏がサウジ・イエメン問題の解決に動かない理由について、ジョンソン氏は「イスラエルが混乱を望んでいるから」との見方に否定的で、サウジ弱体化とフーシ派強化はイスラエルにとって脅威を増すと指摘しています。</li>
+    </ul>
+
+    <!-- ===== セクション8 ===== -->
+    <div class="section-divider" id="sec8">
+        <span class="mark">◆</span> 欧州の無力さと産業空洞化 <span class="mark">◆</span>
+    </div>
+    <h2>欧州の無力さと産業空洞化</h2>
+    <ul>
+        <li><strong>欧州の無関係性：</strong>ジョンソン氏は欧州を「完全に無関係な国々の集まり」と評し、英国が戦闘機をフーシ派対策に派遣しても「幸運を祈る」と皮肉っています。</li>
+        <li><strong>「フロリダの犬」比喩：</strong>欧州を、鷹がさらおうとするのを防ぐためにリーシュで繋がれた小さな犬に例えています。</li>
+        <li><strong>ロシア孤立の失敗：</strong>ウクライナ戦争でロシアを孤立させる試みは失敗し、ロシアは天然資源の豊富さから無視できない存在であり続けています。</li>
+        <li><strong>欧州の軍事的限界：</strong>英国陸軍は<span class="highlight">約7万人</span>で、マンチェスター・ユナイテッドのスタジアムを満員にできない規模です。</li>
+        <li><strong>EUの自滅：</strong>EUは文化・経済・政治的に自滅しつつあり、産業を海外に移転して空洞化を進めています。LGBTQ権利に注力する一方で、白人の人口再生産が減少し、北アフリカなどからの移民が増加しているとジョンソン氏は指摘しています。</li>
+    </ul>
+
+    <!-- ===== セクション9 ===== -->
+    <div class="section-divider" id="sec9">
+        <span class="mark">◆</span> ガザ紛争と国際法の無力 <span class="mark">◆</span>
+    </div>
+    <h2>ガザ紛争と国際法の無力</h2>
+    <ul>
+        <li><strong>ガザのドキュメンタリー：</strong>イスラエルのユヴァル・アブラハム氏とラヘル・ゾル氏が制作したガザ虐殺に関するドキュメンタリーに対し、イスラエルは<span class="highlight">反逆罪での起訴と市民権剥奪</span>を試みています。</li>
+        <li><strong>証言内容：</strong>24人のイスラエル軍・情報関係者が、戦争犯罪を許容するシステムや、<span class="highlight">500人の民間人犠牲が予想される攻撃を承認</span>した事例、AIによる民間人犠牲者閾値の事前設定などを証言しています。</li>
+        <li><strong>ジョンソン氏の評価：</strong>「真実に耐えられない」とし、製作者はイスラエル人・ユダヤ人であるため「反ユダヤ主義」「自己憎悪ユダヤ人」とレッテル貼りされると皮肉っています。</li>
+        <li><strong>シオニズム批判：</strong>ジョンソン氏は「ユダヤ人全体への非難ではなく、問題はシオニスト（ユダヤ教・キリスト教両方）」に焦点を当てるべきだと主張しています。</li>
+        <li><strong>国際法の無力：</strong>国際刑事裁判所（ICC）などの国際機関は権限があっても執行力がなく、米国はイスラエルの虐殺を妨げる法的障害をすべて排除しており、<span class="highlight">米国は虐殺に加担</span>しているとジョンソン氏は述べています。</li>
+        <li><strong>ガザの現実：</strong>ジョンソン氏は「我々はすでに真実を知っている。視覚資料を見れば、ガザは荒れ地と化している」とし、世界は傍観し、報道しないことで協力していると批判しています。</li>
+    </ul>
+
+    <!-- ===== セクション10 ===== -->
+    <div class="section-divider" id="sec10">
+        <span class="mark">◆</span> 結論：偽情報と現実の価格 <span class="mark">◆</span>
+    </div>
+    <h2>結論：偽情報と現実の価格</h2>
+    <ul>
+        <li><strong>トランプの虚偽：</strong>ジョンソン氏はトランプ氏を「嘘つき」と断じ、イランが交渉を懇願しているとの主張や、米国が「かつてないほど精巧でエリートな兵器を生産している」とのツイートを虚偽と指摘しています。</li>
+        <li><strong>武器生産の現実：</strong>ロッキード・マーティンはパトリオットミサイル生産に必要なレアアース鉱物を欠いており、戦争になれば武器不足に陥るとジョンソン氏は述べています。</li>
+        <li><strong>ガソリン価格の現実：</strong>サンディエゴではガソリン価格が<span class="price">1ガロン9.90ドル</span>に達し、ホーマー・シンプソンが給油中に<span class="price">9.99ドル</span>から<span class="price">0.00ドル</span>にロールオーバーする動画が話題に。ジョンソン氏は「嘘はガソリンスタンドの現実を変えない」と述べています。</li>
+        <li><strong>軍事的緊張：</strong>米国が西アジアで何かを準備しているとの報道に対し、ジョンソン氏は「石油価格上昇と株式市場下落を招くため、トランプはさらなる攻撃をしないだろう」と分析しています。</li>
+    </ul>
+
+    <!-- フッター -->
+    <footer>
+        <p><strong>出典：</strong>Larry Johnson 氏との対談動画（2026年9月14日収録）</p>
+        <p><strong>データソース：</strong>ロイター、AP通信、アンサール・アッラー報道、米国戦略石油備蓄データ、市場クラックスプレッド指標</p>
+        <p><strong>注記：</strong>本要約は発言内容を客観的に整理したものであり、ジョンソン氏の主張・推論は「～としています」「～と見られます」と明示しています。</p>
+    </footer>
+
+</body>
+</html>
