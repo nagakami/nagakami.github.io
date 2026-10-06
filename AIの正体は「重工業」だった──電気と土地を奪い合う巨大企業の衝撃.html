@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIが秘める地理学</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #2A2520;
+            color: #F0E9D9;
+            font-family: 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ffb74d;
+            font-size: 2rem;
+            font-weight: 700;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .meta-box {
+            background: #1e1e1e;
+            border-left: 6px solid #ff8a65;
+            padding: 1.2rem 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0 2rem 0;
+        }
+        .meta-box p { margin: 0.3rem 0; }
+        .meta-box a { color: #81d4fa; word-break: break-all; }
+        .section-divider {
+            color: #8ab4f8;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-align: center;
+            padding: 0.6rem 1rem;
+            margin: 2.5rem 0 1.8rem 0;
+            background: rgba(138, 180, 248, 0.06);
+            border-radius: 30px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8ab4f8, transparent);
+        }
+        .section-divider .diamond { color: #ffb74d; font-size: 1.2rem; }
+        h2 {
+            color: #00FA9A;
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ffb74d;
+            padding-left: 0.8rem;
+        }
+        h3 {
+            color: #f5cba0;
+            font-size: 1.25rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        ul { list-style: none; padding: 0; }
+        li {
+            background: #1a1a1a;
+            border-left: 4px solid #4fc3f7;
+            padding: 1rem 1.4rem;
+            margin-bottom: 0.8rem;
+            border-radius: 0 8px 8px 0;
+            transition: border-color 0.2s ease, background 0.2s;
+        }
+        li:hover { border-color: #ffb74d; background: #202020; }
+        .highlight { color: #ffab91; font-weight: 600; }
+        .price { color: #ffd54f; font-weight: 600; }
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2a2a2a;
+            color: #9e9e9e;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .footer-note a { color: #81d4fa; }
+        .small-meta { color: #aaa; font-size: 0.9rem; }
+        .list-title {
+            font-weight: 600;
+            color: #e0e0e0;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .badge {
+            background: #2a2a2a;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            color: #ccc;
+            font-size: 0.8rem;
+        }
+        .code-block {
+            background: #0d0d0d;
+            border-left: 3px solid #ffb74d;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            color: #cfd8dc;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+        .toc-list { display: block; list-style: none; padding: 0; margin: 0; }
+        .toc-list li {
+            background: transparent;
+            border: none;
+            padding: 0.2rem 0;
+            margin: 0;
+            border-radius: 0;
+            transition: none;
+        }
+        .toc-list li:hover { background: transparent; border-color: transparent; }
+        .toc-list a {
+            color: #8ab4f8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-block;
+            padding: 0.1rem 0;
+        }
+        .toc-list a:hover { color: #ffb74d; text-decoration: underline; }
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.6rem; font-size: 15px; }
+            h1 { font-size: 1.4rem; }
+            h2 { font-size: 1.3rem; }
+            .meta-box { padding: 0.8rem 1rem; }
+            li { padding: 0.8rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>AIが秘める地理学</h1>
+<!--
+AIの正体は「重工業」だった──電気と土地を奪い合う巨大企業の衝撃
+
+AIは地理を消すと思われていました。しかし実際は、電気と土地を奪い合う重工業でした。その意外な正体を、数字で解き明かします。
+
+
+
+
+【全体概要】
+人工知能（AI）は、これまで地理的な制約をなくす技術だと考えられてきました。しかし、その実態は大量の電力と物理的なインフラを必要とする重工業に近づいています。データセンターは冷却が容易で安価な電力が得られる土地へと移動しており、グーグルはフィンランド北部に3つの大規模データセンターを建設するため、130億ドルを投じる計画を発表しました。フィンランドは人口わずか560万人で欧州の北端に位置しますが、寒冷な気候が冷却コストを下げ、原子力発電所の出力のおよそ半分を22年間確保する契約が結ばれました。
+
+こうした動きの背景には、AIの電力消費の急増があります。世界のデータセンターの電力消費量は2024年に約415テラワット時でしたが、国際エネルギー機関（IEA）は2035年までに約1,200テラワット時へ増加すると予測しています。しかし、発電だけでは十分ではありません。データセンターは2〜3年で建設できても、送電線や変電所の建設にははるかに長い時間がかかるため、IEAは2030年までに計画中のデータセンター能力の約5分の1が遅延する可能性があると指摘しています。
+
+さらに、AIを支える供給網は世界中に分散しています。米国がチップを設計し、台湾積体電路製造（TSMC）が台湾で製造し、オランダのASMLが製造装置を供給し、フィンランドの原子力発電でデータセンターが稼働するという依存関係が生まれています。ガリウムなどの希少材料の多くも中国に依存しており、政府はAIを石油や軍事装備と同じ戦略資源として扱い始めています。AIの競争は、電力網・半導体・希少材料といった物理的なボトルネックを巡る争いへと変わりつつあるのです。
+
+
+
+【全体概要－２（約300文字）】
+AIは地理的な制約をなくすどころか、電力・土地・半導体・希少材料という物理的な資源に深く依存しています。データセンターは冷却が容易で安価な電力が得られる土地へ移り、グーグルはフィンランドで130億ドルを投じ、原子力発電所の出力の約半分を22年間確保する契約を結びました。
+
+世界のデータセンター電力消費は2024年の約415テラワット時から2035年に約1,200テラワット時へ増えると予測されています。しかし送電網の整備が追いつかず、計画中の能力の約5分の1が遅延する見通しです。さらにチップ製造は台湾やオランダに集中し、ガリウムなどは中国に依存しています。AIの競争は、物理的なボトルネックを巡る争いへと変わりつつあります。
+
+【全体概要－３（約150文字）】
+AIは地理を消す技術に見えますが、実態は大量の電力と物理インフラを必要とする重工業です。データセンターは安価な電力と冷却に適した土地へ移り、世界の電力消費は2035年に約1,200テラワット時へ増加すると予測されています。半導体や希少材料の供給網も特定の地域に集中しており、AIの競争は物理的な制約を巡る争いになっています。
+-->
+<br><p>本稿は<b>『
+The hidden geography of AI』（<a href="https://youtu.be/K-qll_Yhfms" target="_blank" rel="noopener noreferrer">https://youtu.be/K-qll_Yhfms</a>）</b>の内容と各種補足報告から再構成した資料です。</p><br>
+
+<div class="meta-box">
+    <p><strong>📺 動画タイトル:</strong> AIが秘める地理学</p>
+    <p><strong>🔗 URL:</strong> <a href="https://youtu.be/K-qll_Yhfms" target="_blank">https://youtu.be/K-qll_Yhfms</a></p>
+    <p><strong>📌 最重要エッセンス（要約）:</strong><br>
+    人工知能（AI）は一見すると地理的な制約をなくす技術に見えますが、その実態は<span class="highlight">大量の電力</span>と<span class="highlight">物理的なインフラ</span>を必要とする重工業に近づいています。データセンターは冷却が容易で安価な電力が得られる土地へと移動し、<span class="highlight">フィンランド</span>では<span class="price">130億ドル</span>を投じて原子力発電所の出力の約半分を22年間確保する契約が結ばれました。世界のデータセンター電力消費量は<span class="price">2024年の約415テラワット時</span>から<span class="price">2035年には約1,200テラワット時</span>へ増加すると予測されています。AIの競争は、電力網・半導体・希少材料といった物理的なボトルネックを巡る争いへと変わりつつあります。</p>
+</div>
+
+<!-- 目次 -->
+<div style="background:#1a1a1a; padding:1.2rem 1.8rem; border-radius:10px; margin:1.8rem 0;">
+    <p style="color:#ffb74d; font-weight:600; font-size:1.1rem; margin-bottom:0.6rem;">📑 目次</p>
+    <ul class="toc-list">
+        <li><a href="#data-center-geography">1. データセンターの地理学</a></li>
+        <li><a href="#physical-constraints">2. AIの物理的制約</a></li>
+        <li><a href="#shifting-locations">3. 電力と立地の変化</a></li>
+        <li><a href="#energy-grid">4. エネルギーと電力網のボトルネック</a></li>
+        <li><a href="#infrastructure-resources">5. インフラと資源</a></li>
+        <li><a href="#national-strategies">6. 国家戦略としての計算資源</a></li>
+        <li><a href="#global-supply-chain">7. 世界的な供給網</a></li>
+        <li><a href="#strategic-risks">8. 戦略的・安全保障上のリスク</a></li>
+        <li><a href="#vulnerability-resilience">9. 脆弱性と回復力</a></li>
+        <li><a href="#future-grounded-ai">10. 地理に根差すAIの未来</a></li>
+    </ul>
+</div>
+
+<div class="section-divider"><span class="diamond">◆</span> 1. データセンターの地理学 <span class="diamond">◆</span></div>
+<h2 id="data-center-geography">データセンターの地理学</h2>
+<ul>
+    <li><span class="list-title">📌 フィンランドへの巨額投資</span> グーグルはフィンランド北部に3つの大規模データセンターを建設するため、<span class="price">130億ドル</span>を投じる計画を発表しました。フィンランドの人口はわずか<span class="highlight">560万人</span>で、欧州の北端に位置し、これまで主要な技術拠点ではありませんでした。</li>
+    <li><span class="list-title">📌 原子力発電所との22年契約</span> グーグルはフィンランドの原子力発電所の出力のおよそ半分を22年間確保する契約を結びました。世界最大級の技術企業がサーバーを動かすために原子炉を利用するという、注目すべき事例です。</li>
+    <li><span class="list-title">📌 世界的な立地競争</span> 世界中の技術企業が、余剰電力・安価な土地・大規模な負荷に耐えられる電力網を持つ場所を探し求めています。データセンターは都市から遠くへ移動し、古い発電所は新たな用途を見出しています。</li>
+    <li><span class="list-title">📌 気候の役割</span> データセンターは大量の熱を発生させるため、寒冷地域では冷却が容易で安価になります。これがフィンランドのような場所に、ソフトウェアとはほとんど関係のない利点をもたらしています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 2. AIの物理的制約 <span class="diamond">◆</span></div>
+<h2 id="physical-constraints">AIの物理的制約</h2>
+<ul>
+    <li><span class="list-title">📌 地理の重要性の逆転</span> 長年、インターネットは地理をあまり重要でないものにしてきたように見えました。AIはそれをさらに推し進めるかに見えますが、その背後にあるインフラは重工業に似てきています。</li>
+    <li><span class="list-title">📌 デジタル技術の物理的限界</span> 世界で最も重要なデジタル技術が、最終的には地理とそれに伴う物理的な制約によって制限される可能性があります。この問題はデータセンターをはるかに超えています。</li>
+    <li><span class="list-title">📌 AI投資の規模</span> 国際通貨基金（IMF）は、2026年のAIへの世界投資額が<span class="price">2兆ドル</span>を超える可能性があると推定しています。エヌビディア、マイクロソフト、グーグル等や、投資家がこの流れを取り込む主な手段となっています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 3. 電力と立地の変化 <span class="diamond">◆</span></div>
+<h2 id="shifting-locations">電力と立地の変化</h2>
+<ul>
+    <li><span class="list-title">📌 従来のデータセンター立地</span> 最近まで、大規模データセンターは主要都市の周辺に集まっていました。ロンドン、アムステルダム、フランクフルト、パリにはデジタルサービスを必要とする企業や消費者が集まり、高密度の通信網の中心で、利用者との距離を縮め、遅延を減らしていました。</li>
+    <li><span class="list-title">📌 AIによる変化</span> AIの大規模モデルの訓練は、ウェブサイトの提供や銀行決済の処理とは異なります。計算の多くは末端利用者の近くで行う必要がなく、電力と接続性があれば、訓練施設は数百キロメートル離れていても構いません。</li>
+    <li><span class="list-title">📌 データセンターの遠隔化</span> 2026年から2028年に計画されている新しい欧州のAIデータセンターは、主要都市から平均約<span class="highlight">175キロメートル</span>離れた場所に建設されます。比較すると、前世代は約<span class="highlight">46キロメートル</span>でした。プロジェクトはスペインの田園地帯、スウェーデン北部など、土地が安く電力が得やすい場所へ移動しています。</li>
+    <li><span class="list-title">📌 電力接続の価格差</span> アムステルダムでは、電力接続が確保された土地は1メガワットあたり約<span class="price">270万ユーロ</span>かかりますが、欧州の一部の小規模市場では同じ条件が<span class="price">50万ユーロ</span>を下回ることもあります。この価格差が大きな違いを生みます。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 4. エネルギーと電力網のボトルネック <span class="diamond">◆</span></div>
+<h2 id="energy-grid">エネルギーと電力網のボトルネック</h2>
+<ul>
+    <li><span class="list-title">📌 電力消費の急増</span> 世界のデータセンターの電力消費量は<span class="price">2024年に約415テラワット時</span>でした。国際エネルギー機関（IEA）は、この数字が<span class="price">2035年までに約1,200テラワット時</span>に増加すると予測しています。</li>
+    <li><span class="list-title">📌 送電網の遅れ</span> データセンターは2〜3年で建設できることがありますが、主要な送電線や変電所の建設にははるかに長い時間がかかります。IEAは、電力網の制約により、2030年までに世界中で計画されているデータセンター能力の約<span class="highlight">5分の1</span>が遅延する可能性があると推定しています。</li>
+    <li><span class="list-title">📌 電力確保の競争</span> 技術企業は、画像処理装置（GPU）を入手できても、それを起動するための電力を得られない可能性があります。電力網の容量が乏しくなると、問題は政治的なものに変わり得ます。次に利用可能な1メガワットは、データセンター、工場、家庭や企業のいずれかに割り当てられるためです。</li>
+    <li><span class="list-title">📌 原子力への関心</span> グーグルはフィンランドで原子力発電に結びつき、米国ではアイオワ州の原子力発電所を再開する長期契約を結びました。マイクロソフトは、1979年に部分的な炉心溶融事故があったスリーマイル島の原子炉の復活を支援しています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 5. インフラと資源 <span class="diamond">◆</span></div>
+<h2 id="infrastructure-resources">インフラと資源</h2>
+<ul>
+    <li><span class="list-title">📌 物理的ニーズの広がり</span> 新しい送電線、変電所、変圧器、データセンター内部の電気系統には、大量の銅、ケイ素、アルミニウム、希土類が必要です。建物自体には鉄鋼とコンクリートが必要です。</li>
+    <li><span class="list-title">📌 ソフトウェア以外の産業への影響</span> AIブームは、ソフトウェアとはほとんど関係のない産業に影響を与え始めています。モデルが動作する前に、誰かが電力を運ぶ材料を採掘し、精製し、製造しなければなりません。</li>
+    <li><span class="list-title">📌 中国の早期対応</span> 中国はこの問題を早くから捉えていました。企業が適した場所を見つけるのを待つだけでなく、北京は計算資源の地理そのものを再編成しています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 6. 国家戦略としての計算資源 <span class="diamond">◆</span></div>
+<h2 id="national-strategies">国家戦略としての計算資源</h2>
+<ul>
+    <li><span class="list-title">📌 東数西算プロジェクト</span> 中国の主要な人口集中地と技術企業は主に東部にありますが、最も安価な土地と豊富なエネルギー資源ははるか西部にあります。北京は「東数西算（データを東から西へ送り計算する国家計画）」と呼ばれるプロジェクトを開始しました。</li>
+    <li><span class="list-title">📌 仕組みと目的</span> 中国の富裕な東部都市で生成されたデータは、安価な電力と土地に近い大規模な計算拠点で処理するために西部へ送られます。これは、製鉄所を炭鉱の近くに移すことのデジタル版に相当します。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 7. 世界的な供給網 <span class="diamond">◆</span></div>
+<h2 id="global-supply-chain">世界的な供給網</h2>
+<ul>
+    <li><span class="list-title">📌 半導体の重要性</span> 高度なAIモデルが生み出すすべての答えは、最終的に半導体を通過します。最も高度な半導体の製造は極めて困難です。米国はAIブームの中心となるチップの多くを設計しており、エヌビディアが明らかな例です。</li>
+    <li><span class="list-title">📌 台湾への集中</span> 設計と物理的な製造はまったく別のものです。世界で最も高度なチップ製造の多くは台湾に集中しており、台湾積体電路製造（TSMC）がエヌビディアなどの企業向けにプロセッサを生産しています。台湾の産業上の強みは数十年かけて構築され、工場、技術者、供給業者、専門知識の密接なネットワークを伴います。</li>
+    <li><span class="list-title">📌 オランダのASML</span> 台湾自体も別の地理的な要衝に依存しています。高度な半導体製造に必要な機械の一部は、オランダのフェルホーフェンという町から来ています。ASMLは現在、極端紫外線露光装置（EUV）を製造できる世界唯一の企業です。この機械は光を使ってシリコン上に極めて小さなパターンを印刷し、高度なチップの製造を可能にします。</li>
+    <li><span class="list-title">📌 世界的な依存関係</span> カリフォルニアで開発されたAIモデルは、台湾で製造され、オランダで作られた機械を使い、フィンランドの原子力発電で動くデータセンターに設置されたチップに依存するかもしれません。この観点から見ると、クラウドは供給網によく似ています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 8. 戦略的・安全保障上のリスク <span class="diamond">◆</span></div>
+<h2 id="strategic-risks">戦略的・安全保障上のリスク</h2>
+<ul>
+    <li><span class="list-title">📌 輸出規制の影響</span> 衣服、自動車、食料と同じように、物理的なつながりは影響力を生みます。米国による中国向けの高度なチップ輸出規制が大きな打撃を与えたのは、高性能計算ハードウェアがインターネットからダウンロードできない物理的なボトルネックであり続けているためです。同様に、オランダによる高度な半導体装置の規制も、ASMLの代替が極めて困難であるため、実際の影響があります。</li>
+    <li><span class="list-title">📌 国内回帰の動き</span> ワシントンから北京まで、政府はこれらの産業能力を自国領内に取り込もうと巨額を投じています。これは険しい道のりですが、不可能ではありません。</li>
+    <li><span class="list-title">📌 ガリウムの依存</span> 外国供給業者への依存は、原材料にまで及んでいます。ガリウムを例に取ると、IEAによれば、2030年までにデータセンターだけで世界の生産量の<span class="highlight">10%以上</span>を消費する可能性があります。そしてそのほとんどすべてが中国から来ています。</li>
+    <li><span class="list-title">📌 新たな戦略資源</span> 政府がAIを石油、通信、軍事装備と同じ言葉で語るようになった理由はここにあります。JPモルガンは、電力容量、半導体、重要材料をAI競争における新たなボトルネックと表現し、それぞれが特定の場所と供給網に結びついています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 9. 脆弱性と回復力 <span class="diamond">◆</span></div>
+<h2 id="vulnerability-resilience">脆弱性と回復力</h2>
+<ul>
+    <li><span class="list-title">📌 湾岸地域の事例</span> 地理はAIをどこに建設できるかを決めるだけでなく、供給線とインフラがどれほど脆弱になるかも左右します。アラブ首長国連邦（UAE）はAI拠点となるため数十億ドルを投じており、複数ギガワット級のAIキャンパスを開発して、世界最大級の計算能力の集積地にしようとしています。</li>
+    <li><span class="list-title">📌 攻撃による設計変更</span> しかし、今年初めにイランの攻撃がUAEとバーレーンのデータセンターインフラに損害を与えた後、UAEの計画者は設計を再検討しています。すべてを1つの巨大なキャンパスに集中させる代わりに、より分散した施設に分割する計画です。一部の部品は地下に移され、他の施設では耐爆構造や防空システムも検討されています。</li>
+    <li><span class="list-title">📌 地理的脆弱性の例</span> AIが物理的インフラに依存するほど、そのインフラは建設された場所の脆弱性を引き継ぎます。台湾のチップ産業は中国本土からわずか<span class="highlight">100キロメートル</span>余りの場所にあります。欧州のデータセンターは、地域の電力網に余剰容量がないだけで制限されることがあります。主要都市から遠く離れて建設された施設でも、海洋を横断し固定された場所に上陸する光ファイバー網や海底ケーブルに依存しています。</li>
+</ul>
+
+<div class="section-divider"><span class="diamond">◆</span> 10. 地理に根差すAIの未来 <span class="diamond">◆</span></div>
+<h2 id="future-grounded-ai">地理に根差すAIの未来</h2>
+<ul>
+    <li><span class="list-title">📌 新たな優位性</span> 信頼できるインフラ、豊富なエネルギー、利用可能な土地、政治的な安定を持つ国は、10年前には奇妙に時代遅れに見えたであろう利点を得ます。フィンランドはその良い例です。寒冷な気候も役立ちますが、本当の魅力は、これらの大量の電力を必要とする施設をどれだけ確実に支えられるかです。</li>
+    <li><span class="list-title">📌 地図は固定されない</span> より効率的なチップ、より良い冷却システム、熱の管理に関する新しい方法は、寒冷地域が今日享受する利点を減らす可能性があります。将来のデータセンターが冷却に必要な電力や水を減らせれば、中東など資本とエネルギーが豊富な場所を含め、より多くの場所が適した候補になります。</li>
+    <li><span class="list-title">📌 物理的制約の持続</span> しかし、これらの進歩はAIをより物理的でなくするものではありません。どの物理的制約が最も重要かが変わるだけです。実際、知能がクラウドに移るほど、それは地理に深く根差すようになります。</li>
+</ul>
+
+<!-- 核心メッセージ -->
+<div style="background:#1a1a1a; border-radius:10px; padding:1.2rem 1.8rem; margin:2rem 0; border-left:4px solid #ffb74d;">
+    <p style="font-size:1rem;"><strong style="color:#ffb74d;">🔑 核心メッセージ</strong><br>
+    AIはデジタル技術でありながら、その実態は<span class="highlight">電力・土地・半導体・希少材料</span>といった物理的な資源に深く依存しており、地理的な制約から逃れられません。技術の進歩によって制約の種類は変わっても、AIが地理に根差すという本質は変わりません。<br>
+    <span style="color:#aaa; font-size:0.9rem;">（世界のデータセンター電力消費は2024年の約415テラワット時から2035年に約1,200テラワット時へ増加予測。AI投資は2026年に2兆ドル超の見込み。）</span></p>
+</div>
+
+<!-- フッター -->
+<div class="footer-note">
+    <p><span style="color:#ffb74d;">📊 出典・データソース</span><br>
+    グーグル、マイクロソフト、エヌビディア、台湾積体電路製造（TSMC）、ASML、国際通貨基金（IMF）、国際エネルギー機関（IEA）、JPモルガン、東数西算プロジェクト、フィンランド原子力発電所、アイオワ州原子力発電所、スリーマイル島原子力発電所、アラブ首長国連邦（UAE）AIキャンパス計画<br>
+    本要約は動画内容を客観的に構造化したものであり、一部推論・分析を含みます。</p>
+</div>
+
+</body>
+</html>
