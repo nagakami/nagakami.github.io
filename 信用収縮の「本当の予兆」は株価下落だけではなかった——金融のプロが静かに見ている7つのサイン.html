@@ -5,189 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>信用収縮が起きる予兆 総まとめ</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: #2A2520;
-            color: #F0E9D9;
-            font-family: 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
-            line-height: 1.7;
-            padding: 2rem 1rem;
-            max-width: 880px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #ffb74d;
-            font-size: 2rem;
-            font-weight: 700;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-        .meta-box {
-            background: #1e1e1e;
-            border-left: 6px solid #ff8a65;
-            padding: 1.2rem 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0 2rem 0;
-        }
-        .meta-box p { margin: 0.3rem 0; }
-        .meta-box a { color: #81d4fa; word-break: break-all; }
-        .section-divider {
-            color: #8ab4f8;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-align: center;
-            padding: 0.6rem 1rem;
-            margin: 2.5rem 0 1.8rem 0;
-            background: rgba(138, 180, 248, 0.06);
-            border-radius: 30px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-        }
-        .section-divider::before,
-        .section-divider::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #8ab4f8, transparent);
-        }
-        .section-divider .diamond { color: #ffb74d; font-size: 1.2rem; }
-        h2 {
-            color: #00FA9A;
-            font-size: 1.6rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid #ffb74d;
-            padding-left: 0.8rem;
-        }
-        h3 {
-            color: #f5cba0;
-            font-size: 1.25rem;
-            margin-top: 1.6rem;
-            margin-bottom: 0.8rem;
-            font-weight: 500;
-        }
+        body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; line-height: 1.7; padding: 20px; }
+        h1 { color: #ffcc00; font-size: 36px; text-align: center; margin-bottom: 20px; }
+        h2 { color: #32CD32; font-size: 22px; margin-top: 40px; }
+        h3 { color: #4caf50; }
+        h4 { color: #4caf50; }
+        strong { color: #ffb347; }
+        small { color: #ffb347; }
+        b { color: #ffb347; }
+        a { color: #7fb8ff; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #a8d1ff; text-decoration: underline; }
+        p { margin-bottom: 1em; }
         ul { list-style: none; padding: 0; }
-        li {
-            background: #1a1a1a;
-            border-left: 4px solid #4fc3f7;
-            padding: 1rem 1.4rem;
-            margin-bottom: 0.8rem;
-            border-radius: 0 8px 8px 0;
-            transition: border-color 0.2s ease, background 0.2s;
-        }
-        li:hover { border-color: #ffb74d; background: #202020; }
+        li { background: #1a1a1a; border-left: 4px solid #4fc3f7; padding: 1rem 1.4rem; margin-bottom: 0.8rem; border-radius: 0 8px 8px 0; }
+        .section-divider { color: #8ab4f8; font-size: 0.85rem; font-weight: 500; letter-spacing: 3px; text-align: center; padding: 0.6rem 1rem; margin: 2.5rem 0 1.8rem 0; background: rgba(138, 180, 248, 0.06); border-radius: 30px; }
+        .meta-box { background: #1e1e1e; border-left: 6px solid #ff8a65; padding: 1.2rem 1.5rem; border-radius: 6px; margin: 1.5rem 0 2rem 0; }
+        .list-title { font-weight: 600; color: #e0e0e0; display: block; margin-bottom: 0.2rem; }
         .highlight { color: #ffab91; font-weight: 600; }
         .price { color: #ffd54f; font-weight: 600; }
-        .footer-note {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #2a2a2a;
-            color: #9e9e9e;
-            font-size: 0.85rem;
-            text-align: center;
-        }
-        .footer-note a { color: #81d4fa; }
-        .small-meta { color: #aaa; font-size: 0.9rem; }
-        .list-title {
-            font-weight: 600;
-            color: #e0e0e0;
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-        .badge {
-            background: #2a2a2a;
-            padding: 0.1rem 0.6rem;
-            border-radius: 20px;
-            color: #ccc;
-            font-size: 0.8rem;
-        }
-        .code-block {
-            background: #0d0d0d;
-            border-left: 3px solid #ffb74d;
-            padding: 0.8rem 1.2rem;
-            border-radius: 6px;
-            font-family: 'Courier New', monospace;
-            color: #cfd8dc;
-            margin: 0.8rem 0;
-            font-size: 0.9rem;
-        }
-        .toc-list { display: block; list-style: none; padding: 0; margin: 0; }
-        .toc-list li {
-            background: transparent;
-            border: none;
-            padding: 0.2rem 0;
-            margin: 0;
-            border-radius: 0;
-            transition: none;
-        }
-        .toc-list li:hover { background: transparent; border-color: transparent; }
-        .toc-list a {
-            color: #8ab4f8;
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: inline-block;
-            padding: 0.1rem 0;
-        }
-        .toc-list a:hover { color: #ffb74d; text-decoration: underline; }
-        @media (max-width: 600px) {
-            body { padding: 1rem 0.6rem; font-size: 15px; }
-            h1 { font-size: 1.4rem; }
-            h2 { font-size: 1.3rem; }
-            .meta-box { padding: 0.8rem 1rem; }
-            li { padding: 0.8rem 1rem; }
-        }
+        .footer-note { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #2a2a2a; color: #9e9e9e; font-size: 0.85rem; text-align: center; }
     </style>
 </head>
 <body>
-
 <h1>信用収縮が起きる予兆</h1>
 <!--
 信用収縮の「本当の予兆」は株価下落だけではなかった——金融のプロが静かに見ている7つのサイン
 
 「株価が下がる前に、実は“お金の値段”が悲鳴を上げています。コアウィーブCDS1140bp、オラクル174％——あなたの資産を守る7つの予兆、見逃していませんか？」
-信用収縮の予兆は、資金の値段の上昇（スプレッド拡大）から始まり、ノンバンクの綻びを経て、実体経済への波及へと連鎖します。単独ではなく複数が同時に・連鎖して強まるときに現実に起こる可能性の度合いが高まります。動画で最も強調されたのは株価下落そのものではなく、資金調達の循環が止まることと金融機関同士の信用疑念です。
+信用収縮の予兆は、資金の値段の上昇（スプレッド拡大）から始まり、ノンバンクの綻びを経て、実体経済への波及へと連鎖します。単独ではなく、複数が同時に・連鎖して強まるときに、現実に起こる可能性の度合いが高まります。動画で最も強調されたのは株価下落そのものではなく、資金調達の循環が止まることと、金融機関同士の信用疑念です。
 
 
 
 
-【 全体概要 】
+【全体概要】
 信用収縮の予兆は、まず資金調達市場の価格指標に現れます。最も早いシグナルは資金の「値段」の急上昇です。CP（コマーシャルペーパー）とCD（譲渡性預金）のスプレッド拡大は、企業の短期調達コストが銀行より相対的に上がったことを示し、韓国の事例では6bpから33bpへ拡大しました。TEDスプレッド（3ヶ月物米ドルLIBORと米国債利回りの差）の急騰は銀行間の信用不安を映し、2008年リーマン時や2020年コロナ時にも流動性危機の深刻化と一致しました。IMFはクレジットスプレッドの全般的拡大が12ヶ月以内の景気悪化を示す指標になり得ると指摘しています。
 
-次にノンバンクの異変が続きます。プライベートクレジットファンドで投資家の資金引き上げが相次ぎ、契約上の出金上限に達するファンドが続出する状況は、信用リスクの受け皿が機能不全に陥りつつある予兆です。企業倒産が増えているのに銀行の不良債権比率がさほど上昇しない場合、不良債権をノンバンクが抱え込んでいる可能性があります。過去のサブプライムRMBSやCDOのように、新しい形態の信用が急成長した後に「思春期の火傷」を経験してきた歴史も踏まえると、プライベートクレジットの急速な拡大はデフォルトリスクの持続不可能な誤価格を反映している可能性があります。
+次に、ノンバンクの異変が続きます。プライベートクレジットファンドで投資家の資金引き上げが相次ぎ、契約上の出金上限に達するファンドが続出する状況は、信用リスクの受け皿が機能不全に陥りつつある予兆です。企業倒産が増えているのに銀行の不良債権比率がさほど上昇しない場合、不良債権をノンバンクが抱え込んでいる可能性があります。過去のサブプライムRMBSやCDOのように、新しい形態の信用が急成長した後に「思春期の火傷」を経験してきた歴史も踏まえると、プライベートクレジットの急速な拡大はデフォルトリスクの持続不可能な誤価格を反映している可能性があります。
 
-そして実体経済への波及段階では、銀行の厳格な貸出態度の継続・長期化、小規模企業の倒産急増、ゾンビ企業の綻び、借り控えと預金偏重が現れます。日本の事例では負債1000万円以上の倒産が13年ぶりの高水準となり、負債1億円未満が77％、従業員10人未満が90.6％を占めました。日本にはゾンビ企業が25.1万社存在するとの推計もあります。中国では住民存款が7.68兆元増える一方で住民貸款は前年同期比71.5％減の2967億元にとどまり、貸存比が3.9％まで低下しました。これは金利が低くても借り手がおらず、資金が実体経済に循環しない「信用伝導の不全」の極端な例です。株式市場では株価下落そのものが「遅行指標」であり、市場ボラティリティの急上昇はIMFも指摘する予兆の一つです。
-
-
+そして実体経済への波及段階では、銀行の厳格な貸出態度の継続・長期化、小規模企業の倒産急増、ゾンビ企業の綻び、借り控えと預金偏重が現れます。日本の事例では負債1000万円以上の倒産が13年ぶりの高水準となり、負債1億円未満が77％、従業員10人未満が90.6％を占めました。日本にはゾンビ企業が25.1万社存在するとの推計もあります。中国では住民預金が7.68兆元増える一方で住民貸出は前年同期比71.5％減の2967億元にとどまり、貸存比率が3.9％まで低下しました。これは金利が低くても借り手がおらず、資金が実体経済に循環しない「信用伝導の不全」の極端な例です。株式市場では株価下落そのものが「遅行指標」であり、市場ボラティリティの急上昇はIMFも指摘する予兆の一つです。
 
 
-【 全体概要－２（約400文字・テーマごと段落） 】
-動画内で直接指摘された予兆として、CDSの急上昇（コアウィーブで1140ベーシスポイント＝債務の約半分相当の保険料水準）、設備投資が営業キャッシュフローを大幅に上回る状態（オラクルで174％）、フリーキャッシュフローの慢性的赤字（メタの第3四半期で3ヶ月21.2億ドル赤字、年間赤字予想390億ドル規模）、格付け見通しの下方修正（S&Pがメタを「安定的」から「ネガティブ」へ変更）が挙げられます。人工知能関連の巨額投資に対する資金調達コストの上昇と投資家の「回収速度への疑問」の顕在化も重要な兆候です。
-
-より広い金融市場では、銀行間金利の急上昇、銀行の融資基準の急速な厳格化（貸し渋り・貸し剥がしの始まり）、借り換えの困難化、コマーシャルペーパー市場の機能低下、金融機関同士の信用疑念、担保要件の引き上げ、不良債権比率や延滞率の上昇、株価下落の加速、流動性の急激な枯渇、質への逃避の加速、中央銀行の緊急利下げ、設備投資の急縮小、失業率上昇や消費の落ち込み、政治的不透明感が観察されます。複合的・構造的な予兆としては、特定セクター（人工知能・データセンター関連）の過大投資が回収不能リスクとして認識され始めること、複数リスク要因の同時重複、1930年フーバー政権中間選挙後のような歴史的類似パターンが挙げられます。
-
-【 全体概要－３（約150文字・テーマごと段落） 】
-信用収縮の予兆は、資金の値段の上昇（スプレッド拡大）から始まり、ノンバンクの綻びを経て、実体経済への波及へと連鎖します。単独ではなく複数が同時に・連鎖して強まるときに現実に起こる可能性の度合いが高まります。動画で最も強調されたのは株価下落そのものではなく、資金調達の循環が止まることと金融機関同士の信用疑念です。
 -->
 <div class="meta-box">
     <p><strong>📺 動画タイトル:</strong> 【緊急解説 中間選挙で米政治的混乱幕開け 世界的備蓄要請のワケ】中間選挙開票結果直前 1930年と同じ 中間選挙が大恐慌を引き起こす｜米国金利 金価格 ドル円相場分析 26年11月3日</p>
-    <p><strong>🔗 URL:</strong> <a href="https://youtu.be/jwBdp8xZhzk" target="_blank">https://youtu.be/jwBdp8xZhzk</a></p><br>
-<p>本稿は上記の動画（チャンネル：シマウマFX大学）の内容を参考にして「信用収縮が起きる予兆」を集合させたものです。この動画はとても重要なことを教えてくれています。</p><br>
-
+    <p><strong>🔗 URL:</strong> <a href="https://youtu.be/jwBdp8xZhzk" target="_blank">https://youtu.be/jwBdp8xZhzk</a></p>
+    <p>本稿は上記の動画（チャンネル：シマウマFX大学）の内容を参考にして「信用収縮が起きる予兆」を集合させたものです。この動画はとても重要なことを教えてくれています。</p>
     <p><strong>📌 最重要エッセンス（要約）:</strong><br>
     信用収縮の予兆は、<span class="highlight">資金調達市場の価格指標</span>、<span class="highlight">金融機関・ノンバンクの行動変化</span>、<span class="highlight">実体経済への波及指標</span>の3つのカテゴリーで整理できます。最も早く現れるのは資金の「値段」の急上昇であり、CP-CDスプレッドの拡大、TEDスプレッドの急騰、クレジットスプレッドの全般的拡大が挙げられます。次にプライベートクレジットファンドの解約制限や銀行の不良債権比率が上がらないのに倒産が増えるといったノンバンクの異変が続きます。そして銀行の貸出態度の厳格化、小規模企業の倒産急増、ゾンビ企業の綻び、借り控えと預金偏重が実体経済への波及を示します。動画内では<span class="highlight">CDSの急上昇</span>、<span class="highlight">設備投資が営業キャッシュフローを大幅に上回る状態</span>、<span class="highlight">フリーキャッシュフローの慢性的赤字</span>、<span class="highlight">格付け見通しの下方修正</span>が直接指摘されました。これらの予兆は単独ではなく<span class="price">複数が同時に・連鎖して強まる</span>ときに信用収縮の蓋然性が高まります。
     </p>
 </div>
 
-<!-- 目次 -->
 <div style="background:#1a1a1a; padding:1.2rem 1.8rem; border-radius:10px; margin:1.8rem 0;">
     <p style="color:#ffb74d; font-weight:600; font-size:1.1rem; margin-bottom:0.6rem;">📑 目次</p>
-    <ul class="toc-list">
+    <ul>
         <li><a href="#spread">1. 資金調達コスト・スプレッドの異常な拡大</a></li>
         <li><a href="#nonbank">2. ノンバンク（プライベートクレジット等）の異変</a></li>
         <li><a href="#real-economy">3. 金融機関の貸出態度・実体経済指標</a></li>
@@ -199,8 +69,7 @@
     </ul>
 </div>
 
-<!-- セクション1 -->
-<div class="section-divider"><span class="diamond">◆</span> 1. 資金調達コスト・スプレッドの異常な拡大 <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 1. 資金調達コスト・スプレッドの異常な拡大 ◆</div>
 <h2 id="spread">資金調達コスト・スプレッドの異常な拡大</h2>
 <ul>
     <li><span class="list-title">📌 信用収縮の最も早く現れるシグナル</span> 信用収縮の最も早く現れるシグナルは、資金の「値段」が急に上がることです。</li>
@@ -209,21 +78,7 @@
     <li><span class="list-title">📌 クレジットスプレッドの全般的な拡大</span> IMFは、市場ボラティリティの上昇や投資家のリスク回避姿勢の強まりと並んで、クレジットスプレッドの拡大が12ヶ月以内の景気悪化を示す指標になり得ると指摘しています。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>韓国の事例では、CP-CDスプレッドが6bpから______bpへ拡大しました。</li>
-        <li>TEDスプレッドは3ヶ月物の米ドルLIBORと______利回りの差です。</li>
-        <li>IMFはクレジットスプレッドの拡大が______ヶ月以内の景気悪化を示す指標になり得ると指摘しています。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① 33　② 米国債　③ 12</p>
-    </details>
-</div>
-
-<!-- セクション2 -->
-<div class="section-divider"><span class="diamond">◆</span> 2. ノンバンク（プライベートクレジット等）の異変 <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 2. ノンバンク（プライベートクレジット等）の異変 ◆</div>
 <h2 id="nonbank">ノンバンク（プライベートクレジット等）の異変</h2>
 <ul>
     <li><span class="list-title">📌 銀行以外の貸し手の綻び</span> 銀行以外の貸し手がリスクを抱え込んでいる場合、そこから綻びが見えることがあります。</li>
@@ -232,21 +87,7 @@
     <li><span class="list-title">📌 新種の信用商品・市場の急拡大</span> 歴史的に、新しい形態の信用（過去のサブプライムRMBSやCDOなど）が急成長した後、その市場が「思春期の火傷」を経験してきたことが指摘されています。プライベートクレジットの急速な拡大は、デフォルトリスクの持続不可能な誤価格を反映している可能性があり、注意が必要です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>プライベートクレジットファンドで投資家が資金引き上げに動き、契約上の______に達するファンドが続出する状況が予兆となります。</li>
-        <li>企業倒産件数が増加しているのに銀行の______比率がさほど上昇しない場合、ノンバンクがリスクを抱え込んでいる可能性があります。</li>
-        <li>歴史的に新しい形態の信用（過去のサブプライムRMBSや______など）が急成長した後、その市場が「思春期の火傷」を経験してきました。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① 出金上限　② 不良債権　③ CDO</p>
-    </details>
-</div>
-
-<!-- セクション3 -->
-<div class="section-divider"><span class="diamond">◆</span> 3. 金融機関の貸出態度・実体経済指標 <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 3. 金融機関の貸出態度・実体経済指標 ◆</div>
 <h2 id="real-economy">金融機関の貸出態度・実体経済指標</h2>
 <ul>
     <li><span class="list-title">📌 実体経済への波及段階で見える指標</span> 信用収縮が実体経済に波及し始めた段階で見える指標です。</li>
@@ -256,67 +97,24 @@
     <li><span class="list-title">📌 消費者・企業の「借り控え」と預金偏重</span> 中国の事例では、住民存款が7.68兆元増加する一方で、住民貸款は前年同期比71.5%減の2967億元にとどまり、貸存比が3.9%まで低下しました。これは、金利が低くても借り手がおらず、資金が実体経済に循環しない「信用伝導の不全」を示す極端な例です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>日本の事例では、負債1000万円以上の倒産が______年ぶりの高水準となりました。</li>
-        <li>負債1億円未満の企業が全体の______%、従業員10人未満が90.6%を占めました。</li>
-        <li>日本ではゾンビ企業が______万社存在するとの推計があります。</li>
-        <li>中国の事例では、住民貸款は前年同期比71.5%減の______億元にとどまり、貸存比が3.9%まで低下しました。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① 13　② 77　③ 25.1　④ 2967</p>
-    </details>
-</div>
-
-<!-- セクション4 -->
-<div class="section-divider"><span class="diamond">◆</span> 4. 株式市場・資産価格からのシグナル（補足） <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 4. 株式市場・資産価格からのシグナル（補足） ◆</div>
 <h2 id="market-signal">株式市場・資産価格からのシグナル（補足）</h2>
 <ul>
     <li><span class="list-title">📌 株価の下落そのものは「遅行指標」</span> 動画内でも指摘されていた通り、株価は業績悪化が表面化してから動くことが多いです。ただし、市場ボラティリティの急上昇はIMFも指摘する予兆の一つであり、投資家のリスク回避姿勢が一気に強まる局面は注意が必要です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>株価の下落そのものは「______指標」であると指摘されています。</li>
-        <li>IMFも指摘する予兆の一つは、市場______の急上昇です。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① 遅行　② ボラティリティ</p>
-    </details>
-</div>
-
-<!-- セクション5 -->
-<div class="section-divider"><span class="diamond">◆</span> 5. 動画内で直接指摘された主な予兆 <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 5. 動画内で直接指摘された主な予兆 ◆</div>
 <h2 id="video-signals">動画内で直接指摘された主な予兆</h2>
 <ul>
     <li><span class="list-title">📌 CDSの急上昇</span> クレジットデフォルトスワップ（CDS）の急上昇です。例としてコアウィーブで1140ベーシスポイント＝債務の約半分相当の保険料水準が挙げられています。</li>
     <li><span class="list-title">📌 設備投資額が営業キャッシュフローを大幅に上回る状態</span> 企業の設備投資額が営業キャッシュフローを大幅に上回る状態です。例としてオラクルで設備投資が営業キャッシュフローの174％となっています。</li>
     <li><span class="list-title">📌 フリーキャッシュフローの慢性的な赤字</span> フリーキャッシュフローの慢性的な赤字です。例としてメタの第3四半期で3ヶ月21.2億ドル赤字、年間赤字予想390億ドル規模が挙げられています。</li>
-    <li><span class="list-title">📌 格付け会社による見通しの下方修正</span> 格付け会社による見通しの下方修正です。例としてS&amp;Pがメタの格付け見通しを「安定的」から「ネガティブ」に変更しました。</li>
+    <li><span class="list-title">📌 格付け会社による見通しの下方修正</span> 格付け会社による見通しの下方修正です。例としてS&Pがメタの格付け見通しを「安定的」から「ネガティブ」に変更しました。</li>
     <li><span class="list-title">📌 人工知能関連の巨額投資に対する懸念</span> 人工知能関連の巨額投資に対する資金調達コストの上昇と、投資家による「回収速度への疑問」の顕在化です。</li>
     <li><span class="list-title">📌 その他の兆候</span> 短期金融市場や銀行の融資姿勢に異変が出始める兆候、社債スプレッドの拡大、企業のキャッシュフローに異常が出ている状態です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>コアウィーブのCDSは______ベーシスポイント＝債務の約半分相当の保険料水準です。</li>
-        <li>オラクルは設備投資が営業キャッシュフローの______％となっています。</li>
-        <li>メタの第3四半期フリーキャッシュフローは3ヶ月で______億ドルの赤字です。</li>
-        <li>S&amp;Pはメタの格付け見通しを「安定的」から「______」に変更しました。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① 1140　② 174　③ 21.2　④ ネガティブ</p>
-    </details>
-</div>
-
-<!-- セクション6 -->
-<div class="section-divider"><span class="diamond">◆</span> 6. より広い金融市場で観察される典型的な予兆 <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 6. より広い金融市場で観察される典型的な予兆 ◆</div>
 <h2 id="broader-signals">より広い金融市場で観察される典型的な予兆</h2>
 <ul>
     <li><span class="list-title">📌 銀行間金利の急上昇</span> 銀行間金利（例：SOFRや過去のLIBOR系指標）の急上昇や、国債利回りとのスプレッド拡大です。</li>
@@ -335,22 +133,7 @@
     <li><span class="list-title">📌 政治的不透明感</span> 政権と議会の対立、債務上限問題、規制強化などが資金調達環境を一気に悪化させる状況です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>銀行間金利の例として______や過去のLIBOR系指標が挙げられます。</li>
-        <li>銀行の融資基準の急速な厳格化とは、______・貸し剥がしの始まりです。</li>
-        <li>流動性の急激な枯渇では出来高減少、______スプレッドの拡大が起きます。</li>
-        <li>中央銀行がインフレ下でも利下げや______を余儀なくされる動きは金融不安を公式に認めるシグナルです。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① SOFR　② 貸し渋り　③ ビッド・アスク　④ 緊急利下げ</p>
-    </details>
-</div>
-
-<!-- セクション7 -->
-<div class="section-divider"><span class="diamond">◆</span> 7. 複合的・構造的な予兆 <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 7. 複合的・構造的な予兆 ◆</div>
 <h2 id="structural">複合的・構造的な予兆</h2>
 <ul>
     <li><span class="list-title">📌 特定セクターの過大投資の認識</span> 特定セクター（人工知能・データセンター関連）の過大投資が、回収不能リスクとして認識され始めることです。</li>
@@ -358,20 +141,7 @@
     <li><span class="list-title">📌 歴史的類似パターン</span> 1930年フーバー政権中間選挙後のように、株価調整が政治的混乱を経て信用収縮・実体経済悪化へ波及した構造です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>特定セクター（人工知能・______関連）の過大投資が回収不能リスクとして認識され始めることが予兆です。</li>
-        <li>歴史的類似パターンとして、______年フーバー政権中間選挙後の構造が挙げられます。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① データセンター　② 1930</p>
-    </details>
-</div>
-
-<!-- セクション8 -->
-<div class="section-divider"><span class="diamond">◆</span> 8. まとめ的な位置づけ <span class="diamond">◆</span></div>
+<div class="section-divider">◆ 8. まとめ的な位置づけ ◆</div>
 <h2 id="summary">まとめ的な位置づけ</h2>
 <ul>
     <li><span class="list-title">📌 複数同時・連鎖の監視</span> これらの予兆は単独で見るのではなく、複数が同時に、または連鎖して現れるかを監視することが重要です。</li>
@@ -379,31 +149,12 @@
     <li><span class="list-title">📌 動画で強調された点</span> これらの予兆は単独で現れるより、複数が同時に・急速に強まるときに信用収縮の蓋然性が高まります。特に動画で強調されていたのは「株価下落そのもの」ではなく、資金調達の循環が止まることと金融機関同士の信用疑念です。</li>
 </ul>
 
-<div style="background:#15202b; border:1px solid #4fc3f7; border-radius:8px; padding:1rem 1.4rem; margin:0.8rem 0 1.8rem 0;">
-    <p style="color:#4fc3f7; font-weight:600; margin-bottom:0.5rem;">✏️ 穴埋めテスト</p>
-    <ol style="padding-left:1.4rem; color:#e0e0e0; font-size:0.95rem;">
-        <li>予兆は単独で見るのではなく、複数が同時に、または______して現れるかを監視することが重要です。</li>
-        <li>想定される進展順序は、①スプレッドの拡大→②ノンバンクの解約制限→③企業倒産の増加・銀行の______です。</li>
-        <li>動画で強調されていたのは「株価下落そのもの」ではなく、資金調達の循環が止まることと金融機関同士の______です。</li>
-    </ol>
-    <details style="margin-top:0.7rem; cursor:pointer;">
-        <summary style="color:#ffb74d; font-weight:600; font-size:0.9rem;">▶ 答えを見る</summary>
-        <p style="color:#a5d6a7; padding:0.4rem 0; font-size:0.9rem;">① 連鎖　② 貸出慎重化　③ 信用疑念</p>
-    </details>
-</div>
-
-<!-- 核心メッセージ -->
 <div style="background:#1a1a1a; border-radius:10px; padding:1.2rem 1.8rem; margin:2rem 0; border-left:4px solid #ffb74d;">
     <p style="font-size:1rem;"><strong style="color:#ffb74d;">🔑 核心メッセージ</strong><br>
     信用収縮の予兆は、<span class="highlight">資金の値段の上昇（スプレッド拡大）</span>から始まり、<span class="highlight">ノンバンクの綻び</span>を経て、<span class="highlight">実体経済への波及</span>へと連鎖します。動画で最も強調されたのは、株価下落そのものではなく<span class="price">資金調達の循環が止まること</span>と<span class="price">金融機関同士の信用疑念</span>です。<br>
     <span style="color:#aaa; font-size:0.9rem;">（コアウィーブのCDS1140ベーシスポイント、オラクルの設備投資/営業キャッシュフロー174%、メタの3ヶ月フリーキャッシュフロー21.2億ドル赤字、日本での負債1000万円以上倒産13年ぶり高水準などのデータが根拠）</span></p>
 </div>
 
-
-
-
-
-<!-- 免責事項 -->
 <div style="background:#1a1a1a; border-radius:10px; padding:1.2rem 1.8rem; margin:2rem 0; border-left:4px solid #ff8a65;">
     <p style="font-size:1rem;"><strong style="color:#ff8a65;">⚠️ 免責事項</strong></p>
     <ul style="margin-top:0.6rem;">
@@ -418,97 +169,10 @@
     </ul>
 </div>
 
-
-
-
-
-<!-- フッター -->
 <div class="footer-note">
     <p><span style="color:#ffb74d;">📊 出典・データソース</span><br>
-    IMF、内閣府、S&amp;P、コアウィーブ、オラクル、メタ、韓国のCP-CDスプレッド事例、中国の住民存款・住民貸款統計、日本の倒産統計、ゾンビ企業推計、1930年フーバー政権中間選挙の歴史的事例<br>
+    IMF、内閣府、S&P、コアウィーブ、オラクル、メタ、韓国のCP-CDスプレッド事例、中国の住民存款・住民貸款統計、日本の倒産統計、ゾンビ企業推計、1930年フーバー政権中間選挙の歴史的事例<br>
     本要約は動画内容を客観的に構造化したものであり、一部推論・分析を含みます。</p>
 </div>
-
 </body>
 </html>
-
-
-
-
-
-<!--
-
-信用収縮が起きる予兆としては、大きく分けて「資金調達市場の価格指標」「金融機関・ノンバンクの行動変化」「実体経済への波及指標」の3つのカテゴリーで捉えると整理しやすいです。以下、検索結果から確認できるものを中心に、できるだけ多くリストアップします。
-
-### 1. 資金調達コスト・スプレッドの異常な拡大
-
-信用収縮の最も早く現れるシグナルは、資金の「値段」が急に上がることです。
-
-- **CP（コマーシャルペーパー）とCD（譲渡性預金）のスプレッド拡大**：企業が短期資金を調達する際のコストが、銀行の調達コストに比べて相対的に上昇していることを示します。韓国の事例では、CP-CDスプレッドが6bpから33bpへ拡大したことが報告されており、企業の調達負担が相対的に大きくなったと解釈されています。
-- **TEDスプレッドの急上昇**：3ヶ月物の米ドルLIBORと米国債利回りの差。これが急上昇する局面は、銀行間の信用不安が高まり、資金が回らなくなっていることを示します。過去の危機（2008年リーマン時や2020年コロナ時）でも、TED利差の急騰が流动性危機の深刻化と一致しています。
-- **クレジットスプレッドの全般的な拡大**：IMFは、市場ボラティリティの上昇や投資家のリスク回避姿勢の強まりと並んで、クレジットスプレッドの拡大が12ヶ月以内の景気悪化を示す指標になり得ると指摘しています。
-
-### 2. ノンバンク（プライベートクレジット等）の異変
-
-銀行以外の貸し手がリスクを抱え込んでいる場合、そこから綻びが見えることがあります。
-
-- **プライベートクレジットファンドの解約制限・相次ぐ解約請求**：投資家がファンドからの資金引き上げに動き、契約上の出金上限に達するファンドが続出する状況。融資先の業況悪化やパフォーマンス低下が背景にあり、信用リスクの受け皿が機能不全に陥りつつある予兆です。
-- **企業倒産件数の増加に対して、銀行の不良債権比率がさほど上昇しない**：これは、不良債権の増加をプライベートクレジットファンドなどのノンバンクが抱え込んでいる可能性を示唆します。銀行のバランスシートにはまだ現れていないリスクが、別の場所で蓄積されている可能性があります。
-- **新種の信用商品・市場の急拡大**：歴史的に、新しい形態の信用（過去のサブプライムRMBSやCDOなど）が急成長した後、その市場が「思春期の火傷」を経験してきたことが指摘されています。プライベートクレジットの急速な拡大は、デフォルトリスクの持続不可能な誤価格を反映している可能性があり、注意が必要です。
-
-### 3. 金融機関の貸出態度・実体経済指標
-
-信用収縮が実体経済に波及し始めた段階で見える指標です。
-
-- **金融機関の厳格な貸出態度の継続・長期化**：銀行が融資に慎重になり、その姿勢が長引くこと。特に中小企業は間接金融への依存度が高く、資金調達難から経営悪化や倒産につながるリスクがあります。内閣府も、信用収縮の長期化が中小企業の経営悪化や家計の消費・住宅購入抑制につながると指摘しています。
-- **企業倒産件数の急増（特に小規模企業）**：日本の事例では、負債1000万円以上の倒産が13年ぶりの高水準となり、負債1億円未満の企業が全体の77%、従業員10人未満が90.6%を占めました。資金調達コストの上昇と売掛金回収の遅れが、資金余力の薄い企業から順に倒産に追い込まれています。
-- **「ゾンビ企業」の綻び**：本来なら利払いも困難な企業が、低金利によって延命されていた状態から、金利上昇によって一気に破綻に追い込まれるケース。日本ではゾンビ企業が25.1万社存在するとの推計もあり、金利のある世界への移行が信用収縮の引き金になり得ます。
-- **消費者・企業の「借り控え」と預金偏重**：中国の事例では、住民存款が7.68兆元増加する一方で、住民貸款は前年同期比71.5%減の2967億元にとどまり、貸存比が3.9%まで低下しました。これは、金利が低くても借り手がおらず、資金が実体経済に循環しない「信用伝導の不全」を示す極端な例です。
-
-### 4. 株式市場・資産価格からのシグナル（補足）
-
-- **株価の下落そのものは「遅行指標」**：動画内でも指摘されていた通り、株価は業績悪化が表面化してから動くことが多いです。ただし、**市場ボラティリティの急上昇**はIMFも指摘する予兆の一つであり、投資家のリスク回避姿勢が一気に強まる局面は注意が必要です。
-
-### まとめ的な位置づけ
-
-これらの予兆は単独で見るのではなく、**複数が同時に、または連鎖して現れるか**を監視することが重要です。特に、①スプレッドの拡大（資金の値段の上昇）→②ノンバンクの解約制限やファンドのパフォーマンス悪化（リスクの受け皿の綻び）→③企業倒産の増加・銀行の貸出慎重化（実体経済への波及）という順序で進む可能性を意識しておくと、早めの警戒につながります。
-
-
-
-<br><br><br><br>
-**信用収縮（クレジットクランチ）が起きる予兆**を、動画内容と一般的な金融市場の観察からできるだけ多くリストアップします。
-
-### 動画内で直接指摘された主な予兆
-- クレジットデフォルトスワップ（CDS）の急上昇（例：コアウィーブで1140ベーシスポイント＝債務の約半分相当の保険料水準）
-- 企業の設備投資額が営業キャッシュフローを大幅に上回る状態（例：オラクルで設備投資が営業キャッシュフローの174％）
-- フリーキャッシュフローの慢性的な赤字（例：メタの第3四半期で3ヶ月21.2億ドル赤字、年間赤字予想390億ドル規模）
-- 格付け会社による見通しの下方修正（例：S&Pがメタの格付け見通しを「安定的」から「ネガティブ」に変更）
-- 人工知能関連の巨額投資に対する資金調達コストの上昇と、投資家による「回収速度への疑問」の顕在化
-- 短期金融市場や銀行の融資姿勢に異変が出始める兆候
-- 社債スプレッドの拡大
-- 企業のキャッシュフローに異常が出ている状態
-
-### より広い金融市場で観察される信用収縮の典型的な予兆
-- 銀行間金利（例：SOFRや過去のLIBOR系指標）の急上昇や、国債利回りとのスプレッド拡大
-- 銀行の融資基準の急速な厳格化（貸し渋り・貸し剥がしの始まり）
-- 企業の借り換え（ロールオーバー）の困難化や、発行条件の悪化
-- コマーシャルペーパー市場の機能低下・発行額減少
-- 金融機関同士が相手の信用力を疑い始め、相互取引を控える動き
-- 担保要件の引き上げや、担保不足による資金調達難
-- 不良債権比率や延滞率の上昇
-- 株式市場での「遅行指数」としての株価下落の加速（特に高レバレッジ・高投資セクターから他セクターへの波及）
-- 流動性の急激な枯渇（出来高減少、ビッド・アスクスプレッドの拡大）
-- 「質への逃避」の加速（国債や現金への資金シフト、リスク資産からの一斉引き揚げ）
-- 中央銀行がインフレ下でも利下げや緊急利下げを余儀なくされる動き（金融不安を公式に認めるシグナル）
-- 設備投資の急縮小や、企業の資金繰り悪化を示すデータ
-- 失業率の上昇や消費の落ち込みが金融指標に先行して現れ始める兆候
-- 政治的不透明感（政権と議会の対立、債務上限問題、規制強化など）が資金調達環境を一気に悪化させる状況
-
-### 複合的・構造的な予兆
-- 特定セクター（人工知能・データセンター関連）の過大投資が、回収不能リスクとして認識され始める
-- 複数のリスク要因（政治混乱・サイバー攻撃・サプライチェーン障害・雇用統計悪化など）が同時に重なる
-- 歴史的類似パターン（1930年フーバー政権中間選挙後のように、株価調整が政治的混乱を経て信用収縮・実体経済悪化へ波及した構造）
-
-これらの予兆は単独で現れるより、**複数が同時に・急速に強まる**ときに信用収縮の蓋然性が高まります。特に動画で強調されていたのは「株価下落そのもの」ではなく、**資金調達の循環が止まること**と**金融機関同士の信用疑念**です。
-
--->
